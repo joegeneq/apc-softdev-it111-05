@@ -30,8 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'province_code',
             'province_description',
             [
-                'attribute'=>'city_id',
-                'value'=>'city.city_description',
+                'attribute'=>'region_id',
+                'value'=>'region.region_description',
             ],
 
 
