@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'province_description') ?>
 
-    <?= $form->field($model, 'region_id') ?>
+    <?= $form->field($model, 'region') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
