@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $region_code
- * @property integer $region_description
+ * @property string $region_description
  *
  * @property Province[] $provinces
  */
@@ -29,8 +29,7 @@ class Region extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['region_description'], 'integer'],
-            [['region_code'], 'string', 'max' => 32]
+            [['region_code', 'region_description'], 'string', 'max' => 32]
         ];
     }
 

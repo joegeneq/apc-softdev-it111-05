@@ -18,8 +18,8 @@ class RegionSearch extends Region
     public function rules()
     {
         return [
-            [['id', 'region_description'], 'integer'],
-            [['region_code'], 'safe'],
+            [['id'], 'integer'],
+            [['region_code', 'region_description'], 'safe'],
         ];
     }
 
@@ -57,10 +57,10 @@ class RegionSearch extends Region
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'region_description' => $this->region_description,
         ]);
 
-        $query->andFilterWhere(['like', 'region_code', $this->region_code]);
+        $query->andFilterWhere(['like', 'region_code', $this->region_code])
+            ->andFilterWhere(['like', 'region_description', $this->region_description]);
 
         return $dataProvider;
     }
