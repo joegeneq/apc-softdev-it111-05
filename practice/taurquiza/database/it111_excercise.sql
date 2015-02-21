@@ -42,12 +42,11 @@ CREATE TABLE IF NOT EXISTS `it111_excercise1`.`city` (
   `city_code` VARCHAR(32) NULL,
   `city_description` VARCHAR(32) NULL,
   `province_id` INT NOT NULL,
-  `province_region_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `province_id`, `province_region_id`),
-  INDEX `fk_city_province1_idx` (`province_id` ASC, `province_region_id` ASC),
+  PRIMARY KEY (`id`, `province_id`),
+  INDEX `fk_city_province1_idx` (`province_id` ASC),
   CONSTRAINT `fk_city_province1`
-    FOREIGN KEY (`province_id` , `province_region_id`)
-    REFERENCES `it111_excercise1`.`province` (`id` , `region_id`)
+    FOREIGN KEY (`province_id`)
+    REFERENCES `it111_excercise1`.`province` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
