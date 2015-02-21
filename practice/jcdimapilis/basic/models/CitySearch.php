@@ -18,8 +18,8 @@ class CitySearch extends City
     public function rules()
     {
         return [
-            [['id', 'province_id'], 'integer'],
-            [['city_code', 'city_description'], 'safe'],
+            [['id'], 'integer'],
+            [['city_code', 'province_id', 'city_description'], 'safe'],
         ];
     }
 
