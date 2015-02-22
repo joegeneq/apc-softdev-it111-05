@@ -7,6 +7,7 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\City;
 
+
 /**
  * CitySearch represents the model behind the search form about `app\models\City`.
  */
@@ -55,13 +56,16 @@ class CitySearch extends City
             return $dataProvider;
         }
 
+        $query->joinWith('province');
+
         $query->andFilterWhere([
             'id' => $this->id,
-            'province_id' => $this->province_id,
+            //'province_id' => $this->province_id,
         ]);
 
         $query->andFilterWhere(['like', 'city_code', $this->city_code])
-            ->andFilterWhere(['like', 'city_description', $this->city_description]);
+            ->andFilterWhere(['like', 'city_description', $this->city_description])
+            ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
 
         return $dataProvider;
     }
