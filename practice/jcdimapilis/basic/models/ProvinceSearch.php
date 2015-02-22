@@ -17,8 +17,8 @@ class ProvinceSearch extends Province
     public function rules()
     {
         return [
-            [['id', 'region_id'], 'integer'],
-            [['province_code', 'province_description'], 'safe'],
+            [['id'], 'integer'], //removed region id
+            [['province_code', 'region_id', 'province_description'], 'safe'], //added province id
         ];
     }
 
@@ -54,13 +54,16 @@ class ProvinceSearch extends Province
             return $dataProvider;
         }
 
+        $query->joinWith('region'); //Added joinWith 
+
         $query->andFilterWhere([
             'id' => $this->id,
-            'region_id' => $this->region_id,
+            //'region_id' => $this->region_id, //Removed region id from parameters
         ]);
 
         $query->andFilterWhere(['like', 'province_code', $this->province_code])
-            ->andFilterWhere(['like', 'province_description', $this->province_description]);
+            ->andFilterWhere(['like', 'province_description', $this->province_description])
+            ->andFilterWhere(['like', 'region.region_description', $this->region_id]); //Added filterwhere
 
         return $dataProvider;
     }
