@@ -19,7 +19,7 @@ class CitySearch extends City
     {
         return [
             [['id', 'province_id'], 'integer'],
-            [['city_code', 'city_description'], 'safe'],
+            [['city_code','city_description'], 'safe'],
         ];
     }
 
