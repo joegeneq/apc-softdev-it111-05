@@ -44,13 +44,13 @@ class CityController extends Controller
     /**
      * Displays a single City model.
      * @param integer $id
-     * @param integer $province_id1
+     * @param integer $province_id
      * @return mixed
      */
-    public function actionView($id, $province_id1)
+    public function actionView($id, $province_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id, $province_id1),
+            'model' => $this->findModel($id, $province_id),
         ]);
     }
 
@@ -64,7 +64,7 @@ class CityController extends Controller
         $model = new City();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'province_id1' => $model->province_id1]);
+            return $this->redirect(['view', 'id' => $model->id, 'province_id' => $model->province_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -76,15 +76,15 @@ class CityController extends Controller
      * Updates an existing City model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
-     * @param integer $province_id1
+     * @param integer $province_id
      * @return mixed
      */
-    public function actionUpdate($id, $province_id1)
+    public function actionUpdate($id, $province_id)
     {
-        $model = $this->findModel($id, $province_id1);
+        $model = $this->findModel($id, $province_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'province_id1' => $model->province_id1]);
+            return $this->redirect(['view', 'id' => $model->id, 'province_id' => $model->province_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -96,12 +96,12 @@ class CityController extends Controller
      * Deletes an existing City model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @param integer $province_id1
+     * @param integer $province_id
      * @return mixed
      */
-    public function actionDelete($id, $province_id1)
+    public function actionDelete($id, $province_id)
     {
-        $this->findModel($id, $province_id1)->delete();
+        $this->findModel($id, $province_id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -110,13 +110,13 @@ class CityController extends Controller
      * Finds the City model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @param integer $province_id1
+     * @param integer $province_id
      * @return City the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id, $province_id1)
+    protected function findModel($id, $province_id)
     {
-        if (($model = City::findOne(['id' => $id, 'province_id1' => $province_id1])) !== null) {
+        if (($model = City::findOne(['id' => $id, 'province_id' => $province_id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
