@@ -19,8 +19,8 @@ class CitySearch extends City
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['city_code', 'province_id', 'city_description'], 'safe'],
+            [['id'], 'integer'], //removed province id
+            [['city_code', 'province_id', 'city_description'], 'safe'], //Added province id
         ];
     }
 
@@ -56,16 +56,16 @@ class CitySearch extends City
             return $dataProvider;
         }
 
-        $query->joinWith('province');
+        $query->joinWith('province'); //Added joinWith 
 
         $query->andFilterWhere([
             'id' => $this->id,
-            //'province_id' => $this->province_id,
+            //'province_id' => $this->province_id, //Removed province id from parameters
         ]);
 
         $query->andFilterWhere(['like', 'city_code', $this->city_code])
             ->andFilterWhere(['like', 'city_description', $this->city_description])
-            ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
+            ->andFilterWhere(['like', 'province.province_description', $this->province_id]); //Added filterwhere
 
         return $dataProvider;
     }
