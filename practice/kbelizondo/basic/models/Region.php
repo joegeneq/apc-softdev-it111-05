@@ -29,6 +29,8 @@ class Region extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id'], 'required'],
+            [['id'], 'integer'],
             [['region_code', 'region_description'], 'string', 'max' => 32]
         ];
     }
@@ -50,6 +52,6 @@ class Region extends \yii\db\ActiveRecord
      */
     public function getProvinces()
     {
-        return $this->hasMany(Province::className(), ['region_id1' => 'id']);
+        return $this->hasMany(Province::className(), ['region_id' => 'id']);
     }
 }

@@ -14,14 +14,16 @@ use app\models\Province;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'id')->textInput() ?>
+
     <?= $form->field($model, 'city_code')->textInput(['maxlength' => 32]) ?>
 
     <?= $form->field($model, 'city_description')->textInput(['maxlength' => 32]) ?>
 
-    <?= $form->field($model, 'province_id1')->dropDownList(
-		ArrayHelper::map(Province::find()->all(), 'id', 'province_code'),
-		['prompt'=>'Select Province']
-	) ?>
+    <?= $form->field($model, 'province_id')->dropDownList(
+        ArrayHelper::map(Province::find()->all(), 'id', 'province_description'),
+        ['prompt'=>'Select Province Id']
+    ) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
