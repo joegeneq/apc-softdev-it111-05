@@ -46,7 +46,7 @@ class Province extends \yii\db\ActiveRecord
             'id' => 'ID',
             'province_code' => 'Province Code',
             'province_description' => 'Province Description',
-            'region_id' => 'Region ID',
+            'region_id' => 'Region',
         ];
     }
 
