@@ -24,11 +24,18 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
+              
+            
             'id',
             'city_code',
             'city_description',
-            'province.province_description',
+
+            [
+                'attribute'=>'province_id',
+                'value'=>'province.province_description'
+            ],
+
+            
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
