@@ -55,13 +55,16 @@ class CitySearch extends City
             return $dataProvider;
         }
 
+         $query->joinWith('province');
+
         $query->andFilterWhere([
-            'id' => $this->id,
-            'province_id' => $this->province_id,
+            'id' => $this->id
+            
         ]);
 
         $query->andFilterWhere(['like', 'city_code', $this->city_code])
             ->andFilterWhere(['like', 'city_description', $this->city_description]);
+            ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
 
         return $dataProvider;
     }
