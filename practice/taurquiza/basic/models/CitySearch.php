@@ -63,8 +63,9 @@ class CitySearch extends City
         ]);
 
         $query->andFilterWhere(['like', 'city_code', $this->city_code])
-            ->andFilterWhere(['like', 'city_description', $this->city_description]);
-            ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
+              ->andFilterWhere(['like', 'city_description', $this->city_description])
+              ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
+            
 
         return $dataProvider;
     }
