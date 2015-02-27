@@ -45,7 +45,7 @@ class City extends \yii\db\ActiveRecord
             'id' => 'ID',
             'city_code' => 'City Code',
             'city_description' => 'City Description',
-            'province_id' => 'Province ID',
+            'province_id' => 'Province',
         ];
     }
 

@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\City;
+use app\models\Province;
 
 /**
- * CitySearch represents the model behind the search form about `app\models\City`.
+ * ProvinceSearch represents the model behind the search form about `app\models\Province`.
  */
-class CitySearch extends City
+class ProvinceSearch extends Province
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class CitySearch extends City
     {
         return [
             [['id'], 'integer'],
-            [['city_code', 'city_description', 'province_id'], 'safe'],
+            [['province_code', 'province_description', 'region_id'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class CitySearch extends City
      */
     public function search($params)
     {
-        $query = City::find();
+        $query = Province::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -55,17 +55,16 @@ class CitySearch extends City
             return $dataProvider;
         }
 
-         $query->joinWith('province');
+        $query->joinWith('region');
 
         $query->andFilterWhere([
-            'id' => $this->id
-            
+            'id' => $this->id,
+           
         ]);
 
-        $query->andFilterWhere(['like', 'city_code', $this->city_code])
-              ->andFilterWhere(['like', 'city_description', $this->city_description])
-              ->andFilterWhere(['like', 'province.province_description', $this->province_id]);
-            
+        $query->andFilterWhere(['like', 'province_code', $this->province_code])
+            ->andFilterWhere(['like', 'province_description', $this->province_description])
+            ->andFilterWhere(['like', 'region.region_description', $this->region_id]);
 
         return $dataProvider;
     }
