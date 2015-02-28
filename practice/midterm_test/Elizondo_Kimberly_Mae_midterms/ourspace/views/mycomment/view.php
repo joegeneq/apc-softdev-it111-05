@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Myaddress;
 
 
 /* @var $this yii\web\View */
