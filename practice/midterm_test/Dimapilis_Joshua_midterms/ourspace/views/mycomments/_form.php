@@ -14,7 +14,6 @@ use app\models\myaddress;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'myaddress_id')->textInput() ?>
     <?= $form->field($model, 'myaddress_id')->dropDownList(
     		ArrayHelper::map(Myaddress::find()->all(), 'id', 'lastname'),
         ['prompt'=>'Select Last Name']
