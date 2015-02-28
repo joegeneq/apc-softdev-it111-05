@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mycomment */
 
-$this->title = $model->id;
+$this->title = $model->author;
 $this->params['breadcrumbs'][] = ['label' => 'Mycomments', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'myaddress_id',
+            'myaddress.lastname',
             'author',
             'body:ntext',
             'created_at',
