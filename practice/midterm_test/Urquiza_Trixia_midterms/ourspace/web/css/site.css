@@ -8,31 +8,39 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    background-color: #56406B;
 }
 
 .wrap > .container {
     padding: 70px 15px 20px;
+    background-color: #3D0F4C;
+    
 }
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #56406B;
     border-top: 1px solid #ddd;
     padding-top: 20px;
+
 }
 
 .jumbotron {
     text-align: center;
-    background-color: transparent;
+    background-color: #56406B;
+    font-family:#3D0F4C;
 }
 
 .jumbotron .btn {
-    font-size: 21px;
+    font-size: 36px;
     padding: 14px 24px;
+    background-color: #3D0F4C;
+    outline-color: #3D0F4C;
+    
 }
 
 .not-set {
-    color: #c55;
+    color: #3D0F4C;
     font-style: italic;
 }
 
@@ -42,7 +50,7 @@ a.asc:after, a.desc:after {
     top: 1px;
     display: inline-block;
     font-family: 'Glyphicons Halflings';
-    font-style: normal;
+    font-style: italic;
     font-weight: normal;
     line-height: 1;
     padding-left: 5px;
@@ -79,12 +87,12 @@ a.desc:after {
 .hint-block {
     display: block;
     margin-top: 5px;
-    color: #999;
+    color:  #CCFFFF;
 }
 
 .error-summary {
-    color: #a94442;
-    background: #fdf7f7;
+    color: #E60000;
+    background: #56406B;
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
