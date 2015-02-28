@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Mycomment */
 
-$this->title = 'Update Mycomment: ' . ' ' . $model->id;
+$this->title = 'Update Mycomment: ' . ' ' . $model->author;
 $this->params['breadcrumbs'][] = ['label' => 'Mycomments', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
