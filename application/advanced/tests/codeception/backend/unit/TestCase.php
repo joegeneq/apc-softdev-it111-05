@@ -1,6 +1,6 @@
 <?php
 
-namespace tests\codeception\backend\unit;
+namespace backend\tests\unit;
 
 class TestCase extends \yii\codeception\TestCase
 {
