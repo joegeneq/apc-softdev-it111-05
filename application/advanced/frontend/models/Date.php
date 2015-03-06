@@ -55,7 +55,7 @@ class Date extends \yii\db\ActiveRecord
             'date_month' => 'Date Month',
             'date_week' => 'Date Week',
             'date_day' => 'Date Day',
-            'year_year_year' => 'Year Year Year',
+            'year_year_year' => 'Year',
             'event_id' => 'Event ID',
             'weekday_reading_id' => 'Weekday Reading ID',
             'sunday_reading_id' => 'Sunday Reading ID',
