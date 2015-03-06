@@ -21,6 +21,7 @@ use Yii;
  * @property WeekdayReading $weekdayReading
  * @property SundayReading $sundayReading
  */
+
 class Date extends \yii\db\ActiveRecord
 {
     /**
