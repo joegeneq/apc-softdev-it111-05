@@ -124,6 +124,23 @@ CREATE TABLE IF NOT EXISTS `als`.`date` (
 ENGINE = InnoDB;
 
 
+-- -----------------------------------------------------
+-- Table `als`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `als`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `firstname` VARCHAR(45) NOT NULL,
+  `middlename` VARCHAR(45) NOT NULL,
+  `lastname` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(45) NOT NULL,
+  `contact_num` VARCHAR(11) NOT NULL,
+  `user_type` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
