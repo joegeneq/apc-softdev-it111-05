@@ -20,6 +20,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'date_day')->textInput(['maxlength' => 45]) ?>
 
+    <?= $form->field($model, 'year_year_year')->textInput(['maxlength' => 4]) ?>
+
+    <?= $form->field($model, 'event_id')->textInput() ?>
+
+    <?= $form->field($model, 'weekday_reading_id')->textInput() ?>
+
+    <?= $form->field($model, 'sunday_reading_id')->textInput() ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
