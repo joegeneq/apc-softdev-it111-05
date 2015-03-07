@@ -37,14 +37,7 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
   `weekday_week_num` INT NOT NULL COMMENT '1,2,3...',
   `weekday_day` DATE NOT NULL COMMENT 'Monday, Tuesday, Wednesday...',
   `weekday_audio_link` VARCHAR(45) NOT NULL COMMENT 'http://audiolink.com, etc...',
-  `yearly_reading_set_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_weekday_reading_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
-  CONSTRAINT `fk_weekday_reading_yearly_reading_set1`
-    FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -57,14 +50,7 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
   `sunday_reading` VARCHAR(45) NOT NULL COMMENT 'Jonah 3:1, Proverbs 5:12...',
   `sunday_week_num` INT NOT NULL COMMENT '1,2,3,4...',
   `sunday_audio_link` VARCHAR(45) NOT NULL COMMENT 'http://audiolink.com, etc...',
-  `yearly_reading_set_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_sunday_reading_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
-  CONSTRAINT `fk_sunday_reading_yearly_reading_set1`
-    FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
@@ -72,15 +58,8 @@ ENGINE = InnoDB;
 -- Table `asnd_lcmam`.`year`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
-  `year_year` YEAR NULL,
-  `yearly_reading_set_id` INT NOT NULL,
-  PRIMARY KEY (`year_year`),
-  INDEX `fk_year_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
-  CONSTRAINT `fk_year_yearly_reading_set1`
-    FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `year_year` YEAR NOT NULL,
+  PRIMARY KEY (`year_year`))
 ENGINE = InnoDB;
 
 
