@@ -2,13 +2,13 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE SCHEMA IF NOT EXISTS `als` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `als` ;
+CREATE SCHEMA IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `asnd_lcmam` ;
 
 -- -----------------------------------------------------
--- Table `als`.`event`
+-- Table `asnd_lcmam`.`event`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`event` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
   `event_name` VARCHAR(45) NOT NULL COMMENT 'Feast of Saint Therese, Feast of Saint Alphonsus...',
   `event_type` VARCHAR(45) NOT NULL COMMENT 'Memorial, Solemnity, Moveable Feast, Special Feast',
@@ -18,9 +18,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`yearly_reading_set`
+-- Table `asnd_lcmam`.`yearly_reading_set`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`yearly_reading_set` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`yearly_reading_set` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '1,2,3,4,5...',
   `reading_type` VARCHAR(45) NOT NULL COMMENT 'Weekday Reading, Snday Reading',
   PRIMARY KEY (`id`))
@@ -28,9 +28,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`weekday_reading`
+-- Table `asnd_lcmam`.`weekday_reading`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`weekday_reading` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
   `weekday_cycle_num` INT NOT NULL COMMENT '1 or 2...',
   `weekday_reading` VARCHAR(45) NOT NULL COMMENT 'Psalms 1:3, John 3:4...',
@@ -42,16 +42,16 @@ CREATE TABLE IF NOT EXISTS `als`.`weekday_reading` (
   INDEX `fk_weekday_reading_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
   CONSTRAINT `fk_weekday_reading_yearly_reading_set1`
     FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `als`.`yearly_reading_set` (`id`)
+    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`sunday_reading`
+-- Table `asnd_lcmam`.`sunday_reading`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`sunday_reading` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
   `sundayr_cycle_type` VARCHAR(45) NOT NULL COMMENT 'A,B or C...',
   `sunday_reading` VARCHAR(45) NOT NULL COMMENT 'Jonah 3:1, Proverbs 5:12...',
@@ -62,32 +62,32 @@ CREATE TABLE IF NOT EXISTS `als`.`sunday_reading` (
   INDEX `fk_sunday_reading_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
   CONSTRAINT `fk_sunday_reading_yearly_reading_set1`
     FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `als`.`yearly_reading_set` (`id`)
+    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`year`
+-- Table `asnd_lcmam`.`year`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`year` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
   `year_year` YEAR NULL,
   `yearly_reading_set_id` INT NOT NULL,
   PRIMARY KEY (`year_year`),
   INDEX `fk_year_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
   CONSTRAINT `fk_year_yearly_reading_set1`
     FOREIGN KEY (`yearly_reading_set_id`)
-    REFERENCES `als`.`yearly_reading_set` (`id`)
+    REFERENCES `asnd_lcmam`.`yearly_reading_set` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`date`
+-- Table `asnd_lcmam`.`date`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`date` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`date` (
   `id` INT NOT NULL,
   `date_month` VARCHAR(45) NULL,
   `date_week` VARCHAR(45) NULL,
@@ -103,31 +103,31 @@ CREATE TABLE IF NOT EXISTS `als`.`date` (
   INDEX `fk_date_sunday_reading1_idx` (`sunday_reading_id` ASC),
   CONSTRAINT `fk_date_year1`
     FOREIGN KEY (`year_year_year`)
-    REFERENCES `als`.`year` (`year_year`)
+    REFERENCES `asnd_lcmam`.`year` (`year_year`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_date_event1`
     FOREIGN KEY (`event_id`)
-    REFERENCES `als`.`event` (`id`)
+    REFERENCES `asnd_lcmam`.`event` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_date_weekday_reading1`
     FOREIGN KEY (`weekday_reading_id`)
-    REFERENCES `als`.`weekday_reading` (`id`)
+    REFERENCES `asnd_lcmam`.`weekday_reading` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_date_sunday_reading1`
     FOREIGN KEY (`sunday_reading_id`)
-    REFERENCES `als`.`sunday_reading` (`id`)
+    REFERENCES `asnd_lcmam`.`sunday_reading` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `als`.`user`
+-- Table `asnd_lcmam`.`user`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `als`.`user` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
