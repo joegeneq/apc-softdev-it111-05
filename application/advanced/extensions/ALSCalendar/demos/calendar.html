@@ -37,6 +37,11 @@
 		    ]
 		});
 
+		$('#testdisplay').fullCalendar('today');
+
+		$('#my-today-button').click(function() {
+    $('#calendar').fullCalendar('today');
+		});
 	});
 
 </script>
@@ -57,6 +62,9 @@
 </style>
 </head>
 <body>
+
+	<button id='my-today-button'>TEST</button>
+	<h3 id='testdisplay'></h3>
 
 	<div id='calendar'></div>
 

@@ -2,6 +2,14 @@
 
 try {
 
+        $timestamp=strtotime("7 March 2016 ");
+        //echo gmdate("Y-m-d\TH:i:s\Z", $timestamp);
+        echo gmdate("Y-m-d", $timestamp);
+
+    $x = date("W",strtotime("1 April 2015"));
+    $y = date("W",strtotime("1 March 2015"));
+    echo "<br>". $x - $y . "<br>";
+
     $url = 'mysql:dbname=event;host=localhost';
     $username = 'root';
     $password = '';
