@@ -74,7 +74,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
   `year_year` YEAR NULL,
   `yearly_reading_set_id` INT NOT NULL,
-  PRIMARY KEY (`year_year`),
   INDEX `fk_year_yearly_reading_set1_idx` (`yearly_reading_set_id` ASC),
   CONSTRAINT `fk_year_yearly_reading_set1`
     FOREIGN KEY (`yearly_reading_set_id`)
