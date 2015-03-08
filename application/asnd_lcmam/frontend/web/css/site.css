@@ -25,6 +25,7 @@ body {
 .jumbotron {
     text-align: center;
     background-color: transparent;
+    
 }
 
 .jumbotron .btn {
@@ -90,3 +91,9 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.navbar-inverse {
+  background-color:#311900;
+  color:#75A319;
+
+  }
