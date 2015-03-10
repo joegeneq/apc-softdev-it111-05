@@ -77,6 +77,8 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
   `sunday_gospel` VARCHAR(45) NULL,
   `sunday_gospel_audio` VARCHAR(45) NULL,
   `sunday_cycle_type` CHAR NOT NULL,
+  `sunday_weeknum` VARCHAR(45) NULL,
+  `sunday_reading_type` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -95,6 +97,8 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
   `weekday_gospel` VARCHAR(45) NULL,
   `weekday_gospel_audio` VARCHAR(45) NULL,
   `weekday_cycle_num` INT NOT NULL,
+  `weekday_weeknum` INT NULL,
+  `weekday_reading_type` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
