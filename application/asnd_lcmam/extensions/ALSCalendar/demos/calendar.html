@@ -33,12 +33,19 @@
 
 		$('#calendar').fullCalendar({
 			defaultDate: '2015-01-1',
-		     eventLimit: true, eventSources: [
+			header: {
+			    left:   'title',
+			    center: '',
+			    right:  'today'
+			},
+			eventSources: [
 		        //'json/events.json',
 		        'AshWednesday.php',
 		        'sundayReadings.php'
 		    ]
 		});
+
+		$('#calendar').fullCalendar('option', 'aspectRatio', 1.2);
 	});
 
 </script>
@@ -56,6 +63,10 @@
 		background-color: #CCFFCC;
 		max-width: 900px;
 		margin: 0 auto;
+	}
+
+	.fc-time{
+    display : none;
 	}
 
 </style>

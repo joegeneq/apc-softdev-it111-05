@@ -103,6 +103,9 @@
 
     }
 
+    $skipCheck = $weekAfterPentecost - $weeksBeforeLent;
+    //echo $skipCheck;
+
 //for calendar
 
 try {
@@ -115,8 +118,15 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-    $query = "SELECT * FROM sunday_reading WHERE sunday_cycle_type = '" . $sundayCycle. "' AND id != 41";
-    
+    if ($skipCheck > 1 ){
+        $skipValue = $weeksBeforeLent + 1;
+        //echo "You have reached if statement." . $skipValue;
+        $query = "SELECT * FROM sunday_reading WHERE sunday_cycle_type = '" . $sundayCycle. "' AND sunday_weeknum !='" . $skipValue . "'";
+    }else{
+        $query = "SELECT * FROM sunday_reading WHERE sunday_cycle_type = '" . $sundayCycle. "'";
+        //echo "You have reached else statement.";
+    }
+
     //echo $query;
     
     $sth = $connection->prepare($query);
@@ -135,14 +145,28 @@ try {
 
         
         $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allSundays[$counter];
-        
-        $counter++;
-        // Merge the event array into the return array
-        
+        $e['start'] = $allSundays[$counter] . "T01:00:00";
         array_push($events, $e);
+        
+        // Merge the event array into the return array
     
+        $e['title'] = $row['sunday_second_reading'];
+        $e['start'] = $allSundays[$counter] . "T01:00:01";
+        array_push($events, $e);
 
+        $e['title'] = $row['sunday_alleluia_verse'];
+        $e['start'] = $allSundays[$counter] . "T01:00:02";
+        array_push($events, $e);
+
+        $e['title'] = $row['sunday_responsorial_psalm'];
+        $e['start'] = $allSundays[$counter] . "T01:00:03";
+        array_push($events, $e);
+
+        $e['title'] = $row['sunday_gospel'];
+        $e['start'] = $allSundays[$counter] . "T01:00:04";
+        array_push($events, $e);
+
+        $counter++;
     }
 
     // Output json for our calendar
