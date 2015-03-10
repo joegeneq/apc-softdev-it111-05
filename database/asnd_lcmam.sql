@@ -2,13 +2,13 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE SCHEMA IF NOT EXISTS `asnd_lcmam_sample` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `asnd_lcmam_sample` ;
+CREATE SCHEMA IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `asnd_lcmam` ;
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`trigger`
+-- Table `asnd_lcmam`.`trigger`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`trigger` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`trigger` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `year` YEAR NOT NULL,
   `sunday_cycle` VARCHAR(45) NULL,
@@ -17,16 +17,16 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`trigger` (
   `ash_wednesday` DATE NULL,
   `easter_sunday` DATE NULL,
   `penticost_sunday` DATE NULL,
-  `week_ot_after_penticost` VARCHAR(45) NULL,
+  `week_ot_after_pentecost` VARCHAR(45) NULL,
   `first_sunday_of_advent` DATE NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`year`
+-- Table `asnd_lcmam`.`year`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`year` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `year` YEAR NOT NULL,
   `year_cycle` CHAR NOT NULL,
@@ -35,16 +35,16 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`year` (
   INDEX `fk_year_trigger1_idx` (`trigger_id` ASC),
   CONSTRAINT `fk_year_trigger1`
     FOREIGN KEY (`trigger_id`)
-    REFERENCES `asnd_lcmam_sample`.`trigger` (`id`)
+    REFERENCES `asnd_lcmam`.`trigger` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`event`
+-- Table `asnd_lcmam`.`event`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`event` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `event_name` VARCHAR(45) NOT NULL,
   `event_type` VARCHAR(45) NOT NULL,
@@ -55,16 +55,16 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`event` (
   INDEX `fk_event_year1_idx` (`year_id` ASC),
   CONSTRAINT `fk_event_year1`
     FOREIGN KEY (`year_id`)
-    REFERENCES `asnd_lcmam_sample`.`year` (`id`)
+    REFERENCES `asnd_lcmam`.`year` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`sunday_reading`
+-- Table `asnd_lcmam`.`sunday_reading`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`sunday_reading` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `sunday_first_reading` VARCHAR(45) NULL,
   `sunday_first_audio` VARCHAR(45) NULL,
@@ -82,9 +82,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`weekday_reading`
+-- Table `asnd_lcmam`.`weekday_reading`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`weekday_reading` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `weekday_first_reading` VARCHAR(45) NULL,
   `weekday_first_audio` VARCHAR(45) NULL,
@@ -102,9 +102,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam_sample`.`date`
+-- Table `asnd_lcmam`.`date`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`date` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`date` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `date_month` INT(2) NOT NULL,
   `date_week_num` INT(2) NOT NULL,
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`date` (
   INDEX `fk_date_year1_idx` (`year_id` ASC),
   CONSTRAINT `fk_date_year1`
     FOREIGN KEY (`year_id`)
-    REFERENCES `asnd_lcmam_sample`.`year` (`id`)
+    REFERENCES `asnd_lcmam`.`year` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
