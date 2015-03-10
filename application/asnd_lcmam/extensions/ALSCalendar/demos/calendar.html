@@ -32,8 +32,9 @@
 		//Code that calls php file
 
 		$('#calendar').fullCalendar({
-		    eventSources: [
-		        'getevent.php'
+		     eventLimit: true, eventSources: [
+		        //'json/events.json'
+		        'sundayReadings.php'
 		    ]
 		});
 	});
@@ -56,7 +57,7 @@
 </style>
 </head>
 <body>
-
+	
 	<div id='calendar'></div>
 
 </body>
