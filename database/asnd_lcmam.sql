@@ -88,8 +88,6 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `weekday_first_reading` VARCHAR(45) NULL,
   `weekday_first_audio` VARCHAR(45) NULL,
-  `weekday_second_reading` VARCHAR(45) NULL,
-  `weekday_second_audio` VARCHAR(45) NULL,
   `weekday_alleluia_verse` VARCHAR(45) NULL,
   `weekday_alleluia_audio` VARCHAR(45) NULL,
   `weekday_responsorial_psalm` VARCHAR(45) NULL,
