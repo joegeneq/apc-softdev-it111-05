@@ -32,8 +32,10 @@
 		//Code that calls php file
 
 		$('#calendar').fullCalendar({
+			defaultDate: '2015-01-1',
 		     eventLimit: true, eventSources: [
-		        //'json/events.json'
+		        //'json/events.json',
+		        'AshWednesday.php',
 		        'sundayReadings.php'
 		    ]
 		});
@@ -43,6 +45,7 @@
 <style>
 
 	body {
+		background-color: #CCFF99;
 		margin: 40px 10px;
 		padding: 0;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
@@ -50,6 +53,7 @@
 	}
 
 	#calendar {
+		background-color: #CCFFCC;
 		max-width: 900px;
 		margin: 0 auto;
 	}
@@ -57,7 +61,10 @@
 </style>
 </head>
 <body>
-	
+<center>	
+	<h1>Ang Salita Ng Diyos Calendar Site</h1>
+</center>
+
 	<div id='calendar'></div>
 
 </body>
