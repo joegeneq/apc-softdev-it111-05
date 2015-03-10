@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background-color: #93C85E;
+    background-color:   #85E665;
 }
 
 .wrap {
@@ -93,7 +93,7 @@ a.desc:after {
 }
 
 .navbar-inverse {
-  background-color:#311900;
+  background-color:#000000;
   
 
   }
