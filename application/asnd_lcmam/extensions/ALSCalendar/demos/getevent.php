@@ -2,7 +2,7 @@
 
 try {
 
-    $url = 'mysql:dbname=als;host=localhost';
+    $url = 'mysql:dbname=event;host=localhost';
     $username = 'root';
     $password = '';
 
@@ -10,7 +10,7 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-    $query = "SELECT id FROM date";
+    $query = "SELECT * FROM events";
     $sth = $connection->prepare($query);
     $sth->execute();
 
@@ -21,8 +21,8 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 
         $e = array();
-        $e['id'] = $row['id'];
-        $e['title'] = $row['sunday_reading'];
+        $e['id'] = $row['event_id'];
+        $e['title'] = $row['event_name'];
         $e['start'] = $row['start_event'];
 
         // Merge the event array into the return array
