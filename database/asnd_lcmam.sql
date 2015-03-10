@@ -2,121 +2,121 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-CREATE SCHEMA IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `asnd_lcmam` ;
+CREATE SCHEMA IF NOT EXISTS `asnd_lcmam_sample` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `asnd_lcmam_sample` ;
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam`.`event`
+-- Table `asnd_lcmam_sample`.`trigger`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event` (
-  `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
-  `event_name` VARCHAR(45) NOT NULL COMMENT 'Feast of Saint Therese, Feast of Saint Alphonsus...',
-  `event_type` VARCHAR(45) NOT NULL COMMENT 'Memorial, Solemnity, Moveable Feast, Special Feast',
-  `event_audio_link` VARCHAR(45) NULL COMMENT 'http://audiolink.com, etc.',
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`trigger` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `year` YEAR NOT NULL,
+  `sunday_cycle` VARCHAR(45) NULL,
+  `weekday_cycle` VARCHAR(45) NULL,
+  `week_ot_before_lent` VARCHAR(45) NULL,
+  `ash_wednesday` DATE NULL,
+  `easter_sunday` DATE NULL,
+  `penticost_sunday` DATE NULL,
+  `week_ot_after_penticost` VARCHAR(45) NULL,
+  `first_sunday_of_advent` DATE NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam`.`yearly_reading_set`
+-- Table `asnd_lcmam_sample`.`year`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`yearly_reading_set` (
-  `id` INT NOT NULL AUTO_INCREMENT COMMENT '1,2,3,4,5...',
-  `reading_type` VARCHAR(45) NOT NULL COMMENT 'Weekday Reading, Snday Reading',
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`weekday_reading`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
-  `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
-  `weekday_cycle_num` INT NOT NULL COMMENT '1 or 2...',
-  `weekday_reading` VARCHAR(45) NOT NULL COMMENT 'Psalms 1:3, John 3:4...',
-  `weekday_week_num` INT NOT NULL COMMENT '1,2,3...',
-  `weekday_day` DATE NOT NULL COMMENT 'Monday, Tuesday, Wednesday...',
-  `weekday_audio_link` VARCHAR(45) NOT NULL COMMENT 'http://audiolink.com, etc...',
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`sunday_reading`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
-  `id` INT NOT NULL AUTO_INCREMENT COMMENT '0,1,2,3...',
-  `sundayr_cycle_type` VARCHAR(45) NOT NULL COMMENT 'A,B or C...',
-  `sunday_reading` VARCHAR(45) NOT NULL COMMENT 'Jonah 3:1, Proverbs 5:12...',
-  `sunday_week_num` INT NOT NULL COMMENT '1,2,3,4...',
-  `sunday_audio_link` VARCHAR(45) NOT NULL COMMENT 'http://audiolink.com, etc...',
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`year`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
-  `year_year` YEAR NOT NULL,
-  PRIMARY KEY (`year_year`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`date`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`date` (
-  `id` INT NOT NULL,
-  `date_month` VARCHAR(45) NULL,
-  `date_week` VARCHAR(45) NULL,
-  `date_day` VARCHAR(45) NULL,
-  `year_year_year` YEAR NOT NULL,
-  `event_id` INT NOT NULL,
-  `weekday_reading_id` INT NOT NULL,
-  `sunday_reading_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `year_year_year`),
-  INDEX `fk_date_year1_idx` (`year_year_year` ASC),
-  INDEX `fk_date_event1_idx` (`event_id` ASC),
-  INDEX `fk_date_weekday_reading1_idx` (`weekday_reading_id` ASC),
-  INDEX `fk_date_sunday_reading1_idx` (`sunday_reading_id` ASC),
-  CONSTRAINT `fk_date_year1`
-    FOREIGN KEY (`year_year_year`)
-    REFERENCES `asnd_lcmam`.`year` (`year_year`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_date_event1`
-    FOREIGN KEY (`event_id`)
-    REFERENCES `asnd_lcmam`.`event` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_date_weekday_reading1`
-    FOREIGN KEY (`weekday_reading_id`)
-    REFERENCES `asnd_lcmam`.`weekday_reading` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_date_sunday_reading1`
-    FOREIGN KEY (`sunday_reading_id`)
-    REFERENCES `asnd_lcmam`.`sunday_reading` (`id`)
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`year` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `year` YEAR NOT NULL,
+  `year_cycle` CHAR NOT NULL,
+  `trigger_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `trigger_id`),
+  INDEX `fk_year_trigger1_idx` (`trigger_id` ASC),
+  CONSTRAINT `fk_year_trigger1`
+    FOREIGN KEY (`trigger_id`)
+    REFERENCES `asnd_lcmam_sample`.`trigger` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam`.`user`
+-- Table `asnd_lcmam_sample`.`event`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`user` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`event` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  `firstname` VARCHAR(45) NOT NULL,
-  `middlename` VARCHAR(45) NOT NULL,
-  `lastname` VARCHAR(45) NOT NULL,
-  `address` VARCHAR(45) NOT NULL,
-  `contact_num` VARCHAR(11) NOT NULL,
-  `user_type` VARCHAR(45) NOT NULL,
+  `event_name` VARCHAR(45) NOT NULL,
+  `event_type` VARCHAR(45) NOT NULL,
+  `event_audio_link` VARCHAR(45) NOT NULL,
+  `date` DATE NOT NULL,
+  `year_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `year_id`),
+  INDEX `fk_event_year1_idx` (`year_id` ASC),
+  CONSTRAINT `fk_event_year1`
+    FOREIGN KEY (`year_id`)
+    REFERENCES `asnd_lcmam_sample`.`year` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `asnd_lcmam_sample`.`sunday_reading`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`sunday_reading` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sunday_first_reading` VARCHAR(45) NULL,
+  `sunday_first_audio` VARCHAR(45) NULL,
+  `sunday_second_reading` VARCHAR(45) NULL,
+  `sunday_second_audio` VARCHAR(45) NULL,
+  `sunday_alleluia_verse` VARCHAR(45) NULL,
+  `sunday_alleluia_audio` VARCHAR(45) NULL,
+  `sunday_responsorial_psalm` VARCHAR(45) NULL,
+  `sunday_responsorial_audio` VARCHAR(45) NULL,
+  `sunday_gospel` VARCHAR(45) NULL,
+  `sunday_gospel_audio` VARCHAR(45) NULL,
+  `sunday_cycle_type` CHAR NOT NULL,
   PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `asnd_lcmam_sample`.`weekday_reading`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`weekday_reading` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `weekday_first_reading` VARCHAR(45) NULL,
+  `weekday_first_audio` VARCHAR(45) NULL,
+  `weekday_second_reading` VARCHAR(45) NULL,
+  `weekday_second_audio` VARCHAR(45) NULL,
+  `weekday_alleluia_verse` VARCHAR(45) NULL,
+  `weekday_alleluia_audio` VARCHAR(45) NULL,
+  `weekday_responsorial_psalm` VARCHAR(45) NULL,
+  `weekday_responsorial_audio` VARCHAR(45) NULL,
+  `weekday_gospel` VARCHAR(45) NULL,
+  `weekday_gospel_audio` VARCHAR(45) NULL,
+  `weekday_cycle_num` INT NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `asnd_lcmam_sample`.`date`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `asnd_lcmam_sample`.`date` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `date_month` INT(2) NOT NULL,
+  `date_week_num` INT(2) NOT NULL,
+  `date_day_num` INT(2) NOT NULL,
+  `year_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `year_id`),
+  INDEX `fk_date_year1_idx` (`year_id` ASC),
+  CONSTRAINT `fk_date_year1`
+    FOREIGN KEY (`year_id`)
+    REFERENCES `asnd_lcmam_sample`.`year` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
