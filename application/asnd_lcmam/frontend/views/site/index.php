@@ -8,6 +8,7 @@ $this->title = 'My Yii Application';
         <h1><img src="../web/images/Cardinal-tagle.jpg"></h1> 
         <img src=" ../web/images/calendar-icon-md.png" width="150" height="175" title="Logo of a company" alt="Logo of a company" align="left">
         <img src="../web/images/GDM-Icon-Admin-Client-Round.png" width="180" height="175" >
+        <img src="../web/images/Church Icon_Gold-01.png " width="180" height="175">
      	<!-- <p class="lead">You have successfully created your Yii-powered application.</p>
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>!-->
     </div>
