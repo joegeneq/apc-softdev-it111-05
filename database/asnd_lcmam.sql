@@ -6,9 +6,9 @@ CREATE SCHEMA IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET utf8 COLLATE utf8
 USE `asnd_lcmam` ;
 
 -- -----------------------------------------------------
--- Table `asnd_lcmam`.`trigger`
+-- Table `asnd_lcmam`.`event_determinant`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`trigger` (
+CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event_determinant` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `year` YEAR NOT NULL,
   `sunday_cycle` VARCHAR(45) NULL,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
   INDEX `fk_year_trigger1_idx` (`trigger_id` ASC),
   CONSTRAINT `fk_year_trigger1`
     FOREIGN KEY (`trigger_id`)
-    REFERENCES `asnd_lcmam`.`trigger` (`id`)
+    REFERENCES `asnd_lcmam`.`event_determinant` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
