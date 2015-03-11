@@ -3,8 +3,8 @@
 //for trigger
   
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "asnd_lcmam";
+    $password = "asnd_lcmam";
     $dbname = "asnd_lcmam";
 
     $day="01";
@@ -111,8 +111,8 @@
 try {
 
     $url = 'mysql:dbname=asnd_lcmam;host=localhost';
-    $username = 'root';
-    $password = '';
+    $username = 'asnd_lcmam';
+    $password = 'asnd_lcmam';
 
     // Connect to database
     $connection = new PDO($url, $username, $password);
