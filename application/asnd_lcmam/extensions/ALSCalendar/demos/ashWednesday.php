@@ -3,8 +3,8 @@
 try {
 
     $url = 'mysql:dbname=asnd_lcmam;host=localhost';
-    $username = 'root';
-    $password = '';
+    $username = 'asnd_lcmam';
+    $password = 'asnd_lcmam';
     $year = "2015";
 
     // Connect to database

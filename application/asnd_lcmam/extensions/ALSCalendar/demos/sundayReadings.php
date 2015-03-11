@@ -3,8 +3,8 @@
 //for trigger
   
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "asnd_lcmam";
+    $password = "asnd_lcmam";
     $dbname = "asnd_lcmam";
 
     $day="01";
