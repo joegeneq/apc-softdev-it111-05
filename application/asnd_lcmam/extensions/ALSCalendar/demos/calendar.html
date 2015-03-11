@@ -7,6 +7,7 @@
 <script src='../lib/moment.min.js'></script>
 <script src='../lib/jquery.min.js'></script>
 <script src='../fullcalendar.min.js'></script>
+
 <script>
 
 	$(document).ready(function() {
@@ -32,16 +33,27 @@
 		//Code that calls php file
 
 		$('#calendar').fullCalendar({
-		    eventSources: [
-		        'getevent.php'
+			defaultDate: '2015-01-1',
+			header: {
+			    left:   'prev, ',
+			    center: 'title',
+			    right:  'next',
+			},
+			eventSources: [
+		        //'json/events.json',
+		        'AshWednesday.php',
+		        'sundayReadings.php'
 		    ]
 		});
+
+		$('#calendar').fullCalendar('option', 'aspectRatio', 1.2);
 	});
 
 </script>
 <style>
 
 	body {
+		background-color: #CCFF99;
 		margin: 40px 10px;
 		padding: 0;
 		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
@@ -49,13 +61,21 @@
 	}
 
 	#calendar {
+		background-color: #CCFFCC;
 		max-width: 900px;
 		margin: 0 auto;
+	}
+
+	.fc-time{
+    display : none;
 	}
 
 </style>
 </head>
 <body>
+<center>	
+	<h1>Ang Salita Ng Diyos Calendar Site</h1>
+</center>
 
 	<div id='calendar'></div>
 
