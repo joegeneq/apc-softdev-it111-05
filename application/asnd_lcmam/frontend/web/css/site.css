@@ -105,16 +105,19 @@ width:100px ;
 
 }
 
-.row{
+.row-login,.row-signup{
 
     width: 85%;
     margin: 0 auto;
 
 }
 
-.col-lg-5 {
+.col-lg-5-login,.col-lg-5-signup {
     width: 41.66666667%;
     position: relative;
-    left: 260px;
+
+    
   }
+
+
 
