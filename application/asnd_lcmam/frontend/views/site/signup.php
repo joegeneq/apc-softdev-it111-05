@@ -7,23 +7,59 @@ use yii\bootstrap\ActiveForm;
 /* @var $model \frontend\models\SignupForm */
 
 $this->title = 'Signup';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 style="color:#52663D;"><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
+    <p><i>Please fill out the following fields to signup:</i></p>
+<br>
 
-    <div class="row">
-        <div class="col-lg-5">
+    <div class="row-signup">
+        <div class="col-lg-5-signup">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-                <?= $form->field($model, 'username') ?>
-                <?= $form->field($model, 'email') ?>
-                <?= $form->field($model, 'password')->passwordInput() ?>
+
+                <?= $form->field($model, 'firstname')
+                        ->label(false)
+                        ->textInput(['placeholder'=> 'First Name'])
+
+
+
+                 ?>
+                <br>
+                <?= $form->field($model, 'lastname')
+                        ->label(false)
+                        ->textInput(['placeholder'=> 'Last Name'])
+
+                 ?>
+                <br>
+                <?= $form->field($model, 'username') 
+                        ->label(false)
+                        ->textInput(['placeholder'=> ' UserName'])
+
+                ?>
+                <br>
+                <?= $form->field($model, 'email') 
+                        ->label(false)
+                        ->textInput(['placeholder'=> 'Email'])
+
+                ?>
+                <br>
+                <?= $form->field($model, 'password')->passwordInput()
+                        ->label(false)
+                        ->textInput(['placeholder'=> 'Password'])
+
+                 ?>
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                 </div>
             <?php ActiveForm::end(); ?>
         </div>
+    </div>
+
+
+    <div id="side">
+    
+
     </div>
 </div>
