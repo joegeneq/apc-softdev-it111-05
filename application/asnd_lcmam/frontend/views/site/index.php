@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'My Yii Application';
+$this->title = 'Ang Salita Ng Diyos - Liturgical Site';
 ?>
 <div class="site-index">
 

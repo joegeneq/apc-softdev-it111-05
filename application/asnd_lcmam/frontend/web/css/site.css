@@ -9,10 +9,13 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    background-color: #7AA300;
+
 }
 
 .wrap > .container {
     padding: 70px 15px 20px;
+
 }
 
 .footer {
@@ -93,12 +96,9 @@ a.desc:after {
 }
 
 .navbar-inverse {
-  background-color:#000000;
+ background-color: #3D1f00;
+}
 
-
-
-
-  }
 .nav-header{
 color:#75A319;
 width:100px ;
