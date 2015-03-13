@@ -94,15 +94,27 @@ a.desc:after {
 
 .navbar-inverse {
   background-color:#000000;
-  
+
+
+
 
   }
 .nav-header{
 color:#75A319;
+width:100px ;
 
 }
 
-.img{
+.row{
 
-    position: absolute;
+    width: 85%;
+    margin: 0 auto;
+
 }
+
+.col-lg-5 {
+    width: 41.66666667%;
+    position: relative;
+    left: 260px;
+  }
+
