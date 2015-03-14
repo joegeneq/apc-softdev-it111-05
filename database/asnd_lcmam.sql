@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2015 at 03:34 PM
+-- Generation Time: Mar 14, 2015 at 03:55 PM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.3
 
@@ -48,7 +48,16 @@ CREATE TABLE IF NOT EXISTS `event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `event_name` varchar(45) NOT NULL,
   `event_type` varchar(45) NOT NULL,
-  `event_audio_link` varchar(45) NOT NULL,
+  `event_first_reading` varchar(45) DEFAULT NULL,
+  `event_first_audio` varchar(45) DEFAULT NULL,
+  `event_second_reading` varchar(45) DEFAULT NULL,
+  `event_second_audio` varchar(45) DEFAULT NULL,
+  `event_alleluia_verse` varchar(45) DEFAULT NULL,
+  `event_alleluia_audio` varchar(45) DEFAULT NULL,
+  `event_responsorial_psalm` varchar(45) DEFAULT NULL,
+  `event_responsorial_audio` varchar(45) DEFAULT NULL,
+  `event_gospel` varchar(45) DEFAULT NULL,
+  `event_gospel_audio` varchar(45) DEFAULT NULL,
   `date` date NOT NULL,
   `year_id` int(11) NOT NULL,
   PRIMARY KEY (`id`,`year_id`),
