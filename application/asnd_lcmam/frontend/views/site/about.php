@@ -30,7 +30,7 @@ Using the eyes of faith, we are able to discern the dynamic presence of divine a
 Our people come to church with the expectation of being guided in discovering the meaning of life in the light of faith. They bring their frustrations, needs, sins, wounds and dying to us that the power of the Paschal Mystery may kindle hope and strength for the journey.
 
 We hope that in our ministry of proclaiming God’s Word, they may hear the word that the Lord has put in every prophet’s mouth. Then somehow, the joyful and painful experiences begin to speak of a God who faithfully walks with them.
-
+<br>
 Welcome to angsalitangdiyos.com!
 <br>
 <br>
