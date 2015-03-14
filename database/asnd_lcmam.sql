@@ -1,127 +1,899 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 4.0.4.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 14, 2015 at 03:34 PM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
-CREATE SCHEMA IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `asnd_lcmam` ;
-
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`event_determinant`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event_determinant` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `year` YEAR NOT NULL,
-  `sunday_cycle` VARCHAR(45) NULL,
-  `weekday_cycle` VARCHAR(45) NULL,
-  `week_ot_before_lent` VARCHAR(45) NULL,
-  `ash_wednesday` DATE NULL,
-  `easter_sunday` DATE NULL,
-  `penticost_sunday` DATE NULL,
-  `week_ot_after_pentecost` VARCHAR(45) NULL,
-  `first_sunday_of_advent` DATE NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`year`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`year` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `year` YEAR NOT NULL,
-  `year_cycle` CHAR NOT NULL,
-  `trigger_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `trigger_id`),
-  INDEX `fk_year_trigger1_idx` (`trigger_id` ASC),
-  CONSTRAINT `fk_year_trigger1`
-    FOREIGN KEY (`trigger_id`)
-    REFERENCES `asnd_lcmam`.`event_determinant` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
+--
+-- Database: `asnd_lcmam`
+--
+CREATE DATABASE IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `asnd_lcmam`;
 
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`event`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`event` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `event_name` VARCHAR(45) NOT NULL,
-  `event_type` VARCHAR(45) NOT NULL,
-  `event_audio_link` VARCHAR(45) NOT NULL,
-  `date` DATE NOT NULL,
-  `year_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `year_id`),
-  INDEX `fk_event_year1_idx` (`year_id` ASC),
-  CONSTRAINT `fk_event_year1`
-    FOREIGN KEY (`year_id`)
-    REFERENCES `asnd_lcmam`.`year` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `date`
+--
 
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`sunday_reading`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`sunday_reading` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `sunday_first_reading` VARCHAR(45) NULL,
-  `sunday_first_audio` VARCHAR(45) NULL,
-  `sunday_second_reading` VARCHAR(45) NULL,
-  `sunday_second_audio` VARCHAR(45) NULL,
-  `sunday_alleluia_verse` VARCHAR(45) NULL,
-  `sunday_alleluia_audio` VARCHAR(45) NULL,
-  `sunday_responsorial_psalm` VARCHAR(45) NULL,
-  `sunday_responsorial_audio` VARCHAR(45) NULL,
-  `sunday_gospel` VARCHAR(45) NULL,
-  `sunday_gospel_audio` VARCHAR(45) NULL,
-  `sunday_cycle_type` CHAR NOT NULL,
-  `sunday_weeknum` VARCHAR(45) NULL,
-  `sunday_reading_type` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `date` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date_month` int(2) NOT NULL,
+  `date_week_num` int(2) NOT NULL,
+  `date_day_num` int(2) NOT NULL,
+  `year_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`year_id`),
+  KEY `fk_date_year1_idx` (`year_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`weekday_reading`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`weekday_reading` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `weekday_first_reading` VARCHAR(45) NULL,
-  `weekday_first_audio` VARCHAR(45) NULL,
-  `weekday_alleluia_verse` VARCHAR(45) NULL,
-  `weekday_alleluia_audio` VARCHAR(45) NULL,
-  `weekday_responsorial_psalm` VARCHAR(45) NULL,
-  `weekday_responsorial_audio` VARCHAR(45) NULL,
-  `weekday_gospel` VARCHAR(45) NULL,
-  `weekday_gospel_audio` VARCHAR(45) NULL,
-  `weekday_cycle_num` INT NOT NULL,
-  `weekday_weeknum` INT NULL,
-  `weekday_reading_type` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+--
+-- Table structure for table `event`
+--
 
+CREATE TABLE IF NOT EXISTS `event` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `event_name` varchar(45) NOT NULL,
+  `event_type` varchar(45) NOT NULL,
+  `event_audio_link` varchar(45) NOT NULL,
+  `date` date NOT NULL,
+  `year_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`year_id`),
+  KEY `fk_event_year1_idx` (`year_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- -----------------------------------------------------
--- Table `asnd_lcmam`.`date`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `asnd_lcmam`.`date` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `date_month` INT(2) NOT NULL,
-  `date_week_num` INT(2) NOT NULL,
-  `date_day_num` INT(2) NOT NULL,
-  `year_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `year_id`),
-  INDEX `fk_date_year1_idx` (`year_id` ASC),
-  CONSTRAINT `fk_date_year1`
-    FOREIGN KEY (`year_id`)
-    REFERENCES `asnd_lcmam`.`year` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `event_determinant`
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+CREATE TABLE IF NOT EXISTS `event_determinant` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` year(4) NOT NULL,
+  `sunday_cycle` varchar(45) DEFAULT NULL,
+  `weekday_cycle` varchar(45) DEFAULT NULL,
+  `week_ot_before_lent` varchar(45) DEFAULT NULL,
+  `ash_wednesday` date DEFAULT NULL,
+  `easter_sunday` date DEFAULT NULL,
+  `pentecost_sunday` date DEFAULT NULL,
+  `week_ot_after_pentecost` varchar(45) DEFAULT NULL,
+  `first_sunday_of_advent` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=83 ;
+
+--
+-- Dumping data for table `event_determinant`
+--
+
+INSERT INTO `event_determinant` (`id`, `year`, `sunday_cycle`, `weekday_cycle`, `week_ot_before_lent`, `ash_wednesday`, `easter_sunday`, `pentecost_sunday`, `week_ot_after_pentecost`, `first_sunday_of_advent`) VALUES
+(1, 1969, 'A', '1', '6', '1969-02-19', '1969-04-06', '1969-05-25', '8', '1969-11-30'),
+(2, 1970, 'B', '2', '5', '1970-02-11', '1970-03-29', '1970-05-17', '7', '1970-11-29'),
+(3, 1971, 'C', '1', '7', '1971-02-24', '1971-04-11', '1971-05-30', '9', '1971-11-28'),
+(4, 1972, 'A', '2', '6', '1972-02-16', '1972-04-02', '1972-05-21', '7', '1972-12-03'),
+(5, 1973, 'B', '1', '10', '1973-03-07', '1973-04-22', '1973-06-10', '12', '1973-12-02'),
+(6, 1974, 'C', '2', '7', '1974-02-01', '1974-04-14', '1974-06-02', '9', '1974-12-01'),
+(7, 1975, 'A', '1', '5', '1975-02-12', '1975-03-30', '1975-05-18', '7', '1975-11-30'),
+(8, 1976, 'B', '2', '8', '1976-03-03', '1976-04-18', '1976-06-06', '10', '1976-11-28'),
+(9, 1977, 'C', '1', '7', '1977-02-23', '1977-04-10', '1977-05-29', '9', '1977-11-27'),
+(10, 1978, 'A', '2', '5', '1978-02-08', '1978-03-26', '1978-05-14', '6', '1978-12-03'),
+(11, 1979, 'B', '1', '8', '1979-02-28', '1979-04-15', '1979-06-03', '9', '1979-12-02'),
+(12, 1980, 'C', '2', '6', '1980-02-20', '1980-04-06', '1980-05-25', '8', '1980-11-30'),
+(13, 1981, 'A', '1', '8', '1981-03-04', '1981-04-19', '1981-06-07', '10', '1981-11-29'),
+(14, 1982, 'B', '2', '7', '1982-02-24', '1982-04-11', '1982-05-30', '9', '1982-11-28'),
+(15, 1983, 'C', '1', '6', '1983-02-16', '1983-04-03', '1983-05-22', '8', '1983-11-27'),
+(16, 1984, 'A', '2', '9', '1984-03-07', '1984-04-22', '1984-06-10', '10', '1984-12-02'),
+(17, 1985, 'B', '1', '6', '1985-02-20', '1985-04-07', '1985-05-26', '8', '1985-12-01'),
+(18, 1986, 'C', '2', '5', '1986-02-12', '1986-03-30', '1986-05-18', '7', '1986-11-30'),
+(19, 1987, 'A', '1', '8', '1987-03-04', '1987-04-19', '1987-06-07', '10', '1987-11-29'),
+(20, 1988, 'B', '2', '6', '1988-02-17', '1988-04-03', '1988-05-22', '8', '1988-11-27'),
+(21, 1989, 'C', '1', '5', '1989-02-08', '1989-03-26', '1989-05-14', '6', '1989-12-03'),
+(22, 1990, 'A', '2', '8', '1990-02-28', '1990-04-15', '1990-06-03', '9', '1990-12-02'),
+(23, 1991, 'B', '1', '5', '1991-02-13', '1991-03-31', '1991-05-19', '7', '1991-12-01'),
+(24, 1992, 'C', '2', '8', '1992-03-04', '1992-04-19', '1992-06-07', '10', '1992-11-29'),
+(25, 1993, 'A', '1', '7', '1993-02-24', '1993-04-11', '1993-05-30', '9', '1993-11-28'),
+(26, 1994, 'B', '2', '6', '1994-02-16', '1994-04-03', '1994-05-22', '8', '1994-11-27'),
+(27, 1995, 'C', '1', '8', '1995-03-01', '1995-04-16', '1995-06-04', '9', '1995-12-03'),
+(28, 1996, 'A', '2', '7', '1996-02-21', '1996-04-07', '1996-05-26', '8', '1996-12-01'),
+(29, 1997, 'B', '1', '5', '1997-02-12', '1997-03-30', '1997-05-18', '7', '1905-06-19'),
+(30, 1998, 'C', '2', '7', '1998-02-25', '1998-04-12', '1998-05-31', '9', '1998-11-29'),
+(31, 1999, 'A', '1', '6', '1999-02-17', '1999-04-04', '1999-05-23', '8', '1999-11-28'),
+(32, 2000, 'B', '2', '9', '2000-03-08', '2000-04-23', '2000-06-11', '10', '2000-12-03'),
+(33, 2001, 'C', '1', '7', '2001-02-28', '2001-04-15', '2001-06-03', '9', '2001-12-02'),
+(34, 2002, 'A', '2', '5', '2002-02-13', '2002-03-31', '2002-05-19', '7', '2002-12-01'),
+(35, 2003, 'B', '1', '8', '2003-03-05', '2003-04-20', '2003-06-08', '10', '2003-11-30'),
+(36, 2004, 'C', '2', '7', '2004-02-25', '2004-04-11', '2004-05-30', '9', '2004-11-28'),
+(37, 2005, 'A', '1', '5', '2005-02-09', '2005-03-27', '2005-05-15', '7', '2005-11-27'),
+(38, 2006, 'B', '2', '8', '2006-03-01', '2006-04-16', '2006-06-04', '9', '2006-12-03'),
+(39, 2007, 'C', '1', '7', '2007-02-21', '2007-04-08', '2007-05-27', '8', '2007-12-02'),
+(40, 2008, 'A', '2', '4', '2008-02-06', '2008-03-23', '2008-05-11', '6', '2008-11-30'),
+(41, 2009, 'B', '1', '7', '2009-02-25', '2009-04-12', '2009-05-31', '9', '2009-11-29'),
+(42, 2010, 'C', '2', '6', '2010-02-17', '2010-04-04', '2010-05-23', '8', '2010-11-28'),
+(43, 2011, 'A', '1', '9', '2011-03-09', '2011-04-24', '2011-06-12', '11', '2011-11-27'),
+(44, 2012, 'B', '2', '7', '2012-02-22', '2012-04-08', '2012-05-27', '8', '2012-12-02'),
+(45, 2013, 'C', '1', '5', '2013-02-13', '2013-03-31', '2013-05-19', '7', '2013-12-01'),
+(46, 2014, 'A', '2', '8', '2014-03-05', '2014-04-20', '2014-06-08', '10', '2014-11-30'),
+(47, 2015, 'B', '1', '6', '2015-02-18', '2015-04-05', '2015-05-24', '8', '2015-11-29'),
+(48, 2016, 'C', '2', '5', '2016-02-10', '2016-03-27', '2016-05-15', '7', '2016-11-27'),
+(49, 2017, 'A', '1', '8', '2017-03-01', '2017-04-16', '2017-06-04', '9', '2017-12-03'),
+(50, 2018, 'B', '2', '6', '2018-02-14', '2018-04-01', '2018-05-20', '7', '2018-12-02'),
+(51, 2019, 'C', '1', '8', '2019-03-06', '2019-04-21', '2019-06-09', '10', '2019-12-01'),
+(52, 2020, 'A', '2', '7', '2020-02-26', '2020-04-12', '2020-05-31', '9', '2020-11-29'),
+(53, 2021, 'B', '1', '6', '2021-02-27', '2021-04-04', '2021-05-23', '8', '2021-11-28'),
+(54, 2022, 'C', '2', '8', '2022-03-02', '2022-04-17', '2022-06-05', '10', '2022-11-27'),
+(55, 2023, 'A', '1', '7', '2023-02-22', '2023-04-09', '2023-05-28', '8', '2023-12-03'),
+(56, 2024, 'B', '2', '6', '2024-02-14', '2024-03-31', '2024-05-19', '7', '2024-12-01'),
+(57, 2025, 'C', '1', '8', '2025-03-05', '2025-04-20', '2025-06-08', '10', '2025-11-30'),
+(58, 2026, 'A', '2', '6', '2026-02-18', '2026-04-05', '2026-05-24', '8', '2026-11-29'),
+(59, 2027, 'B', '1', '5', '2027-02-10', '2027-03-28', '2027-05-16', '7', '2027-11-28'),
+(60, 2028, 'C', '2', '8', '2028-03-01', '2028-04-16', '2028-06-04', '9', '2028-12-03'),
+(61, 2029, 'A', '1', '6', '2029-02-14', '2029-04-01', '2029-05-20', '7', '2029-12-02'),
+(62, 2030, 'B', '2', '8', '2030-03-06', '2030-04-21', '2030-06-09', '10', '2030-12-01'),
+(63, 2031, 'C', '1', '7', '2031-02-26', '2031-04-13', '2031-06-01', '9', '2031-11-30'),
+(64, 2032, 'A', '2', '5', '2032-02-11', '2032-03-28', '2032-05-16', '7', '2032-11-28'),
+(65, 2033, 'B', '1', '8', '2033-03-02', '2033-04-17', '2033-06-05', '10', '2033-11-27'),
+(66, 2034, 'C', '2', '7', '2034-02-22', '2034-04-09', '2034-05-28', '8', '2034-12-03'),
+(67, 2035, 'A', '1', '5', '2035-02-07', '2035-03-25', '2035-05-13', '6', '2035-12-02'),
+(68, 2036, 'B', '2', '7', '2036-02-27', '2036-04-13', '2036-06-01', '9', '2036-11-30'),
+(69, 2037, 'C', '1', '6', '2037-02-18', '2037-04-05', '2037-05-24', '8', '2037-11-29'),
+(70, 2038, 'A', '2', '9', '2038-03-10', '2038-04-25', '2038-06-13', '11', '2038-11-28'),
+(71, 2039, 'B', '1', '7', '2039-02-23', '2039-04-10', '2039-05-29', '9', '2039-11-27'),
+(72, 2040, 'C', '2', '6', '2040-02-15', '2040-04-01', '2040-05-20', '7', '2040-12-02'),
+(73, 2041, 'A', '1', '8', '2041-03-06', '2041-04-21', '2041-06-09', '10', '2041-12-01'),
+(74, 2042, 'B', '2', '6', '2042-02-19', '2042-04-06', '2042-05-25', '8', '2042-11-30'),
+(75, 2043, 'C', '1', '5', '2043-02-11', '2043-03-29', '2043-05-17', '7', '2043-11-29'),
+(76, 2044, 'A', '2', '8', '2044-03-02', '2044-04-17', '2044-06-05', '10', '2044-11-27'),
+(77, 2045, 'B', '1', '7', '2045-02-22', '2045-04-09', '2045-05-28', '8', '2045-12-03'),
+(78, 2046, 'C', '2', '5', '2046-02-07', '2046-03-25', '2046-05-13', '6', '2046-12-02'),
+(79, 2047, 'A', '1', '7', '2047-02-01', '2047-04-14', '2047-06-02', '9', '2047-12-01'),
+(80, 2048, 'B', '2', '6', '2048-02-19', '2048-04-05', '2048-05-24', '8', '2048-11-29'),
+(81, 2049, 'C', '1', '8', '2049-03-03', '2049-04-18', '2049-06-06', '10', '2049-11-28'),
+(82, 2050, 'A', '2', '7', '2050-02-23', '2050-04-10', '2050-05-29', '9', '2050-11-27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migration`
+--
+
+CREATE TABLE IF NOT EXISTS `migration` (
+  `version` varchar(180) NOT NULL,
+  `apply_time` int(11) DEFAULT NULL,
+  PRIMARY KEY (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `migration`
+--
+
+INSERT INTO `migration` (`version`, `apply_time`) VALUES
+('m000000_000000_base', 1425976637),
+('m130524_201442_init', 1425976642);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `solemnities_or_feasts`
+--
+
+CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `first_reading` varchar(100) NOT NULL,
+  `first_reading_audio` varchar(100) NOT NULL,
+  `responsorial_psalm` varchar(100) NOT NULL,
+  `responsorial_psalm_audio` varchar(100) NOT NULL,
+  `second_reading` varchar(100) NOT NULL,
+  `second_reading_audio` varchar(100) NOT NULL,
+  `gospel` varchar(100) NOT NULL,
+  `gospel_audio` varchar(100) NOT NULL,
+  `type` char(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sunday_reading`
+--
+
+CREATE TABLE IF NOT EXISTS `sunday_reading` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `sunday_weeknum` int(11) NOT NULL,
+  `sunday_first_reading` varchar(45) DEFAULT NULL,
+  `sunday_first_audio` varchar(45) DEFAULT NULL,
+  `sunday_second_reading` varchar(45) DEFAULT NULL,
+  `sunday_second_audio` varchar(45) DEFAULT NULL,
+  `sunday_alleluia_verse` varchar(45) DEFAULT NULL,
+  `sunday_alleluia_audio` varchar(45) DEFAULT NULL,
+  `sunday_responsorial_psalm` varchar(45) DEFAULT NULL,
+  `sunday_responsorial_audio` varchar(45) DEFAULT NULL,
+  `sunday_gospel` varchar(45) DEFAULT NULL,
+  `sunday_gospel_audio` varchar(45) DEFAULT NULL,
+  `sunday_cycle_type` char(1) NOT NULL,
+  `sunday_reading_type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=103 ;
+
+--
+-- Dumping data for table `sunday_reading`
+--
+
+INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_first_reading`, `sunday_first_audio`, `sunday_second_reading`, `sunday_second_audio`, `sunday_alleluia_verse`, `sunday_alleluia_audio`, `sunday_responsorial_psalm`, `sunday_responsorial_audio`, `sunday_gospel`, `sunday_gospel_audio`, `sunday_cycle_type`, `sunday_reading_type`) VALUES
+(1, 1, 'Isa 42:1-4', '', 'Acts 10:34-38', '', 'cf. Mark 9:7', '', 'Ps 29:1-2', '', 'Matt 3:13-17', '', 'A', 'ordinary'),
+(2, 2, 'Isa 49:3', '', '1 Cor 1:1-3', '', 'John 1:14a+12a', '', 'Ps 40:2+4', '', 'John 1:29-34', '', 'A', 'ordinary'),
+(3, 3, 'Isa 8:23b?9:3', '', '1 Cor 1:10-13', '', 'cf. Matt 4:23', '', 'Ps 27:1', '', 'Matt 4:12-23?', '', 'A', 'ordinary'),
+(4, 4, 'Zeph 2:3', '', '1 Cor 1:26-31', '', 'Matt 5:12a', '', 'Ps 146:6c-7', '', 'Matt 5:1-12a', '', 'A', 'ordinary'),
+(5, 5, 'Isa 58:7-10', '', '1 Cor 2:1-5', '', 'John 8:12', '', 'Ps 112:4-5', '', 'Matt 5:13-16', '', 'A', 'ordinary'),
+(6, 6, 'Sir 15:16-21', '', '1 Cor 2:6-10', '', 'cf. Matt 11:25', '', 'Ps 119:1-2', '', 'Matt 5:17-37?', '', 'A', 'ordinary'),
+(7, 7, 'Lev 19:1-2', '', '1 Cor 3:16-23', '', '1 John 2:5', '', 'Ps 103:1-2', '', 'Matt 5:38-48', '', 'A', 'ordinary'),
+(8, 8, 'Isa 49:14-15', '', '1 Cor 4:1-5', '', 'Hebr 4:12', '', 'Ps 62:2-3', '', 'Matt 6:24-34', '', 'A', 'ordinary'),
+(9, 9, 'Deut 11:18', '', 'Rom 3:21-25', '', 'John 15:5', '', 'Ps 31:2-3a', '', 'Matt 7:21-27', '', 'A', 'ordinary'),
+(10, 10, 'Hos 6:3-6', '', 'Rom 4:18-25', '', 'cf. Luke 4:18', '', 'Ps 50:1+8', '', 'Matt 9:9-13', '', 'A', 'ordinary'),
+(11, 11, 'Exod 19:2-6a', '', 'Rom 5:6-11', '', 'Mark 1:15', '', 'Ps 100:1-2', '', 'Matt 9:36?10:8', '', 'A', 'ordinary'),
+(12, 12, 'Jer 20:10-13', '', 'Rom 5:12-15', '', 'John 15:26b-27a', '', 'Ps 69:8-10', '', 'Matt 10:26-33', '', 'A', 'ordinary'),
+(13, 13, '2 Kgs 4:8-11', '', 'Rom 6:3-4', '', '1 Peter 2:9', '', 'Ps 89:2-3', '', 'Matt 10:37-42', '', 'A', 'ordinary'),
+(14, 14, 'Zech 9:9-10', '', 'Rom 8:9', '', 'cf. Matt 11:25', '', 'Ps 145:1-2', '', 'Matt 11:25-30', '', 'A', 'ordinary'),
+(15, 15, 'Isa 55:10-11', '', 'Rom 8:18-23', '', 'no bible reference', '', 'Ps 65:10', '', 'Matt 13:1-23?', '', 'A', 'ordinary'),
+(16, 16, 'Wis 12:13', '', 'Rom 8:26-27', '', 'cf. Matt 11:25', '', 'Ps 86:5-6', '', 'Matt 13:24-43?', '', 'A', 'ordinary'),
+(17, 17, '1 Kgs 3:5', '', 'Rom 8:28-30', '', 'cf. Matt 11:25', '', 'Ps 119:57+72', '', 'Matt 13:44-52?', '', 'A', 'ordinary'),
+(18, 18, 'Isa 55:1-3', '', 'Rom 8:35', '', 'Matt 4:4b', '', 'Ps 145:8-9', '', 'Matt 14:13-21', '', 'A', 'ordinary'),
+(19, 19, '1 Kgs 19:9a', '', 'Rom 9:1-5', '', 'cf. Psalm 130:5', '', 'Ps 85:9ab+10', '', 'Matt 14:22-33', '', 'A', 'ordinary'),
+(20, 20, 'Isa 56:1', '', 'Rom 11:13-15', '', 'cf. Matt 4:23', '', 'Ps 67:2-3', '', 'Matt 15:21-28', '', 'A', 'ordinary'),
+(21, 21, 'Isa 22:19-23', '', 'Rom 11:33-36', '', 'Matt 16:18', '', 'Ps 138:1-2a', '', 'Matt 16:13-20', '', 'A', 'ordinary'),
+(22, 22, 'Jer 20:7-9', '', 'Rom 12:1-2', '', 'cf. Eph 1:17-18', '', 'Ps 63:2', '', 'Matt 16:21-27', '', 'A', 'ordinary'),
+(23, 23, 'Ezek 33:7-9', '', 'Rom 13:8-10', '', '2 Cor 5:19', '', 'Ps 95:1-2', '', 'Matt 18:15-20', '', 'A', 'ordinary'),
+(24, 24, 'Sir 27:30?28:7', '', 'Rom 14:7-9', '', 'John 13:34', '', 'Ps 103:1-2', '', 'Matt 18:21-35', '', 'A', 'ordinary'),
+(25, 25, 'Isa 55:6-9', '', 'Phil 1:20c-24', '', 'cf. Act 16:14b', '', 'Ps 145:2-3', '', 'Matt 20:1-16a', '', 'A', 'ordinary'),
+(26, 26, 'Ezek 18:25-28', '', 'Phil 2:1-11?', '', 'John 10:27', '', 'Ps 25:4-5', '', 'Matt 21:28-32', '', 'A', 'ordinary'),
+(27, 27, 'Isa 5:1-7', '', 'Phil 4:6-9', '', 'cf. John 15:16', '', 'Ps 80:9+12', '', 'Matt 21:33-43', '', 'A', 'ordinary'),
+(28, 28, 'Isa 25:6-10a', '', 'Phil 4:12-14', '', 'cf. Eph 1:17-18', '', 'Ps 23:1-3a', '', 'Matt 22:1-14?', '', 'A', 'ordinary'),
+(29, 29, 'Isa 45:1', '', '1 Thess 1:1-5b', '', 'Phil 2:15d-16a', '', 'Ps 96:1+3', '', 'Matt 22:15-21', '', 'A', 'ordinary'),
+(30, 30, 'Exod 22:20-26', '', '1 Thess 1:5c-10', '', 'John 14:23', '', 'Ps 18:2-3a', '', 'Matt 22:34-40', '', 'A', 'ordinary'),
+(31, 31, 'Mal 1:14b?2:2b', '', '1 Thess 2:7b-9', '', 'Matt 23:9b+10b', '', 'Ps 131:1', '', 'Matt 23:1-12', '', 'A', 'ordinary'),
+(32, 32, 'Wis 6:12-16', '', '1 Thess 4:13-18', '', 'Matt 24:42a+44', '', 'Ps 63:2', '', 'Matt 25:1-13', '', 'A', 'ordinary'),
+(33, 33, 'Prov 31:10-13', '', '1 Thess 5:1-6', '', 'John 15:4a+5b', '', 'Ps 128:1-2', '', 'Matt 25:14-30 ', '', 'A', 'ordinary'),
+(34, 34, 'Ezek 34:11-12', '', '1 Cor 15:20-26', '', 'Mark 11:9b+10a', '', 'Ps 23:1-2a', '', 'Matt 25:31-46', '', 'A', 'ordinary'),
+(35, 1, 'Isa 55:1-11', '', '1 John 5:1-9 ', '', 'cf. John 1:29', '', '?Isa 12:2-3', '', 'Mark 1:7-11', '', 'B', 'ordinary'),
+(36, 2, '1 Sam 3:3b-10', '', '1 Cor 6:13c-15a, 17-20', '', 'John 1:41+17b', '', 'Ps 40:2+4', '', 'John 1:35-42', '', 'B', 'ordinary'),
+(37, 3, 'Jon 3:1-5', '', '1 Cor 7:29-31', '', 'Mark 1:15', '', 'Ps 25:4-5', '', 'Mark 1:14-20', '', 'B', 'ordinary'),
+(38, 4, 'Deut 18:15-20', '', '1 Cor 7:32-35', '', 'Matt 4:16', '', 'Ps 95:1-2', '', 'Mark 1:21-28', '', 'B', 'ordinary'),
+(39, 5, 'Job 7:1-4', '', '1 Cor 9:16-19, 22-23', '', 'Matt 8:17', '', 'Ps 147:1-2', '', 'Mark 1:29-39', '', 'B', 'ordinary'),
+(40, 6, 'Lev 13:1-2', '', '1 Cor 10:31?11:1', '', 'Luke 7:16', '', 'Ps 32:1-2', '', 'Mark 1:40-45', '', 'B', 'ordinary'),
+(41, 7, 'Isa 43:18-19', '', '2 Cor 1:18-22', '', 'cf. Luke 4:18', '', 'Ps 41:2-3', '', 'Mark 2:1-12', '', 'B', 'ordinary'),
+(42, 8, 'Hos 2:16b', '', '2 Cor 3:1b-6', '', 'James 1:18', '', 'Ps 103:1-2', '', 'Mark 2:18-22', '', 'B', 'ordinary'),
+(43, 9, 'Deut 5:12-15', '', '2 Cor 4:6-11', '', 'cf. John 17:17b+a', '', 'Ps 81:3-4', '', 'Mark 2:23?3:6?', '', 'B', 'ordinary'),
+(44, 10, 'Gen 3:9-15', '', '2 Cor 4:13?5:1', '', 'John 12:31b-32', '', 'Ps 130:1-2', '', 'Mark 3:20-35', '', 'B', 'ordinary'),
+(45, 11, 'Ezek 17:22-24', '', '2 Cor 5:6-10', '', 'no bible reference', '', 'Ps 92:2-3', '', 'Mark 4:26-34', '', 'B', 'ordinary'),
+(46, 12, 'Job 38:1', '', '2 Cor 5:14-17', '', 'Luke 7:16', '', 'Ps 107:23-24', '', 'Mark 4:35-41', '', 'B', 'ordinary'),
+(47, 13, 'Wis 1:13-15', '', '2 Cor 8:7, 9, 13-15', '', 'cf. 2 Tim 1:10', '', 'Ps 30:2+4', '', 'Mark 5:21-43 ', '', 'B', 'ordinary'),
+(48, 14, 'Ezek 2:2-5', '', '2 Cor 12:7-10', '', 'cf. Luke 4:18', '', 'Ps 123:1-2a', '', 'Mark 6:1-6 ', '', 'B', 'ordinary'),
+(49, 15, 'Amos 7:12-15', '', 'Eph 1:3-14?or?1:3-10', '', 'cf. Eph 1:17-18', '', 'Ps 85:9ab+10', '', 'Mark 6:7-13', '', 'B', 'ordinary'),
+(50, 16, 'Jer 23:1-6', '', 'Eph 2:13-18', '', 'John 10:27', '', 'Ps 23:1-3a', '', 'Mark 6:30-34', '', 'B', 'ordinary'),
+(51, 17, '2 Kgs 4:42-44', '', 'Eph 4:1-6', '', 'Luke 7:16', '', 'Ps 145:10-11', '', 'John 6:1-15', '', 'B', 'ordinary'),
+(52, 18, 'Exod 16:2-4', '', 'Eph 4:17, 20-24', '', 'Matt 4:4b', '', 'Ps 78:3-4', '', 'John 6:24-35', '', 'B', 'ordinary'),
+(53, 19, '1 Kgs 19:4-8', '', 'Eph 4:30?5:2', '', 'John 6:51', '', 'Ps 34:2-3', '', 'John 6:41-51', '', 'B', 'ordinary'),
+(54, 20, 'Prov 9:1-6', '', 'Eph 5:15-20', '', 'John 6:56', '', 'Ps 34:2-3', '', 'John 6:51-58', '', 'B', 'ordinary'),
+(55, 21, 'Josh 24:1-2a', '', 'Eph 5:21-32', '', 'cf. John 6:63c+68c', '', 'Ps 34:2-3', '', 'John 6:60-69', '', 'B', 'ordinary'),
+(56, 22, 'Deut 4:1-2', '', 'Jas 1:17-18', '', 'James 1:18', '', 'Ps 15:2-3a', '', 'Mark 7:1-8', '', 'B', 'ordinary'),
+(57, 23, 'Isa 35:4-7a', '', 'Jas 2:1-5', '', 'cf. Matt 4:23', '', 'Ps 146:6c-7', '', 'Mark 7:31-37', '', 'B', 'ordinary'),
+(58, 24, 'Isa 50:4-9a', '', 'Jas 2:14-18', '', 'Gal 6:14', '', 'Ps 116:1-2', '', 'Mark 8:27-35', '', 'B', 'ordinary'),
+(59, 25, 'Wis 2:12', '', 'Jas 3:16?4:3', '', 'cf. 2 Thess 2:14', '', 'Ps 54:3-4', '', 'Mark 9:30-37', '', 'B', 'ordinary'),
+(60, 26, 'Num 11:25-29', '', 'Jas 5:1-6', '', 'cf. John 17:17b+a', '', 'Ps 19:8, 10', '', 'Mark 9:38-43', '', 'B', 'ordinary'),
+(61, 27, 'Gen 2:18-24', '', 'Heb 2:9-11', '', '1 John 4:12', '', 'Ps 128:1-2', '', 'Mark 10:2-16', '', 'B', 'ordinary'),
+(62, 28, 'Wis 7:7-11', '', 'Heb 4:12-13', '', 'Matt 5:3', '', 'Ps 90:12-13', '', 'Mark 10:17-30?', '', 'B', 'ordinary'),
+(63, 29, 'Isa 53:10-11', '', 'Heb 4:14-16', '', 'Mark 10:45', '', 'Ps 33:4-5', '', 'Mark 10:35-45?', '', 'B', 'ordinary'),
+(64, 30, 'Jer 31:7-9', '', 'Heb 5:1-6', '', 'cf. 2 Tim 1:10', '', 'Ps 126:1-2a', '', 'Mark 10:46-52', '', 'B', 'ordinary'),
+(65, 31, 'Deut 6:2-6', '', 'Heb 7:23-28', '', 'John 14:23', '', 'Ps 18:2-3a', '', 'Mark 12:28b-34', '', 'B', 'ordinary'),
+(66, 32, '1 Kgs 17:10-16', '', 'Heb 9:24-28', '', 'Matt 5:3', '', 'Ps 146:6c-7', '', 'Mark 12:38-44?', '', 'B', 'ordinary'),
+(67, 33, 'Dan 12:1-3', '', 'Heb 10:11-14', '', 'Luke 21:36', '', 'Ps 16:5+8', '', 'Mark 13:24-32', '', 'B', 'ordinary'),
+(68, 34, 'Dan 7:13-14', '', 'Rev 1:5-8', '', 'Mark 11:9b+10a', '', 'Ps 93:1a', '', 'John 18:33b-37', '', 'B', 'ordinary'),
+(69, 1, 'Isa 40:1-5', '', 'Titus 2:11-14', '', 'Titus 2:11-14', '', 'Ps 104:1b-2', '', 'Luke 3:15-16', '', 'C', 'ordinary'),
+(70, 2, 'Isa 62:1-5', '', '1 Cor 12:4-11', '', '1 Cor 12:4-11', '', 'Ps 96:1-2a', '', 'John 2:1-11', '', 'C', 'ordinary'),
+(71, 3, 'Neh 8:2-4a', '', '1 Cor 12:12-30', '', '1 Cor 12:12-30', '', 'Ps 19:8', '', 'Luke 1:1-4', '', 'C', 'ordinary'),
+(72, 4, 'Jer 1:4-5', '', '1 Cor 12:31?13:13', '', '1 Cor 12:31?13:13', '', 'Ps 71:1-2', '', 'Luke 4:21-30', '', 'C', 'ordinary'),
+(73, 5, 'Isa 6:1-2a', '', '1 Cor 15:1-11', '', '1 Cor 15:1-11', '', 'Ps 138:1-2a', '', 'Luke 5:1-11', '', 'C', 'ordinary'),
+(74, 6, 'Jer 17:5-8', '', '1 Cor 15:12', '', '1 Cor 15:12', '', 'Ps 1:1-2', '', 'Luke 6:17', '', 'C', 'ordinary'),
+(75, 7, '1 Sam 26:2', '', '1 Cor 15:45-49', '', '1 Cor 15:45-49', '', 'Ps 103:1-2', '', 'Luke 6:27-38', '', 'C', 'ordinary'),
+(76, 8, 'Sir 27:5-8 ', '', '1 Cor 15:54-58', '', '1 Cor 15:54-58', '', 'Ps 92:2-3', '', 'Luke 6:39-45', '', 'C', 'ordinary'),
+(77, 9, '1 Kgs 8:41-43', '', 'Gal 1:1-2', '', 'Gal 1:1-2', '', 'Ps 117:1-2', '', 'Luke 7:1-10', '', 'C', 'ordinary'),
+(78, 10, '1 Kgs 17:17-24', '', 'Gal 1:11-19', '', 'Gal 1:11-19', '', 'Ps 30:2+4', '', 'Luke 7:11-17', '', 'C', 'ordinary'),
+(79, 11, '2 Sam 12:7-10, 13', '', 'Gal 2:16', '', 'Gal 2:16', '', 'Ps 32:1-2', '', 'Luke 7:36?8:3', '', 'C', 'ordinary'),
+(80, 12, 'Zech 12:10-11', '', 'Gal 3:26-29', '', 'Gal 3:26-29', '', 'Ps 63:2, 3-4', '', 'Luke 9:18-24', '', 'C', 'ordinary'),
+(81, 13, '1 Kgs 19:16b', '', 'Gal 5:1', '', 'Gal 5:1', '', 'Ps 16:1-2a+5', '', 'Luke 9:51-62', '', 'C', 'ordinary'),
+(82, 14, 'Isa 66:10-14c', '', 'Gal 6:14-18', '', 'Gal 6:14-18', '', 'Ps 66:1-3', '', 'Luke 10:1-12', '', 'C', 'ordinary'),
+(83, 15, 'Deut 30:10-14', '', 'Col 1:15-20', '', 'Col 1:15-20', '', 'Ps 69:14+17', '', 'Luke 10:25-37', '', 'C', 'ordinary'),
+(84, 16, 'Gen 18:1-10a', '', 'Col 1:24-28', '', 'Col 1:24-28', '', 'Ps 15:2-3a', '', 'Luke 10:38-42', '', 'C', 'ordinary'),
+(85, 17, 'Gen 18:20-32', '', 'Col 2:12-14', '', 'Col 2:12-14', '', 'Ps 138:1-2', '', 'Luke 11:1-13', '', 'C', 'ordinary'),
+(86, 18, 'Eccl 1:2', '', 'Col 3:1-5', '', 'Col 3:1-5', '', 'Ps 90:3-4', '', 'Luke 12:13-21', '', 'C', 'ordinary'),
+(87, 19, 'Wis 18:6-9', '', 'Heb 11:1-2', '', 'Heb 11:1-2', '', 'Ps 33:1+12', '', 'Luke 12:32-48', '', 'C', 'ordinary'),
+(88, 20, 'Jer 38:4-6', '', 'Heb 12:1-4', '', 'Heb 12:1-4', '', 'Ps 40:2', '', 'Luke 12:49-53', '', 'C', 'ordinary'),
+(89, 21, 'Isa 66:18-21', '', 'Heb 12:5-7', '', 'Heb 12:5-7', '', 'Ps 117:1', '', 'Luke 13:22-30', '', 'C', 'ordinary'),
+(90, 22, 'Sir 3:17-18, 20', '', 'Heb 12:18-19', '', 'Heb 12:18-19', '', 'Ps 68:4-5', '', 'Luke 14:1', '', 'C', 'ordinary'),
+(91, 23, 'Wis 9:13-18b', '', 'Phlm 9-10', '', 'Phlm 9-10', '', 'Ps 90:3-4', '', 'Luke 14:25-33', '', 'C', 'ordinary'),
+(92, 24, 'Exod 32:7-11, 13-14', '', '1 Tim 1:12-17', '', '1 Tim 1:12-17', '', 'Ps 51:3-4', '', 'Luke 15:1-32', '', 'C', 'ordinary'),
+(93, 25, 'Amos 8:4-7', '', '1 Tim 2:1-8', '', '1 Tim 2:1-8', '', 'Ps 113:1-2', '', 'Luke 16:1-13', '', 'C', 'ordinary'),
+(94, 26, 'Amos 6:1a', '', '1 Tim 6:11-16', '', '1 Tim 6:11-16', '', 'Ps 146:6c-7', '', 'Luke 16:19-31', '', 'C', 'ordinary'),
+(95, 27, 'Habb 1:2-3', '', '2 Tim 1:6-8', '', '2 Tim 1:6-8', '', 'Ps 95:1-2', '', 'Luke 17:5-10', '', 'C', 'ordinary'),
+(96, 28, '2 Kgs 5:14-17', '', '2 Tim 2:8-13', '', '2 Tim 2:8-13', '', 'Ps 98:1', '', 'Luke 17:11-19', '', 'C', 'ordinary'),
+(97, 29, 'Exod 17:8-13', '', '2 Tim 3:14?4:2', '', '2 Tim 3:14?4:2', '', 'Ps 121:1-2', '', 'Luke 18:1-8', '', 'C', 'ordinary'),
+(98, 30, 'Sir 35:12-14, 16-18 ', '', '2 Tim 4:6-8', '', '2 Tim 4:6-8', '', 'Ps 34:2-3', '', 'Luke 18:9-14', '', 'C', 'ordinary'),
+(99, 31, 'Wis 11:22?12:2 ', '', '2 Thess 1:11?2:2', '', '2 Thess 1:11?2:2', '', 'Ps 145:1-2', '', 'Luke 19:1-10', '', 'C', 'ordinary'),
+(100, 32, '2 Macc 7:1-2, 9-14', '', '2 Thess 2:16?3:5', '', '2 Thess 2:16?3:5', '', 'Ps 17:1', '', 'Luke 20:27-38', '', 'C', 'ordinary'),
+(101, 33, 'Mal 3:19-20a', '', '2 Thess 3:7-12', '', '2 Thess 3:7-12', '', 'Ps 98:5-6', '', 'Luke 21:5-19', '', 'C', 'ordinary'),
+(102, 34, '2 Sam 5:1-3', '', 'Col 1:12-20', '', 'Col 1:12-20', '', 'Ps 122:1-2', '', 'Luke 23:35-43', '', 'C', 'ordinary');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `lastname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint(6) NOT NULL DEFAULT '10',
+  `created_at` int(11) NOT NULL,
+  `updated_at` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `weekday_reading`
+--
+
+CREATE TABLE IF NOT EXISTS `weekday_reading` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `weekday_first_reading` varchar(45) DEFAULT NULL,
+  `weekday_first_audio` varchar(45) DEFAULT NULL,
+  `weekday_alleluia_verse` varchar(45) DEFAULT NULL,
+  `weekday_alleluia_audio` varchar(45) DEFAULT NULL,
+  `weekday_responsorial_psalm` varchar(45) DEFAULT NULL,
+  `weekday_responsorial_audio` varchar(45) DEFAULT NULL,
+  `weekday_gospel` varchar(45) DEFAULT NULL,
+  `weekday_gospel_audio` varchar(45) DEFAULT NULL,
+  `weekday_cycle_num` int(11) NOT NULL,
+  `weekday_weeknum` int(11) NOT NULL,
+  `weekday_reading_type` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=471 ;
+
+--
+-- Dumping data for table `weekday_reading`
+--
+
+INSERT INTO `weekday_reading` (`id`, `weekday_first_reading`, `weekday_first_audio`, `weekday_alleluia_verse`, `weekday_alleluia_audio`, `weekday_responsorial_psalm`, `weekday_responsorial_audio`, `weekday_gospel`, `weekday_gospel_audio`, `weekday_cycle_num`, `weekday_weeknum`, `weekday_reading_type`) VALUES
+(1, 'Heb 1:1-6', '', 'Mark 1:15', '', 'Ps 97:1+2b, 6+7c, 9', '', 'Mark 1:14-20', '', 1, 1, 'ordinary'),
+(2, 'Heb 2:5-12', '', '1 Thess 2:13', '', 'Ps 8:2ab+5, 6-7, 8-9', '', 'Mark 1:21-28', '', 1, 1, 'ordinary'),
+(3, 'Heb 2:14-18', '', 'John 10:27', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Mark 1:29-39', '', 1, 1, 'ordinary'),
+(4, 'Heb 3:7-14', '', 'Matt 4:23', '', 'Ps 95:6-7c, 8-9, 10-11', '', 'Mark 1:40-45', '', 1, 1, 'ordinary'),
+(5, 'Heb 4:1-5, 11', '', 'Luke 7:16', '', 'Ps 78:3+4bc, 6c-7, 8', '', 'Mark 2:1-12', '', 1, 1, 'ordinary'),
+(6, 'Heb 4:12-16', '', 'Luke 4:18', '', 'Ps 19:8, 9, 10, 15', '', 'Mark 2:13-17', '', 1, 1, 'ordinary'),
+(7, 'Heb 5:1-10', '', 'Heb 4:12', '', 'Ps 110:1, 2, 3, 4', '', 'Mark 2:18-22', '', 1, 2, 'ordinary'),
+(8, 'Heb 6:10-20', '', 'Eph 1:17-18', '', 'Ps 111:1-2, 4-5, 9+10c', '', 'Mark 2:23-28', '', 1, 2, 'ordinary'),
+(9, 'Heb 7:1-3, 15-17', '', 'Matt 4:23', '', 'Ps 110:1, 2, 3, 4', '', 'Mark 3:1-6', '', 1, 2, 'ordinary'),
+(10, 'Heb 7:25?8:6', '', '2 Tim 1:10', '', 'Ps 40:7-8a, 8b-9, 10, 17', '', 'Mark 3:7-12', '', 1, 2, 'ordinary'),
+(11, 'Heb 8:6-13', '', '2 Cor 5:19', '', 'Ps 85:8+10, 11-12, 13-14', '', 'Mark 3:13-19', '', 1, 2, 'ordinary'),
+(12, 'Heb 9:2-3, 11-14', '', 'Acts 16:14b', '', 'Ps 47:2-3, 6-7, 8-9', '', 'Mark 3:20-21', '', 1, 2, 'ordinary'),
+(13, 'Heb 9:15, 24-28', '', '2 Tim 1:10', '', 'Ps 98:1, 2-3ab, 3cd-4, 5-6', '', 'Mark 3:22-30', '', 1, 3, 'ordinary'),
+(14, 'Heb 10:1-10', '', 'Matt 11:25', '', 'Ps 40:2+4ab, 7-8a, 10, 11', '', 'Mark 3:31-35', '', 1, 3, 'ordinary'),
+(15, 'Heb 10:11-18', '', 'no biblical reference', '', 'Ps 110:1, 2, 3, 4', '', 'Mark 4:1-20', '', 1, 3, 'ordinary'),
+(16, 'Heb 10:19-25', '', 'Ps 119:105', '', 'Ps 24:1-2, 3-4ab, 5-6', '', 'Mark 4:21-25', '', 1, 3, 'ordinary'),
+(17, 'Heb 10:32-39', '', 'Matt 11:25', '', 'Ps 37:3-4, 5-6, 23-24, 39-40', '', 'Mark 4:26-34', '', 1, 3, 'ordinary'),
+(18, 'Heb 11:1-2, 8-19', '', 'John 3:16', '', 'Luke 1:69-70, 71-72, 73-75', '', 'Mark 4:35-41', '', 1, 3, 'ordinary'),
+(19, 'Heb 11:32-40', '', 'Luke 7:16', '', 'Ps 31:20, 21, 22, 23, 24', '', 'Mark 5:1-20', '', 1, 4, 'ordinary'),
+(20, 'Heb 12:1-4', '', 'Matt 8:17', '', 'Ps 22:26b-27, 28+30, 31-32', '', 'Mark 5:21-43', '', 1, 4, 'ordinary'),
+(21, 'Heb 12:4-7, 11-15', '', 'John 10:27', '', 'Ps 103:1-2, 13-14, 17-18a', '', 'Mark 6:1-6', '', 1, 4, 'ordinary'),
+(22, 'Heb 12:18-19, 21-24', '', 'Mark 1:15', '', 'Ps 48:2-3ab, 3cd-4, 9, 10-11', '', 'Mark 6:7-13', '', 1, 4, 'ordinary'),
+(23, 'Heb 13:1-8', '', 'Luke 8:15', '', 'Ps 27:1, 3, 5, 8b-9abc', '', 'Mark 6:14-29', '', 1, 4, 'ordinary'),
+(24, 'Heb 13:15-17, 20-21', '', 'John 10:27', '', 'Ps 23:1-3a, 3b-4, 5, 6', '', 'Mark 6:30-34', '', 1, 4, 'ordinary'),
+(25, 'Gen 1:1-19', '', 'Matt 4:23', '', 'Ps 104:1-2a, 5-6, 10+12, 24+35c', '', 'Mark 6:53-56', '', 1, 5, 'ordinary'),
+(26, 'Gen 1:20?2:4a', '', 'Ps 119:36, 29b', '', 'Ps 8:4-5, 6-7, 8-9', '', 'Mark 7:1-13', '', 1, 5, 'ordinary'),
+(27, 'Gen 2:4b-9, 15-17', '', 'John 17:17b, 17a', '', 'Ps 104:1-2a, 27-28, 29bc-30', '', 'Mark 7:14-23', '', 1, 5, 'ordinary'),
+(28, 'Gen 2:18-25', '', 'James 1:21bc', '', 'Ps 128:1-2, 3, 4-5', '', 'Mark 7:24-30', '', 1, 5, 'ordinary'),
+(29, 'Gen 3:1-8', '', 'Acts 16:14b', '', 'Ps 32:1-2, 5, 6, 7', '', 'Mark 7:31-37', '', 1, 5, 'ordinary'),
+(30, 'Gen 3:9-24', '', 'Matt 4:4b', '', 'Ps 90:2, 3-4abc, 5-6, 12-13', '', 'Mark 8:1-10', '', 1, 5, 'ordinary'),
+(31, 'Gen 4:1-15, 25', '', 'John 14:6', '', 'Ps 50:1+8, 16bc-17, 20-21', '', 'Mark 8:11-13', '', 1, 6, 'ordinary'),
+(32, 'Gen 6:5-8; 7:1-5, 10', '', 'John 14:23', '', 'Ps 29:1a+2, 3ac-4, 3b+9c-10', '', 'Mark 8:14-21', '', 1, 6, 'ordinary'),
+(33, 'Gen 8:6-13, 20-22', '', 'Eph 1:17-18', '', 'Ps 116:12-13, 14-15, 18-19', '', 'Mark 8:22-26', '', 1, 6, 'ordinary'),
+(34, 'Gen 9:1-13', '', 'John 6:63c, 68c', '', 'Ps 102:16-18, 19-21, 29+22-23', '', 'Mark 8:27-33', '', 1, 6, 'ordinary'),
+(35, 'Gen 11:1-9', '', 'John 15:15b', '', 'Ps 33:10-11, 12-13, 14-15', '', 'Mark 8:34?9:1', '', 1, 6, 'ordinary'),
+(36, 'Heb 11:1-7', '', 'Mark 9:6', '', 'Ps 145:2-3, 4-5, 10-11', '', 'Mark 9:2-13', '', 1, 6, 'ordinary'),
+(37, 'Sir 1:1-10', '', '2 Tim 1:10', '', 'Ps 93:1ab, 1cd-2, 5', '', 'Mark 9:14-29', '', 1, 7, 'ordinary'),
+(38, 'Sir 2:1-11', '', 'Gal 6:14', '', 'Ps 37:3-4, 18-19, 27-28, 39-40', '', 'Mark 9:30-37', '', 1, 7, 'ordinary'),
+(39, 'Sir 4:11-19', '', 'John 14:6', '', 'Ps 119:165, 168, 171, 172, 174, 175', '', 'Mark 9:38-40', '', 1, 7, 'ordinary'),
+(40, 'Sir 5:1-8', '', '1 Thess 2:13', '', 'Ps 1:1-2, 3, 4+6', '', 'Mark 9:41-50', '', 1, 7, 'ordinary'),
+(41, 'Sir 6:5-17', '', 'John 17:17b, 17a', '', 'Ps 119:12, 16, 18, 27, 34, 35', '', 'Mark 10:1-12', '', 1, 7, 'ordinary'),
+(42, 'Sir 17:1-15', '', 'Matt 11:25', '', 'Ps 103:13-14, 15-16, 17-18a', '', 'Mark 10:13-16', '', 1, 7, 'ordinary'),
+(43, 'Sir 17:20-24', '', '2 Cor 8:9', '', 'Ps 32:1-2, 5, 6, 7', '', 'Mark 10:17-27', '', 1, 8, 'ordinary'),
+(44, 'Sir 35:1-12', '', 'Matt 11:25', '', 'Ps 50:5-6, 7-8, 14+23', '', 'Mark 10:28-31', '', 1, 8, 'ordinary'),
+(45, 'Sir 36:1, 4-5a, 10-17', '', 'Mark 10:45', '', 'Ps 79:8, 9, 11+13', '', 'Mark 10:32-45', '', 1, 8, 'ordinary'),
+(46, 'Sir 42:15-25', '', 'John 8:12', '', 'Ps 33:2-3, 4-5, 6-7, 8-9', '', 'Mark 10:46-52', '', 1, 8, 'ordinary'),
+(47, 'Sir 44:1, 9-13', '', 'John 15:16', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'Mark 11:11-26', '', 1, 8, 'ordinary'),
+(48, 'Sir 51:12cd-20', '', 'Col 3:16a, 17c', '', 'Ps 19:8, 9, 10, 11', '', 'Mark 11:27-33', '', 1, 8, 'ordinary'),
+(49, 'Tob 1:3; 2:1a-8', '', 'Rev 1:5ab', '', 'Ps 112:1b-2, 3b-4, 5-6', '', 'Mark 12:1-12', '', 1, 9, 'ordinary'),
+(50, 'Tob 2:9-14', '', 'Eph 1:17-18', '', 'Ps 112:1-2, 7-8, 9', '', 'Mark 12:13-17', '', 1, 9, 'ordinary'),
+(51, 'Tob 3:1-11a, 16-17a', '', 'John 11:25a, 26', '', 'Ps 25:2-3, 4-5ab, 6+7bc, 8-9', '', 'Mark 12:18-27', '', 1, 9, 'ordinary'),
+(52, 'Tob 6:10-11; 7:1bcde, 9-17; 8:4-9a', '', '2 Tim 1:10', '', 'Ps 128:1-2, 3, 4-5', '', 'Mark 12:28b-34', '', 1, 9, 'ordinary'),
+(53, 'Tob 11:5-17', '', 'John 14:23', '', 'Ps 146:1b-2, 6c-7, 8-9a, 9bc-10', '', 'Mark 12:35-37', '', 1, 9, 'ordinary'),
+(54, 'Tob 12:1, 5-15, 20', '', 'Matt 5:3', '', 'Tob 13:2, 6, 7, 10 [Vulg.]', '', 'Mark 12:38-44', '', 1, 9, 'ordinary'),
+(55, '2 Cor 1:1-7', '', 'Matt 5:12a', '', 'Ps 34:2-3, 4-5, 6-7, 8-9', '', 'Matt 5:1-12', '', 1, 10, 'ordinary'),
+(56, '2 Cor 1:18-22', '', 'Matt 5:16', '', 'Ps 119:129, 130, 131, 132, 133, 135', '', 'Matt 5:13-16', '', 1, 10, 'ordinary'),
+(57, '2 Cor 3:4-11', '', 'Ps 25:4b, 5a', '', 'Ps 99:5, 6, 7, 8, 9', '', 'Matt 5:17-19', '', 1, 10, 'ordinary'),
+(58, '2 Cor 3:15?4:1, 3-6', '', 'John 13:34', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Matt 5:20-26', '', 1, 10, 'ordinary'),
+(59, '2 Cor 4:7-15', '', 'Phil 2:15d, 16a', '', 'Ps 116:10-11, 15-16, 17-18', '', 'Matt 5:27-32', '', 1, 10, 'ordinary'),
+(60, '2 Cor 5:14-21', '', 'Ps 119:36a, 29b', '', 'Ps 103:1-2, 3-4, 9-10, 11-12', '', 'Matt 5:33-37', '', 1, 10, 'ordinary'),
+(61, '2 Cor 6:1-10', '', 'Ps 119:105', '', 'Ps 98:1, 2b-3ab, 3cd-4', '', 'Matt 5:38-42', '', 1, 11, 'ordinary'),
+(62, '2 Cor 8:1-9', '', 'John 13:34', '', 'Ps 146:2, 5-6ab, 6c-7, 8-9a', '', 'Matt 5:43-48', '', 1, 11, 'ordinary'),
+(63, '2 Cor 9:6-11', '', 'John 14:23', '', 'Ps 112:1bc-2, 3-4, 9', '', 'Matt 6:1-6, 16-18', '', 1, 11, 'ordinary'),
+(64, '2 Cor 11:1-11', '', 'Rom 8:15bc', '', 'Ps 111:1b-2, 3-4, 7-8', '', 'Matt 6:7-15', '', 1, 11, 'ordinary'),
+(65, '2 Cor 11:18, 21-30', '', 'Matt 5:3', '', 'Ps 34:2-3, 4-5, 6-7', '', 'Matt 6:19-23', '', 1, 11, 'ordinary'),
+(66, '2 Cor 12:1-10', '', '2 Cor 8:9', '', 'Ps 34:8-9, 10-11, 12-13', '', 'Matt 6:24-34', '', 1, 11, 'ordinary'),
+(67, 'Gen 12:1-9', '', 'Heb 4:12', '', 'Ps 33:12-13, 18-19, 20+22', '', 'Matt 7:1-5', '', 1, 12, 'ordinary'),
+(68, 'Gen 13:2, 5-18', '', 'John 8:12', '', 'Ps 15:2-3a, 3bc-4ab, 5', '', 'Matt 7:6, 12-14', '', 1, 12, 'ordinary'),
+(69, 'Gen 15:1-12, 17-18', '', 'John 15:4a, 5b', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Matt 7:15-20', '', 1, 12, 'ordinary'),
+(70, 'Gen 16:1-12, 15-16', '', 'John 14:23', '', 'Ps 106:1b-2, 3-4a, 4b-5', '', 'Matt 7:21-29', '', 1, 12, 'ordinary'),
+(71, 'Gen 17:1, 9-10, 15-22', '', 'Matt 8:17', '', 'Ps 128:1-2, 3, 4-5', '', 'Matt 8:1-4', '', 1, 12, 'ordinary'),
+(72, 'Gen 18:1-15', '', 'Matt 8:17', '', 'Luke 1:46-47, 48-49, 50+53, 54-55', '', 'Matt 8:5-17', '', 1, 12, 'ordinary'),
+(73, 'Gen 18:16-33', '', 'Ps 95:8', '', 'Ps 103:1b-2, 3-4, 8-9, 10-11', '', 'Matt 8:18-22', '', 1, 13, 'ordinary'),
+(74, 'Gen 19:15-29', '', 'Ps 130:5', '', 'Ps 26:2-3, 9-10, 11-12', '', 'Matt 8:23-27', '', 1, 13, 'ordinary'),
+(75, 'Gen 21:5, 8-20a', '', 'James 1:18', '', 'Ps 34:7-8, 10-11, 12-13', '', 'Matt 8:28-34', '', 1, 13, 'ordinary'),
+(76, 'Gen 22:1b-19', '', '2 Cor 5:19', '', 'Ps 115:1-2, 3-4, 5-6, 8-9', '', 'Matt 9:1-8', '', 1, 13, 'ordinary'),
+(77, 'Gen 23:1-4, 19; 24:1-8, 62-67', '', 'Matt 11:28', '', 'Ps 106:1b-2, 3-4a, 4b-5', '', 'Matt 9:9-13', '', 1, 13, 'ordinary'),
+(78, 'Gen 27:1-5, 15-29', '', 'John 10:27', '', 'Ps 135:1b-2, 3-4, 5-6', '', 'Matt 9:14-17', '', 1, 13, 'ordinary'),
+(79, 'Gen 28:10-22a', '', '2 Tim 1:10', '', 'Ps 91:1-2, 3-4, 14-15ab', '', 'Matt 9:18-26', '', 1, 14, 'ordinary'),
+(80, 'Gen 32:23-33', '', 'John 10:14', '', 'Ps 17:1b, 2-3, 6-7ab, 8b+15', '', 'Matt 9:32-38', '', 1, 14, 'ordinary'),
+(81, 'Gen 41:55-57; 42:5-7a, 17-24a', '', 'Mark 1:15', '', 'Ps 33:2-3, 10-11, 18-19', '', 'Matt 10:1-7', '', 1, 14, 'ordinary'),
+(82, 'Gen 44:18-21, 23b-29; 45:1-5', '', 'Mark 1:15', '', 'Ps 105:16-17, 18-19, 20-21', '', 'Matt 10:7-15', '', 1, 14, 'ordinary'),
+(83, 'Gen 46:1-7, 28-30', '', 'John 16:13a; 14:26d', '', 'Ps 37:3-4, 18-19, 27-28, 39-40', '', 'Matt 10:16-23', '', 1, 14, 'ordinary'),
+(84, 'Gen 49:29-32; 50:15-26a', '', '1 Pet 4:14', '', 'Ps 105:1-2, 3-4, 6-7', '', 'Matt 10:24-33', '', 1, 14, 'ordinary'),
+(85, 'Exod 1:8-14, 22', '', 'Matt 5:10', '', 'Ps 124:1b-3, 4-6, 7-8', '', 'Matt 10:34?11:1', '', 1, 15, 'ordinary'),
+(86, 'Exod 2:1-15a', '', 'Ps 95:8', '', 'Ps 69:3, 14, 30-31, 33-34', '', 'Matt 11:20-24', '', 1, 15, 'ordinary'),
+(87, 'Exod 3:1-6, 9-12', '', 'Matt 11:25', '', 'Ps 103:1b-2, 3-4, 6-7', '', 'Matt 11:25-27', '', 1, 15, 'ordinary'),
+(88, 'Exod 3:13-20', '', 'Matt 11:28', '', 'Ps 105:1+5, 8-9, 24-25, 26-27', '', 'Matt 11:28-30', '', 1, 15, 'ordinary'),
+(89, 'Exod 11:10?12:14', '', 'John 10:27', '', 'Ps 116:12-13, 15+16bc, 17-18', '', 'Matt 12:1-8', '', 1, 15, 'ordinary'),
+(90, 'Exod 12:37-42', '', '2 Cor 5:19', '', 'Ps 136:1+23-24, 10-12, 13-15', '', 'Matt 12:14-21', '', 1, 15, 'ordinary'),
+(91, 'Exod 14:5-18', '', 'Ps 95:8', '', 'Exod 15:1bc-2, 3-4, 5-6', '', 'Matt 12:38-42', '', 1, 16, 'ordinary'),
+(92, 'Exod 14:21?15:1', '', 'John 14:23', '', 'Exod 15:8-9, 10+12, 17', '', 'Matt 12:46-50', '', 1, 16, 'ordinary'),
+(93, 'Exod 16:1-5, 9-15', '', 'no biblical reference', '', 'Ps 78:18-19, 23-24, 25-26, 27-28', '', 'Matt 13:1-9', '', 1, 16, 'ordinary'),
+(94, 'Exod 19:1-2, 9-11, 16-20b', '', 'Matt 11:25', '', 'Dan 3:52, 53, 54, 55, 56', '', 'Matt 13:10-17', '', 1, 16, 'ordinary'),
+(95, 'Exod 20:1-17', '', 'Luke 8:15', '', 'Ps 19:8, 9, 10, 11', '', 'Matt 13:18-23', '', 1, 16, 'ordinary'),
+(96, 'Exod 24:3-8', '', 'James 1:21bc', '', 'Ps 50:1b-2, 5-6, 14-15', '', 'Matt 13:24-30', '', 1, 16, 'ordinary'),
+(97, 'Exod 32:15-24, 30-34', '', 'James 1:18', '', 'Ps 106:19-20, 21-22, 23', '', 'Matt 13:31-35', '', 1, 17, 'ordinary'),
+(98, 'Exod 33:7-11; 34:5b-9, 28', '', 'no biblical reference', '', 'Ps 103:6-7, 8-9, 10-11, 12-13', '', 'Matt 13:36-43', '', 1, 17, 'ordinary'),
+(99, 'Exod 34:29-35', '', 'John 15:15b', '', 'Ps 99:5, 6, 7, 9', '', 'Matt 13:44-46', '', 1, 17, 'ordinary'),
+(100, 'Exod 40:16-21, 34-38', '', 'Acts 16:14b', '', 'Ps 84:3, 4, 5-6a+8a, 11', '', 'Matt 13:47-53', '', 1, 17, 'ordinary'),
+(101, 'Lev 23:1, 4-11, 15-16, 27, 34b-37', '', '1 Pet 1:25', '', 'Ps 81:3-4, 5-6ab, 10-11ab', '', 'Matt 13:54-58', '', 1, 17, 'ordinary'),
+(102, 'Lev 25:1, 8-17', '', 'Matt 5:10', '', 'Ps 67:2-3, 5, 7-8', '', 'Matt 14:1-12', '', 1, 17, 'ordinary'),
+(103, 'Num 11:4b-15', '', 'Matt 4:4', '', 'Ps 81:12-13, 14-15, 16-17', '', 'Matt 14:13-21? or,', '', 1, 18, 'ordinary'),
+(104, 'Num 12:1-13', '', 'John 1:49b', '', 'Ps 51:3-4, 5-6ab, 6cd-7, 12-13', '', 'Matt 14:22-36??or,?', '', 1, 18, 'ordinary'),
+(105, 'Num 13:1-2, 25?14:1, 26a-29a, 34-35', '', 'Luke 7:16', '', 'Ps 106:6-7ab, 13-14, 21-22, 23', '', 'Matt 15:21-28', '', 1, 18, 'ordinary'),
+(106, 'Num 20:1-13', '', 'Matt 16:18', '', 'Ps 95:1-2, 6-7, 8-9', '', 'Matt 16:13-23', '', 1, 18, 'ordinary'),
+(107, 'Deut 4:32-40', '', 'Matt 5:10', '', 'Ps 77:12-13, 14-15, 16+21', '', 'Matt 16:24-28', '', 1, 18, 'ordinary'),
+(108, 'Deut 6:4-13', '', '2 Tim 1:10', '', 'Ps 18:2-3a, 3bc-4, 47+51', '', 'Matt 17:14-20', '', 1, 18, 'ordinary'),
+(109, 'Deut 10:12-22', '', '2 Thess 2:14', '', 'Ps 147:12-13, 14-15, 19-20', '', 'Matt 17:22-27', '', 1, 19, 'ordinary'),
+(110, 'Deut 31:1-8', '', 'Matt 11:29ab', '', 'Deut 32:3-4ab, 7, 8, 9+12', '', 'Matt 18:1-5, 10, 12-14', '', 1, 19, 'ordinary'),
+(111, 'Deut 34:1-12', '', '2 Cor 5:19', '', 'Ps 66:1-3a, 5+8, 16-17', '', 'Matt 18:15-20', '', 1, 19, 'ordinary'),
+(112, 'Josh 3:7-10a, 11, 13-17', '', 'Ps 119:135', '', 'Ps 114:1-2, 3-4, 5-6', '', 'Matt 18:21?19:1', '', 1, 19, 'ordinary'),
+(113, 'Josh 24:1-13', '', '1 Thess 2:13', '', 'Ps 136:1-3, 16-18, 21-22+24', '', 'Matt 19:3-12', '', 1, 19, 'ordinary'),
+(114, 'Josh 24:14-29', '', ' Matt 11:25', '', 'Ps 16:1-2a+5, 7-8, 11', '', 'Matt 19:13-15', '', 1, 19, 'ordinary'),
+(115, 'Judg 2:11-19', '', 'Matt 5:3', '', 'Ps 106:34-35, 36-37, 39-40, 43ab+44', '', 'Matt 19:16-22', '', 1, 20, 'ordinary'),
+(116, 'Judg 6:11-24a', '', '2 Cor 8:9', '', 'Ps 85:9, 11-12, 13-14', '', 'Matt 19:23-30', '', 1, 20, 'ordinary'),
+(117, 'Judg 9:6-15', '', 'Heb 4:12', '', 'Ps 21:2-3, 4-5, 6-7', '', 'Matt 20:1-16', '', 1, 20, 'ordinary'),
+(118, 'Judg 11:29-39a', '', 'Ps 95:8', '', 'Ps 40:5, 7-8a, 8b-9, 10', '', 'Matt 22:1-14', '', 1, 20, 'ordinary'),
+(119, 'Ruth 1:1, 3-6, 14b-16, 22', '', 'Ps 25:4b, 5a', '', 'Ps 146:5-6ab, 6c-7, 8-9a, 9bc-10', '', 'Matt 22:34-40', '', 1, 20, 'ordinary'),
+(120, 'Ruth 2:1-3, 8-11; 4:13-17', '', 'Matt 23:9b, 10b', '', 'Ps 128:1b-2, 3, 4, 5', '', 'Matt 23:1-12', '', 1, 20, 'ordinary'),
+(121, '1 Thess 1:1-5, 8b-10', '', 'John 10:27', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'Matt 23:13-22', '', 1, 21, 'ordinary'),
+(122, '1 Thess 2:1-8', '', 'Heb 4:12', '', 'Ps 139:1-3, 4-6', '', 'Matt 23:23-26', '', 1, 21, 'ordinary'),
+(123, '1 Thess 2:9-13', '', '1 John 2:5', '', 'Ps 139:7-8, 9-10, 11-12ab', '', 'Matt 23:27-32', '', 1, 21, 'ordinary'),
+(124, '1 Thess 3:7-13', '', 'Matt 24:42a, 44', '', 'Ps 90:3-4, 12-13, 14+17', '', 'Matt 24:42-51', '', 1, 21, 'ordinary'),
+(125, '1 Thess 4:1-8', '', 'Luke 21:36', '', 'Ps 97:1+2b, 5-6, 10, 11-12', '', 'Matt 25:1-13', '', 1, 21, 'ordinary'),
+(126, '1 Thess 4:9-11', '', 'John 13:34', '', 'Ps 98:1, 7-8, 9', '', 'Matt 25:14-30', '', 1, 21, 'ordinary'),
+(127, '1 Thess 4:13-18', '', 'Luke 4:18', '', 'Ps 96:1+3, 4-5, 11-12, 13', '', 'Luke 4:16-30', '', 1, 22, 'ordinary'),
+(128, '1 Thess 5:1-6, 9-11', '', 'Luke 7:16', '', 'Ps 27:1, 4, 13-14', '', 'Luke 4:31-37', '', 1, 22, 'ordinary'),
+(129, 'Col 1:1-8', '', 'Luke 4:18', '', 'Ps 52:10, 11', '', 'Luke 4:38-44', '', 1, 22, 'ordinary'),
+(130, 'Col 1:9-14', '', 'Matt 4:19', '', 'Ps 98:2-3ab, 3cd-4, 5-6', '', 'Luke 5:1-11', '', 1, 22, 'ordinary'),
+(131, 'Col 1:15-20', '', 'John 8:12', '', 'Ps 100:1b-2, 3, 4, 5', '', 'Luke 5:33-39', '', 1, 22, 'ordinary'),
+(132, 'Col 1:21-23', '', 'John 14:6', '', 'Ps 54:3-4, 6+8', '', 'Luke 6:1-5', '', 1, 22, 'ordinary'),
+(133, 'Col 1:24?2:3', '', 'John 10:27', '', 'Ps 62:6-7, 9', '', 'Luke 6:6-11', '', 1, 23, 'ordinary'),
+(134, 'Col 2:6-15', '', 'John 15:16', '', 'Ps 145:1b-2, 8-9, 10-11', '', 'Luke 6:12-19', '', 1, 23, 'ordinary'),
+(135, 'Col 3:1-11', '', 'Luke 6:23ab', '', 'Ps 145:2-3, 10-11, 12-13ab', '', 'Luke 6:20-26', '', 1, 23, 'ordinary'),
+(136, 'Col 3:12-17', '', '1 John 4:12', '', 'Ps 150:1b-2, 3-4, 5-6', '', 'Luke 6:27-38', '', 1, 23, 'ordinary'),
+(137, '1 Tim 1:1-2, 12-14', '', 'John 17:17b, 17a', '', 'Ps 16:1b-2a+5, 7-8, 11', '', 'Luke 6:39-42', '', 1, 23, 'ordinary'),
+(138, '1 Tim 1:15-17', '', 'John 14:23', '', 'Ps 113:1b-2, 3-4, 5a+6-7', '', 'Luke 6:43-49', '', 1, 23, 'ordinary'),
+(139, '1 Tim 2:1-8', '', 'John 3:16', '', 'Ps 28:2, 7, 8-9', '', 'Luke 7:1-10', '', 1, 24, 'ordinary'),
+(140, '1 Tim 3:1-13', '', 'Luke 7:16', '', 'Ps 101:1b-2ab, 2cd-3ab, 5, 6', '', 'Luke 7:11-17', '', 1, 24, 'ordinary'),
+(141, '1 Tim 3:14-16', '', 'John 6:63c, 68c', '', 'Ps 111:1-2, 3-4, 5-6', '', 'Luke 7:31-35', '', 1, 24, 'ordinary'),
+(142, '1 Tim 4:12-16', '', 'Matt 11:28', '', 'Ps 111:7-8, 9, 10', '', 'Luke 7:36-50', '', 1, 24, 'ordinary'),
+(143, '1 Tim 6:2c-12', '', 'Matt 11:25', '', 'Ps 49:6-7, 8-10, 17-18, 19-20', '', 'Luke 8:1-3', '', 1, 24, 'ordinary'),
+(144, '1 Tim 6:13-16', '', 'Luke 8:15', '', 'Ps 100:1b-2, 3, 4, 5', '', 'Luke 8:4-15', '', 1, 24, 'ordinary'),
+(145, 'Ezra 1:1-6', '', 'Matt 5:16', '', 'Ps 126:1b-2ab, 2cd-3, 4-5, 6', '', 'Luke 8:16-18', '', 1, 25, 'ordinary'),
+(146, 'Ezra 6:7-8, 12b, 14-20', '', 'Luke 11:28', '', 'Ps 122:1-2, 3-4ab, 4cd-5', '', 'Luke 8:19-21', '', 1, 25, 'ordinary'),
+(147, 'Ezra 9:5-9', '', 'Mark 1:15', '', 'Tob 13:2, 3-4a, 6, 7, 10 [Vulg.]', '', 'Luke 9:1-6', '', 1, 25, 'ordinary'),
+(148, 'Hag 1:1-8', '', 'John 14:6', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'Luke 9:7-9', '', 1, 25, 'ordinary'),
+(149, 'Hag 2:1-9', '', 'Mark 10:45', '', 'Ps 43:1, 2, 3, 4', '', 'Luke 9:18-22', '', 1, 25, 'ordinary'),
+(150, 'Zech 2:5-9, 14-15a', '', '2 Tim 1:10', '', 'Jer 31:10, 11-12ab, 13', '', 'Luke 9:43b-45', '', 1, 25, 'ordinary'),
+(151, 'Zech 8:1-8', '', 'Mark 10:45', '', 'Ps 102:16-18, 19-21, 29+22-23', '', 'Luke 9:46-50', '', 1, 26, 'ordinary'),
+(152, 'Zech 8:20-23', '', 'Mark 10:45', '', 'Ps 87:1b-3, 4-5, 6-7', '', 'Luke 9:51-56', '', 1, 26, 'ordinary'),
+(153, 'Neh 2:1-8', '', 'Phil 3:8-9', '', 'Ps 137:1-2, 3, 4-5, 6', '', 'Luke 9:57-62', '', 1, 26, 'ordinary'),
+(154, 'Neh 8:1-4a, 5-6, 7b-12', '', 'Mark 1:15', '', 'Ps 19:8, 9, 10, 11', '', 'Luke 10:1-12', '', 1, 26, 'ordinary'),
+(155, 'Bar 1:15-22', '', 'Ps 95:8', '', 'Ps 79:1b-2, 3-5, 8, 9', '', 'Luke 10:13-16', '', 1, 26, 'ordinary'),
+(156, 'Bar 4:5-12, 27-29', '', 'Matt 11:25', '', 'Ps 69:33-35, 36-37', '', 'Luke 10:17-24', '', 1, 26, 'ordinary'),
+(157, 'Jonah 1:1?2:2, 11', '', 'John 13:34', '', 'Jonah 2:3, 4, 5, 8', '', 'Luke 10:25-37', '', 1, 27, 'ordinary'),
+(158, 'Jonah 3:1-10', '', 'Luke 11:28', '', 'Ps 130:1b-2, 3-4ab, 7-8', '', 'Luke 10:38-42', '', 1, 27, 'ordinary'),
+(159, 'Jonah 4:1-11', '', 'Rom 8:15bc', '', 'Ps 86:3-4, 5-6, 9-10', '', 'Luke 11:1-4', '', 1, 27, 'ordinary'),
+(160, 'Mal 3:13-20b', '', 'Acts 16:14b', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 11:5-13', '', 1, 27, 'ordinary'),
+(161, 'Joel 1:13-15; 2:1-2', '', 'John 12:31b-32', '', 'Ps 9:2-3, 6+16, 8-9', '', 'Luke 11:15-26', '', 1, 27, 'ordinary'),
+(162, 'Joel 4:12-21', '', 'Luke 11:28', '', 'Ps 97:1-2, 5-6, 11-12', '', 'Luke 11:27-28', '', 1, 27, 'ordinary'),
+(163, 'Rom 1:1-7', '', 'Ps 95:8', '', 'Ps 98:1bcde, 2-3ab, 3cd-4', '', 'Luke 11:29-32', '', 1, 28, 'ordinary'),
+(164, 'Rom 1:16-25', '', 'Heb 4:12', '', 'Ps 19:2-3, 4-5', '', 'Luke 11:37-41', '', 1, 28, 'ordinary'),
+(165, 'Rom 2:1-11', '', 'John 10:27', '', 'Ps 62:2-3, 6-7, 9', '', 'Luke 11:42-46', '', 1, 28, 'ordinary'),
+(166, 'Rom 3:21-30', '', 'John 14:6', '', 'Ps 130:1b-2, 3-4, 5-6ab', '', 'Luke 11:47-54', '', 1, 28, 'ordinary'),
+(167, 'Rom 4:1-8', '', 'Ps 33:22', '', 'Ps 32:1b-2, 5, 11', '', 'Luke 12:1-7', '', 1, 28, 'ordinary'),
+(168, 'Rom 4:13, 16-18', '', 'John 15:26b, 27a', '', 'Ps 105:6-7, 8-9, 42-43', '', 'Luke 12:8-12', '', 1, 28, 'ordinary'),
+(169, 'Rom 4:20-25', '', 'Matt 5:3', '', 'Luke 1:69-70, 71-72, 73-75', '', 'Luke 12:13-21', '', 1, 29, 'ordinary'),
+(170, 'Rom 5:12, 15b, 17-19, 20b-21', '', 'Luke 21:36', '', 'Ps 40:7-8a, 8b-9, 10, 17', '', 'Luke 12:35-38', '', 1, 29, 'ordinary'),
+(171, 'Rom 6:12-18', '', 'Matt 24:42a, 44', '', 'Ps 124:1b-3, 4-6, 7-8', '', 'Luke 12:39-48', '', 1, 29, 'ordinary'),
+(172, 'Rom 6:19-23', '', 'Phil 3:8-9', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 12:49-53', '', 1, 29, 'ordinary'),
+(173, 'Rom 7:18-25a', '', 'Matt 11:25', '', 'Ps 119:66, 68, 76, 77, 93, 94', '', 'Luke 12:54-59', '', 1, 29, 'ordinary'),
+(174, 'Rom 8:1-11', '', 'Ezek 33:11', '', 'Ps 24:1b-2, 3-4ab, 5-6', '', 'Luke 13:1-9', '', 1, 29, 'ordinary'),
+(175, 'Rom 8:12-17', '', 'John 17:17b, 17a', '', 'Ps 68:2+4, 6-7ab, 20-21', '', 'Luke 13:10-17', '', 1, 30, 'ordinary'),
+(176, 'Rom 8:18-25', '', 'Matt 11:25', '', 'Ps 126:1b-2ab, 2cd-3, 4-5, 6', '', 'Luke 13:18-21', '', 1, 30, 'ordinary'),
+(177, 'Rom 8:26-30', '', '2 Thess 2:14', '', 'Ps 13:4-5, 6', '', 'Luke 13:22-30', '', 1, 30, 'ordinary'),
+(178, 'Rom 8:31b-39', '', 'Luke 19:38; 2:14', '', 'Ps 109:21-22, 26-27, 30-31', '', 'Luke 13:31-35', '', 1, 30, 'ordinary'),
+(179, 'Rom 9:1-5', '', 'John 10:27', '', 'Ps 147:12-13, 14-15, 19-20', '', 'Luke 14:1-6', '', 1, 30, 'ordinary'),
+(180, 'Rom 11:1-2a, 11-12, 25-29', '', 'Matt 11:29ab', '', 'Ps 94:12-13a, 14-15, 17-18', '', 'Luke 14:1, 7-11', '', 1, 30, 'ordinary'),
+(181, 'Rom 11:29-36', '', 'John 8:31b-32', '', 'Ps 69:30-31, 33-34, 36-37', '', 'Luke 14:12-14', '', 1, 31, 'ordinary'),
+(182, 'Rom 12:5-16ab', '', 'Matt 11:28', '', 'Ps 131:1bcde, 2, 3', '', 'Luke 14:15-24', '', 1, 31, 'ordinary'),
+(183, 'Rom 13:8-10', '', '1 Pet 4:14', '', 'Ps 112:1b-2, 4-5, 9', '', 'Luke 14:25-33', '', 1, 31, 'ordinary'),
+(184, 'Rom 14:7-12', '', 'Matt 11:28', '', 'Ps 27:1bcde, 4, 13-14', '', 'Luke 15:1-10', '', 1, 31, 'ordinary'),
+(185, 'Rom 15:14-21', '', '1 John 2:5', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'Luke 16:1-8', '', 1, 31, 'ordinary'),
+(186, 'Rom 16:3-9, 16, 22-27', '', '2 Cor 8:9', '', 'Ps 145:2-3, 4-5, 10-11', '', 'Luke 16:9-15', '', 1, 31, 'ordinary'),
+(187, 'Wis 1:1-7', '', 'Phil 2:15d, 16a', '', 'Ps 139:1b-3, 4-6, 7-8, 9-10', '', 'Luke 17:1-6', '', 1, 32, 'ordinary'),
+(188, 'Wis 2:23?3:9', '', 'John 14:23', '', 'Ps 34:2-3, 16-17, 18-19', '', 'Luke 17:7-10', '', 1, 32, 'ordinary'),
+(189, 'Wis 6:1-11', '', '1 Thess 5:18', '', 'Ps 82:3-4, 6-7', '', 'Luke 17:11-19', '', 1, 32, 'ordinary'),
+(190, 'Wis 7:22b?8:1', '', 'John 15:5', '', 'Ps 119:89, 90, 91, 130, 135, 175', '', 'Luke 17:20-25', '', 1, 32, 'ordinary'),
+(191, 'Wis 13:1-9', '', 'Luke 21:28', '', 'Ps 19:2-3, 4-5ab', '', 'Luke 17:26-37', '', 1, 32, 'ordinary'),
+(192, 'Wis 18:14-16; 19:6-9', '', '2 Thess 2:14', '', 'Ps 105:2-3, 36-37, 42-43', '', 'Luke 18:1-8', '', 1, 32, 'ordinary'),
+(193, '1 Macc 1:10-15, 41-43, 54-57, 62-63', '', 'John 8:12', '', 'Ps 119:53, 61, 134, 150, 155, 158', '', 'Luke 18:35-43', '', 1, 33, 'ordinary'),
+(194, '2 Macc 6:18-31', '', '1 John 4:10b', '', 'Ps 3:2-3, 4-5, 6-7', '', 'Luke 19:1-10', '', 1, 33, 'ordinary'),
+(195, '2 Macc 7:1, 20-31', '', 'John 15:16', '', 'Ps 17:1bcd, 5-6, 8b+15', '', 'Luke 19:11-28', '', 1, 33, 'ordinary'),
+(196, '1 Macc 2:15-29', '', 'Ps 95:8', '', 'Ps 50:1b-2, 5-6, 14-15', '', 'Luke 19:41-44', '', 1, 33, 'ordinary'),
+(197, '1 Macc 4:36-37, 52-59', '', 'John 10:27', '', '1 Chr 29:10bcd, 11abc, 11d-12a, 12bcd', '', 'Luke 19:45-48', '', 1, 33, 'ordinary'),
+(198, '1 Macc 6:1-13', '', '2 Tim 1:10', '', 'Ps 9:2-3, 4+6, 16+19', '', 'Luke 20:27-40', '', 1, 33, 'ordinary'),
+(199, 'Dan 1:1-6, 8-20', '', 'Matt 24:42a, 44', '', 'Dan 3:52, 53, 54, 55, 56', '', 'Luke 21:1-4', '', 1, 34, 'ordinary'),
+(200, 'Dan 2:31-45', '', 'Rev 2:10c', '', 'Dan 3:57, 58, 59, 60, 61', '', 'Luke 21:5-11', '', 1, 34, 'ordinary'),
+(201, 'Dan 5:1-6, 13-14, 16-17, 23-28', '', 'Rev 2:10c', '', 'Dan 3:62, 63, 64, 65, 66, 67', '', 'Luke 21:12-19', '', 1, 34, 'ordinary'),
+(202, 'Dan 6:12-28', '', 'Luke 21:28', '', 'Dan 3:68, 69, 70, 71, 72, 73, 74', '', 'Luke 21:20-28', '', 1, 34, 'ordinary'),
+(203, 'Dan 7:2-14', '', 'Luke 21:28', '', 'Dan 3:75, 76, 77, 78, 79, 80, 81', '', 'Luke 21:29-33', '', 1, 34, 'ordinary'),
+(204, 'Dan 7:15-27', '', 'Luke 21:36', '', 'Dan 3:82, 83, 84, 85, 86, 87', '', 'Luke 21:34-36', '', 1, 34, 'ordinary'),
+(205, '1 Sam 1:1-8', '', 'Mark 1:15', '', 'Ps 116:12-13, 14-17, 18-19', '', 'Mark 1:14-20', '', 2, 1, 'ordinary'),
+(206, '1 Sam 1:9-20', '', '1 Thess 2:13', '', '1 Sam 2:1, 4-5, 6-7, 8abcd', '', 'Mark 1:21-28', '', 2, 1, 'ordinary'),
+(207, '1 Sam 3:1-10, 19-20', '', 'John 10:27', '', 'Ps 40:2+5, 7-8a, 8b-9, 10', '', 'Mark 1:29-39', '', 2, 1, 'ordinary'),
+(208, '1 Sam 4:1-11', '', 'Matt 4:23', '', 'Ps 44:10-11, 14-15, 24-25', '', 'Mark 1:40-45', '', 2, 1, 'ordinary'),
+(209, '1 Sam 8:4-7, 10-22a', '', 'Luke 7:16', '', 'Ps 89:16-17, 18-19', '', 'Mark 2:1-12', '', 2, 1, 'ordinary'),
+(210, '1 Sam 9:1-4, 17-19; 10:1', '', 'Luke 4:18', '', 'Ps 21:2-3, 4-5, 6-7', '', 'Mark 2:13-17', '', 2, 1, 'ordinary'),
+(211, '1 Sam 15:16-23', '', 'Heb 4:12', '', 'Ps 50:8-9, 16bc-17, 21+23', '', 'Mark 2:18-22', '', 2, 2, 'ordinary'),
+(212, '1 Sam 16:1-13', '', 'Eph 1:17-18', '', 'Ps 89:20, 21-22, 27-28', '', 'Mark 2:23-28', '', 2, 2, 'ordinary'),
+(213, '1 Sam 17:32-33, 37, 40-51', '', 'Matt 4:23', '', 'Ps 144:1b, 2, 9-10', '', 'Mark 3:1-6', '', 2, 2, 'ordinary'),
+(214, '1 Sam 18:6-9; 19:1-7', '', '2 Tim 1:10', '', 'Ps 56:2-3, 9-10a, 10b-11, 12-13', '', 'Mark 3:7-12', '', 2, 2, 'ordinary'),
+(215, '1 Sam 24:3-21', '', '2 Cor 5:19', '', 'Ps 57:2, 3-4, 6+11', '', 'Mark 3:13-19', '', 2, 2, 'ordinary'),
+(216, '2 Sam 1:1-4, 11-12, 19, 23-27', '', 'Acts 16:14b', '', 'Ps 80:2-3, 5-7', '', 'Mark 3:20-21', '', 2, 2, 'ordinary'),
+(217, '2 Sam 5:1-7, 10', '', '2 Tim 1:10', '', 'Ps 89:20, 21-22, 25-26', '', 'Mark 3:22-30', '', 2, 3, 'ordinary'),
+(218, '2 Sam 6:12b-15, 17-19', '', 'Matt 11:25', '', 'Ps 24:7, 8, 9, 10', '', 'Mark 3:31-35', '', 2, 3, 'ordinary'),
+(219, '2 Sam 7:4-17', '', 'no biblical reference', '', 'Ps 89:4-5, 27-28, 29-30', '', 'Mark 4:1-20', '', 2, 3, 'ordinary'),
+(220, '2 Sam 7:18-19, 24-29', '', 'Ps 119:105', '', 'Ps 132:1-2, 3-5, 11, 12, 13-14', '', 'Mark 4:21-25', '', 2, 3, 'ordinary'),
+(221, '2 Sam 11:1-4a, 5-10a, 13-17', '', 'Matt 11:25', '', 'Ps 51:3-4, 5-6a, 6bcd-7, 10-11', '', 'Mark 4:26-34', '', 2, 3, 'ordinary'),
+(222, '2 Sam 12:1-7a, 10-17', '', 'John 3:16', '', 'Ps 51:12-13, 14-15, 16-17', '', 'Mark 4:35-41', '', 2, 3, 'ordinary'),
+(223, '2 Sam 15:13-14, 30; 16:5-13', '', 'Luke 7:16', '', 'Ps 3:2-3, 4-5, 6-7', '', 'Mark 5:1-20', '', 2, 4, 'ordinary'),
+(224, '2 Sam 18:9-10, 14b, 24-25a, 30?19:3', '', 'Matt 8:17', '', 'Ps 86:1-2, 3-4, 5-6', '', 'Mark 5:21-43', '', 2, 4, 'ordinary'),
+(225, '2 Sam 24:2, 9-17', '', 'John 10:27', '', 'Ps 32:1-2, 5, 6, 7', '', 'Mark 6:1-6', '', 2, 4, 'ordinary'),
+(226, '1 Kgs 2:1-4, 10-12', '', 'Mark 1:15', '', '1 Chr 29:10bcd, 11ab, 11d-12a, 12bcd', '', 'Mark 6:7-13', '', 2, 4, 'ordinary'),
+(227, 'Sir 47:2-11', '', 'Luke 8:15', '', 'Ps 18:31, 47+50, 51', '', 'Mark 6:14-29', '', 2, 4, 'ordinary'),
+(228, '1 Kgs 3:4-13', '', 'John 10:27', '', 'Ps 119:9, 10, 11, 12, 13, 14', '', 'Mark 6:30-34', '', 2, 4, 'ordinary'),
+(229, '1 Kgs 8:1-7, 9-13', '', 'Matt 4:23', '', 'Ps 132:6-7, 8-10', '', 'Mark 6:53-56', '', 2, 5, 'ordinary'),
+(230, '1 Kgs 8:22-23, 27-30', '', 'Ps 119:36, 29b', '', 'Ps 84:3, 4, 5+10, 11', '', 'Mark 7:1-13', '', 2, 5, 'ordinary'),
+(231, '1 Kgs 10:1-10', '', 'John 17:17b, 17a', '', 'Ps 37:5-6, 30-31, 39-40', '', 'Mark 7:14-23', '', 2, 5, 'ordinary'),
+(232, '1 Kgs 11:4-13', '', 'James 1:21bc', '', 'Ps 106:3-4, 35-36, 37+40', '', 'Mark 7:24-30', '', 2, 5, 'ordinary'),
+(233, '1 Kgs 11:29-32; 12:19', '', 'Acts 16:14b', '', 'Ps 81:10-11ab, 12-13, 14-15', '', 'Mark 7:31-37', '', 2, 5, 'ordinary'),
+(234, '1 Kgs 12:26-32; 13:33-34', '', 'Matt 4:4b', '', 'Ps 106:6-7ab, 19-20, 21-22', '', 'Mark 8:1-10', '', 2, 5, 'ordinary'),
+(235, 'Jas 1:1-11', '', 'John 14:6', '', 'Ps 119:67, 68, 71, 72, 75, 76', '', 'Mark 8:11-13', '', 2, 6, 'ordinary'),
+(236, 'Jas 1:12-18', '', 'John 14:23', '', 'Ps 94:12-13a, 14-15, 18-19', '', 'Mark 8:14-21', '', 2, 6, 'ordinary'),
+(237, 'Jas 1:19-27', '', 'Eph 1:17-18', '', 'Ps 15:2-3a, 3bc-4ab, 5', '', 'Mark 8:22-26', '', 2, 6, 'ordinary'),
+(238, 'Jas 2:1-9', '', 'John 6:63c, 68c', '', 'Ps 34:2-3, 4-5, 6-7', '', 'Mark 8:27-33', '', 2, 6, 'ordinary'),
+(239, 'Jas 2:14-24, 26', '', 'John 15:15b', '', 'Ps 112:1-2, 3-4, 5-6', '', 'Mark 8:34?9:1', '', 2, 6, 'ordinary'),
+(240, 'Jas 3:1-10', '', 'Mark 9:6', '', 'Ps 12:2-3, 4-5, 7-8', '', 'Mark 9:2-13', '', 2, 6, 'ordinary'),
+(241, 'Jas 3:13-18', '', '2 Tim 1:10', '', 'Ps 19:8, 9, 10, 15', '', 'Mark 9:14-29', '', 2, 7, 'ordinary'),
+(242, 'Jas 4:1-10', '', 'Gal 6:14', '', 'Ps 55:7-8, 9-10a, 10b-11a, 23', '', 'Mark 9:30-37', '', 2, 7, 'ordinary'),
+(243, 'Jas 4:13-17', '', 'John 14:6', '', 'Ps 49:2-3, 6-7, 8-10, 11', '', 'Mark 9:38-40', '', 2, 7, 'ordinary'),
+(244, 'Jas 5:1-6', '', '1 Thess 2:13', '', 'Ps 49:14-15ab, 15cd-16, 17-18, 19-20', '', 'Mark 9:41-50', '', 2, 7, 'ordinary'),
+(245, 'Jas 5:9-12', '', 'John 17:17b, 17a', '', 'Ps 103:1-2, 3-4, 8-9, 11-12', '', 'Mark 10:1-12', '', 2, 7, 'ordinary'),
+(246, 'Jas 5:13-20', '', 'Matt 11:25', '', 'Ps 141:1-2, 3+8', '', 'Mark 10:13-16', '', 2, 7, 'ordinary'),
+(247, '1 Pet 1:3-9', '', '2 Cor 8:9', '', 'Ps 111:1-2, 5-6, 9,+10c', '', 'Mark 10:17-27', '', 2, 8, 'ordinary'),
+(248, '1 Pet 1:10-16', '', 'Matt 11:25', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'Mark 10:28-31', '', 2, 8, 'ordinary'),
+(249, '1 Pet 1:18-25', '', 'Mark 10:45', '', 'Ps 147:12-13, 14-15, 19-20', '', 'Mark 10:32-45', '', 2, 8, 'ordinary'),
+(250, '1 Pet 2:2-5, 9-12', '', 'John 8:12', '', 'Ps 100:2, 3, 4, 5', '', 'Mark 10:46-52', '', 2, 8, 'ordinary'),
+(251, '1 Pet 4:7-13', '', 'John 15:16', '', 'Ps 96:10, 11-12, 13', '', 'Mark 11:11-26', '', 2, 8, 'ordinary'),
+(252, 'Jude 17, 20b-25', '', 'Col 3:16a, 17c', '', 'Ps 63:2, 3-4, 5-6', '', 'Mark 11:27-33', '', 2, 8, 'ordinary'),
+(253, '2 Pet 1:2-7', '', 'Rev 1:5ab', '', 'Ps 91:1-2, 14-15ab, 15c-16', '', 'Mark 12:1-12', '', 2, 9, 'ordinary'),
+(254, '2 Pet 3:12-15a, 17-18', '', 'Eph 1:17-18', '', 'Ps 90:2, 3-4, 10, 14+16', '', 'Mark 12:13-17', '', 2, 9, 'ordinary'),
+(255, '2 Tim 1:1-3, 6-12', '', 'John 11:25a, 26', '', 'Ps 123:1b-2ab, 2cdef', '', 'Mark 12:18-27', '', 2, 9, 'ordinary'),
+(256, '2 Tim 2:8-15', '', '2 Tim 1:10', '', 'Ps 25:4-5ab, 8-9, 10+14', '', 'Mark 12:28b-34', '', 2, 9, 'ordinary'),
+(257, '2 Tim 3:10-17', '', 'John 14:23', '', 'Ps 119:157, 160, 161, 165, 166, 168', '', 'Mark 12:35-37', '', 2, 9, 'ordinary'),
+(258, '2 Tim 4:1-8', '', 'Matt 5:3', '', 'Ps 71:8-9, 14-15ab, 16-17, 22', '', 'Mark 12:38-44', '', 2, 9, 'ordinary'),
+(259, '1 Kgs 17:1-6', '', 'Matt 5:12a', '', 'Ps 121:1bc-2, 3-4, 5-6, 7-8', '', 'Matt 5:1-12', '', 2, 10, 'ordinary'),
+(260, '1 Kgs 17:7-16', '', 'Matt 5:16', '', 'Ps 4:2-3, 4-5, 7b-8', '', 'Matt 5:13-16', '', 2, 10, 'ordinary'),
+(261, '1 Kgs 18:20-39', '', 'Ps 25:4b, 5a', '', 'Ps 16:1-2ab, 4, 5ab+8, 11', '', 'Matt 5:17-19', '', 2, 10, 'ordinary'),
+(262, '1 Kgs 18:41-46', '', 'John 13:34', '', 'Ps 65:10, 11, 12-13', '', 'Matt 5:20-26', '', 2, 10, 'ordinary'),
+(263, '1 Kgs 19:9a, 11-16', '', 'Phil 2:15d, 16a', '', 'Ps 27:7-8a, 8b-9abc, 13-14', '', 'Matt 5:27-32', '', 2, 10, 'ordinary'),
+(264, '1 Kgs 19:19-21', '', 'Ps 119:36a, 29b', '', 'Ps 16:1b-2a+5, 7-8, 9-10', '', 'Matt 5:33-37', '', 2, 10, 'ordinary'),
+(265, '1 Kgs 21:1-16', '', 'Ps 119:105', '', 'Ps 5:2-3ab, 4b-6a, 6b-7', '', 'Matt 5:38-42', '', 2, 11, 'ordinary'),
+(266, '1 Kgs 21:17-29', '', 'John 13:34', '', 'Ps 51:3-4, 5-6ab, 11+16', '', 'Matt 5:43-48', '', 2, 11, 'ordinary'),
+(267, '2 Kgs 2:1, 6-14', '', 'John 14:23', '', 'Ps 31:20, 21, 24', '', 'Matt 6:1-6, 16-18', '', 2, 11, 'ordinary'),
+(268, 'Sir 48:1-14', '', 'Rom 8:15bc', '', 'Ps 97:1-2, 3-4, 5-6, 7', '', 'Matt 6:7-15', '', 2, 11, 'ordinary'),
+(269, '2 Kgs 11:1-4, 9-18, 20', '', 'Matt 5:3', '', 'Ps 132:11, 12, 13-14, 17-18', '', 'Matt 6:19-23', '', 2, 11, 'ordinary'),
+(270, '2 Chr 24:17-25', '', '2 Cor 8:9', '', 'Ps 89:4-5, 29-30, 31-32, 33-34', '', 'Matt 6:24-34', '', 2, 11, 'ordinary'),
+(271, '2 Kgs 17:5-8, 13-15a, 18', '', 'Heb 4:12', '', 'Ps 60:3, 4-5, 12-13', '', 'Matt 7:1-5', '', 2, 12, 'ordinary'),
+(272, '2 Kgs 19:9b-11, 14-21, 31-35a, 36', '', 'John 8:12', '', 'Ps 48:2-3ab, 3cd-4, 10-11', '', 'Matt 7:6, 12-14', '', 2, 12, 'ordinary'),
+(273, '2 Kgs 22:8-13; 23:1-3', '', 'John 15:4a, 5b', '', 'Ps 119:33, 34, 35, 36, 37, 40', '', 'Matt 7:15-20', '', 2, 12, 'ordinary'),
+(274, '2 Kgs 24:8-17', '', 'John 14:23', '', 'Ps 79:1b-2, 3-5, 8, 9', '', 'Matt 7:21-29', '', 2, 12, 'ordinary'),
+(275, '2 Kgs 25:1-12', '', 'Matt 8:17', '', 'Ps 137:1-2, 3, 4-5, 6', '', 'Matt 8:1-4', '', 2, 12, 'ordinary'),
+(276, 'Lam 2:2, 10-14, 18-19', '', 'Matt 8:17', '', 'Ps 74:1b-2, 3-5, 6-7, 20-21', '', 'Matt 8:5-17', '', 2, 12, 'ordinary'),
+(277, 'Amos 2:6-10, 13-16', '', 'Ps 95:8', '', 'Ps 50:16bc-17, 18-19, 20-21, 22-23', '', 'Matt 8:18-22', '', 2, 13, 'ordinary'),
+(278, 'Amos 3:1-8; 4:11-12', '', 'Ps 130:5', '', 'Ps 5:4b-6a, 6b-7, 8', '', 'Matt 8:23-27', '', 2, 13, 'ordinary'),
+(279, 'Amos 5:14-15, 21-24', '', 'James 1:18', '', 'Ps 50:7, 8-9, 10-11, 12-13, 16bc-17', '', 'Matt 8:28-34', '', 2, 13, 'ordinary'),
+(280, 'Amos 7:10-17', '', '2 Cor 5:19', '', 'Ps 19:8, 9, 10, 11', '', 'Matt 9:1-8', '', 2, 13, 'ordinary'),
+(281, 'Amos 8:4-6, 9-12', '', 'Matt 11:28', '', 'Ps 119:2, 10, 20, 30, 40, 131', '', 'Matt 9:9-13', '', 2, 13, 'ordinary'),
+(282, 'Amos 9:11-15', '', 'John 10:27', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Matt 9:14-17', '', 2, 13, 'ordinary'),
+(283, 'Hos 2:16, 17c-18, 21-22', '', '2 Tim 1:10', '', 'Ps 145:2-3, 4-5, 6-7, 8-9', '', 'Matt 9:18-26', '', 2, 14, 'ordinary'),
+(284, 'Hos 8:4-7, 11-13', '', 'John 10:14', '', 'Ps 115:3-4, 5-6, 7ab+8, 9-10', '', 'Matt 9:32-38', '', 2, 14, 'ordinary'),
+(285, 'Hos 10:1-3, 7-8, 12', '', 'Mark 1:15', '', 'Ps 105:2-3, 4-5, 6-7', '', 'Matt 10:1-7', '', 2, 14, 'ordinary'),
+(286, 'Hos 11:1-4, 8e-9', '', 'Mark 1:15', '', 'Ps 80:2ac+3b, 15-16', '', 'Matt 10:7-15', '', 2, 14, 'ordinary'),
+(287, 'Hos 14:2-10', '', 'John 16:13a; 14:26d', '', 'Ps 51:3-4, 8-9, 12-13, 14+17', '', 'Matt 10:16-23', '', 2, 14, 'ordinary'),
+(288, 'Isa 6:1-8', '', '1 Pet 4:14', '', 'Ps 93:1ab, 1cd-2, 5', '', 'Matt 10:24-33', '', 2, 14, 'ordinary'),
+(289, 'Isa 1:10-17', '', 'Matt 5:10', '', 'Ps 50:8-9, 16bc-17, 21+23', '', 'Matt 10:34?11:1', '', 2, 15, 'ordinary'),
+(290, 'Isa 7:1-9', '', 'Ps 95:8', '', 'Ps 48:2-3a, 3b-4, 5-6, 7-8', '', 'Matt 11:20-24', '', 2, 15, 'ordinary'),
+(291, 'Isa 10:5-7, 13b-16', '', 'Matt 11:25', '', 'Ps 94:5-6, 7-8, 9-10, 14-15', '', 'Matt 11:25-27', '', 2, 15, 'ordinary'),
+(292, 'Isa 26:7-9, 12, 16-19', '', 'Matt 11:28', '', 'Ps 102:13-14ab+15, 16-18, 19-21', '', 'Matt 11:28-30', '', 2, 15, 'ordinary'),
+(293, 'Isa 38:1-6, 21-22, 7-8', '', 'John 10:27', '', 'Isa 38:10, 11, 12abcd, 16', '', 'Matt 12:1-8', '', 2, 15, 'ordinary'),
+(294, 'Mic 2:1-5', '', '2 Cor 5:19', '', 'Ps 10:1-2, 3-4, 7-8, 14', '', 'Matt 12:14-21', '', 2, 15, 'ordinary'),
+(295, 'Mic 6:1-4, 6-8', '', 'Ps 95:8', '', 'Ps 50:5-6, 8-9, 16bc-17, 21+23', '', 'Matt 12:38-42', '', 2, 16, 'ordinary'),
+(296, 'Mic 7:14-15, 18-20', '', 'John 14:23', '', 'Ps 85:2-4, 5-6, 7-8', '', 'Matt 12:46-50', '', 2, 16, 'ordinary'),
+(297, 'Jer 1:1, 4-10', '', 'no biblical reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'Matt 13:1-9', '', 2, 16, 'ordinary'),
+(298, 'Jer 2:1-3, 7-8, 12-13', '', 'Matt 11:25', '', 'Ps 36:6-7ab, 8-9, 10-11', '', 'Matt 13:10-17', '', 2, 16, 'ordinary'),
+(299, 'Jer 3:14-17', '', 'Luke 8:15', '', 'Jer 31:10, 11-12abcd, 13', '', 'Matt 13:18-23', '', 2, 16, 'ordinary'),
+(300, 'Jer 7:1-11', '', 'James 1:21bc', '', 'Ps 84:3, 4, 5-6a+8a, 11', '', 'Matt 13:24-30', '', 2, 16, 'ordinary'),
+(301, 'Jer 13:1-11', '', 'James 1:18', '', 'Deut 32:18-19, 20, 21', '', 'Matt 13:31-35', '', 2, 17, 'ordinary'),
+(302, 'Jer 14:17-22', '', 'no biblical reference', '', 'Ps 79:8, 9, 11+13', '', 'Matt 13:36-43', '', 2, 17, 'ordinary'),
+(303, 'Jer 15:10, 16-21', '', 'John 15:15b', '', 'Ps 59:2-3, 4, 10-11, 17, 18', '', 'Matt 13:44-46', '', 2, 17, 'ordinary'),
+(304, 'Jer 18:1-6', '', 'Acts 16:14b', '', 'Ps 146:1b-2, 3-4, 5-6ab', '', 'Matt 13:47-53', '', 2, 17, 'ordinary'),
+(305, 'Jer 26:1-9', '', '1 Pet 1:25', '', 'Ps 69:5, 8-10, 14', '', 'Matt 13:54-58', '', 2, 17, 'ordinary'),
+(306, 'Jer 26:11-16, 24', '', 'Matt 5:10', '', 'Ps 69:15-16, 30-31, 33-34', '', 'Matt 14:1-12', '', 2, 17, 'ordinary'),
+(307, 'Jer 28:1-17', '', 'Matt 4:4', '', 'Ps 119:29, 43, 79, 80, 95, 102', '', 'Matt 14:13-21? or,', '', 2, 18, 'ordinary'),
+(308, 'Jer 30:1-2, 12-15, 18-22', '', 'John 1:49b', '', 'Ps 102:16-18, 19-21, 29+22-23', '', 'Matt 14:22-36??or,?', '', 2, 18, 'ordinary'),
+(309, 'Jer 31:1-7', '', 'Luke 7:16', '', 'Jer 31:10, 11-12ab, 13', '', 'Matt 15:21-28', '', 2, 18, 'ordinary'),
+(310, 'Jer 31:31-34', '', 'Matt 16:18', '', 'Ps 51:12-13, 14-15, 18-19', '', 'Matt 16:13-23', '', 2, 18, 'ordinary'),
+(311, 'Nah 2:1, 3; 3:1-3, 6-7', '', 'Matt 5:10', '', 'Deut 32:35cd-36ab, 39abcd, 41', '', 'Matt 16:24-28', '', 2, 18, 'ordinary'),
+(312, 'Hab 1:12?2:4', '', '2 Tim 1:10', '', 'Ps 9:8-9, 10-11, 12-13', '', 'Matt 17:14-20', '', 2, 18, 'ordinary'),
+(313, 'Ezek 1:2-5, 24-28c', '', '2 Thess 2:14', '', 'Ps 148:1-2, 11-12, 13, 14', '', 'Matt 17:22-27', '', 2, 19, 'ordinary'),
+(314, 'Ezek 2:8?3:4', '', 'Matt 11:29ab', '', 'Ps 119:14, 24, 72, 103, 111, 131', '', 'Matt 18:1-5, 10, 12-14', '', 2, 19, 'ordinary'),
+(315, 'Ezek 9:1-7; 10:18-22', '', '2 Cor 5:19', '', 'Ps 113:1-2, 3-4, 5-6', '', 'Matt 18:15-20', '', 2, 19, 'ordinary'),
+(316, 'Ezek 12:1-12', '', 'Ps 119:135', '', 'Ps 78:56-57, 58-59, 61-62', '', 'Matt 18:21?19:1', '', 2, 19, 'ordinary'),
+(317, 'Ezek 16:1-15, 60, 63?or?16:59-63', '', '1 Thess 2:13', '', 'Isa 12:2-3, 4bcd, 5-6', '', 'Matt 19:3-12', '', 2, 19, 'ordinary'),
+(318, 'Ezek 18:1-10, 13b, 30-32', '', 'Matt 11:25', '', 'Ps 51:12-13, 14-15, 18-19', '', 'Matt 19:13-15', '', 2, 19, 'ordinary'),
+(319, 'Ezek 24:15-23', '', 'Matt 5:3', '', 'Deut 32:18-19, 20, 21', '', 'Matt 19:16-22', '', 2, 20, 'ordinary'),
+(320, 'Ezek 28:1-10', '', '2 Cor 8:9', '', 'Deut 32:26-27ab, 27cd-28, 30, 35cd-36ab', '', 'Matt 19:23-30', '', 2, 20, 'ordinary'),
+(321, 'Ezek 34:1-11', '', 'Heb 4:12', '', 'Ps 23:1-3a, 3b-4, 5, 6', '', 'Matt 20:1-16', '', 2, 20, 'ordinary'),
+(322, 'Ezek 36:23-28', '', 'Ps 95:8', '', 'Ps 51:12-13, 14-15, 18-19', '', 'Matt 22:1-14', '', 2, 20, 'ordinary'),
+(323, 'Ezek 37:1-14', '', 'Ps 25:4b, 5a', '', 'Ps 107:2-3, 4-5, 6-7, 8-9', '', 'Matt 22:34-40', '', 2, 20, 'ordinary'),
+(324, 'Ezek 43:1-7ab', '', 'Matt 23:9b, 10b', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Matt 23:1-12', '', 2, 20, 'ordinary'),
+(325, '2 Thess 1:1-5, 11-12', '', 'John 10:27', '', 'Ps 96:1-2a, 2b-3, 4-5', '', 'Matt 23:13-22', '', 2, 21, 'ordinary'),
+(326, '2 Thess 2:1-3a, 14-17', '', 'Heb 4:12', '', 'Ps 96:10, 11-12, 13', '', 'Matt 23:23-26', '', 2, 21, 'ordinary'),
+(327, '2 Thess 3:6-10, 16-18', '', '1 John 2:5', '', 'Ps 128:1-2, 4-5', '', 'Matt 23:27-32', '', 2, 21, 'ordinary'),
+(328, '1 Cor 1:1-9', '', 'Matt 24:42a, 44', '', 'Ps 145:2-3, 4-5, 6-7', '', 'Matt 24:42-51', '', 2, 21, 'ordinary'),
+(329, '1 Cor 1:17-25', '', 'Luke 21:36', '', 'Ps 33:1-2, 4-5, 10-11', '', 'Matt 25:1-13', '', 2, 21, 'ordinary'),
+(330, '1 Cor 1:26-31', '', 'John 13:34', '', 'Ps 33:12-13, 18-19, 20-21', '', 'Matt 25:14-30', '', 2, 21, 'ordinary'),
+(331, '1 Cor 2:1-5', '', 'Luke 4:18', '', 'Ps 119:97, 98, 99, 100, 101, 102', '', 'Luke 4:16-30', '', 2, 22, 'ordinary'),
+(332, '1 Cor 2:10b-16', '', 'Luke 7:16', '', 'Ps 145:8-9, 10-11, 12-13ab, 13cd-14', '', 'Luke 4:31-37', '', 2, 22, 'ordinary'),
+(333, '1 Cor 3:1-9', '', 'Luke 4:18', '', 'Ps 33:12-13, 14-15, 20-21', '', 'Luke 4:38-44', '', 2, 22, 'ordinary'),
+(334, '1 Cor 3:18-23', '', 'Matt 4:19', '', 'Ps 24:1bc-2, 3-4ab, 5-6', '', 'Luke 5:1-11', '', 2, 22, 'ordinary'),
+(335, '1 Cor 4:1-5', '', 'John 8:12', '', 'Ps 37:3-4, 5-6, 27-28, 39-40', '', 'Luke 5:33-39', '', 2, 22, 'ordinary'),
+(336, '1 Cor 4:6b-15', '', 'John 14:6', '', 'Ps 145:17-18, 19-20, 21', '', 'Luke 6:1-5', '', 2, 22, 'ordinary'),
+(337, '1 Cor 5:1-8', '', 'John 10:27', '', 'Ps 5:5-6, 7, 12', '', 'Luke 6:6-11', '', 2, 23, 'ordinary'),
+(338, '1 Cor 6:1-11', '', 'John 15:16', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'Luke 6:12-19', '', 2, 23, 'ordinary'),
+(339, '1 Cor 7:25-31', '', 'Luke 6:23ab', '', 'Ps 45:11-12, 14-15, 16-17', '', 'Luke 6:20-26', '', 2, 23, 'ordinary'),
+(340, '1 Cor 8:1b-7, 11-13', '', '1 John 4:12', '', 'Ps 139:1b-3, 13-14ab, 23-24', '', 'Luke 6:27-38', '', 2, 23, 'ordinary'),
+(341, '1 Cor 9:16-19, 22b-27', '', 'John 17:17b, 17a', '', 'Ps 84:3, 4, 5-6, 12', '', 'Luke 6:39-42', '', 2, 23, 'ordinary'),
+(342, '1 Cor 10:14-22', '', 'John 14:23', '', 'Ps 116:12-13, 17-18', '', 'Luke 6:43-49', '', 2, 23, 'ordinary'),
+(343, '1 Cor 11:17-26, 33', '', 'John 3:16', '', 'Ps 40:7-8a, 8b-9, 10, 17', '', 'Luke 7:1-10', '', 2, 24, 'ordinary'),
+(344, '1 Cor 12:12-14, 27-31a', '', 'Luke 7:16', '', 'Ps 100:1b-2, 3, 4, 5', '', 'Luke 7:11-17', '', 2, 24, 'ordinary'),
+(345, '1 Cor 12:31?13:13', '', 'John 6:63c, 68c', '', 'Ps 33:2-3, 4-5, 12+22', '', 'Luke 7:31-35', '', 2, 24, 'ordinary'),
+(346, '1 Cor 15:1-11', '', 'Matt 11:28', '', 'Ps 118:1b-2, 16ab+17, 28', '', 'Luke 7:36-50', '', 2, 24, 'ordinary'),
+(347, '1 Cor 15:12-20', '', 'Matt 11:25', '', 'Ps 17:1bcd, 6-7, 8b+15', '', 'Luke 8:1-3', '', 2, 24, 'ordinary'),
+(348, '1 Cor 15:35-37, 42-49', '', 'Luke 8:15', '', 'Ps 56:10c-12, 13-14', '', 'Luke 8:4-15', '', 2, 24, 'ordinary'),
+(349, 'Prov 3:27-34', '', 'Matt 5:16', '', 'Ps 15:2-3a, 3bc-4ab, 5', '', 'Luke 8:16-18', '', 2, 25, 'ordinary'),
+(350, 'Prov 21:1-6, 10-13', '', 'Luke 11:28', '', 'Ps 119:1, 27, 30, 34, 35, 44', '', 'Luke 8:19-21', '', 2, 25, 'ordinary'),
+(351, 'Prov 30:5-9', '', 'Mark 1:15', '', 'Ps 119:29, 72, 89, 101, 104, 163', '', 'Luke 9:1-6', '', 2, 25, 'ordinary'),
+(352, 'Eccl/Qoh 1:2-11', '', 'John 14:6', '', 'Ps 90:3-4, 5-6, 12-13, 14+17bc', '', 'Luke 9:7-9', '', 2, 25, 'ordinary'),
+(353, 'Eccl/Qoh 3:1-11', '', 'Mark 10:45', '', 'Ps 144:1b+2abc, 3-4', '', 'Luke 9:18-22', '', 2, 25, 'ordinary'),
+(354, 'Eccl/Qoh 11:9?12:8', '', '2 Tim 1:10', '', 'Ps 90:3-4, 5-6, 12-13, 14+17', '', 'Luke 9:43b-45', '', 2, 25, 'ordinary'),
+(355, 'Job 1:6-22', '', 'Mark 10:45', '', 'Ps 17:1bcd, 2-3, 6-7', '', 'Luke 9:46-50', '', 2, 26, 'ordinary'),
+(356, 'Job 3:1-3, 11-17, 20-23', '', 'Mark 10:45', '', 'Ps 88:2-3, 4-5, 6, 7-8', '', 'Luke 9:51-56', '', 2, 26, 'ordinary'),
+(357, 'Job 9:1-12, 14-16', '', 'Phil 3:8-9', '', 'Ps 88:10bc-11, 12-13, 14-15', '', 'Luke 9:57-62', '', 2, 26, 'ordinary'),
+(358, 'Job 19:21-27', '', 'Mark 1:15', '', 'Ps 27:7-8a, 8b-9abc, 13-14', '', 'Luke 10:1-12', '', 2, 26, 'ordinary'),
+(359, 'Job 38:1, 12-21; 40:3-5', '', 'Ps 95:8', '', 'Ps 139:1-3, 7-8, 9-10, 13-14ab', '', 'Luke 10:13-16', '', 2, 26, 'ordinary'),
+(360, 'Job 42:1-3, 5-6, 12-17', '', 'Matt 11:25', '', 'Ps 119:66, 71, 75, 91, 125, 130', '', 'Luke 10:17-24', '', 2, 26, 'ordinary'),
+(361, 'Gal 1:6-12', '', 'John 13:34', '', 'Ps 111:1b-2, 7-8, 9+10c', '', 'Luke 10:25-37', '', 2, 27, 'ordinary'),
+(362, 'Gal 1:13-24', '', 'Luke 11:28', '', 'Ps 139:1b-3, 13-14ab, 14c-15', '', 'Luke 10:38-42', '', 2, 27, 'ordinary'),
+(363, 'Gal 2:1-2, 7-14', '', 'Rom 8:15bc', '', 'Ps 117:1bc, 2', '', 'Luke 11:1-4', '', 2, 27, 'ordinary'),
+(364, 'Gal 3:1-5', '', 'Acts 16:14b', '', 'Luke 1:69-70, 71-72, 73-75', '', 'Luke 11:5-13', '', 2, 27, 'ordinary'),
+(365, 'Gal 3:7-14', '', 'John 12:31b-32', '', 'Ps 111:1b-2, 3-4, 5-6', '', 'Luke 11:15-26', '', 2, 27, 'ordinary'),
+(366, 'Gal 3:22-29', '', 'Luke 11:28', '', 'Ps 105:2-3, 4-5, 6-7', '', 'Luke 11:27-28', '', 2, 27, 'ordinary'),
+(367, 'Gal 4:22-24, 26-27, 31?5:1', '', 'Ps 95:8', '', 'Ps 113:1b-2, 3-4, 5a+6-7', '', 'Luke 11:29-32', '', 2, 28, 'ordinary'),
+(368, 'Gal 5:1-6', '', 'Heb 4:12', '', 'Ps 119:41, 43, 44, 45, 47, 48', '', 'Luke 11:37-41', '', 2, 28, 'ordinary'),
+(369, 'Gal 5:18-25', '', 'John 10:27', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 11:42-46', '', 2, 28, 'ordinary'),
+(370, 'Eph 1:1-10', '', 'John 14:6', '', 'Ps 98:1, 2-3ab, 3cd-4, 5-6', '', 'Luke 11:47-54', '', 2, 28, 'ordinary'),
+(371, 'Eph 1:11-14', '', 'Ps 33:22', '', 'Ps 33:1-2, 4-5, 12-13', '', 'Luke 12:1-7', '', 2, 28, 'ordinary'),
+(372, 'Eph 1:15-23', '', 'John 15:26b, 27a', '', 'Ps 8:2-3ab, 4-5, 6-7', '', 'Luke 12:8-12', '', 2, 28, 'ordinary'),
+(373, 'Eph 2:1-10', '', 'Matt 5:3', '', 'Ps 100:1b-2, 3, 4ab, 4c-5', '', 'Luke 12:13-21', '', 2, 29, 'ordinary'),
+(374, 'Eph 2:12-22', '', 'Luke 21:36', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Luke 12:35-38', '', 2, 29, 'ordinary'),
+(375, 'Eph 3:2-12', '', 'Matt 24:42a, 44', '', 'Isa 12:2-3, 4bcd, 5-6', '', 'Luke 12:39-48', '', 2, 29, 'ordinary'),
+(376, 'Eph 3:14-21', '', 'Phil 3:8-9', '', 'Ps 33:1-2, 4-5, 11-12, 18-19', '', 'Luke 12:49-53', '', 2, 29, 'ordinary'),
+(377, 'Eph 4:1-6', '', 'Matt 11:25', '', 'Ps 24:1-2, 3-4ab, 5-6', '', 'Luke 12:54-59', '', 2, 29, 'ordinary'),
+(378, 'Eph 4:7-16', '', 'Ezek 33:11', '', 'Ps 122:1-2, 3-4ab, 4cd-5', '', 'Luke 13:1-9', '', 2, 29, 'ordinary'),
+(379, 'Eph 4:32?5:8', '', 'John 17:17b, 17a', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 13:10-17', '', 2, 30, 'ordinary'),
+(380, 'Eph 5:21-33', '', 'Matt 11:25', '', 'Ps 128:1-2, 3, 4-5', '', 'Luke 13:18-21', '', 2, 30, 'ordinary'),
+(381, 'Eph 6:1-9', '', '2 Thess 2:14', '', 'Ps 145:10-11, 12-13ab, 13cd-14', '', 'Luke 13:22-30', '', 2, 30, 'ordinary'),
+(382, 'Eph 6:10-20', '', 'Luke 19:38; 2:14', '', 'Ps 144:1b, 2, 9-10', '', 'Luke 13:31-35', '', 2, 30, 'ordinary'),
+(383, 'Phil 1:1-11', '', 'John 10:27', '', 'Ps 111:1-2, 3-4, 5-6', '', 'Luke 14:1-6', '', 2, 30, 'ordinary'),
+(384, 'Phil 1:18b-26', '', 'Matt 11:29ab', '', 'Ps 42:2, 3, 5cdef', '', 'Luke 14:1, 7-11', '', 2, 30, 'ordinary'),
+(385, 'Phil 2:1-4', '', 'John 8:31b-32', '', 'Ps 131:1bcde, 2, 3', '', 'Luke 14:12-14', '', 2, 31, 'ordinary'),
+(386, 'Phil 2:5-11', '', 'Matt 11:28', '', 'Ps 22:26b-27, 28-30ab, 30e, 31-32', '', 'Luke 14:15-24', '', 2, 31, 'ordinary'),
+(387, 'Phil 2:12-18', '', '1 Pet 4:14', '', 'Ps 27:1, 4, 13-14', '', 'Luke 14:25-33', '', 2, 31, 'ordinary'),
+(388, 'Phil 3:3-8a', '', 'Matt 11:28', '', 'Ps 105:2-3, 4-5, 6-7', '', 'Luke 15:1-10', '', 2, 31, 'ordinary'),
+(389, 'Phil 3:17?4:1', '', '1 John 2:5', '', 'Ps 122:1-2, 3-4ab, 4cd-5', '', 'Luke 16:1-8', '', 2, 31, 'ordinary'),
+(390, 'Phil 4:10-19', '', '2 Cor 8:9', '', 'Ps 112:1b-2, 5-6, 8a+9', '', 'Luke 16:9-15', '', 2, 31, 'ordinary'),
+(391, 'Titus 1:1-9', '', 'Phil 2:15d, 16a', '', 'Ps 24:1b-2, 3-4ab, 5-6', '', 'Luke 17:1-6', '', 2, 32, 'ordinary'),
+(392, 'Titus 2:1-8, 11-14', '', 'John 14:23', '', 'Ps 37:3-4, 18+23, 27+29', '', 'Luke 17:7-10', '', 2, 32, 'ordinary'),
+(393, 'Titus 3:1-7', '', '1 Thess 5:18', '', 'Ps 23:1b-3a, 3bc-4, 5, 6', '', 'Luke 17:11-19', '', 2, 32, 'ordinary'),
+(394, 'Phlm 7-20', '', 'John 15:5', '', 'Ps 146:7, 8-9a, 9bc-10', '', 'Luke 17:20-25', '', 2, 32, 'ordinary'),
+(395, '2 John 4-9', '', 'Luke 21:28', '', 'Ps 119:1, 2, 10, 11, 17, 18', '', 'Luke 17:26-37', '', 2, 32, 'ordinary'),
+(396, '3 John 5-8', '', '2 Thess 2:14', '', 'Ps 112:1-2, 3-4, 5-6', '', 'Luke 18:1-8', '', 2, 32, 'ordinary'),
+(397, 'Rev 1:1-4; 2:1-5', '', 'John 8:12', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 18:35-43', '', 2, 33, 'ordinary'),
+(398, 'Rev 3:1-6, 14-22', '', '1 John 4:10b', '', 'Ps 15:2-3a, 3bc-4ab, 5', '', 'Luke 19:1-10', '', 2, 33, 'ordinary'),
+(399, 'Rev 4:1-11', '', 'John 15:16', '', 'Ps 150:1b-2, 3-4, 5-6', '', 'Luke 19:11-28', '', 2, 33, 'ordinary'),
+(400, 'Rev 5:1-10', '', 'Ps 95:8', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'Luke 19:41-44', '', 2, 33, 'ordinary'),
+(401, 'Rev 10:8-11', '', 'John 10:27', '', 'Ps 119:14, 24, 72, 103, 111, 131', '', 'Luke 19:45-48', '', 2, 33, 'ordinary'),
+(402, 'Rev 11:4-12', '', '2 Tim 1:10', '', 'Ps 144:1, 2, 9-10', '', 'Luke 20:27-40', '', 2, 33, 'ordinary'),
+(403, 'Rev 14:1-3, 4b-5', '', 'Matt 24:42a, 44', '', 'Ps 24:1bc-2, 3-4ab, 5-6', '', 'Luke 21:1-4', '', 2, 34, 'ordinary'),
+(404, 'Rev 14:14-19', '', 'Rev 2:10c', '', 'Ps 96:10, 11-12, 13', '', 'Luke 21:5-11', '', 2, 34, 'ordinary'),
+(405, 'Rev 15:1-4', '', 'Rev 2:10c', '', 'Ps 98:1, 2-3ab, 7-8, 9', '', 'Luke 21:12-19', '', 2, 34, 'ordinary'),
+(406, 'Rev 18:1-2, 21-23; 19:1-3, 9a', '', 'Luke 21:28', '', 'Ps 100:1b-2, 3, 4, 5', '', 'Luke 21:20-28', '', 2, 34, 'ordinary'),
+(407, 'Rev 20:1-4, 11?21:2', '', 'Luke 21:28', '', 'Ps 84:3, 4, 5-6a+8a', '', 'Luke 21:29-33', '', 2, 34, 'ordinary'),
+(408, 'Rev 22:1-7', '', 'Luke 21:36', '', 'Ps 95:1-2, 3-5, 6-7ab', '', 'Luke 21:34-36', '', 2, 34, 'ordinary'),
+(409, 'Isa 2:1-5 (or, in Year A, Isa 4:2-6)', '', 'Ps 80:4', '', 'Ps 122:1-2, 3-4b, 4cd-5, 6-7, 8-9', '', 'Matt 8:5-11', '', 0, 1, 'advent'),
+(410, 'Isa 11:1-10', '', 'no biblical reference', '', 'Ps 72:1-2, 7-8, 12-13, 17', '', 'Luke 10:21-24', '', 0, 1, 'advent'),
+(411, 'Isa 25:6-10a', '', 'no biblical reference', '', 'Ps 23:1-3a, 3b-4, 5, 6', '', 'Matt 15:29-37', '', 0, 1, 'advent'),
+(412, 'Isa 26:1-6', '', 'Isa 55:6', '', 'Ps 118:1+8-9, 19-21, 25-27a', '', 'Matt 7:21, 24-27', '', 0, 1, 'advent'),
+(413, 'Isa 29:17-24', '', 'no biblical reference', '', 'Ps 27:1, 4, 13-14', '', 'Matt 9:27-31', '', 0, 1, 'advent'),
+(414, 'Isa 30:19-21, 23-26', '', 'Isa 33:22', '', 'Ps 147:1-2, 3-4, 5-6', '', 'Matt 9:35?10:1, 5a, 6-8', '', 0, 1, 'advent'),
+(415, 'Isa 35:1-10', '', 'no biblical reference', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Luke 5:17-26', '', 0, 2, 'advent'),
+(416, 'Isa 40:1-11', '', 'no biblical reference', '', 'Ps 96:1-2, 3+10ac, 11-12, 13', '', 'Matt 18:12-14', '', 0, 2, 'advent'),
+(417, 'Isa 40:25-31', '', 'no biblical reference', '', 'Ps 103:1-2, 3-4, 8+10', '', 'Matt 11:28-30', '', 0, 2, 'advent'),
+(418, 'Isa 41:13-20', '', 'Isa 45:8', '', 'Ps 145:1+9, 10-11, 12-13ab', '', 'Matt 11:11-15', '', 0, 2, 'advent'),
+(419, 'Isa 48:17-19', '', 'no biblical reference', '', 'Ps 1:1-2, 3, 4+6', '', 'Matt 11:16-19', '', 0, 2, 'advent'),
+(420, 'Sir 48:1-4, 9-11', '', 'Luke 3:4+6', '', 'Ps 80:2ac+3b, 15-16, 18-19', '', 'Matt 17:9a, 10-13', '', 0, 2, 'advent'),
+(421, 'Num 24:2-7, 15-17a', '', 'Ps 85:8', '', 'Ps 25:4-5ab, 6+7bc, 8-9', '', 'Matt 21:23-27', '', 0, 3, 'advent'),
+(422, 'Zeph 3:1-2, 9-13', '', 'no biblical reference', '', 'Ps 34:2-3, 6-7, 17-18, 19+23', '', 'Matt 21:28-32', '', 0, 3, 'advent'),
+(423, 'Isa 45:6c-8, 18, 21c-25', '', 'Isa 40:9-10', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Luke 7:18b-23', '', 0, 3, 'advent'),
+(424, 'Isa 54:1-10', '', 'Luke 3:4+6', '', 'Ps 30:2+4, 5-6, 11-12a+13b', '', 'Luke 7:24-30', '', 0, 3, 'advent'),
+(425, 'Isa 56:1-3a, 6-8', '', 'no biblical reference', '', 'Ps 67:2-3, 5, 7-8', '', 'John 5:33-36', '', 0, 3, 'advent'),
+(426, 'Deut 30:15-20', '', 'Matt 4:17', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 9:22-25', '', 0, 1, 'pre-lent'),
+(427, 'Isa 58:1-9a', '', 'Amos 5:14', '', 'Ps 51:3-4, 5-6ab, 18-19', '', 'Matt 9:14-15', '', 0, 1, 'pre-lent');
+INSERT INTO `weekday_reading` (`id`, `weekday_first_reading`, `weekday_first_audio`, `weekday_alleluia_verse`, `weekday_alleluia_audio`, `weekday_responsorial_psalm`, `weekday_responsorial_audio`, `weekday_gospel`, `weekday_gospel_audio`, `weekday_cycle_num`, `weekday_weeknum`, `weekday_reading_type`) VALUES
+(428, 'Isa 58:9b-14', '', 'Ezek 33:11', '', 'Ps 86:1-2, 3-4, 5-6', '', 'Luke 5:27-32', '', 0, 1, 'pre-lent'),
+(429, 'Acts 2:14, 22-33', '', 'Ps 118:24', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'Matt 28:8-15', '', 0, 1, 'easter'),
+(430, 'Acts 2:36-41', '', 'Ps 118:24', '', 'Ps 33:4-5, 18-19, 20+22', '', 'John 20:11-18', '', 0, 1, 'easter'),
+(431, 'Acts 3:1-10', '', 'Ps 118:24', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Luke 24:13-35', '', 0, 1, 'easter'),
+(432, 'Acts 3:11-26', '', 'Ps 118:24', '', 'Ps 8:2ab+5, 6-7, 8-9', '', 'Luke 24:35-48', '', 0, 1, 'easter'),
+(433, 'Acts 4:1-12', '', 'Ps 118:24', '', 'Ps 118:1-2+4, 22-24, 25-27a', '', 'John 21:1-14', '', 0, 1, 'easter'),
+(434, 'Acts 4:13-21', '', 'Ps 118:24', '', 'Ps 118:1+14-15ab, 16-18, 19-21', '', 'Mark 16:9-15', '', 0, 1, 'easter'),
+(435, 'Acts 4:23-31', '', 'Col 3:1', '', 'Ps 2:1-3, 4-7a, 7b-9', '', 'John 3:1-8', '', 0, 2, 'easter'),
+(436, 'Acts 4:32-37', '', 'John 3:14-15', '', 'Ps 93:1ab, 1cd-2, 5', '', 'John 3:7b-15', '', 0, 2, 'easter'),
+(437, 'Acts 5:17-26', '', 'John 3:16', '', 'Ps 34:2-3, 4-5, 6-7, 8-9', '', 'John 3:16-21', '', 0, 2, 'easter'),
+(438, 'Acts 5:27-33', '', 'John 20:29', '', 'Ps 34:2+9, 17-18, 19-20', '', 'John 3:31-36', '', 0, 2, 'easter'),
+(439, 'Acts 5:34-42', '', 'Matt 4:4b', '', 'Ps 27:1, 4, 13-14', '', 'John 6:1-15', '', 0, 2, 'easter'),
+(440, 'Acts 6:1-7', '', 'no biblical reference', '', 'Ps 33:1-2, 4-5, 18-19', '', 'John 6:16-21', '', 0, 2, 'easter'),
+(441, 'Acts 6:8-15', '', 'Matt 4:4b', '', 'Ps 119:23-24, 26-27, 29-30', '', 'John 6:22-29', '', 0, 3, 'easter'),
+(442, 'Acts 7:51?8:1a', '', 'John 6:35ab', '', 'Ps 31:3cd-4, 6+7b+8a, 17+21ab', '', 'John 6:30-35', '', 0, 3, 'easter'),
+(443, 'Acts 8:1b-8', '', 'John 6:40', '', 'Ps 66:1-3a, 4-5, 6-7a', '', 'John 6:35-40', '', 0, 3, 'easter'),
+(444, 'Acts 8:26-40', '', 'John 6:51', '', 'Ps 66:8-9, 16-17, 20', '', 'John 6:44-51', '', 0, 3, 'easter'),
+(445, 'Acts 9:1-20', '', 'John 6:56', '', 'Ps 117:1, 2', '', 'John 6:52-59', '', 0, 3, 'easter'),
+(446, 'Acts 9:31-42', '', 'John 6:63c+68c', '', 'Ps 116:12-13, 14-15, 16-17', '', 'John 6:60-69', '', 0, 3, 'easter'),
+(447, 'Acts 11:1-18', '', 'John 10:14', '', 'Ps 42:2-3; 42:3, 4', '', 'John 10:1-10?', '', 0, 4, 'easter'),
+(448, 'Acts 11:19-26', '', 'John 10:27', '', 'Ps 87:1b-3, 4-5, 6-7', '', 'John 10:22-30', '', 0, 4, 'easter'),
+(449, 'Acts 12:24?13:5a', '', 'John 8:12', '', 'Ps 67:2-3, 5, 6+8', '', 'John 12:44-50', '', 0, 4, 'easter'),
+(450, 'Acts 13:13-25', '', 'Rev 1:5ab', '', 'Ps 89:2-3, 21-22, 25+27', '', 'John 13:16-20', '', 0, 4, 'easter'),
+(451, 'Acts 13:26-33', '', 'John 14:6', '', 'Ps 2:6-7, 8-9, 10-11ab', '', 'John 14:1-6', '', 0, 4, 'easter'),
+(452, 'Acts 13:44-52', '', 'John 8:31b-32', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'John 14:7-14', '', 0, 4, 'easter'),
+(453, 'Acts 14:5-18', '', 'John 14:26', '', 'Ps 115:1-2, 3-4, 15-16', '', 'John 14:21-26', '', 0, 5, 'easter'),
+(454, 'Acts 14:19-28', '', 'Luke 24:46+26', '', 'Ps 145:10-11, 12-13ab, 21', '', 'John 14:27-31a', '', 0, 5, 'easter'),
+(455, 'Acts 15:1-6', '', 'John 15:4a+5b', '', 'Ps 122:1-2, 3-4ab, 4cd-5', '', 'John 15:1-8', '', 0, 5, 'easter'),
+(456, 'Acts 15:7-21', '', 'John 10:27', '', 'Ps 96:1-2a, 2b-3, 10', '', 'John 15:9-11', '', 0, 5, 'easter'),
+(457, 'Acts 15:22-31', '', 'John 15:15b', '', 'Ps 57:8-9, 10+12', '', 'John 15:12-17', '', 0, 5, 'easter'),
+(458, 'Acts 16:1-10', '', 'Col 3:1', '', 'Ps 100:1b-2, 3, 5', '', 'John 15:18-21', '', 0, 5, 'easter'),
+(459, 'Acts 16:11-15', '', 'John 15:26b-27a', '', 'Ps 149:1b-2, 3-4, 5-6a+9b', '', 'John 15:26-16:4a', '', 0, 6, 'easter'),
+(460, 'Acts 16:22-34', '', 'John 16:7+13', '', 'Ps 138:1-2ab, 2cde-3, 7c-8', '', 'John 16:5-11', '', 0, 6, 'easter'),
+(461, 'Acts 17:15, 22?18:1', '', 'John 14:16', '', 'Ps 148:1-2, 11-12, 13, 14', '', 'John 16:12-15', '', 0, 6, 'easter'),
+(462, 'Acts 18:1-8', '', 'John 14:18', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'John 16:16-20', '', 0, 6, 'easter'),
+(463, 'Acts 18:9-18', '', 'Luke 24:46+26', '', 'Ps 47:2-3, 4-5, 6-7', '', 'John 16:20-23', '', 0, 6, 'easter'),
+(464, 'Acts 18:23-28', '', 'John 16:28', '', 'Ps 47:2-3, 8-9, 10', '', 'John 16:23b-28', '', 0, 6, 'easter'),
+(465, 'Acts 19:1-8', '', 'Col 3:1', '', 'Ps 68:2-3ab, 4-5acd, 6-7ab', '', 'John 16:29-33', '', 0, 7, 'easter'),
+(466, 'Acts 20:17-27', '', 'John 14:16', '', 'Ps 68:10-11, 20-21', '', 'John 17:1-11a', '', 0, 7, 'easter'),
+(467, 'Acts 20:28-38', '', 'John 17:17b+17a', '', 'Ps 68:29-30, 33-35a, 35bc-36ab', '', 'John 17:11b-19', '', 0, 7, 'easter'),
+(468, 'Acts 22:30; 23:6-11', '', 'John 17:21', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'John 17:20-26', '', 0, 7, 'easter'),
+(469, 'Acts 25:13b-21', '', 'John 14:26', '', 'Ps 103:1-2, 11-12, 19-20ab', '', 'John 21:15-19', '', 0, 7, 'easter'),
+(470, 'Acts 28:16-20, 30-31', '', 'John 16:7+13', '', 'Ps 11:4, 5+7', '', 'John 21:20-25', '', 0, 7, 'easter');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `year`
+--
+
+CREATE TABLE IF NOT EXISTS `year` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` year(4) NOT NULL,
+  `year_cycle` char(1) NOT NULL,
+  `trigger_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`,`trigger_id`),
+  KEY `fk_year_trigger1_idx` (`trigger_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `date`
+--
+ALTER TABLE `date`
+  ADD CONSTRAINT `fk_date_year1` FOREIGN KEY (`year_id`) REFERENCES `year` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `event`
+--
+ALTER TABLE `event`
+  ADD CONSTRAINT `fk_event_year1` FOREIGN KEY (`year_id`) REFERENCES `year` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `year`
+--
+ALTER TABLE `year`
+  ADD CONSTRAINT `fk_year_trigger1` FOREIGN KEY (`trigger_id`) REFERENCES `event_determinant` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
