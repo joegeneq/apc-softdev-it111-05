@@ -40,9 +40,8 @@
                 right:  'next',
             },
             eventSources: [
-                //'json/events.json',
-                'AshWednesday.php',
-                'sundayReadings.php'
+                'ashWednesday.php',
+                'sundayReadings.php',
             ]
         });
 
