@@ -97,11 +97,13 @@ a.desc:after {
 
 .navbar-inverse {
  background-color: #3D1f00;
+ background-image:Capture.jpg;
 }
 
 .nav-header{
 color:#75A319;
 width:100px ;
+
 
 }
 
@@ -118,6 +120,27 @@ width:100px ;
 
     
   }
+
+.site-about{
+
+    width: 100%;
+    position: relative;
+}
+
+.image{
+
+   width: 50%;
+   vertical-align: left;
+}
+
+.message_text{
+
+    width: 50%;
+    text-align: right;
+    border-style: inset;
+    border-color: #98bf21;
+
+}
 
 
 

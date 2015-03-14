@@ -13,12 +13,12 @@ $this->title = 'About';
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
     <h2>A Message from the Archbishop of Manila</h2>
-
-  <center>  <img src="../web/images/Cardinal-tagle.jpg" > </center>
-
-    <br>
-
-<p >
+<div id="image" position ="absolute">
+  <img src="../web/images/Cardinal-tagle.jpg" align="left"  > 
+</div>
+   
+<div id="message_text" position="absolute">
+<p align="justify">
 
 My dear brothers and sisters in Christ,
 
@@ -32,11 +32,13 @@ Our people come to church with the expectation of being guided in discovering th
 We hope that in our ministry of proclaiming God’s Word, they may hear the word that the Lord has put in every prophet’s mouth. Then somehow, the joyful and painful experiences begin to speak of a God who faithfully walks with them.
 
 Welcome to angsalitangdiyos.com!
+<br>
+<br>
 
 +LUIS ANTONIO G. CARDINAL TAGLE
 </p>
 
-
+<div>
     <!--<p>This is the About page. You may modify the following file to customize its content:</p>
 
     <code><?= __FILE__ ?></code>-->
