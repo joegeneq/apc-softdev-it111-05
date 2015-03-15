@@ -96,13 +96,13 @@ a.desc:after {
 }
 
 .navbar-inverse {
- background-color: #3D1f00;
- background-image:Capture.jpg;
+ background-color: #6D811E;
+
 }
 
 .nav-header{
 color:#75A319;
-width:100px ;
+
 
 
 }
@@ -122,23 +122,23 @@ width:100px ;
   }
 
 .site-about{
-
     width: 100%;
-    position: relative;
+   
 }
 
 .image{
+    display: block;
+    margin-left: 30px;
+    padding-left: 20px;
 
-   width: 50%;
-   vertical-align: left;
 }
 
 .message_text{
-
-    width: 50%;
-    text-align: right;
-    border-style: inset;
-    border-color: #98bf21;
+    display: block;
+    margin-right: 30px;
+    text-align: left;
+    border-style: solid;
+    border-color: #000000;
 
 }
 

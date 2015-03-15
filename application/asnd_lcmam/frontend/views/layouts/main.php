@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Ang Salita ng Diyos Liturgical Site',
+                'brandLabel' => '<img src="images/asnd_banner.png" style="width:90%">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
