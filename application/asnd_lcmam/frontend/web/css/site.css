@@ -1,7 +1,7 @@
 html,
 body {
     height: 100%;
-    background-color:   #85E665;
+    background-color: #F2E0C7;
 }
 
 .wrap {
@@ -9,7 +9,10 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
-    background-color: #7AA300;
+    background-color: #FFF;
+    font-family: 'Georgia';
+    font-color: #000000;
+    font-size: 15px;
 
 }
 
@@ -101,22 +104,21 @@ a.desc:after {
 }
 
 .nav-header{
-color:#75A319;
-
-
-
+ color:#75A319;
 }
 
-.row-login,.row-signup{
 
+.row-login,.row-signup{
     width: 85%;
     margin: 0 auto;
+    position: relative;
 
 }
 
 .col-lg-5-login,.col-lg-5-signup {
     width: 41.66666667%;
     position: relative;
+    margin-top: 50px;
 
     
   }
@@ -125,6 +127,15 @@ color:#75A319;
     width: 100%;
    
 }
+
+.col-lg-4-about {
+    width: 44.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+  }
 
 .image{
     display: block;

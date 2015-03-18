@@ -13,11 +13,14 @@ $this->title = 'Login';
 
    
   <!--  <p>Please fill out the following fields to login:</p> !-->
+  <br>
+  <br>
+  
     <div class="row-login" position="relative">
     
         <div class="col-lg-5-login" position="absolute" align="center">
         
-            <img src="../web/images/ALC_Logo.png" width="200" height="200" align="center">
+            <img src="images/ALC_Logo.png" width="200" height="200" align="center">
             <br>
             
             <br>

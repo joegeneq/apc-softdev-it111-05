@@ -31,7 +31,7 @@
             $firstSundayofAdvent = $row['first_sunday_of_advent'];
         }
     } else {
-        echo "0 results";
+        echo "Error on database connection. No results";
     }
     $conn->close();
 

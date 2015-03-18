@@ -12,26 +12,6 @@
 
     $(document).ready(function() {
 
-        /*$('#calendar').fullCalendar({
-            defaultDate: '2015-02-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                {
-                  "title": "Presentation at the temple",
-                  "url": "/",
-                  "start": "2015-02-02"
-                },
-                {
-                  "title": "Saint Blaise",
-                  "url": "/",
-                  "start": "2015-02-03"
-                }
-            ]
-        });*/
-
-        //Code that calls php file
-
         $('#calendar').fullCalendar({
             defaultDate: '2015-01-01',
             header: {
@@ -40,7 +20,7 @@
                 right:  'next',
             },
             eventSources: [
-                'ashWednesday.php',
+                'eventDeterminant.php',
                 'sundayReadings.php',
             ]
         });

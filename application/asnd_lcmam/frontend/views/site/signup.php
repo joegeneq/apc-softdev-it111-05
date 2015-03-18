@@ -7,15 +7,15 @@ use yii\bootstrap\ActiveForm;
 /* @var $model \frontend\models\SignupForm */
 
 $this->title = 'Signup';
+$this->params['breadcrumbs'][] = $this->title;
 
 ?>
+<br><br>
 <div class="site-signup">
     <h1 style="color:#52663D;"><?= Html::encode($this->title) ?></h1>
 
     <p><i>Please fill out the following fields to signup:</i></p>
-<br>
-
-    <div class="row-signup">
+    <div class="row-signup" position="relative">
         <div class="col-lg-5-signup">
             <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
