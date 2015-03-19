@@ -10,7 +10,6 @@ $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-<br><br>
 <div class="site-signup">
     <h1 style="color:#52663D;"><?= Html::encode($this->title) ?></h1>
 
