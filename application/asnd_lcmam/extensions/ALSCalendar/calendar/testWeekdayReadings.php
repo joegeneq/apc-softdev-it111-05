@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 
     //$timestamp=strtotime("7 March 2016 ");
     //echo gmdate("Y-m-d\TH:i:s\Z", $timestamp);

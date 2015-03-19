@@ -14,7 +14,7 @@
 
         $('#calendar').fullCalendar({
             header: {
-                left:   'prev, ',
+                left:   'prev',
                 center: 'title',
                 right:  'next',
             },
@@ -32,7 +32,7 @@
 <style>
 
     body {
-        background-color: #CCFF99;
+        background-color: #75A319;
         margin: 40px 10px;
         padding: 0;
         font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
@@ -40,7 +40,7 @@
     }
 
     #calendar {
-        background-color: #CCFFCC;
+        background-color: #99CC66;
         max-width: 900px;
         margin: 0 auto;
     }

@@ -38,7 +38,8 @@ try {
         
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allSundays[$counter] . "T01:00:01";
-        $e['color'] = '#00CC00';
+        $e['color'] = '#FFCC00';
+        $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:01"){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
