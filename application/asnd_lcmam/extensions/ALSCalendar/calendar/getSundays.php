@@ -6,6 +6,8 @@ require 'eventDeterminant.php';
 
 //For Sunday
 
+    error_reporting(E_ERROR); // attempting to remove errors and notices
+
     $trigger = $year . "-" . $month . "-" . $day;
 
     //echo "<br>" . date('l', strtotime($trigger)) . "<br>";
