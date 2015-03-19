@@ -1,0 +1,45 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\weekdayReadingSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Weekday Readings';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="weekday-reading-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <p>
+        <?= Html::a('Create Weekday Reading', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'id',
+            'weekday_first_reading',
+            'weekday_first_audio',
+            'weekday_alleluia_verse',
+            'weekday_alleluia_audio',
+            // 'weekday_responsorial_psalm',
+            // 'weekday_responsorial_audio',
+            // 'weekday_gospel',
+            // 'weekday_gospel_audio',
+            // 'weekday_cycle_num',
+            // 'weekday_weeknum',
+            // 'weekday_reading_type',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+</div>
