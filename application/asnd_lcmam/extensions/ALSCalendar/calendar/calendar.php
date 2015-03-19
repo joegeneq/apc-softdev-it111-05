@@ -14,7 +14,7 @@
 
         $('#calendar').fullCalendar({
             header: {
-                left:   'prev, ',
+                left:   'prev',
                 center: 'title',
                 right:  'next',
             },
