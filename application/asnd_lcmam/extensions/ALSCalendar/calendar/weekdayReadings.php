@@ -5,6 +5,8 @@ require 'dateSpecification.php';
 require 'eventDeterminant.php';
 
 //For Weekday
+	
+	//error_reporting(E_ERROR); // attempting to remove errors and notices
 
 	$trigger = $year . "-" . $month . "-" . $day;
 
@@ -170,7 +172,8 @@ try {
         
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:01";
-        $e['color'] = '#6699CC';
+        $e['color'] = '#FF9966';
+        $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:01"){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
