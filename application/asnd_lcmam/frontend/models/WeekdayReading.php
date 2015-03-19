@@ -8,15 +8,17 @@ use Yii;
  * This is the model class for table "weekday_reading".
  *
  * @property integer $id
+ * @property string $weekday_first_reading
+ * @property string $weekday_first_audio
+ * @property string $weekday_alleluia_verse
+ * @property string $weekday_alleluia_audio
+ * @property string $weekday_responsorial_psalm
+ * @property string $weekday_responsorial_audio
+ * @property string $weekday_gospel
+ * @property string $weekday_gospel_audio
  * @property integer $weekday_cycle_num
- * @property string $weekday_reading
- * @property integer $weekday_week_num
- * @property string $weekday_day
- * @property string $weekday_audio_link
- * @property integer $yearly_reading_set_id
- *
- * @property Date[] $dates
- * @property YearlyReadingSet $yearlyReadingSet
+ * @property integer $weekday_weeknum
+ * @property string $weekday_reading_type
  */
 class WeekdayReading extends \yii\db\ActiveRecord
 {
@@ -34,10 +36,9 @@ class WeekdayReading extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['weekday_cycle_num', 'weekday_reading', 'weekday_week_num', 'weekday_day', 'weekday_audio_link', 'yearly_reading_set_id'], 'required'],
-            [['weekday_cycle_num', 'weekday_week_num', 'yearly_reading_set_id'], 'integer'],
-            [['weekday_day'], 'safe'],
-            [['weekday_reading', 'weekday_audio_link'], 'string', 'max' => 45]
+            [['weekday_cycle_num', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
+            [['weekday_cycle_num', 'weekday_weeknum'], 'integer'],
+            [['weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type'], 'string', 'max' => 45]
         ];
     }
 
@@ -48,28 +49,17 @@ class WeekdayReading extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'weekday_first_reading' => 'Weekday First Reading',
+            'weekday_first_audio' => 'Weekday First Audio',
+            'weekday_alleluia_verse' => 'Weekday Alleluia Verse',
+            'weekday_alleluia_audio' => 'Weekday Alleluia Audio',
+            'weekday_responsorial_psalm' => 'Weekday Responsorial Psalm',
+            'weekday_responsorial_audio' => 'Weekday Responsorial Audio',
+            'weekday_gospel' => 'Weekday Gospel',
+            'weekday_gospel_audio' => 'Weekday Gospel Audio',
             'weekday_cycle_num' => 'Weekday Cycle Num',
-            'weekday_reading' => 'Weekday Reading',
-            'weekday_week_num' => 'Weekday Week Num',
-            'weekday_day' => 'Weekday Day',
-            'weekday_audio_link' => 'Weekday Audio Link',
-            'yearly_reading_set_id' => 'Yearly Reading Set ID',
+            'weekday_weeknum' => 'Weekday Weeknum',
+            'weekday_reading_type' => 'Weekday Reading Type',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDates()
-    {
-        return $this->hasMany(Date::className(), ['weekday_reading_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getYearlyReadingSet()
-    {
-        return $this->hasOne(YearlyReadingSet::className(), ['id' => 'yearly_reading_set_id']);
     }
 }
