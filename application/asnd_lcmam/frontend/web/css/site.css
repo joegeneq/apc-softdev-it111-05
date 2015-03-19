@@ -100,16 +100,42 @@ a.desc:after {
 
 .navbar-inverse {
  background-color: #6D811E;
+}
 
+.navbar-inverse .navbar-text {
+  color: #FFF;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: #FFFFCC;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #9ACD32;
 }
 
 .nav-header{
  color:#75A319;
+
 }
 
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
 
 .row-login,.row-signup{
-    width: 85%;
+   
     margin: 0 auto;
     position: relative;
 
@@ -137,10 +163,8 @@ a.desc:after {
     float: left;
   }
 
-.image{
+.image {
     display: block;
-    margin-left: 30px;
-    padding-left: 20px;
 
 }
 
@@ -153,5 +177,11 @@ a.desc:after {
 
 }
 
+#container, #container2 {
 
+    font-family: 'Calibri';
+}
 
+tr:hover {
+    background-color: #E6F5FA;
+}

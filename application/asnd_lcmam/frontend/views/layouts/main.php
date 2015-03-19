@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '<img src="images/asnd_banner.png">',
+                'brandLabel' => '<img src="images/asnd_banner.png" id="image" style="width:300px; position:fixed; margin-top:-10px;" >',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -34,19 +34,19 @@ AppAsset::register($this);
             ]);
 
             $menuItems = [
-                ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Activities', 'url' => ['/site/activities']],
-                ['label' => 'Reflections', 'url' => ['/site/reflections']],
-                ['label' => 'Notes', 'url' => ['/site/notes']],
-                ['label' => 'About', 'url' => ['/site/about']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
+                ['label' => 'HOME', 'url' => ['/site/index']],
+                ['label' => 'ACTIVITIES', 'url' => ['/site/activities']],
+                ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
+                ['label' => 'NOTES', 'url' => ['/site/notes']],
+                ['label' => 'ABOUT', 'url' => ['/site/about']],
+                ['label' => 'CONTACT', 'url' => ['/site/contact']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => 'SIGNUP', 'url' => ['/site/signup']];
+                $menuItems[] = ['label' => 'LOGIN', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'label' => 'LOGOUT (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
