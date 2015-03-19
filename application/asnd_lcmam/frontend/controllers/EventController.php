@@ -44,12 +44,13 @@ class EventController extends Controller
     /**
      * Displays a single Event model.
      * @param integer $id
+     * @param integer $year_id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView($id, $year_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($id, $year_id),
         ]);
     }
 
@@ -63,7 +64,7 @@ class EventController extends Controller
         $model = new Event();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'year_id' => $model->year_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -75,14 +76,15 @@ class EventController extends Controller
      * Updates an existing Event model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
+     * @param integer $year_id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate($id, $year_id)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel($id, $year_id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->id, 'year_id' => $model->year_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -94,11 +96,12 @@ class EventController extends Controller
      * Deletes an existing Event model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
+     * @param integer $year_id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete($id, $year_id)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($id, $year_id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -107,12 +110,13 @@ class EventController extends Controller
      * Finds the Event model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
+     * @param integer $year_id
      * @return Event the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($id, $year_id)
     {
-        if (($model = Event::findOne($id)) !== null) {
+        if (($model = Event::findOne(['id' => $id, 'year_id' => $year_id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
