@@ -4,7 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\WeekdayReading;
-use frontend\models\WeekdayReadingSearch;
+use frontend\models\weekdayReadingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,7 +32,7 @@ class WeekdayReadingController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new WeekdayReadingSearch();
+        $searchModel = new weekdayReadingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
