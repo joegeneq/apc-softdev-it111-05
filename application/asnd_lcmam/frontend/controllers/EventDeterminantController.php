@@ -3,16 +3,16 @@
 namespace frontend\controllers;
 
 use Yii;
-use frontend\models\WeekdayReading;
-use frontend\models\weekdayReadingSearch;
+use frontend\models\EventDeterminant;
+use frontend\models\EventDeterminantSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * WeekdayReadingController implements the CRUD actions for WeekdayReading model.
+ * EventDeterminantController implements the CRUD actions for EventDeterminant model.
  */
-class WeekdayReadingController extends Controller
+class EventDeterminantController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Lists all WeekdayReading models.
+     * Lists all EventDeterminant models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new weekdayReadingSearch();
+        $searchModel = new EventDeterminantSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,7 +42,7 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Displays a single WeekdayReading model.
+     * Displays a single EventDeterminant model.
      * @param integer $id
      * @return mixed
      */
@@ -54,13 +54,13 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Creates a new WeekdayReading model.
+     * Creates a new EventDeterminant model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new WeekdayReading();
+        $model = new EventDeterminant();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -72,7 +72,7 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Updates an existing WeekdayReading model.
+     * Updates an existing EventDeterminant model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -91,7 +91,7 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Deletes an existing WeekdayReading model.
+     * Deletes an existing EventDeterminant model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -104,15 +104,15 @@ class WeekdayReadingController extends Controller
     }
 
     /**
-     * Finds the WeekdayReading model based on its primary key value.
+     * Finds the EventDeterminant model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return WeekdayReading the loaded model
+     * @return EventDeterminant the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = WeekdayReading::findOne($id)) !== null) {
+        if (($model = EventDeterminant::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
