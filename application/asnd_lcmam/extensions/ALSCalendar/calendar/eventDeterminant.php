@@ -1,59 +1,46 @@
 <?php 
 
+require 'dbConnection.php';
+require 'dateSpecification.php';
+
 try {
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
 
-    $url = 'mysql:dbname=asnd_lcmam;host=localhost';
-    $username = 'asnd_lcmam';
-    $password = 'asnd_lcmam';
-    $year = "2015";
+    $sql = "SELECT * FROM event_determinant WHERE year = " . $year . "";
+    $result = $conn->query($sql);
 
-    // Connect to database
-    $connection = new PDO($url, $username, $password);
-
-    // Prepare and execute query
-    $query = "SELECT * FROM event_determinant WHERE year = '" . $year . "'";
-    $sth = $connection->prepare($query);
-    $sth->execute();
-
-    // Returning array
-    $events = array();
-
-    // Fetch results
-    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-
-        $e = array();
-        //$e['id'] = $row['id'];
-        //$e['year'] = $row['year'];
-        //$e['sunday_cycle'] = $row['sunday_cycle'];
-        //$e['weekday_cycle'] = $row['weekday_cycle'];
-        //$e['week_ot_before_lent'] = $row['week_ot_before_lent'];
-        //$e['easter_sunday'] = $row['easter_sunday'];
-        //$e['week_ot_after_pentecost'] = $row['week_ot_after_pentecost'];
-
-        $e['title'] = "*Ash Wednesday";
-        $e['start'] = $row['ash_wednesday'];
-        array_push($events, $e);
-
-        $e['title'] = "*Easter Sunday";
-        $e['start'] = $row['easter_sunday'];
-        array_push($events, $e);
-
-        $e['title'] = "*Pentecost Sunday";
-        $e['start'] = $row['pentecost_sunday'];
-        array_push($events, $e);
-
-        $e['title'] = "*1st Sunday of Advent";
-        $e['start'] = $row['first_sunday_of_advent'];
-        array_push($events, $e);
-
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            $sundayCycle = $row['sunday_cycle'];
+            $weekdayCycle = $row['weekday_cycle'];
+            $weeksBeforeLent = $row['week_ot_before_lent'];
+            $weekAfterPentecost = $row['week_ot_after_pentecost'];
+            $pentecostSunday = $row['pentecost_sunday'];
+            $firstSundayofAdvent = $row['first_sunday_of_advent'];
+            $ashWednesday = $row['ash_wednesday'];
+        }
+    } else {
+        echo "Error on database connection. No results may be displayed.";
     }
+    
+    $conn->close();
 
-    // Output json for our calendar
-    echo json_encode($events);
-    exit();
+//Testing for displays
+
+    //echo $sundayCycle;
+    //echo $weekdayCycle;
+    //echo $weeksBeforeLent;
+    //echo $weekAfterPentecost;
+    //echo $pentecostSunday;
 
 } catch (PDOException $e){
-    echo $e->getMessage();
+     die('Database connection could not be established.');
 }
 
 ?>

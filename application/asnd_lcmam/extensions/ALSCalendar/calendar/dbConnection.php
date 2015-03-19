@@ -1,6 +1,6 @@
 <?php 
 
-//for hosting  /*
+/*/for hosting  /*
 
     $servername = "localhost";
     $username = "asnd_lcmam";
@@ -9,7 +9,7 @@
 
 // */
 
-//for testing /*
+//for testing 
 
     $servername = "localhost";
     $username = "root";
@@ -17,6 +17,5 @@
     $dbname = "asnd_lcmam";
 
 //
-
 
 ?>

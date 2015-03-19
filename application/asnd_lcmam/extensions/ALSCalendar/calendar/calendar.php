@@ -13,15 +13,15 @@
     $(document).ready(function() {
 
         $('#calendar').fullCalendar({
-            defaultDate: '2015-01-01',
             header: {
                 left:   'prev, ',
                 center: 'title',
                 right:  'next',
             },
             eventSources: [
-                'eventDeterminant.php',
                 'sundayReadings.php',
+                'specialEvents.php',
+                'weekdayReadings.php',
             ]
         });
 
