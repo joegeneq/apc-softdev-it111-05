@@ -12,7 +12,7 @@ $this->title = 'About';
 
 <div class="site-about">
     <!-- <h1><?= Html::encode($this->title) ?></h1><br> -->
-    <br><br><br>
+    <br>
      <h2>A Message from the Archbishop of Manila</h2>
      <!--
 <div id="image">
