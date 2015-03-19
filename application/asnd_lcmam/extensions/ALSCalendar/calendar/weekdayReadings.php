@@ -172,7 +172,7 @@ try {
         
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:01";
-        $e['color'] = '#FF9966';
+        $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:01"){ array_push($events, $e); }
 
