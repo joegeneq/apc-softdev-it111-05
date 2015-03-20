@@ -8,6 +8,8 @@ use Yii;
  * This is the model class for table "weekday_reading".
  *
  * @property integer $id
+ * @property integer $weekday_daynum
+ * @property string $weekday_day
  * @property string $weekday_first_reading
  * @property string $weekday_first_audio
  * @property string $weekday_alleluia_verse
@@ -36,8 +38,9 @@ class WeekdayReading extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['weekday_cycle_num', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
-            [['weekday_cycle_num', 'weekday_weeknum'], 'integer'],
+            [['weekday_daynum', 'weekday_day', 'weekday_cycle_num', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
+            [['weekday_daynum', 'weekday_cycle_num', 'weekday_weeknum'], 'integer'],
+            [['weekday_day'], 'string', 'max' => 10],
             [['weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type'], 'string', 'max' => 45]
         ];
     }
@@ -49,6 +52,8 @@ class WeekdayReading extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'weekday_daynum' => 'Weekday Daynum',
+            'weekday_day' => 'Weekday Day',
             'weekday_first_reading' => 'Weekday First Reading',
             'weekday_first_audio' => 'Weekday First Audio',
             'weekday_alleluia_verse' => 'Weekday Alleluia Verse',
