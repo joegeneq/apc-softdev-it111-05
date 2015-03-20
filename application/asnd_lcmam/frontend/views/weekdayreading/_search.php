@@ -17,13 +17,17 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
+    <?= $form->field($model, 'weekday_daynum') ?>
+
+    <?= $form->field($model, 'weekday_day') ?>
+
     <?= $form->field($model, 'weekday_first_reading') ?>
 
     <?= $form->field($model, 'weekday_first_audio') ?>
 
-    <?= $form->field($model, 'weekday_alleluia_verse') ?>
+    <?php // echo $form->field($model, 'weekday_alleluia_verse') ?>
 
-    <?= $form->field($model, 'weekday_alleluia_audio') ?>
+    <?php // echo $form->field($model, 'weekday_alleluia_audio') ?>
 
     <?php // echo $form->field($model, 'weekday_responsorial_psalm') ?>
 

@@ -12,6 +12,10 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'weekday_daynum')->textInput() ?>
+
+    <?= $form->field($model, 'weekday_day')->textInput(['maxlength' => 10]) ?>
+
     <?= $form->field($model, 'weekday_first_reading')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'weekday_first_audio')->textInput(['maxlength' => 45]) ?>
