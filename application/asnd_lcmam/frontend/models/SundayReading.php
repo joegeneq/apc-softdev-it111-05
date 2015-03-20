@@ -8,14 +8,21 @@ use Yii;
  * This is the model class for table "sunday_reading".
  *
  * @property integer $id
- * @property string $sundayr_cycle_type
- * @property string $sunday_reading
- * @property integer $sunday_week_num
- * @property string $sunday_audio_link
- * @property integer $yearly_reading_set_id
- *
- * @property Date[] $dates
- * @property YearlyReadingSet $yearlyReadingSet
+ * @property integer $sunday_weeknum
+ * @property string $sunday_first_reading
+ * @property string $sunday_first_audio
+ * @property string $sunday_second_reading
+ * @property string $sunday_second_audio
+ * @property string $sunday_alleluia_verse
+ * @property string $sunday_alleluia_audio
+ * @property string $sunday_responsorial_psalm
+ * @property string $sunday_responsorial_audio
+ * @property string $sunday_gospel
+ * @property string $sunday_gospel_audio
+ * @property string $sunday_before_gospel
+ * @property string $sunday_before_gospel_audio
+ * @property string $sunday_cycle_type
+ * @property string $sunday_reading_type
  */
 class SundayReading extends \yii\db\ActiveRecord
 {
@@ -33,9 +40,11 @@ class SundayReading extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sundayr_cycle_type', 'sunday_reading', 'sunday_week_num', 'sunday_audio_link', 'yearly_reading_set_id'], 'required'],
-            [['sunday_week_num', 'yearly_reading_set_id'], 'integer'],
-            [['sundayr_cycle_type', 'sunday_reading', 'sunday_audio_link'], 'string', 'max' => 45]
+            [['sunday_weeknum', 'sunday_cycle_type', 'sunday_reading_type'], 'required'],
+            [['sunday_weeknum'], 'integer'],
+            [['sunday_first_reading', 'sunday_first_audio', 'sunday_second_reading', 'sunday_second_audio', 'sunday_alleluia_verse', 'sunday_alleluia_audio', 'sunday_responsorial_psalm', 'sunday_responsorial_audio', 'sunday_gospel', 'sunday_gospel_audio', 'sunday_reading_type'], 'string', 'max' => 45],
+            [['sunday_before_gospel', 'sunday_before_gospel_audio'], 'string', 'max' => 100],
+            [['sunday_cycle_type'], 'string', 'max' => 1]
         ];
     }
 
@@ -46,27 +55,21 @@ class SundayReading extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'sundayr_cycle_type' => 'Sundayr Cycle Type',
-            'sunday_reading' => 'Sunday Reading',
-            'sunday_week_num' => 'Sunday Week Num',
-            'sunday_audio_link' => 'Sunday Audio Link',
-            'yearly_reading_set_id' => 'Yearly Reading Set ID',
+            'sunday_weeknum' => 'Sunday Weeknum',
+            'sunday_first_reading' => 'Sunday First Reading',
+            'sunday_first_audio' => 'Sunday First Audio',
+            'sunday_second_reading' => 'Sunday Second Reading',
+            'sunday_second_audio' => 'Sunday Second Audio',
+            'sunday_alleluia_verse' => 'Sunday Alleluia Verse',
+            'sunday_alleluia_audio' => 'Sunday Alleluia Audio',
+            'sunday_responsorial_psalm' => 'Sunday Responsorial Psalm',
+            'sunday_responsorial_audio' => 'Sunday Responsorial Audio',
+            'sunday_gospel' => 'Sunday Gospel',
+            'sunday_gospel_audio' => 'Sunday Gospel Audio',
+            'sunday_before_gospel' => 'Sunday Before Gospel',
+            'sunday_before_gospel_audio' => 'Sunday Before Gospel Audio',
+            'sunday_cycle_type' => 'Sunday Cycle Type',
+            'sunday_reading_type' => 'Sunday Reading Type',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getDates()
-    {
-        return $this->hasMany(Date::className(), ['sunday_reading_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getYearlyReadingSet()
-    {
-        return $this->hasOne(YearlyReadingSet::className(), ['id' => 'yearly_reading_set_id']);
     }
 }

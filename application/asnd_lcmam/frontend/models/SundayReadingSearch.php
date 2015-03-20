@@ -18,8 +18,8 @@ class SundayReadingSearch extends SundayReading
     public function rules()
     {
         return [
-            [['id', 'sunday_week_num', 'yearly_reading_set_id'], 'integer'],
-            [['sundayr_cycle_type', 'sunday_reading', 'sunday_audio_link'], 'safe'],
+            [['id', 'sunday_weeknum'], 'integer'],
+            [['sunday_first_reading', 'sunday_first_audio', 'sunday_second_reading', 'sunday_second_audio', 'sunday_alleluia_verse', 'sunday_alleluia_audio', 'sunday_responsorial_psalm', 'sunday_responsorial_audio', 'sunday_gospel', 'sunday_gospel_audio', 'sunday_before_gospel', 'sunday_before_gospel_audio', 'sunday_cycle_type', 'sunday_reading_type'], 'safe'],
         ];
     }
 
@@ -57,13 +57,23 @@ class SundayReadingSearch extends SundayReading
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'sunday_week_num' => $this->sunday_week_num,
-            'yearly_reading_set_id' => $this->yearly_reading_set_id,
+            'sunday_weeknum' => $this->sunday_weeknum,
         ]);
 
-        $query->andFilterWhere(['like', 'sundayr_cycle_type', $this->sundayr_cycle_type])
-            ->andFilterWhere(['like', 'sunday_reading', $this->sunday_reading])
-            ->andFilterWhere(['like', 'sunday_audio_link', $this->sunday_audio_link]);
+        $query->andFilterWhere(['like', 'sunday_first_reading', $this->sunday_first_reading])
+            ->andFilterWhere(['like', 'sunday_first_audio', $this->sunday_first_audio])
+            ->andFilterWhere(['like', 'sunday_second_reading', $this->sunday_second_reading])
+            ->andFilterWhere(['like', 'sunday_second_audio', $this->sunday_second_audio])
+            ->andFilterWhere(['like', 'sunday_alleluia_verse', $this->sunday_alleluia_verse])
+            ->andFilterWhere(['like', 'sunday_alleluia_audio', $this->sunday_alleluia_audio])
+            ->andFilterWhere(['like', 'sunday_responsorial_psalm', $this->sunday_responsorial_psalm])
+            ->andFilterWhere(['like', 'sunday_responsorial_audio', $this->sunday_responsorial_audio])
+            ->andFilterWhere(['like', 'sunday_gospel', $this->sunday_gospel])
+            ->andFilterWhere(['like', 'sunday_gospel_audio', $this->sunday_gospel_audio])
+            ->andFilterWhere(['like', 'sunday_before_gospel', $this->sunday_before_gospel])
+            ->andFilterWhere(['like', 'sunday_before_gospel_audio', $this->sunday_before_gospel_audio])
+            ->andFilterWhere(['like', 'sunday_cycle_type', $this->sunday_cycle_type])
+            ->andFilterWhere(['like', 'sunday_reading_type', $this->sunday_reading_type]);
 
         return $dataProvider;
     }
