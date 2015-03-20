@@ -22,10 +22,14 @@
                 'sundayReadings.php',
                 'specialEvents.php',
                 'weekdayReadings.php',
-            ]
+            ],
+            eventRender: function(event, element) {
+            element.attr('title', event.tip);
+        }
         });
 
-        $('#calendar').fullCalendar('option', 'aspectRatio', 1.2);
+
+        $('#calendar').fullCalendar('option', 'aspectRatio', 1.5);
     });
 
 </script>
