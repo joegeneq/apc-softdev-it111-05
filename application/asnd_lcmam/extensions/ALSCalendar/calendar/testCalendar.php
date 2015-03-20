@@ -37,15 +37,8 @@ $(document).ready(function () {
             return false;
         },
 
-        /*eventMouseover: function(event, jsEvent, view) {
-                $('#modalTitle').html(event.title);
-                $('#modalBody').html(event.description);
-                $('#eventUrl').attr('href',event.url);
-                $('#fullCalModal').modal();
-        },*/
-
         eventRender: function(event, element) {
-            element.attr('title', event.tip);
+            $(element).tooltip({title: event.title});             
         },
 
             loading: function(bool) {
