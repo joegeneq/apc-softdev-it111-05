@@ -50,11 +50,11 @@ class EventDeterminant extends \yii\db\ActiveRecord
             'year' => 'Year',
             'sunday_cycle' => 'Sunday Cycle',
             'weekday_cycle' => 'Weekday Cycle',
-            'week_ot_before_lent' => 'Week Ot Before Lent',
+            'week_ot_before_lent' => 'Week OT Before Lent',
             'ash_wednesday' => 'Ash Wednesday',
             'easter_sunday' => 'Easter Sunday',
             'pentecost_sunday' => 'Pentecost Sunday',
-            'week_ot_after_pentecost' => 'Week Ot After Pentecost',
+            'week_ot_after_pentecost' => 'Week OT After Pentecost',
             'first_sunday_of_advent' => 'First Sunday Of Advent',
         ];
     }
