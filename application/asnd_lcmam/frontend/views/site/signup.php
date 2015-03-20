@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <br>
                 <?= $form->field($model, 'password')->passwordInput()
                         ->label(false)
-                        ->textInput(['placeholder'=> 'Password'])
+                        ->passwordInput(['placeholder'=> 'Password'])
 
                  ?>
                 <div class="form-group">
