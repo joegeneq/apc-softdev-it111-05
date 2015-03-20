@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\User */
+/* @var $model frontend\models\WeekdayReading */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Weekday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-view">
+<div class="weekday-reading-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,16 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'firstname',
-            'lastname',
-            'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            'email:email',
-            'status',
-            'created_at',
-            'updated_at',
+            'weekday_daynum',
+            'weekday_day',
+            'weekday_first_reading',
+            'weekday_first_audio',
+            'weekday_alleluia_verse',
+            'weekday_alleluia_audio',
+            'weekday_responsorial_psalm',
+            'weekday_responsorial_audio',
+            'weekday_gospel',
+            'weekday_gospel_audio',
+            'weekday_cycle_num',
+            'weekday_weeknum',
+            'weekday_reading_type',
         ],
     ]) ?>
 
