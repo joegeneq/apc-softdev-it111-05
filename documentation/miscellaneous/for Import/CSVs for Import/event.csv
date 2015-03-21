@@ -1,5 +1,6 @@
-"1";" The Nativity of the Lord ";"Solemnity, Christmas";"-12-24";"Isa 62:1-5";;"Acts 13:16-17";;"(no bibl. ref.)";;"Ps 89:4-5";;"Matt 1:1-25";
-"2";" Christmas: Mass during the Night";" Christmas ";"-12-25";"Isa 9:1-6";;"Titus 2:11-14";;"Luke 2:10-11";;"Ps 96:1-2a";;"Luke 2:1-14";
-"3";"	Christmas: Mass at Dan";"Christmas";"-12-25";"Isa 62:11-12";;"Titus 3:4-7";;"Luke 2:14";;"Ps 97:1+6";;"Luke 2:15-20";
-"4";"	Christmas: Mass during the ay";"Christmas";"-12-25";"Isa 52:7-10";;"Heb 1:1-6";;"(no bibl. ref.)";;"Ps 98:1, 2-3a";;"John 1:1-18";
-"5";"The Octave Day of Christmas: Solemnity of the";"Solemnity, Christmas";"-01-01";"Num 6:22-27";;"Gal 4:4-7";;"Heb 1:1-2";;"Ps 67:2-3";;"Luke 2:16-21";
+id,event_name,event_type,date,event_first_reading,event_first_audio,event_second_reading,event_second_audio,event_alleluia_verse,event_alleluia_audio,event_responsorial_psalm,event_responsorial_audio,event_gospel,event_gospel_audio
+1, The Nativity of the Lord ,"Solemnity, Christmas",-36,Isa 62:1-5,,Acts 13:16-17,,(no bibl. ref.),,Ps 89:4-5,,Matt 1:1-25,
+2, Christmas: Mass during the Night, Christmas ,-37,Isa 9:1-6,,Titus 2:11-14,,Luke 2:10-11,,Ps 96:1-2a,,Luke 2:1-14,
+3,"	Christmas: Mass at Dan",Christmas,-37,Isa 62:11-12,,Titus 3:4-7,,Luke 2:14,,Ps 97:1+6,,Luke 2:15-20,
+4,"	Christmas: Mass during the ay",Christmas,-37,Isa 52:7-10,,Heb 1:1-6,,(no bibl. ref.),,"Ps 98:1, 2-3a",,John 1:1-18,
+5,The Octave Day of Christmas: Solemnity of the,"Solemnity, Christmas",-2,Num 6:22-27,,Gal 4:4-7,,Heb 1:1-2,,Ps 67:2-3,,Luke 2:16-21,
