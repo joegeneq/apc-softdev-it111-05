@@ -11,15 +11,12 @@ $this->title = 'Activities';
 
 <div class="site-activities">
  
-     <h2>UPCOMING EVENTS</h2>
+     <h2>ALS CALENDAR</h2>
   
-
-<div class="col-lg-4-activities">
-<p align="justify">
-	No upcoming events!
-</p>
+<object data='../../extensions/ALSCalendar/calendar/testCalendar.php' style='width:100%;min-height: 965px;'>
 
     <!--<p>This is the About page. You may modify the following file to customize its content:</p>
 
     <code><?= __FILE__ ?></code>-->
 </div>
+
