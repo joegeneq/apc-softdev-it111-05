@@ -1,27 +1,6 @@
-id	event_name	event_type	event_first_reading	event_first_audio	event_second_reading	event_second_audio	event_alleluia_verse	event_alleluia_audio	event_responsorial_psalm	event_responsorial_audio	event_gospel	event_gospel_audio	event_date
-0			"Gen 49:2, 8-10"						"Ps 72:1-2, 3-4ab, 7-8, 17"		Matt 1:1-17		-12-17
-0			Jer 23:5-8						"Ps 72:1-2, 12-13, 18-19"		Matt 1:18-24		-12-18
-0			"Judg 13:2-7, 24-25a"						"Ps 71:3-4a, 5-6ab, 16-17"		Luke 1:5-25		-12-19
-0			Isa 7:10-14						"Ps 24:1-2, 3-4ab, 5-6"		Luke 1:26-38		-12-20
-0			Cant 2:8-14 or Zeph 3:14-18a						"Ps 33:2-3, 11-12, 20-21"		Luke 1:39-45		-12-21
-0			1 Sam 1:24-28						"1 Sam 2:1, 4-5, 6-7, 8abcd"		Luke 1:46-56		-12-22
-0			"Mal 3:1-4, 23-24"						"Ps 25:4-5ab, 8-9, 10+14"		Luke 1:57-66		-12-23
-0			"2 Sam 7:1-5, 8b-12, 14a, 16"						"Ps 89:2-3, 4-5, 27+29"		Luke 1:67-79		-12-24
-0	" Feast of St. Stephen, First Martyr"	Feast	Acts 6:8-10; 7:54-59				Ps 118:26a+27a		"Ps 31:3cd-4, 6ab+8a, 16bc+17"		Matt 10:17-22		-12-26
-0	"Feast of St. John, Apostle & Evangelist"	Feast	1 John 1:1-4						"Ps 97:1-2, 5-6, 11-12"		"John 20:1a, 2-8"		-12-27
-0	"Feast of the Holy Innocents, Martyrs"	Feast	1 John 1:5—2:2						"Ps 124:2-3, 4-5, 7cd-8"		Matt 2:13-18		-12-28
-0	5th Day in the Octave of Christmas		1 John 2:3-11				Luke 2:32		"Ps 96:1-2a, 2b-3, 5b-6"		Luke 2:22-35		-12-29
-0	6th Day in the Octave of Christmas		1 John 2:12-17				no bibilical reference		"Ps 96:7-8a, 8b-9, 10"		Luke 2:36-40		-12-30
-0	7th Day in the Octave of Christmas		1 John 2:18-21				John 1:14a+12a		"Ps 96:1-2, 11-12, 13"		John 1:1-18		-12-31
-0			1 John 2:22-28				Heb 1:1-2		"Ps 98:1, 2-3ab, 3cd-4"		John 1:19-28		-01-02
-0			1 John 2:29—3:6				John 1:14a+12a		"Ps 98:1, 3cd-4, 5-6"		John 1:29-34		-01-03
-0			1 John 3:7-10				Heb 1:1-2		"Ps 98:1, 7-8, 9"		John 1:35-42		-01-04
-0			1 John 3:11-21				no bibilical reference		"Ps 100:1b-2, 3, 4, 5"		John 1:43-51		-01-05
-0			1 John 5:5-13				Mark 9:6		"Ps 147:12-13, 14-15, 19-20"		Mark 1:7-11 or		-01-06
-0			1 John 5:14-21				Luke 7:16		"Ps 149:1-2, 3-4, 5+6a+9b"		John 2:1-11		-01-07
-0	Monday after Epiphany		1 John 3:22—4:6				Matt 4:23		"Ps 2:7bc-8, 10-12a"		"Matt 4:12-17, 23-25"		
-0	Tuesday after Epiphany		1 John 4:7-10				Luke 4:18		"Ps 72:1-2, 3-4, 7-8"		Mark 6:34-44		
-0	Wednesday after Epiphany		1 John 4:11-18				1 Tim 3:16		"Ps 72:1-2, 10, 12-13"		Mark 6:45-52		
-0	Thursday after Epiphany		1 John 4:19—5:4				Luke 4:18		"Ps 72:1-2, 14+15bc, 17"		Luke 4:14-22a		
-0	Friday after Epiphany		1 John 5:5-13				Matt 4:23		"Ps 147:12-13, 14-15, 19-20"		Luke 5:12-16		
-0	Saturday after Epiphany		1 John 5:14-21				Matt 4:16		"Ps 149:1-2, 3-4, 5+6a+9b"		John 3:22-30		
+id	event_name	event_type	date	event_first_reading	event_first_audio	event_second_reading	event_second_audio	event_alleluia_verse	event_alleluia_audio	event_responsorial_psalm	event_responsorial_audio	event_gospel	event_gospel_audio
+1	The Nativity of the Lord	"Solemnity, Christmas"		Isa 62:1-5		Acts 13:16-17		(no bibl. ref.)		Ps 89:4-5		Matt 1:1-25	
+2	Christmas: Mass during the Night	Christmas		Isa 9:1-6		Titus 2:11-14		Luke 2:10-11		Ps 96:1-2a		Luke 2:1-14	
+3	Christmas: Mass at Dawn	Christmas		Isa 62:11-12		Titus 3:4-7		Luke 2:14		Ps 97:1+6		Luke 2:15-20	
+4	Christmas: Mass during the Day	Christmas		Isa 52:7-10		Heb 1:1-6		(no bibl. ref.)		"Ps 98:1, 2-3a"		John 1:1-18	
+5	"The Octave Day of Christmas: Solemnity of the Blessed Virgin Mary, the Mother of God - ABC"	"Solemnity, Christmas"		Num 6:22-27		Gal 4:4-7		Heb 1:1-2		Ps 67:2-3		Luke 2:16-21	
