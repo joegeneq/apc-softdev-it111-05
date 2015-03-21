@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2015 at 05:22 PM
+-- Generation Time: Mar 21, 2015 at 06:32 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `event` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `event_name` varchar(45) NOT NULL,
-  `event_type` varchar(45) NOT NULL,
+  `event_name` varchar(45) DEFAULT NULL,
+  `event_type` varchar(45) DEFAULT NULL,
   `event_first_reading` varchar(45) DEFAULT NULL,
   `event_first_audio` varchar(45) DEFAULT NULL,
   `event_second_reading` varchar(45) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `event_responsorial_audio` varchar(45) DEFAULT NULL,
   `event_gospel` varchar(45) DEFAULT NULL,
   `event_gospel_audio` varchar(45) DEFAULT NULL,
-  `date` varchar(45) NOT NULL,
+  `event_date` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -182,14 +182,14 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(10) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `first_reading` varchar(100) NOT NULL,
-  `first_reading_audio` varchar(100) NOT NULL,
-  `responsorial_psalm` varchar(100) NOT NULL,
-  `responsorial_psalm_audio` varchar(100) NOT NULL,
-  `second_reading` varchar(100) NOT NULL,
-  `second_reading_audio` varchar(100) NOT NULL,
-  `gospel` varchar(100) NOT NULL,
-  `gospel_audio` varchar(100) NOT NULL,
+  `first_reading` varchar(100) DEFAULT NULL,
+  `first_reading_audio` varchar(100) DEFAULT NULL,
+  `responsorial_psalm` varchar(100) DEFAULT NULL,
+  `responsorial_psalm_audio` varchar(100) DEFAULT NULL,
+  `second_reading` varchar(100) DEFAULT NULL,
+  `second_reading_audio` varchar(100) DEFAULT NULL,
+  `gospel` varchar(100) DEFAULT NULL,
+  `gospel_audio` varchar(100) DEFAULT NULL,
   `type` char(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -404,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `weekday_reading` (
   `weekday_weeknum` int(11) NOT NULL,
   `weekday_reading_type` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=471 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=507 ;
 
 --
 -- Dumping data for table `weekday_reading`
@@ -881,7 +881,43 @@ INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_day`, `weekday_f
 (467, 3, 'Wednesday', 'Acts 20:28-38', '', 'John 17:17b+17a', '', 'Ps 68:29-30, 33-35a, 35bc-36ab', '', 'John 17:11b-19', '', 0, 7, 'easter'),
 (468, 4, 'Thursday', 'Acts 22:30; 23:6-11', '', 'John 17:21', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'John 17:20-26', '', 0, 7, 'easter'),
 (469, 5, 'Friday', 'Acts 25:13b-21', '', 'John 14:26', '', 'Ps 103:1-2, 11-12, 19-20ab', '', 'John 21:15-19', '', 0, 7, 'easter'),
-(470, 6, 'Saturday', 'Acts 28:16-20, 30-31', '', 'John 16:7+13', '', 'Ps 11:4, 5+7', '', 'John 21:20-25', '', 0, 7, 'easter');
+(470, 6, 'Saturday', 'Acts 28:16-20, 30-31', '', 'John 16:7+13', '', 'Ps 11:4, 5+7', '', 'John 21:20-25', '', 0, 7, 'easter'),
+(471, 1, 'Monday', 'Lev 19:1-2, 11-18', '', '2 Cor 6:2b', '', 'Ps?19:8, 9, 10, 15', '', 'Matt 25:31-46', '', 0, 1, 'lent'),
+(472, 2, 'Tuesday', 'Isa 55:10-11', '', 'Matt 4:4b', '', 'Ps 34:4-5, 6-7, 16-17, 18-19', '', 'Matt 6:7-15', '', 0, 1, 'lent'),
+(473, 3, 'Wednesday', 'Jonah 3:1-10', '', 'Joel 2:12-13', '', 'Ps 51:3-4, 12-13, 18-19', '', 'Luke 11:29-32', '', 0, 1, 'lent'),
+(474, 4, 'Thursday', 'Esth C:12, 14-16, 23-25', '', 'Ps 51:12a+14a', '', 'Ps 138:1-2ab, 2cde-3, 7c-8', '', 'Matt 7:7-12', '', 0, 1, 'lent'),
+(475, 5, 'Friday', 'Ezek 18:21-28', '', 'Ezek 18:31', '', 'Ps 130:1-2, 3-4, 5-7a, 7bc-8', '', 'Matt 5:20-26', '', 0, 1, 'lent'),
+(476, 6, 'Saturday', 'Deut 26:16-19', '', '2 Cor 6:2b', '', 'Ps 119:1-2, 4-5, 7-8', '', 'Matt 5:43-48', '', 0, 1, 'lent'),
+(477, 1, 'Monday', 'Dan 9:4b-10', '', 'John 6:63c+68c', '', 'Ps 78:8, 9, 11+13', '', 'Luke 6:36-38', '', 0, 2, 'lent'),
+(478, 2, 'Tuesday', 'Isa 1:10, 16-20', '', 'Ezek 18:31', '', 'Ps 50:8-9, 16bc-17, 21+23', '', 'Matt 23:1-12', '', 0, 2, 'lent'),
+(479, 3, 'Wednesday', 'Jer 18:18-20', '', 'John 8:12', '', 'Ps 31:5-6, 14, 15-16', '', 'Matt 20:17-28', '', 0, 2, 'lent'),
+(480, 4, 'Thursday', 'Jer 17:5-10', '', 'Luke 8:15', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 16:19-31', '', 0, 2, 'lent'),
+(481, 5, 'Friday', 'Gen 37:3-4, 12-13a, 17b-28a', '', 'John 3:16', '', 'Ps 105:16-17, 18-19, 20-21', '', 'Matt 21:33-43, 45-46', '', 0, 2, 'lent'),
+(482, 6, 'Saturday', 'Mic 7:14-15, 18-20', '', 'Luke 15:18', '', 'Ps 103:1-2, 3-4, 9-10, 11-12', '', 'Luke 15:1-3, 11-32', '', 0, 2, 'lent'),
+(483, 0, '', 'Exod 17:1-7', '', 'John 4:42, 15', '', 'Ps 95:1-2, 6-7ab, 7c-9', '', 'John 4:5-42', '', 0, 3, 'lent-optional'),
+(484, 1, 'Monday', '2 Kgs 5:1-15a', '', 'Ps 130:5+7', '', 'Ps 42:2, 3; 43:3, 4', '', 'Luke 4:24-30', '', 0, 3, 'lent'),
+(485, 2, 'Tuesday', 'Dan 3:25, 34-43', '', 'Joel 2:12-13', '', 'Ps 25:4-5ab, 6+7bc, 8-9', '', 'Matt 18:21-35', '', 0, 3, 'lent'),
+(486, 3, 'Wednesday', 'Deut 4:1, 5-9', '', 'John 6:63c+68c', '', 'Ps 147:12-13, 15-16, 19-20', '', 'Matt 5:17-19', '', 0, 3, 'lent'),
+(487, 4, 'Thursday', 'Jer 7:23-28', '', 'Joel 2:12-13', '', 'Ps 95:1-2, 6-7, 8-9', '', 'Luke 11:14-23', '', 0, 3, 'lent'),
+(488, 5, 'Friday', 'Hos 14:2-10', '', 'Matt 4:17', '', 'Ps 81:6c-8a, 8bc-9, 10-11ab, 14+17', '', 'Mark 12:28b-34', '', 0, 3, 'lent'),
+(489, 6, 'Saturday', 'Hos 6:1-6', '', 'Ps 95:8', '', 'Ps 51:3-4, 18-19, 20-21ab', '', 'Luke 18:9-14', '', 0, 3, 'lent'),
+(490, 0, '', 'Mic 7:7-9', '', 'John 8:12', '', 'Ps 26:1, 7-8a, 8b-9abc, 13-14', '', 'John 9:1-41', '', 0, 4, 'lent-optional'),
+(491, 1, 'Monday', 'Isa 65:17-21', '', 'Amos 5:14', '', 'Ps 30:2+4, 5-6, 11-12a+13b', '', 'John 4:43-54', '', 0, 4, 'lent'),
+(492, 2, 'Tuesday', 'Ezek 47:1-9, 12', '', 'Ps 51:12a+14a', '', 'Ps 46:2-3, 5-6, 8-9', '', 'John 5:1-3a, 5-16', '', 0, 4, 'lent'),
+(493, 3, 'Wednesday', 'Isa 49:8-15', '', 'John 11:25a+26', '', 'Ps 145:8-9, 13cd-14, 17-18', '', 'John 5:17-30', '', 0, 4, 'lent'),
+(494, 4, 'Thursday', 'Exod 32:7-14', '', 'John 3:16', '', 'Ps 106:19-20, 21-22, 23', '', 'John 5:31-47', '', 0, 4, 'lent'),
+(495, 5, 'Friday', 'Wis 2:1a, 12-22', '', 'Matt 4:4b', '', 'Ps 34:17-18, 19-20, 21+23', '', 'John 7:1-2, 10, 25-30', '', 0, 4, 'lent'),
+(496, 6, 'Saturday', 'Jer 11:18-20', '', 'Luke 8:15', '', 'Ps 7:2-3, 9bc-10, 11-12', '', 'John 7:40-53', '', 0, 4, 'lent'),
+(497, 0, '', '2 Kgs 4:18b-21, 32-37', '', 'John 11:25a+26', '', 'Ps 17:1, 6-7, 8b+15', '', 'John 11:1-45', '', 0, 5, 'lent-optional'),
+(498, 1, 'Monday', 'Dan 13:1-9, 15-17, 19-30, 33-62', '', 'Ezek 33:11', '', 'Ps 23:1-3a, 3b-4, 5, 6', '', 'John 8:1-11?or,?', '', 0, 5, 'lent'),
+(499, 2, 'Tuesday', 'Num 21:4-9', '', 'no bibilical reference', '', 'Ps 102:2-3, 16-18, 19-21', '', 'John 8:21-30', '', 0, 5, 'lent'),
+(500, 3, 'Wednesday', 'Dan 3:14-20, 91-92, 95', '', 'Luke 8:15', '', 'Dan 3:52, 53, 54, 55, 56', '', 'John 8:31-42', '', 0, 5, 'lent'),
+(501, 4, 'Thursday', 'Gen 17:3-9', '', 'Ps 95:8', '', 'Ps 105:4-5, 6-7, 8-9', '', 'John 8:51-59', '', 0, 5, 'lent'),
+(502, 5, 'Friday', 'Jer 20:10-13', '', 'John 6:63c+68c', '', 'Ps 18:2-3a, 3bc-4, 5-6, 7', '', 'John 10:31-42', '', 0, 5, 'lent'),
+(503, 6, 'Saturday', 'Ezek 37:21-28', '', 'Ezek 18:31', '', 'Jer 31:10, 11-12abcd, 13', '', 'John 11:45-56', '', 0, 5, 'lent'),
+(504, 1, 'Monday', 'Isa 42:1-7', '', 'no bibilical reference', '', 'Ps 27:1, 2, 3, 13-14', '', 'John 12:1-11', '', 0, 1, 'holy week'),
+(505, 2, 'Tuesday', 'Isa 49:1-6', '', 'no bibilical reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'John 13:21-33, 36-38', '', 0, 1, 'holy week'),
+(506, 3, 'Wednesday', 'Isa 50:4-9a', '', 'no bibilical reference', '', 'Ps 69:8-10, 21-22, 31+33-34', '', 'Matt 26:14-25', '', 0, 1, 'holy week');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
