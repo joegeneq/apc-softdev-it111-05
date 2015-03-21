@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2015 at 01:19 AM
--- Server version: 5.6.11
--- PHP Version: 5.5.3
+-- Generation Time: Mar 21, 2015 at 05:22 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `asnd_lcmam`
 --
-CREATE DATABASE IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `asnd_lcmam`;
 
 -- --------------------------------------------------------
 
@@ -42,10 +40,8 @@ CREATE TABLE IF NOT EXISTS `event` (
   `event_responsorial_audio` varchar(45) DEFAULT NULL,
   `event_gospel` varchar(45) DEFAULT NULL,
   `event_gospel_audio` varchar(45) DEFAULT NULL,
-  `date` date NOT NULL,
-  `year_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`,`year_id`),
-  KEY `fk_event_year1_idx` (`year_id`)
+  `date` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
