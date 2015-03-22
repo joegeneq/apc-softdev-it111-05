@@ -147,29 +147,29 @@ id,sunday_weeknum,sunday_name,sunday_first_reading,sunday_first_audio,sunday_sec
 146,3,Epiphany of the Lord,Isa 60:1-6,,Eph 3:2-3a,,Matt 2:2,,Ps 72:1-2,,Matt 2:1-12,,,,C,christmas,
 147,4,Baptism of the Lord,"opt:Isa 40:1-5, 9-11 (new)",,opt:Titus 2:11-14; 3:4-7 (new),,cf. Luke 3:16,,"opt:Ps 104:1b-2, 3-4, 24-25,27-28, 29b-30 (",,"Luke 3:15-16, 21-22",,,,C,christmas,
 148,1,Easter Vigil in the Holy Night,,,,,,,,,,,,,A,easter,
-149,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon Masses),,,,A,easter,Easter Sunday: The Resurrection of the Lord
-150,2,2nd Sunday of Easter - A,Acts 2:42-47,,1 Pet 1:3-9,,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,A,easter,
-151,3,3rd Sunday of Easter - A,"Acts 2:14, 22-33 (diff)",,1 Pet 1:17-21,,cf. Luke 24:32,,"Ps 16:1-2a+5, 7-8, 9-10, 11",,Luke 24:13-35,,,,A,easter,
-152,4,4th Sunday of Easter - A,"Acts 2:14a, 36-41",,1 Pet 2:20b-25,,John 10:14,,"Ps 23:1-3a, 3b-4, 5, 6",,John 10:1-10,,,,A,easter,
-153,5,5th Sunday of Easter - A,Acts 6:1-7,,1 Pet 2:4-9,,John 14:6,,"Ps 33:1-2, 4-5, 18-19",,John 14:1-12,,,,A,easter,
-154,6,6th Sunday of Easter - A,"Acts 8:5-8, 14-17",,1 Pet 3:15-18,,John 14:23,,"Ps 66:1-3, 4-5, 6-7, 16+20",,John 14:15-21,,,,A,easter,
-155,7,7th Sunday of Easter - A (note),Acts 1:12-14,,1 Pet 4:13-16,,cf. John 14:18,,"Ps 27:1, 4, 7-8",,John 17:1-11a,,,,A,easter,
+149,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon M,,,,A,easter,Easter Sunday: The Resurrection of the Lord
+150,2,2nd Sunday of Easter - A,Acts 2:42-47,,1 Pet 1:3-9,,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,A,easter,
+151,3,3rd Sunday of Easter - A,"Acts 2:14, 22-33",,1 Pet 1:17-21,,cf. Luke 24:32,,"Ps 16:1-2a+5, 7-8, 9-10, 11",,Luke 24:13-35,,,,A,easter,
+152,4,4th Sunday of Easter - A,"Acts 2:14a, 36-41",,1 Pet 2:20b-25,,John 10:14,,"Ps 23:1-3a, 3b-4, 5, 6",,John 10:1-10,,,,A,easter,
+153,5,5th Sunday of Easter - A,Acts 6:1-7,,1 Pet 2:4-9,,John 14:6,,"Ps 33:1-2, 4-5, 18-19",,John 14:1-12,,,,A,easter,
+154,6,6th Sunday of Easter - A,"Acts 8:5-8, 14-17",,1 Pet 3:15-18,,John 14:23,,"Ps 66:1-3, 4-5, 6-7, 16+20",,John 14:15-21,,,,A,easter,
+155,7,7th Sunday of Easter - A,Acts 1:12-14,,1 Pet 4:13-16,,cf. John 14:18,,"Ps 27:1, 4, 7-8",,John 17:1-11a,,,,A,easter,
 156,8,Pentecost Sunday,Acts 2:1-11,,"1 Cor 12:3b-7, 12-13",,(no bibl. ref.),,"Ps 104:1+24, 29-30, 31+34",,John 20:19-23,,,,A,pentecost,Mass during the day
 157,1,Easter Vigil in the Holy Night,,,,,,,,,,,,,B,easter,
-158,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon Masses),,,,B,easter,Easter Sunday: The Resurrection of the Lord
-159,2,2nd Sunday of Easter - B,Acts 4:32-35,,1 John 5:1-6,,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,B,easter,
-160,3,3rd Sunday of Easter - B,"Acts 3:13-15, 17-19",,1 John 2:1-5a,,cf. Luke 24:32,,"Ps 4:2, 4, 7-8, 9",,Luke 24:35-48,,,,B,easter,
-161,4,4th Sunday of Easter - B,Acts 4:8-12,,1 John 3:1-2,,John 10:14,,"Ps 118:1+8-9, 21-23, 26+21+29",,John 10:11-18,,,,B,easter,
-162,5,5th Sunday of Easter - B,Acts 9:26-31,,1 John 3:18-24,,John 15:4a+5b,,"Ps 22:26-27, 28+30, 31-32",,John 15:1-8,,,,B,easter,
-163,6,6th Sunday of Easter - B,"Acts 10:25-26, 34-35, 44-48 (diff)",,1 John 4:7-10,,John 14:23,,"Ps 98:1, 2-3a, 3b-4",,John 15:9-17,,,,B,easter,
-164,7,7th Sunday of Easter - B (note),"Acts 1:15-17, 20a, 20c-26",,1 John 4:11-16,,cf. John 14:18,,"Ps 103:1-2, 11-12, 19-20",,John 17:11b-19,,,,B,easter,
-165,8,Pentecost Sunday,Acts 2:1-11,,opt: Gal 5:16-25 (new),,(no bibl. ref.),,"Ps 104:1+24, 29-30, 31+34",,opt: John 15:26-27; 16:12-15 (new),,,,B,pentecost,Mass during the day
+158,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon M,,,,B,easter,Easter Sunday: The Resurrection of the Lord
+159,2,2nd Sunday of Easter - B,Acts 4:32-35,,1 John 5:1-6,,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,B,easter,
+160,3,3rd Sunday of Easter - B,"Acts 3:13-15, 17-19",,1 John 2:1-5a,,cf. Luke 24:32,,"Ps 4:2, 4, 7-8, 9",,Luke 24:35-48,,,,B,easter,
+161,4,4th Sunday of Easter - B,Acts 4:8-12,,1 John 3:1-2,,John 10:14,,"Ps 118:1+8-9, 21-23, 26+21+29",,John 10:11-18,,,,B,easter,
+162,5,5th Sunday of Easter - B,Acts 9:26-31,,1 John 3:18-24,,John 15:4a+5b,,"Ps 22:26-27, 28+30, 31-32",,John 15:1-8,,,,B,easter,
+163,6,6th Sunday of Easter - B,"Acts 10:25-26, 34-35, 44-48",,1 John 4:7-10,,John 14:23,,"Ps 98:1, 2-3a, 3b-4",,John 15:9-17,,,,B,easter,
+164,7,7th Sunday of Easter - B (note),"Acts 1:15-17, 20a, 20c-26",,1 John 4:11-16,,cf. John 14:18,,"Ps 103:1-2, 11-12, 19-20",,John 17:11b-19,,,,B,easter,
+165,8,Pentecost Sunday,Acts 2:1-11,,opt: Gal 5:16-25 (new),,(no bibl. ref.),,"Ps 104:1+24, 29-30, 31+34",,opt: John 15:26-27; 16:12-15 (new),,,,B,pentecost,Mass during the day
 166,1,Easter Vigil in the Holy Night,,,,,,,,,,,,,C,easter,
-167,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon Masses),,,,C,easter,Easter Sunday: The Resurrection of the Lord
-168,2,2nd Sunday of Easter - C,Acts 5:12-16,,"Rev 1:9-11a, 12-13, 17-19",,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,C,easter,
-169,3,3rd Sunday of Easter - C,"Acts 5:27-32, 40b-41",,Rev 5:11-14,,(no bibl. ref.),,"Ps 30:2+4, 5-6, 11-12a+13b",,John 21:1-19 or 21:1-14,,,,C,easter,
-170,4,4th Sunday of Easter - C,"Acts 13:14, 43-52",,"Rev 7:9, 14b-17",,John 10:14,,"Ps 100:1-2, 3, 5",,John 10:27-30,,,,C,easter,
-171,5,5th Sunday of Easter - C,Acts 14:21-27,,Rev 21:1-5a,,John 13:34,,"Ps 145:8-9, 10-11, 12-13",,"John 13:31-33a, 34-35",,,,C,easter,
-172,6,6th Sunday of Easter - C,"Acts 15:1-2, 22-29",,"Rev 21:10-14, 22-23",,John 14:23,,"Ps 67:2-3, 5, 6+8",,John 14:23-29,,,,C,easter,
-173,7,7th Sunday of Easter - C (note),Acts 7:55-60,,"Rev 22:12-14, 16-17, 20",,cf. John 14:18,,"Ps 97:1-2, 6-7, 9",,John 17:20-26,,,,C,easter,
-174,8,Pentecost Sunday,Acts 2:1-11,,opt: Rom 8:8-17 (new),,(no bibl. ref.),,"Ps 104:1+24, 29-30, 31+34",,"opt: John 14:15-16, 23b-26 (new)",,,,C,pentecost,Mass during the day
+167,1,The Mass of Easter Day,Acts 10:34a,,Col 3:1-4,,1 Cor 5:7b-8a,,Ps 118:1-2,,John 20:1-9 or Luke 24:13-35 (for afternoon M,,,,C,easter,Easter Sunday: The Resurrection of the Lord
+168,2,2nd Sunday of Easter - C,Acts 5:12-16,,"Rev 1:9-11a, 12-13, 17-19",,John 20:29,,"Ps 118:2-4, 13-15, 22-24",,John 20:19-31,,,,C,easter,
+169,3,3rd Sunday of Easter - C,"Acts 5:27-32, 40b-41",,Rev 5:11-14,,(no bibl. ref.),,"Ps 30:2+4, 5-6, 11-12a+13b",,John 21:1-19 or 21:1-14,,,,C,easter,
+170,4,4th Sunday of Easter - C,"Acts 13:14, 43-52",,"Rev 7:9, 14b-17",,John 10:14,,"Ps 100:1-2, 3, 5",,John 10:27-30,,,,C,easter,
+171,5,5th Sunday of Easter - C,Acts 14:21-27,,Rev 21:1-5a,,John 13:34,,"Ps 145:8-9, 10-11, 12-13",,"John 13:31-33a, 34-35",,,,C,easter,
+172,6,6th Sunday of Easter - C,"Acts 15:1-2, 22-29",,"Rev 21:10-14, 22-23",,John 14:23,,"Ps 67:2-3, 5, 6+8",,John 14:23-29,,,,C,easter,
+173,7,7th Sunday of Easter - C,Acts 7:55-60,,"Rev 22:12-14, 16-17, 20",,cf. John 14:18,,"Ps 97:1-2, 6-7, 9",,John 17:20-26,,,,C,easter,
+174,8,Pentecost Sunday,Acts 2:1-11,,opt: Rom 8:8-17 (new),,(no bibl. ref.),,"Ps 104:1+24, 29-30, 31+34",,"opt: John 14:15-16, 23b-26 (new)",,,,C,pentecost,Mass during the day
