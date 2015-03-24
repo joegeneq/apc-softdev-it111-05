@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2015 at 08:01 AM
--- Server version: 5.6.11
--- PHP Version: 5.5.3
+-- Generation Time: Mar 24, 2015 at 04:41 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `asnd_lcmam`
 --
-CREATE DATABASE IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `asnd_lcmam`;
 
 -- --------------------------------------------------------
 
@@ -56,11 +54,11 @@ CREATE TABLE IF NOT EXISTS `event` (
 --
 
 INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_reading`, `event_first_audio`, `event_second_reading`, `event_second_audio`, `event_alleluia_verse`, `event_alleluia_audio`, `event_responsorial_psalm`, `event_responsorial_audio`, `event_gospel`, `event_gospel_audio`, `event_first_optional`, `event_second_optional`, `event_responsorial_optional`, `event_alleluia_optional`, `event_gospel_optional`) VALUES
-(1, ' The Nativity of the Lord ', 'Solemnity, Christmas', '-36', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', '', '', '', '', '', ''),
-(2, ' Christmas: Mass during the Night', ' Christmas ', '-37', 'Isa 9:1-6', '', 'Titus 2:11-14', '', 'Luke 2:10-11', '', 'Ps 96:1-2a', '', 'Luke 2:1-14', '', '', '', '', '', ''),
-(3, '	Christmas: Mass at Dan', 'Christmas', '-37', 'Isa 62:11-12', '', 'Titus 3:4-7', '', 'Luke 2:14', '', 'Ps 97:1+6', '', 'Luke 2:15-20', '', '', '', '', '', ''),
-(4, '	Christmas: Mass during the ay', 'Christmas', '-37', 'Isa 52:7-10', '', 'Heb 1:1-6', '', '(no bibl. ref.)', '', 'Ps 98:1, 2-3a', '', 'John 1:1-18', '', '', '', '', '', ''),
-(5, 'The Octave Day of Christmas: Solemnity of the', 'Solemnity, Christmas', '-2', 'Num 6:22-27', '', 'Gal 4:4-7', '', 'Heb 1:1-2', '', 'Ps 67:2-3', '', 'Luke 2:16-21', '', '', '', '', '', ''),
+(1, ' The Nativity of the Lord ', 'Solemnity, Christmas - Nativity', '-12-24', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', '', '', '', '', '', ''),
+(2, ' Christmas: Mass during the Night', 'Christmas Night', '-12-25', 'Isa 9:1-6', '', 'Titus 2:11-14', '', 'Luke 2:10-11', '', 'Ps 96:1-2a', '', 'Luke 2:1-14', '', '', '', '', '', ''),
+(3, 'Christmas: Mass at Dawn', 'Christmas Dawn', '-12-25', 'Isa 62:11-12', '', 'Titus 3:4-7', '', 'Luke 2:14', '', 'Ps 97:1+6', '', 'Luke 2:15-20', '', '', '', '', '', ''),
+(4, 'Christmas: Mass during the Day', 'Christmas Day', '-12-25', 'Isa 52:7-10', '', 'Heb 1:1-6', '', '(no bibl. ref.)', '', 'Ps 98:1, 2-3a', '', 'John 1:1-18', '', '', '', '', '', ''),
+(5, 'Solemnity of Mary, Mother of God', 'Solemnity, Christmas', '-01-01', 'Num 6:22-27', '', 'Gal 4:4-7', '', 'Heb 1:1-2', '', 'Ps 67:2-3', '', 'Luke 2:16-21', '', '', '', '', '', ''),
 (6, '', 'Advent', '-12-17', 'Gen 49:2, 8-10', '', '', '', '', '', 'Ps 72:1-2, 3-4ab, 7-8, 17', '', 'Matt 1:1-17', '', '', '', '', '', ''),
 (7, '', 'Advent', '-12-18', 'Jer 23:5-8', '', '', '', '', '', 'Ps 72:1-2, 12-13, 18-19', '', 'Matt 1:18-24', '', '', '', '', '', ''),
 (8, '', 'Advent', '-12-19', 'Judg 13:2-7, 24-25a', '', '', '', '', '', 'Ps 71:3-4a, 5-6ab, 16-17', '', 'Luke 1:5-25', '', '', '', '', '', ''),
@@ -68,7 +66,7 @@ INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_read
 (10, '', 'Advent', '-12-21', 'Cant 2:8-14 or Zeph 3:14-18a', '', '', '', '', '', 'Ps 33:2-3, 11-12, 20-21', '', 'Luke 1:39-45', '', '', '', '', '', ''),
 (11, '', 'Advent', '-12-22', '1 Sam 1:24-28', '', '', '', '', '', '1 Sam 2:1, 4-5, 6-7, 8abcd', '', 'Luke 1:46-56', '', '', '', '', '', ''),
 (12, '', 'Advent', '-12-23', 'Mal 3:1-4, 23-24', '', '', '', '', '', 'Ps 25:4-5ab, 8-9, 10+14', '', 'Luke 1:57-66', '', '', '', '', '', ''),
-(13, 'Morning Mass', 'Advent', '-12-24', '2 Sam 7:1-5, 8b-12, 14a, 16', '', '', '', '', '', 'Ps 89:2-3, 4-5, 27+29', '', 'Luke 1:67-79', '', '', '', '', '', ''),
+(13, 'Morning Mass', 'Advent - Morning Mass', '-12-24', '2 Sam 7:1-5, 8b-12, 14a, 16', '', '', '', '', '', 'Ps 89:2-3, 4-5, 27+29', '', 'Luke 1:67-79', '', '', '', '', '', ''),
 (14, 'Feast of St. Stephen, first martyr', 'Christmas', '-12-26', 'Acts 6:8-10; 7:54-59', '', '', '', 'Ps 118:26a+27a', '', 'Ps 31:3cd-4, 6ab+8a, 16bc+17', '', 'Matt 10:17-22', '', '', '', '', '', ''),
 (15, 'Feast of St. John, Apostle & Evangelist', 'Christmas', '-12-27', '1 John 1:1-4', '', '', '', '', '', 'Ps 97:1-2, 5-6, 11-12', '', 'John 20:1a, 2-8', '', '', '', '', '', ''),
 (16, 'Feast of the Holy Innocents, martyrs', 'Christmas', '-12-28', '1 John 1:5?2:2', '', '', '', '', '', 'Ps 124:2-3, 4-5, 7cd-8', '', 'Matt 2:13-18', '', '', '', '', '', ''),
