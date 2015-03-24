@@ -22,6 +22,7 @@ $(document).ready(function () {
                 'sundayReadings.php',
                 'specialEvents.php',
                 'weekdayReadings.php',
+                'solemnitiesOrFeasts.php',
             ],
         header: {
             left: 'prev, next',

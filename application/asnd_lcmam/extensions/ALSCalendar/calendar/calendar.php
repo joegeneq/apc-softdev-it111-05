@@ -22,6 +22,7 @@
                 'sundayReadings.php',
                 'specialEvents.php',
                 'weekdayReadings.php',
+                'solemnitiesOrFeasts.php',
             ],
             eventRender: function(event, element) {
             element.attr('title', event.tip);
