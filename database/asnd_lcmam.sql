@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2015 at 01:53 PM
+-- Generation Time: Mar 24, 2015 at 08:01 AM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.3
 
@@ -49,18 +49,44 @@ CREATE TABLE IF NOT EXISTS `event` (
   `event_alleluia_optional` varchar(100) DEFAULT NULL,
   `event_gospel_optional` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `event`
 --
 
 INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_reading`, `event_first_audio`, `event_second_reading`, `event_second_audio`, `event_alleluia_verse`, `event_alleluia_audio`, `event_responsorial_psalm`, `event_responsorial_audio`, `event_gospel`, `event_gospel_audio`, `event_first_optional`, `event_second_optional`, `event_responsorial_optional`, `event_alleluia_optional`, `event_gospel_optional`) VALUES
-(1, ' The Nativity of the Lord ', 'Solemnity, Christmas', '-12-24', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', '', NULL, NULL, NULL, NULL, NULL),
-(2, ' Christmas: Mass during the Night', ' Christmas ', '-12-25', 'Isa 9:1-6', '', 'Titus 2:11-14', '', 'Luke 2:10-11', '', 'Ps 96:1-2a', '', 'Luke 2:1-14', '', NULL, NULL, NULL, NULL, NULL),
-(3, '	Christmas: Mass at Dan', 'Christmas', '-12-25', 'Isa 62:11-12', '', 'Titus 3:4-7', '', 'Luke 2:14', '', 'Ps 97:1+6', '', 'Luke 2:15-20', '', NULL, NULL, NULL, NULL, NULL),
-(4, '	Christmas: Mass during the ay', 'Christmas', '-12-25', 'Isa 52:7-10', '', 'Heb 1:1-6', '', '(no bibl. ref.)', '', 'Ps 98:1, 2-3a', '', 'John 1:1-18', '', NULL, NULL, NULL, NULL, NULL),
-(5, 'The Octave Day of Christmas: Solemnity of the', 'Solemnity, Christmas', '-01-01', 'Num 6:22-27', '', 'Gal 4:4-7', '', 'Heb 1:1-2', '', 'Ps 67:2-3', '', 'Luke 2:16-21', '', NULL, NULL, NULL, NULL, NULL);
+(1, ' The Nativity of the Lord ', 'Solemnity, Christmas', '-36', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', '', '', '', '', '', ''),
+(2, ' Christmas: Mass during the Night', ' Christmas ', '-37', 'Isa 9:1-6', '', 'Titus 2:11-14', '', 'Luke 2:10-11', '', 'Ps 96:1-2a', '', 'Luke 2:1-14', '', '', '', '', '', ''),
+(3, '	Christmas: Mass at Dan', 'Christmas', '-37', 'Isa 62:11-12', '', 'Titus 3:4-7', '', 'Luke 2:14', '', 'Ps 97:1+6', '', 'Luke 2:15-20', '', '', '', '', '', ''),
+(4, '	Christmas: Mass during the ay', 'Christmas', '-37', 'Isa 52:7-10', '', 'Heb 1:1-6', '', '(no bibl. ref.)', '', 'Ps 98:1, 2-3a', '', 'John 1:1-18', '', '', '', '', '', ''),
+(5, 'The Octave Day of Christmas: Solemnity of the', 'Solemnity, Christmas', '-2', 'Num 6:22-27', '', 'Gal 4:4-7', '', 'Heb 1:1-2', '', 'Ps 67:2-3', '', 'Luke 2:16-21', '', '', '', '', '', ''),
+(6, '', 'Advent', '-12-17', 'Gen 49:2, 8-10', '', '', '', '', '', 'Ps 72:1-2, 3-4ab, 7-8, 17', '', 'Matt 1:1-17', '', '', '', '', '', ''),
+(7, '', 'Advent', '-12-18', 'Jer 23:5-8', '', '', '', '', '', 'Ps 72:1-2, 12-13, 18-19', '', 'Matt 1:18-24', '', '', '', '', '', ''),
+(8, '', 'Advent', '-12-19', 'Judg 13:2-7, 24-25a', '', '', '', '', '', 'Ps 71:3-4a, 5-6ab, 16-17', '', 'Luke 1:5-25', '', '', '', '', '', ''),
+(9, '', 'Advent', '-12-20', 'Isa 7:10-14', '', '', '', '', '', 'Ps 24:1-2, 3-4ab, 5-6', '', 'Luke 1:26-38', '', '', '', '', '', ''),
+(10, '', 'Advent', '-12-21', 'Cant 2:8-14 or Zeph 3:14-18a', '', '', '', '', '', 'Ps 33:2-3, 11-12, 20-21', '', 'Luke 1:39-45', '', '', '', '', '', ''),
+(11, '', 'Advent', '-12-22', '1 Sam 1:24-28', '', '', '', '', '', '1 Sam 2:1, 4-5, 6-7, 8abcd', '', 'Luke 1:46-56', '', '', '', '', '', ''),
+(12, '', 'Advent', '-12-23', 'Mal 3:1-4, 23-24', '', '', '', '', '', 'Ps 25:4-5ab, 8-9, 10+14', '', 'Luke 1:57-66', '', '', '', '', '', ''),
+(13, 'Morning Mass', 'Advent', '-12-24', '2 Sam 7:1-5, 8b-12, 14a, 16', '', '', '', '', '', 'Ps 89:2-3, 4-5, 27+29', '', 'Luke 1:67-79', '', '', '', '', '', ''),
+(14, 'Feast of St. Stephen, first martyr', 'Christmas', '-12-26', 'Acts 6:8-10; 7:54-59', '', '', '', 'Ps 118:26a+27a', '', 'Ps 31:3cd-4, 6ab+8a, 16bc+17', '', 'Matt 10:17-22', '', '', '', '', '', ''),
+(15, 'Feast of St. John, Apostle & Evangelist', 'Christmas', '-12-27', '1 John 1:1-4', '', '', '', '', '', 'Ps 97:1-2, 5-6, 11-12', '', 'John 20:1a, 2-8', '', '', '', '', '', ''),
+(16, 'Feast of the Holy Innocents, martyrs', 'Christmas', '-12-28', '1 John 1:5?2:2', '', '', '', '', '', 'Ps 124:2-3, 4-5, 7cd-8', '', 'Matt 2:13-18', '', '', '', '', '', ''),
+(17, '5th Day in the Octave of Christmas', 'Christmas', '-12-29', '1 John 2:3-11', '', '', '', 'Luke 2:32', '', 'Ps 96:1-2a, 2b-3, 5b-6', '', 'Luke 2:22-35', '', '', '', '', '', ''),
+(18, '6th Day in the Octave of Christmas', 'Christmas', '-12-30', '1 John 2:12-17', '', '', '', 'no biblical reference', '', 'Ps 96:7-8a, 8b-9, 10', '', 'Luke 2:36-40', '', '', '', '', '', ''),
+(19, '7th Day in the Octave of Christmas', 'Christmas', '-12-31', '1 John 2:18-21', '', '', '', 'John 1:14a+12a', '', 'Ps 96:1-2, 11-12, 13', '', 'John 1:1-18', '', '', '', '', '', ''),
+(20, '', 'Christmas', '-01-02', '1 John 2:22-28', '', '', '', 'Heb 1:1-2', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'John 1:19-28', '', '', '', '', '', ''),
+(21, '', 'Christmas', '-01-03', '1 John 2:29?3:6', '', '', '', 'John 1:14a+12a', '', 'Ps 98:1, 3cd-4, 5-6', '', 'John 1:29-34', '', '', '', '', '', ''),
+(22, '', 'Christmas', '-01-04', '1 John 3:7-10', '', '', '', 'Heb 1:1-2', '', 'Ps 98:1, 7-8, 9', '', 'John 1:35-42', '', '', '', '', '', ''),
+(23, '', 'Christmas', '-01-05', '1 John 3:11-21', '', '', '', 'no biblical reference', '', 'Ps 100:1b-2, 3, 4, 5', '', 'John 1:43-51', '', '', '', '', '', ''),
+(24, '', 'Christmas', '-01-06', '1 John 5:5-13', '', '', '', 'Mark 9:6', '', 'Ps 147:12-13, 14-15, 19-20', '', 'Mark 1:7-11?or', '', '', '', '', '', ''),
+(25, '', 'Christmas', '-01-07', '1 John 5:14-21', '', '', '', 'Luke 7:16', '', 'Ps 149:1-2, 3-4, 5+6a+9b', '', 'John 2:1-11', '', '', '', '', '', ''),
+(26, 'Monday after Epiphany', 'Christmas', '', '1 John 3:22?4:6', '', '', '', 'Matt 4:23', '', 'Ps 2:7bc-8, 10-12a', '', 'Matt 4:12-17, 23-25', '', '', '', '', '', ''),
+(27, 'Tuesday after Epiphany', 'Christmas', '', '1 John 4:7-10', '', '', '', 'Luke 4:18', '', 'Ps 72:1-2, 3-4, 7-8', '', 'Mark 6:34-44', '', '', '', '', '', ''),
+(28, 'Wednesday after Epiphany', 'Christmas', '', '1 John 4:11-18', '', '', '', '1 Tim 3:16', '', 'Ps 72:1-2, 10, 12-13', '', 'Mark 6:45-52', '', '', '', '', '', ''),
+(29, 'Thursday after Epiphany', 'Christmas', '', '1 John 4:19?5:4', '', '', '', 'Luke 4:18', '', 'Ps 72:1-2, 14+15bc, 17', '', 'Luke 4:14-22a', '', '', '', '', '', ''),
+(30, 'Friday after Epiphany', 'Christmas', '', '1 John 5:5-13', '', '', '', 'Matt 4:23', '', 'Ps 147:12-13, 14-15, 19-20', '', 'Luke 5:12-16', '', '', '', '', '', ''),
+(31, 'Saturday after Epiphany', 'Christmas', '', '1 John 5:14-21', '', '', '', 'Matt 4:16', '', 'Ps 149:1-2, 3-4, 5+6a+9b', '', 'John 3:22-30', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -200,17 +226,58 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(10) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `first_reading` varchar(100) NOT NULL,
-  `first_reading_audio` varchar(100) NOT NULL,
-  `responsorial_psalm` varchar(100) NOT NULL,
-  `responsorial_psalm_audio` varchar(100) NOT NULL,
-  `second_reading` varchar(100) NOT NULL,
-  `second_reading_audio` varchar(100) NOT NULL,
-  `gospel` varchar(100) NOT NULL,
-  `gospel_audio` varchar(100) NOT NULL,
   `type` char(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+
+--
+-- Dumping data for table `solemnities_or_feasts`
+--
+
+INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`) VALUES
+(1, '-03-19', 'St. Joseph, Husband of the Blessed Virgin Mary', 'S'),
+(2, '-03-25', 'The Anunciation of the Lord', 'S'),
+(3, '-06-24', 'The Nativity of St. John the Baptist (Vigil & Day)', 'S'),
+(4, '-06-29', 'Sts. Peter and Paul (Vigil & Day)', 'S'),
+(5, '-08-15', 'The Assumption of the Blessed Virgin Mary (Vigil & Day)', 'S'),
+(6, '-11-01', 'All Saints Day', 'S'),
+(7, '-11-02', 'Commemoration of All the Faithful Departed ("All Souls Day")', 'S'),
+(8, '-12-08', 'The Immaculate Concepcion of the Blessed Virgin Mary', 'S'),
+(9, '-02-02', 'Presentation of the Lord', 'F'),
+(10, '-08-06', 'Transfiguration of the Lord', 'F'),
+(11, '-09-14', 'Exaltation of the Holy Cross', 'F'),
+(12, '-11-09', 'Dedication of the Lateran Basilica in Rome', 'F'),
+(13, '-05-31', 'Visitation of the Blessed Virgin Mary', 'F'),
+(14, '-09-08', 'The Nativity of the Blessed Virgin Mary', 'F'),
+(15, '-12-12', 'Our Lady of Guadalupe', 'F'),
+(16, '-01-25', 'The Conversion of St. Paul, Apostle', 'F'),
+(17, '-02-22', 'The Chair of St. Peter, Apostle', 'F'),
+(18, '-04-25', 'St. Mark, evangelist', 'F'),
+(19, '-05-03', 'Sts. Philip and James, Apostle', 'F'),
+(20, '-05-13', 'St. Matthias, Apostle', 'F'),
+(21, '-07-03', 'St. Thomas, Apostle', 'F'),
+(22, '-07-25', 'St. James, Apostle', 'F'),
+(23, '-08-24', 'St. Bartholomew, Apostle', 'F'),
+(24, '-09-21', 'St. Matthew, Apostle and evangelist', 'F'),
+(25, '-10-18', 'St. Luke, evangelist', 'F'),
+(26, '-10-28', 'Sts. Simon and Jude, Apostles', 'F'),
+(27, '-11-30', 'St. Andrew, Apostle', 'F'),
+(28, '-12-27', 'St. John, Apostle and evangelist', 'F'),
+(29, '-08-10', 'St. Lawrence, deacon and martyr', 'F'),
+(30, '-09-29', 'Sts. Michael, Gabriel and Raphael, archangels', 'F'),
+(31, '-12-26', 'St. Stephen, first martyr', 'F'),
+(32, '-12-28', 'The Holy Innocents, martyrs', 'F'),
+(33, '-01-26', 'Sts. Timothy and Titus, bishops', 'M'),
+(34, '-06-11', 'St. Barnabas, Apostle', 'M'),
+(35, '-07-22', 'St. Mary Magdalene', 'M'),
+(36, '-07-26', 'Sts. Joachim and Anne, parents of Blessed Virgin Mary', 'M'),
+(37, '-07-29', 'St. Martha', 'M'),
+(38, '-08-29', 'The Martyrdom of St. John the Baptist', 'M'),
+(39, '-09-15', 'Our Lady of Sorrows', 'M'),
+(40, '-10-02', 'The Guardian Angels', 'M'),
+(41, '-10-17', 'St. Ignatius of Antioch', 'M'),
+(42, '-05-01', 'St. Joseph the Worker', 'M'),
+(43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'M');
 
 -- --------------------------------------------------------
 
