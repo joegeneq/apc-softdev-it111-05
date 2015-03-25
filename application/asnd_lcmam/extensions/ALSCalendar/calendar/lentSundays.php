@@ -8,7 +8,7 @@ require 'eventDeterminant.php';
 
     //$sundays = $pentecostSunday;
 
-    $sundays=date('Y-m-d', strtotime($ashWednesday . '+4 days')); //first Sunday of Advent
+    $sundays = date('Y-m-d', strtotime($ashWednesday . '+4 days')); //first Sunday of Advent
 
     //echo $sundays;
 

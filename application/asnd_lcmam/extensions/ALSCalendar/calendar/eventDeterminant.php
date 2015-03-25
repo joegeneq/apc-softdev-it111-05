@@ -22,6 +22,7 @@ try {
             $weeksBeforeLent = $row['week_ot_before_lent'];
             $weekAfterPentecost = $row['week_ot_after_pentecost'];
             $pentecostSunday = $row['pentecost_sunday'];
+            $easterSunday = $row['easter_sunday'];
             $firstSundayofAdvent = $row['first_sunday_of_advent'];
             $ashWednesday = $row['ash_wednesday'];
         }
