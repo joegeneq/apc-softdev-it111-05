@@ -6,44 +6,24 @@ require 'eventDeterminant.php';
 
 //For Calendar
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
+    //$sundays = $pentecostSunday;
 
-    $year = date('Y', strtotime($sundays . '+1 year')); // Advent is always considered using next year's cycle type
+    $sundays = $easterSunday; //first Sunday of Advent
 
-    $sql = "SELECT sunday_cycle FROM event_determinant WHERE year = " . $year . "";
-    $result = $conn->query($sql);
+    //echo $sundays;
 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $sundayCycle = $row['sunday_cycle'];
-        }
-    } else {
-        echo "Error on database connection. No results may be displayed.";
-    }
+    $allEasterSundays = array();
 
-    $conn->close();
-
-    $sundays=$firstSundayofAdvent; //first Sunday of Advent
-
-    $allAdventSundays = array();
-
-    for ($x = 0; $x <= 3; $x++) { // There will always be 4 Sundays for Advent
+    for ($x = 0; $x <= 7; $x++) { // There will always be 7 Sundays for Easter, but the first Sunday has 2 sets of readings
         
-        $allAdventSundays[$x] = $sundays;
+        $allEasterSundays[$x] = $sundays;
 
-        $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));      
+        if ($x > 0 ){ $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));}
     }
-    
-    /*foreach ($allAdventSundays as $item => $x){
+
+    /*foreach ($allEasterSundays as $item => $x){
         echo $x . "<br>";
     }*/
-    $sundays = $pentecostSunday;
 
 try {
 
@@ -53,7 +33,7 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'advent' AND sunday_cycle_type = '" . $sundayCycle. "'";
+        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'easter' AND sunday_cycle_type = '" . $sundayCycle. "'";
     
     //echo $query;
     
@@ -71,47 +51,56 @@ try {
         $e = array();
         
         $e['title'] = $row['sunday_name'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:04";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_name'];
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:04";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:10";}
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:05";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_first_reading'];
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:05";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:11";}
+        if ($e['title'] != ""){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_second_reading'];
-        if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
-
-        $e['title'] = $row['sunday_alleluia_verse'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
-        $e['tip'] = $row['sunday_alleluia_verse'];
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_alleluia_verse'];
-        if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:06";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:12";}
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:07";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_responsorial_psalm'];
-        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:07";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:13";}
+        if ($e['title'] != ""){ array_push($events, $e); }
+
+        $e['title'] = $row['sunday_before_gospel'];
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:08";
+        //$e['color'] = '#33CC00';
+        $e['tip'] = $row['sunday_before_gospel'];
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:08";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:14";}
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:09";
+        $e['start'] = $allEasterSundays[$counter] . "T01:00:09";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_gospel'];
-        if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
+        if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:09";}
+        if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:15";}
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $counter++;
-
-        
     
     }
 
