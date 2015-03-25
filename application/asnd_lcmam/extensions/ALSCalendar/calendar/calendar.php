@@ -26,16 +26,7 @@
                 'majorEvents.php',
                 'adventWeekdays.php',
                 'adventSundays.php',
-                'Year X/sundayReadings.php',
-                'Year X/specialEvents.php',
-                'Year X/weekdayReadings.php',
-                'Year X/solemnitiesOrFeasts.php',
-                'Year X/majorEvents.php',
-                'Year Y/sundayReadings.php',
-                'Year Y/specialEvents.php',
-                'Year Y/weekdayReadings.php',
-                'Year Y/solemnitiesOrFeasts.php',
-                'Year Y/majorEvents.php',
+                'preLent.php',
             ],
             eventRender: function(event, element) {
             element.attr('title', event.tip);
