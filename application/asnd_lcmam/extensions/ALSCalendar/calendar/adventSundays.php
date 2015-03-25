@@ -43,7 +43,7 @@ require 'eventDeterminant.php';
     /*foreach ($allAdventSundays as $item => $x){
         echo $x . "<br>";
     }*/
-    $sundays = $pentecostSunday;
+//    $sundays = $pentecostSunday;
 
 try {
 
