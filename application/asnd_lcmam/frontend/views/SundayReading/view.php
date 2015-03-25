@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'sunday_weeknum',
+            'sunday_name',
             'sunday_first_reading',
             'sunday_first_audio',
             'sunday_second_reading',
@@ -44,6 +45,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'sunday_before_gospel_audio',
             'sunday_cycle_type',
             'sunday_reading_type',
+            'sunday_description',
+            'sunday_first_optional',
+            'sunday_second_optional',
+            'sunday_responsorial_optional',
+            'sunday_alleluia_optional',
+            'sunday_gospel_optional',
+            'sunday_before_gospel_optional',
         ],
     ]) ?>
 
