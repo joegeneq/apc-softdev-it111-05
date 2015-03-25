@@ -36,6 +36,13 @@ try {
         
         $e = array();
         
+        $e['title'] = $row['sunday_name'];
+        $e['start'] = $allSundays[$counter] . "T01:00:04";
+        $e['color'] = '#FFCC00';
+        $e['tip'] = $row['sunday_name'];
+        $e['textColor'] = 'Black';
+        if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
+
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allSundays[$counter] . "T01:00:05";
         $e['color'] = '#FFCC00';
@@ -69,6 +76,8 @@ try {
         if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
 
         $counter++;
+
+        
     
     }
 
