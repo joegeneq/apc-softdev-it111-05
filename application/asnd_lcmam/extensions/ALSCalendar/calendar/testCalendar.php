@@ -30,6 +30,7 @@ $(document).ready(function () {
                 'lentSundays.php',
                 'lentWeekdays.php',
                 'easterWeekdays.php',
+                'easterSundays.php',
             ],
         header: {
             left: 'prev, next',

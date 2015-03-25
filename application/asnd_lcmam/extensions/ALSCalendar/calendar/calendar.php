@@ -30,6 +30,7 @@
                 'lentSundays.php',
                 'lentWeekdays.php',
                 'easterWeekdays.php',
+                'easterSundays.php',
             ],
             eventRender: function(event, element) {
             element.attr('title', event.tip);
