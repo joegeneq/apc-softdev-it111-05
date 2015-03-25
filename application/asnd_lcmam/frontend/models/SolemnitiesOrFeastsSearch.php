@@ -19,7 +19,7 @@ class SolemnitiesOrFeastsSearch extends SolemnitiesOrFeasts
     {
         return [
             [['id'], 'integer'],
-            [['date', 'title', 'first_reading', 'first_reading_audio', 'responsorial_psalm', 'responsorial_psalm_audio', 'second_reading', 'second_reading_audio', 'gospel', 'gospel_audio', 'type'], 'safe'],
+            [['date', 'title', 'type'], 'safe'],
         ];
     }
 
@@ -61,14 +61,6 @@ class SolemnitiesOrFeastsSearch extends SolemnitiesOrFeasts
 
         $query->andFilterWhere(['like', 'date', $this->date])
             ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'first_reading', $this->first_reading])
-            ->andFilterWhere(['like', 'first_reading_audio', $this->first_reading_audio])
-            ->andFilterWhere(['like', 'responsorial_psalm', $this->responsorial_psalm])
-            ->andFilterWhere(['like', 'responsorial_psalm_audio', $this->responsorial_psalm_audio])
-            ->andFilterWhere(['like', 'second_reading', $this->second_reading])
-            ->andFilterWhere(['like', 'second_reading_audio', $this->second_reading_audio])
-            ->andFilterWhere(['like', 'gospel', $this->gospel])
-            ->andFilterWhere(['like', 'gospel_audio', $this->gospel_audio])
             ->andFilterWhere(['like', 'type', $this->type]);
 
         return $dataProvider;
