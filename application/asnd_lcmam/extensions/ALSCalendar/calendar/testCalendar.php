@@ -29,6 +29,7 @@ $(document).ready(function () {
                 'preLent.php',
                 'lentSundays.php',
                 'lentWeekdays.php',
+                'easterWeekdays.php',
             ],
         header: {
             left: 'prev, next',

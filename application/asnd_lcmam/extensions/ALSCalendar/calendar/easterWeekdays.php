@@ -12,9 +12,9 @@ require 'eventDeterminant.php';
 
     $allWeekdays = array();
 
-    $weekdays = date('Y-m-d', strtotime($firstSundayofAdvent . '+1 day'));
+    $weekdays = date('Y-m-d', strtotime($easterSunday . '+1 day'));
 
-    $limit = $year . "-12-17";
+    $limit = $pentecostSunday;
     
     while ($weekdays < $limit){
 
@@ -54,7 +54,7 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-        $query = "SELECT * FROM weekday_reading WHERE weekday_reading_type = 'advent'";
+        $query = "SELECT * FROM weekday_reading WHERE weekday_reading_type = 'easter'";
 
     //echo $query;
     
@@ -72,26 +72,32 @@ try {
 
         $e = array();
         
+        $e['title'] = $row['weekday_name'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
+        $e['color'] = '#33FF66';
+        $e['textColor'] = 'Black';
+        if ($e['title'] != ""){ array_push($events, $e); }
+
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
         $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_responsorial_psalm'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:07";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_gospel'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:08";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+        if ($e['title'] != ""){ array_push($events, $e); }
 
         $counter++;
 
