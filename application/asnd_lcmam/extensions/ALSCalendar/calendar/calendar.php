@@ -27,6 +27,7 @@
                 'adventWeekdays.php',
                 'adventSundays.php',
                 'preLent.php',
+                'lentSundays.php',
             ],
             eventRender: function(event, element) {
             element.attr('title', event.tip);
