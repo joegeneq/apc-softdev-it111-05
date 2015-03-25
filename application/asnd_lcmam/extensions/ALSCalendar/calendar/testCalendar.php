@@ -24,16 +24,10 @@ $(document).ready(function () {
                 'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
                 'majorEvents.php',
-                'Year X/sundayReadings.php',
-                'Year X/specialEvents.php',
-                'Year X/weekdayReadings.php',
-                'Year X/solemnitiesOrFeasts.php',
-                'Year X/majorEvents.php',
-                'Year Y/sundayReadings.php',
-                'Year Y/specialEvents.php',
-                'Year Y/weekdayReadings.php',
-                'Year Y/solemnitiesOrFeasts.php',
-                'Year Y/majorEvents.php',
+                'adventWeekdays.php',
+                'adventSundays.php',
+                'preLent.php',
+                'lentSundays.php',
             ],
         header: {
             left: 'prev, next',
@@ -84,6 +78,24 @@ $(document).ready(function () {
     .fc-time{
     display : none;
     }
+
+    .modal {
+        text-align: center;
+    }
+
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        height: 100%;
+    }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
 
 </style>
 </head>
