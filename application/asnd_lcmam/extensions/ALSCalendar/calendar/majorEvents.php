@@ -62,6 +62,9 @@ try {
             
             if ($row['date'] != ''){
 
+            $sundayValidation = date('l', strtotime($year . $row['date']));
+            //echo $sundayValidation;
+
             $e['title'] = $row['event_name'];
             $e['start'] = $year . $row['date'] . "T01:00:02";
             $e['color'] = '#99FF66';
@@ -72,7 +75,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:14";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:02";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:08";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             $e['title'] = $row['event_first_reading'];
             $e['start'] = $year . $row['date'] . "T01:00:03";
@@ -85,7 +91,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:15";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:03";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:09";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             $e['title'] = $row['event_second_reading'];
             $e['start'] = $year . $row['date'] . "T01:00:04";
@@ -97,7 +106,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:16";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:04";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:10";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             $e['title'] = $row['event_alleluia_verse'];
             $e['start'] = $year . $row['date'] . "T01:00:05";
@@ -109,7 +121,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:17";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:05";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:11";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             $e['title'] = $row['event_responsorial_psalm'];
             $e['start'] = $year . $row['date'] . "T01:00:06";
@@ -121,7 +136,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:18";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:06";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:12";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             $e['title'] = $row['event_gospel'];
             $e['start'] = $year . $row['date'] . "T01:00:07";
@@ -133,7 +151,10 @@ try {
             if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:19";}
             if ($row['event_type'] == "Solemnity, Christmas - Nativity"){$e['start'] = $year . $row['date'] . "T01:00:07";}
             if ($row['event_type'] == "Advent - Morning Mass"){$e['start'] = $year . $row['date'] . "T01:00:13";}
-            if ($e['title'] != ""){ array_push($events, $e); }
+            if ($e['title'] != ""){ 
+                if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
+                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+            }
 
             }
 
