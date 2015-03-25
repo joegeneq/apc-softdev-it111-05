@@ -18,8 +18,8 @@ class EventSearch extends Event
     public function rules()
     {
         return [
-            [['id', 'year_id'], 'integer'],
-            [['event_name', 'event_type', 'event_first_reading', 'event_first_audio', 'event_second_reading', 'event_second_audio', 'event_alleluia_verse', 'event_alleluia_audio', 'event_responsorial_psalm', 'event_responsorial_audio', 'event_gospel', 'event_gospel_audio', 'date'], 'safe'],
+            [['id'], 'integer'],
+            [['event_name', 'event_type', 'date', 'event_first_reading', 'event_first_audio', 'event_second_reading', 'event_second_audio', 'event_alleluia_verse', 'event_alleluia_audio', 'event_responsorial_psalm', 'event_responsorial_audio', 'event_gospel', 'event_gospel_audio', 'event_first_optional', 'event_second_optional', 'event_responsorial_optional', 'event_alleluia_optional', 'event_gospel_optional'], 'safe'],
         ];
     }
 
@@ -57,12 +57,11 @@ class EventSearch extends Event
 
         $query->andFilterWhere([
             'id' => $this->id,
-            'date' => $this->date,
-            'year_id' => $this->year_id,
         ]);
 
         $query->andFilterWhere(['like', 'event_name', $this->event_name])
             ->andFilterWhere(['like', 'event_type', $this->event_type])
+            ->andFilterWhere(['like', 'date', $this->date])
             ->andFilterWhere(['like', 'event_first_reading', $this->event_first_reading])
             ->andFilterWhere(['like', 'event_first_audio', $this->event_first_audio])
             ->andFilterWhere(['like', 'event_second_reading', $this->event_second_reading])
@@ -72,7 +71,12 @@ class EventSearch extends Event
             ->andFilterWhere(['like', 'event_responsorial_psalm', $this->event_responsorial_psalm])
             ->andFilterWhere(['like', 'event_responsorial_audio', $this->event_responsorial_audio])
             ->andFilterWhere(['like', 'event_gospel', $this->event_gospel])
-            ->andFilterWhere(['like', 'event_gospel_audio', $this->event_gospel_audio]);
+            ->andFilterWhere(['like', 'event_gospel_audio', $this->event_gospel_audio])
+            ->andFilterWhere(['like', 'event_first_optional', $this->event_first_optional])
+            ->andFilterWhere(['like', 'event_second_optional', $this->event_second_optional])
+            ->andFilterWhere(['like', 'event_responsorial_optional', $this->event_responsorial_optional])
+            ->andFilterWhere(['like', 'event_alleluia_optional', $this->event_alleluia_optional])
+            ->andFilterWhere(['like', 'event_gospel_optional', $this->event_gospel_optional]);
 
         return $dataProvider;
     }
