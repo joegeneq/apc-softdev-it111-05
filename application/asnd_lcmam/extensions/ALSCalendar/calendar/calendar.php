@@ -24,6 +24,7 @@
                 'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
                 'majorEvents.php',
+                'advent.php',
                 'Year X/sundayReadings.php',
                 'Year X/specialEvents.php',
                 'Year X/weekdayReadings.php',

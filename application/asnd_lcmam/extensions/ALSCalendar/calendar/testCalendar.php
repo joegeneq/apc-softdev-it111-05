@@ -24,6 +24,7 @@ $(document).ready(function () {
                 'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
                 'majorEvents.php',
+                'advent.php',
                 'Year X/sundayReadings.php',
                 'Year X/specialEvents.php',
                 'Year X/weekdayReadings.php',
@@ -84,6 +85,24 @@ $(document).ready(function () {
     .fc-time{
     display : none;
     }
+
+    .modal {
+        text-align: center;
+    }
+
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: "";
+        height: 100%;
+    }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
 
 </style>
 </head>
