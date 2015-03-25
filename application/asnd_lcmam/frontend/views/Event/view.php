@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id, 'year_id' => $model->year_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id, 'year_id' => $model->year_id], [
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'event_name',
             'event_type',
+            'date',
             'event_first_reading',
             'event_first_audio',
             'event_second_reading',
@@ -41,8 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'event_responsorial_audio',
             'event_gospel',
             'event_gospel_audio',
-            'date',
-            'year_id',
+            'event_first_optional',
+            'event_second_optional',
+            'event_responsorial_optional',
+            'event_alleluia_optional',
+            'event_gospel_optional',
         ],
     ]) ?>
 

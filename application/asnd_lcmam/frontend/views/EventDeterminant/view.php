@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\EventDeterminant */
 
-$this->title = $model->year;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Event Determinants', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
