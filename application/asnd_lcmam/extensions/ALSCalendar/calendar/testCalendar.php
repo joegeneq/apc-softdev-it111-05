@@ -18,6 +18,8 @@
 
 $(document).ready(function () {
     $('#cal').fullCalendar({
+        eventLimit: true, 
+    eventLimitText: "+ More",
         eventSources: [
                 'sundayReadings.php',
                 'specialEvents.php',
@@ -118,7 +120,7 @@ $(document).ready(function () {
             <div id="modalBody" class="modal-body"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a>
+                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Reading Link</a>
 
                 </button>
             </div>

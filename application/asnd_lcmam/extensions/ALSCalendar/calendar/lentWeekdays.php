@@ -11,10 +11,6 @@ require 'functions.php';
 
     $allWeekdays = getWeekdaysOfLent();
 
-    /*foreach ($allWeekdays as $item => $x){
-        echo $x . "<br>";
-    }*/
-
     $countOfWeekdays = count($allWeekdays); //count of Sundays
 
 //For Calendar
