@@ -1,29 +1,12 @@
 <?php 
 
 require 'dbConnection.php';
-require 'getSundays.php';
 require 'eventDeterminant.php';
+require 'functions.php';
 
 //For Calendar
-
-    //$sundays = $pentecostSunday;
-
-    $sundays = $easterSunday; //first Sunday of Advent
-
-    //echo $sundays;
-
-    $allEasterSundays = array();
-
-    for ($x = 0; $x <= 7; $x++) { // There will always be 7 Sundays for Easter, but the first Sunday has 2 sets of readings
-        
-        $allEasterSundays[$x] = $sundays;
-
-        if ($x > 0 ){ $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));}
-    }
-
-    /*foreach ($allEasterSundays as $item => $x){
-        echo $x . "<br>";
-    }*/
+    
+    $allEasterSundays = getSundaysOfEaster();
 
 try {
 

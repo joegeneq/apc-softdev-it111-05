@@ -1,8 +1,8 @@
 <?php 
 
 require 'dbConnection.php';
-require 'getSundays.php';
 require 'eventDeterminant.php';
+require 'functions.php';
 
 //For Calendar
 
@@ -29,21 +29,7 @@ require 'eventDeterminant.php';
 
     $conn->close();
 
-    $sundays=$firstSundayofAdvent; //first Sunday of Advent
-
-    $allAdventSundays = array();
-
-    for ($x = 0; $x <= 3; $x++) { // There will always be 4 Sundays for Advent
-        
-        $allAdventSundays[$x] = $sundays;
-
-        $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));      
-    }
-    
-    /*foreach ($allAdventSundays as $item => $x){
-        echo $x . "<br>";
-    }*/
-//    $sundays = $pentecostSunday;
+    $allAdventSundays = getSundaysOfAdvent();
 
 try {
 
@@ -110,8 +96,6 @@ try {
         if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
 
         $counter++;
-
-        
     
     }
 
