@@ -3,46 +3,13 @@
 require 'dbConnection.php';
 require 'dateSpecification.php';
 require 'eventDeterminant.php';
+require 'functions.php';
 
 //For Weekday
 	
 	error_reporting(E_ERROR); // attempting to remove errors and notices
 
-    $weekdayCounter = 0;
-
-    $allWeekdays = array();
-
-    $weekdays = date('Y-m-d', strtotime($easterSunday . '+1 day'));
-
-    $limit = $pentecostSunday;
-    
-    while ($weekdays < $limit){
-
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = $weekdays;}
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));}
-       	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));}
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));}
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));}
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        if ($weekdays < $limit){ $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));}
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+2 days'));
-
-    }
-
-    /*foreach ($allWeekdays as $item => $x){
-        echo $x . "<br>";
-    }*/
-
-    $countOfWeekdays = count($allWeekdays); //count of Sundays
+    $allWeekdays = getWeekdaysOfEaster();
 
 //For Calendar
 
