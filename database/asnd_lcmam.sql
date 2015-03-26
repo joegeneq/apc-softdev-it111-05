@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2015 at 10:53 AM
+-- Generation Time: Mar 26, 2015 at 08:15 AM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -224,7 +224,19 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date` varchar(10) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `type` char(1) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `first_reading` varchar(60) DEFAULT NULL,
+  `first_reading_audio` varchar(60) DEFAULT NULL,
+  `responsorial_psalm` varchar(60) DEFAULT NULL,
+  `responsorial_psalm_audio` varchar(60) DEFAULT NULL,
+  `second_reading` varchar(60) DEFAULT NULL,
+  `second_reading_audio` varchar(60) DEFAULT NULL,
+  `alleluia_verse` varchar(60) DEFAULT NULL,
+  `alleluia_verse_audio` varchar(60) DEFAULT NULL,
+  `gospel` varchar(60) DEFAULT NULL,
+  `gospel_audio` varchar(60) DEFAULT NULL,
+  `rule` varchar(45) DEFAULT NULL,
+  `cycle_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
 
@@ -232,50 +244,50 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
 -- Dumping data for table `solemnities_or_feasts`
 --
 
-INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`) VALUES
-(1, '-03-19', 'St. Joseph, Husband of the Blessed Virgin Mary', 'S'),
-(2, '-03-25', 'The Anunciation of the Lord', 'S'),
-(3, '-06-24', 'The Nativity of St. John the Baptist (Vigil & Day)', 'S'),
-(4, '-06-29', 'Sts. Peter and Paul (Vigil & Day)', 'S'),
-(5, '-08-15', 'The Assumption of the Blessed Virgin Mary (Vigil & Day)', 'S'),
-(6, '-11-01', 'All Saints Day', 'S'),
-(7, '-11-02', 'Commemoration of All the Faithful Departed ("All Souls Day")', 'S'),
-(8, '-12-08', 'The Immaculate Concepcion of the Blessed Virgin Mary', 'S'),
-(9, '-02-02', 'Presentation of the Lord', 'F'),
-(10, '-08-06', 'Transfiguration of the Lord', 'F'),
-(11, '-09-14', 'Exaltation of the Holy Cross', 'F'),
-(12, '-11-09', 'Dedication of the Lateran Basilica in Rome', 'F'),
-(13, '-05-31', 'Visitation of the Blessed Virgin Mary', 'F'),
-(14, '-09-08', 'The Nativity of the Blessed Virgin Mary', 'F'),
-(15, '-12-12', 'Our Lady of Guadalupe', 'F'),
-(16, '-01-25', 'The Conversion of St. Paul, Apostle', 'F'),
-(17, '-02-22', 'The Chair of St. Peter, Apostle', 'F'),
-(18, '-04-25', 'St. Mark, evangelist', 'F'),
-(19, '-05-03', 'Sts. Philip and James, Apostle', 'F'),
-(20, '-05-13', 'St. Matthias, Apostle', 'F'),
-(21, '-07-03', 'St. Thomas, Apostle', 'F'),
-(22, '-07-25', 'St. James, Apostle', 'F'),
-(23, '-08-24', 'St. Bartholomew, Apostle', 'F'),
-(24, '-09-21', 'St. Matthew, Apostle and evangelist', 'F'),
-(25, '-10-18', 'St. Luke, evangelist', 'F'),
-(26, '-10-28', 'Sts. Simon and Jude, Apostles', 'F'),
-(27, '-11-30', 'St. Andrew, Apostle', 'F'),
-(28, '-12-27', 'St. John, Apostle and evangelist', 'F'),
-(29, '-08-10', 'St. Lawrence, deacon and martyr', 'F'),
-(30, '-09-29', 'Sts. Michael, Gabriel and Raphael, archangels', 'F'),
-(31, '-12-26', 'St. Stephen, first martyr', 'F'),
-(32, '-12-28', 'The Holy Innocents, martyrs', 'F'),
-(33, '-01-26', 'Sts. Timothy and Titus, bishops', 'M'),
-(34, '-06-11', 'St. Barnabas, Apostle', 'M'),
-(35, '-07-22', 'St. Mary Magdalene', 'M'),
-(36, '-07-26', 'Sts. Joachim and Anne, parents of Blessed Virgin Mary', 'M'),
-(37, '-07-29', 'St. Martha', 'M'),
-(38, '-08-29', 'The Martyrdom of St. John the Baptist', 'M'),
-(39, '-09-15', 'Our Lady of Sorrows', 'M'),
-(40, '-10-02', 'The Guardian Angels', 'M'),
-(41, '-10-17', 'St. Ignatius of Antioch', 'M'),
-(42, '-05-01', 'St. Joseph the Worker', 'M'),
-(43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'M');
+INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`, `first_reading`, `first_reading_audio`, `responsorial_psalm`, `responsorial_psalm_audio`, `second_reading`, `second_reading_audio`, `alleluia_verse`, `alleluia_verse_audio`, `gospel`, `gospel_audio`, `rule`, `cycle_type`) VALUES
+(1, '-03-19', 'St. Joseph, Husband of the Blessed Virgin Mary', 'S', '2 Sam 7:4-5a, 12-14a, 16', NULL, 'Ps 89:2-3, 4-5, 27+29', NULL, 'Rom 4:13, 16-18, 22', NULL, 'Ps 84:5', NULL, 'Matt 1:16, 18-21,24a', NULL, 'replace SOT but not LEA', NULL),
+(2, '-03-25', 'The Annunciation of the Lord', 'S', 'Isa 7:10-14; 8:10', NULL, 'Ps 40:7-8a, 8b-9, 10, 11', NULL, 'Heb 10:4-10', NULL, 'John 1:14ab', NULL, 'Luke 1:26-38', NULL, 'replace SOT but not LEA', NULL),
+(3, '-06-24', 'The Nativity of St. John the Baptist (Vigil & Day)', 'S', 'Isa 49:1-6', NULL, 'Ps 139:1b-3, 13-14ab, 14c-15', NULL, 'Acts 13:22-26', NULL, 'Luke 1:76', NULL, 'Luke 1:57-66, 80', NULL, 'replace SOT but not LEA', NULL),
+(4, '-06-29', 'Sts. Peter and Paul (Vigil & Day)', 'S', 'Acts 12:1-11', NULL, 'Ps 34:2-3, 4-5, 6-7, 8-9', NULL, '2 Tim 4:6-8, 17-18', NULL, 'Matt 16:18', NULL, 'Matt 16:13-19', NULL, 'replace SOT but not LEA', NULL),
+(5, '-08-15', 'The Assumption of the Blessed Virgin Mary (Vigil & Day)', 'S', 'Rev 11:19a; 12:1-6a, 10ab', NULL, 'Ps 45:10, 11, 12, 16', NULL, '1 Cor 15:20-27', NULL, NULL, NULL, 'Luke 1:39-56', NULL, 'replace SOT but not LEA', NULL),
+(6, '-11-01', 'All Saints Day', 'S', 'Rev 7:2-4, 9-14', NULL, 'Ps 24:1bc-2, 3-4ab, 5-6', NULL, '1 John 3:1-3', NULL, 'Matt 11:28', NULL, 'Matt 5:1-12a', NULL, 'replace SOT but not LEA', NULL),
+(7, '-11-02', 'Commemoration of All the Faithful Departed ("All Souls Day")', 'S', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'replace SOT but not LEA', NULL),
+(8, '-12-08', 'The Immaculate Concepcion of the Blessed Virgin Mary', 'S', 'Gen 3:9-15, 20', NULL, 'Ps 98:1, 2-3ab, 3cd-4', NULL, 'Eph 1:3-6, 11-12', NULL, 'Luke 1:28', NULL, 'Luke 1:26-38', NULL, 'replace SOT but not LEA', NULL),
+(9, '-02-02', 'Presentation of the Lord', 'F', 'Mal 3:1-4', NULL, 'Ps 24:7, 8, 9, 10', NULL, 'Heb 2:14-18', NULL, 'Luke 2:32', NULL, 'Luke 2:22-40', NULL, 'replace SOT but not LEA', NULL),
+(10, '-08-06', 'Transfiguration of the Lord', 'F', 'Dan 7:9-10, 13-14', NULL, 'Ps 97:1-2, 5-6, 9', NULL, '2 Pet 1:16-19', NULL, 'Matt 17:5c', NULL, 'A: Matt 17:1-9, B: Mark 9:2-10, C: Luke 9:28b-36', NULL, 'replace SOT but not LEA', NULL),
+(11, '-09-14', 'Exaltation of the Holy Cross', 'F', 'Num 21:4b-9', NULL, 'Ps 78:1bc-2, 34-35, 36-37, 38', NULL, 'Phil 2:6-11', NULL, NULL, NULL, 'John 3:13-17', NULL, 'replace SOT but not LEA', NULL),
+(12, '-11-09', 'Dedication of the Lateran Basilica in Rome', 'F', 'Ezek 47:1-2, 8-9, 12', NULL, 'Ps 46:2-3, 5-6, 8-9', NULL, '1 Cor 3:9c-11, 16-17', NULL, '2 Chr 7:16', NULL, 'John 2:13-22', NULL, 'replace SOT but not LEA', NULL),
+(13, '-05-31', 'Visitation of the Blessed Virgin Mary', 'F', 'Zeph 3:14-18a', NULL, 'Isa 12:2-3, 4bcd, 5-6', NULL, NULL, NULL, 'Luke 2:19', NULL, 'Luke 2:41-51', NULL, 'omitted if falls on a sunday', NULL),
+(14, '-09-08', 'The Nativity of the Blessed Virgin Mary', 'F', 'Micah 5:1-4a', NULL, 'Ps 13:6ab, 6c', NULL, NULL, NULL, NULL, NULL, 'Matt 1:1-16, 18-23\nor 1:18-23', NULL, 'omitted if falls on a sunday', NULL),
+(15, '-12-12', 'Our Lady of Guadalupe', 'F', 'Zech 2:14-17', NULL, 'Judith 13:18bcde, 19', NULL, NULL, NULL, NULL, NULL, 'Luke 1:26-38', NULL, 'omitted if falls on a sunday', NULL),
+(16, '-01-25', 'The Conversion of St. Paul, Apostle', 'F', 'Acts 22:3-16', NULL, 'Ps 117:1bc, 2', NULL, NULL, NULL, 'John 15:16', NULL, 'Mark 16:15-18', NULL, 'omitted if falls on a sunday', NULL),
+(17, '-02-22', 'The Chair of St. Peter, Apostle', 'F', '1 Pet 5:1-4', NULL, 'Ps 23:1-3a, 4, 5, 6', NULL, NULL, NULL, 'Matt 16:18', NULL, 'Matt 16:13-19', NULL, 'omitted if falls on a sunday', NULL),
+(18, '-04-25', 'St. Mark, evangelist', 'F', '1 Pet 5:5b-14', NULL, 'Ps 89:2-3, 6-7, 16-17', NULL, NULL, NULL, '1 Cor 1:23a+24b', NULL, 'Mark 16:15-20', NULL, 'omitted if falls on a sunday', NULL),
+(19, '-05-03', 'Sts. Philip and James, Apostle', 'F', '1 Cor 15:1-8', NULL, 'Ps 19:2-3, 4-5', NULL, NULL, NULL, 'John 14:6b+9c', NULL, 'John 14:6-14', NULL, 'omitted if falls on a sunday', NULL),
+(20, '-05-13', 'St. Matthias, Apostle', 'F', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'omitted if falls on a sunday', NULL),
+(21, '-07-03', 'St. Thomas, Apostle', 'F', 'Eph 2:19-22', NULL, 'Ps 117:1bc, 2', NULL, NULL, NULL, 'John 20:29', NULL, 'John 20:24-29', NULL, 'omitted if falls on a sunday', NULL),
+(22, '-07-25', 'St. James, Apostle', 'F', '2 Cor 4:7-15', NULL, 'Ps 126:1bc-2ab, 2cd-3, 4-5, 6', NULL, NULL, NULL, 'John 15:16', NULL, 'Matt 20:20-28', NULL, 'omitted if falls on a sunday', NULL),
+(23, '-08-24', 'St. Bartholomew, Apostle', 'F', 'Rev 21:9b-14', NULL, 'Ps 145:10-11, 12-13, 17-18', NULL, NULL, NULL, 'John 1:49b', NULL, 'John 1:45-51', NULL, 'omitted if falls on a sunday', NULL),
+(24, '-09-21', 'St. Matthew, Apostle and evangelist', 'F', 'Eph 4:1-7, 11-13', NULL, 'Ps 19:2-3, 4-5', NULL, NULL, NULL, NULL, NULL, 'Matt 9:9-13', NULL, 'omitted if falls on a sunday', NULL),
+(25, '-10-18', 'St. Luke, evangelist', 'F', '2 Tim 4:10-17b', NULL, 'Ps 145:10-11, 12-13, 17-18', NULL, NULL, NULL, 'John 15:16', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
+(26, '-10-28', 'Sts. Simon and Jude, Apostles', 'F', 'Eph 2:19-22', NULL, 'Ps 19:2-3, 4-5', NULL, NULL, NULL, NULL, NULL, 'Luke 6:12-19', NULL, 'omitted if falls on a sunday', NULL),
+(27, '-11-30', 'St. Andrew, Apostle', 'F', 'Rom 10:9-18', NULL, 'Ps 19:8, 9, 10, 11', NULL, NULL, NULL, 'Matt 4:19', NULL, 'Matt 4:18-22', NULL, 'omitted if falls on a sunday', NULL),
+(28, '-12-27', 'St. John, Apostle and evangelist', 'F', '1 John 1:1-4', NULL, 'Ps 97:1-2, 5-6, 11-12', NULL, NULL, NULL, NULL, NULL, 'John 20:1a+2-8', NULL, 'omitted if falls on a sunday', NULL),
+(29, '-08-10', 'St. Lawrence, deacon and martyr', 'F', '2 Cor 9:6-10', NULL, 'Ps 112:1-2, 5-6, 7-8, 9', NULL, NULL, NULL, 'John 8:12bc', NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
+(30, '-09-29', 'Sts. Michael, Gabriel and Raphael, archangels', 'F', 'Dan 7:9-10, 13-14', NULL, 'Ps 138:1-2ab, 2cde-3, 4-5', NULL, NULL, NULL, 'Ps 103:21', NULL, 'John 1:47-51', NULL, 'omitted if falls on a sunday', NULL),
+(31, '-12-26', 'St. Stephen, first martyr', 'F', 'Acts 6:8-10; 7:54-59', NULL, 'Ps 31:3cd-4, 6+8ab, 16bc+17', NULL, NULL, NULL, 'Ps 118:26a+27a', NULL, 'Matt 10:17-22', NULL, 'omitted if falls on a sunday', NULL),
+(32, '-12-28', 'The Holy Innocents, martyrs', 'F', '1 John 1:5—2:2', NULL, 'Ps 124:2-3, 4-5, 7b-8', NULL, NULL, NULL, NULL, NULL, 'Matt 2:13-18', NULL, 'omitted if falls on a sunday', NULL),
+(33, '-01-26', 'Sts. Timothy and Titus, bishops', 'M', '2 Tim 1:1-8', NULL, 'Ps 96:1-2a, 2b-3, 7-8a, 10', NULL, NULL, NULL, 'Luke 4:18', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
+(34, '-06-11', 'St. Barnabas, Apostle', 'M', 'Acts 11:21b-26; 13:1-3', NULL, 'Ps 98:1, 2-3ab, 3cd-4, 5-6', NULL, NULL, NULL, 'Matt 28:19a+20b', NULL, 'Matt 10:7-13', NULL, 'omitted if falls on a sunday', NULL),
+(35, '-07-22', 'St. Mary Magdalene', 'M', 'Cant 3:1-4b', NULL, 'Ps 63:2, 3-4, 5-6, 8-9', NULL, NULL, NULL, NULL, NULL, 'John 20:1-2, 11-18', NULL, 'omitted if falls on a sunday', NULL),
+(36, '-07-26', 'Sts. Joachim and Anne, parents of Blessed Virgin Mary', 'M', 'Sir 44:1, 10-15', NULL, 'Ps 132:11, 13-14, 17-18', NULL, NULL, NULL, 'Luke 2:25c', NULL, 'Matt 13:16-17', NULL, 'omitted if falls on a sunday', NULL),
+(37, '-07-29', 'St. Martha', 'M', '1 John 4:7-16', NULL, 'Ps 34:2-3, 4-5, 6-7, 8-9, 10-11', NULL, NULL, NULL, 'John 8:12', NULL, 'John 11:19-27', NULL, 'omitted if falls on a sunday', NULL),
+(38, '-08-29', 'The Martyrdom of St. John the Baptist', 'M', 'Jer 1:17-19', NULL, 'Ps 71:1-2, 3-4a, 5-6ab, 15ab+17', NULL, NULL, NULL, 'Matt 5:10', NULL, 'Mark 6:17-29', NULL, 'omitted if falls on a sunday', NULL),
+(39, '-09-15', 'Our Lady of Sorrows', 'M', 'Heb 5:7-9', NULL, 'Ps 31:2-3b, 3cd-4, 5-6, 15-16, 20', NULL, NULL, NULL, NULL, NULL, 'John 19:25-27', NULL, 'omitted if falls on a sunday', NULL),
+(40, '-10-02', 'The Holy Guardian Angels', 'M', 'Exod 23:20-23', NULL, 'Ps 91:1-2, 3-4ab, 4c-6, 10-11', NULL, NULL, NULL, 'Ps 103:21', NULL, 'Matt 18:1-5, 10', NULL, 'omitted if falls on a sunday', NULL),
+(41, '-10-17', 'St. Ignatius of Antioch', 'M', 'Phil 3:17—4:1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
+(42, '-05-01', 'St. Joseph the Worker', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Matt 13:54-58', NULL, NULL, NULL),
+(43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -546,7 +558,7 @@ CREATE TABLE IF NOT EXISTS `weekday_reading` (
   `weekday_alleluia_optional` varchar(100) DEFAULT NULL,
   `weekday_gospel_optional` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=508 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=511 ;
 
 --
 -- Dumping data for table `weekday_reading`
@@ -982,7 +994,7 @@ INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_name`, `weekday_
 (426, 4, '', 'Thursday', 'Deut 30:15-20', '', 'Matt 4:17', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 9:22-25', '', 0, 1, 'pre-lent', '', '', '', ''),
 (427, 5, '', 'Friday', 'Isa 58:1-9a', '', 'Amos 5:14', '', 'Ps 51:3-4, 5-6ab, 18-19', '', 'Matt 9:14-15', '', 0, 1, 'pre-lent', '', '', '', ''),
 (428, 6, '', 'Saturday', 'Isa 58:9b-14', '', 'Ezek 33:11', '', 'Ps 86:1-2, 3-4, 5-6', '', 'Luke 5:27-32', '', 0, 1, 'pre-lent', '', '', '', ''),
-(429, 1, '1st Week of Easter', 'Monday', 'Acts 2:14, 22-33', '', 'Ps 118:24', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'Matt 28:8-15', '', 0, 1, 'easter', '', '', '', ''),
+(429, 1, 'Octave of Easter', 'Monday', 'Acts 2:14, 22-33', '', 'Ps 118:24', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'Matt 28:8-15', '', 0, 1, 'easter', '', '', '', ''),
 (430, 2, '', 'Tuesday', 'Acts 2:36-41', '', 'Ps 118:24', '', 'Ps 33:4-5, 18-19, 20+22', '', 'John 20:11-18', '', 0, 1, 'easter', '', '', '', ''),
 (431, 3, '', 'Wednesday', 'Acts 3:1-10', '', 'Ps 118:24', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Luke 24:13-35', '', 0, 1, 'easter', '', '', '', ''),
 (432, 4, '', 'Thursday', 'Acts 3:11-26', '', 'Ps 118:24', '', 'Ps 8:2ab+5, 6-7, 8-9', '', 'Luke 24:35-48', '', 0, 1, 'easter', '', '', '', ''),
@@ -1057,10 +1069,13 @@ INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_name`, `weekday_
 (501, 4, '', 'Thursday', 'Gen 17:3-9', '', 'Ps 95:8', '', 'Ps 105:4-5, 6-7, 8-9', '', 'John 8:51-59', '', 0, 5, 'lent', '', '', '', ''),
 (502, 5, '', 'Friday', 'Jer 20:10-13', '', 'John 6:63c+68c', '', 'Ps 18:2-3a, 3bc-4, 5-6, 7', '', 'John 10:31-42', '', 0, 5, 'lent', '', '', '', ''),
 (503, 6, '', 'Saturday', 'Ezek 37:21-28', '', 'Ezek 18:31', '', 'Jer 31:10, 11-12abcd, 13', '', 'John 11:45-56', '', 0, 5, 'lent', '', '', '', ''),
-(504, 1, 'Holy Week', 'Monday', 'Isa 42:1-7', '', 'no bibilical reference', '', 'Ps 27:1, 2, 3, 13-14', '', 'John 12:1-11', '', 0, 1, 'holy week', '', '', '', ''),
-(505, 2, '', 'Tuesday', 'Isa 49:1-6', '', 'no bibilical reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'John 13:21-33, 36-38', '', 0, 1, 'holy week', '', '', '', ''),
-(506, 3, '', 'Wednesday', 'Isa 50:4-9a', '', 'no bibilical reference', '', 'Ps 69:8-10, 21-22, 31+33-34', '', 'Matt 26:14-25', '', 0, 1, 'holy week', '', '', '', ''),
-(507, 1, 'Ash Wednesday', '', 'Joel 2:12-18', '', 'Ps 95:8', '', 'Ps 51:3-4, 5-6ab, 12-13, 14+17', '', 'Matt 6:1-6, 16-18', '', 0, 1, 'ash', '', '', '', '');
+(504, 1, 'Holy Week', 'Monday', 'Isa 42:1-7', '', 'no bibilical reference', '', 'Ps 27:1, 2, 3, 13-14', '', 'John 12:1-11', '', 0, 1, 'lent', '', '', '', ''),
+(505, 2, '', 'Tuesday', 'Isa 49:1-6', '', 'no bibilical reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'John 13:21-33, 36-38', '', 0, 1, 'lent', '', '', '', ''),
+(506, 3, '', 'Wednesday', 'Isa 50:4-9a', '', 'no bibilical reference', '', 'Ps 69:8-10, 21-22, 31+33-34', '', 'Matt 26:14-25', '', 0, 1, 'lent', '', '', '', ''),
+(507, 4, 'Maundy Thursday', 'Thursday', 'Is 61:1-3a, 6a, 8b-9', '', 'Isa 61:1 (cited in Luke 4:18', '', 'Ps 89:21-22, 25+27', '', 'Lk 4:16-21 (260)', '', 0, 1, 'lent', '', '', '', ''),
+(508, 5, 'Good Friday', 'Friday', 'Is 52:13-53:12', '', '', '', 'Heb 4:14-16; 5:7-9', '', 'Jn 18:1-19:42(40)', '', 0, 1, 'lent', '', '', '', ''),
+(509, 6, 'Holy Saturday', 'Saturday', 'Gn 1:1-2:2 or 1:1, 26-31a', '', 'Gn 22:1-18 or 22:1-2, 9a, 10-13, 15-18', '', 'Ex 14:15-15:1', '', 'Mk 16:1-7 (41)', '', 0, 1, 'lent', '', '', '', ''),
+(510, 1, 'Ash Wednesday', '', 'Joel 2:12-18', '', 'Ps 95:8', '', 'Ps 51:3-4, 5-6ab, 12-13, 14+17', '', 'Matt 6:1-6, 16-18', '', 0, 1, 'ash', '', '', '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
