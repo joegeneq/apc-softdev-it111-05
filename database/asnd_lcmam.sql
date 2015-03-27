@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2015 at 08:15 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Generation Time: Mar 27, 2015 at 04:27 AM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -276,8 +276,8 @@ INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`, `first_readi
 (29, '-08-10', 'St. Lawrence, deacon and martyr', 'F', '2 Cor 9:6-10', NULL, 'Ps 112:1-2, 5-6, 7-8, 9', NULL, NULL, NULL, 'John 8:12bc', NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
 (30, '-09-29', 'Sts. Michael, Gabriel and Raphael, archangels', 'F', 'Dan 7:9-10, 13-14', NULL, 'Ps 138:1-2ab, 2cde-3, 4-5', NULL, NULL, NULL, 'Ps 103:21', NULL, 'John 1:47-51', NULL, 'omitted if falls on a sunday', NULL),
 (31, '-12-26', 'St. Stephen, first martyr', 'F', 'Acts 6:8-10; 7:54-59', NULL, 'Ps 31:3cd-4, 6+8ab, 16bc+17', NULL, NULL, NULL, 'Ps 118:26a+27a', NULL, 'Matt 10:17-22', NULL, 'omitted if falls on a sunday', NULL),
-(32, '-12-28', 'The Holy Innocents, martyrs', 'F', '1 John 1:5—2:2', NULL, 'Ps 124:2-3, 4-5, 7b-8', NULL, NULL, NULL, NULL, NULL, 'Matt 2:13-18', NULL, 'omitted if falls on a sunday', NULL),
-(33, '-01-26', 'Sts. Timothy and Titus, bishops', 'M', '2 Tim 1:1-8', NULL, 'Ps 96:1-2a, 2b-3, 7-8a, 10', NULL, NULL, NULL, 'Luke 4:18', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
+(32, '-12-28', 'The Holy Innocents, Martyrs', 'F', '1 John 1:5-2:2', NULL, 'Ps 124:2-3, 4-5, 7b-8', NULL, NULL, NULL, NULL, NULL, 'Matt 2:13-18', NULL, 'omitted if falls on a sunday', NULL),
+(33, '-01-26', 'Sts. Timothy and Titus, Bishops', 'M', '2 Tim 1:1-8', NULL, 'Ps 96:1-2a, 2b-3, 7-8a, 10', NULL, NULL, NULL, 'Luke 4:18', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
 (34, '-06-11', 'St. Barnabas, Apostle', 'M', 'Acts 11:21b-26; 13:1-3', NULL, 'Ps 98:1, 2-3ab, 3cd-4, 5-6', NULL, NULL, NULL, 'Matt 28:19a+20b', NULL, 'Matt 10:7-13', NULL, 'omitted if falls on a sunday', NULL),
 (35, '-07-22', 'St. Mary Magdalene', 'M', 'Cant 3:1-4b', NULL, 'Ps 63:2, 3-4, 5-6, 8-9', NULL, NULL, NULL, NULL, NULL, 'John 20:1-2, 11-18', NULL, 'omitted if falls on a sunday', NULL),
 (36, '-07-26', 'Sts. Joachim and Anne, parents of Blessed Virgin Mary', 'M', 'Sir 44:1, 10-15', NULL, 'Ps 132:11, 13-14, 17-18', NULL, NULL, NULL, 'Luke 2:25c', NULL, 'Matt 13:16-17', NULL, 'omitted if falls on a sunday', NULL),
@@ -285,7 +285,7 @@ INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`, `first_readi
 (38, '-08-29', 'The Martyrdom of St. John the Baptist', 'M', 'Jer 1:17-19', NULL, 'Ps 71:1-2, 3-4a, 5-6ab, 15ab+17', NULL, NULL, NULL, 'Matt 5:10', NULL, 'Mark 6:17-29', NULL, 'omitted if falls on a sunday', NULL),
 (39, '-09-15', 'Our Lady of Sorrows', 'M', 'Heb 5:7-9', NULL, 'Ps 31:2-3b, 3cd-4, 5-6, 15-16, 20', NULL, NULL, NULL, NULL, NULL, 'John 19:25-27', NULL, 'omitted if falls on a sunday', NULL),
 (40, '-10-02', 'The Holy Guardian Angels', 'M', 'Exod 23:20-23', NULL, 'Ps 91:1-2, 3-4ab, 4c-6, 10-11', NULL, NULL, NULL, 'Ps 103:21', NULL, 'Matt 18:1-5, 10', NULL, 'omitted if falls on a sunday', NULL),
-(41, '-10-17', 'St. Ignatius of Antioch', 'M', 'Phil 3:17—4:1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
+(41, '-10-17', 'St. Ignatius of Antioch', 'M', 'Phil 3:17-4:1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
 (42, '-05-01', 'St. Joseph the Worker', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Matt 13:54-58', NULL, NULL, NULL),
 (43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
