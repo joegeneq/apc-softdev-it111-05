@@ -193,7 +193,7 @@ try {
 
 //For Calendar
 
-print_r($datesSFM);
+//print_r($datesSFM);
 
 try {
 
