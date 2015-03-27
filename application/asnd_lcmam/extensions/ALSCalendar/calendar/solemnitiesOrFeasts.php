@@ -48,12 +48,14 @@ try {
 
                 if (date('l', strtotime($dateToTest)) != "Sunday"){
               
-                    for ($x=0; $x < $lentwCount; $x++){
-                        
+                    for ($x=0; $x < $otCount; $x++){
                         if ($OTWeekdays[$x] == $dateToTest){
                             $datesSFM[$counter] = $dateToTest;
                             $counter++;
                         }
+                    }
+
+                    for ($x=0; $x < $lentwCount; $x++){
 
                         if ($LentWeekdays[$x] == $dateToTest){
                             
@@ -218,6 +220,8 @@ try {
 
     $countArray = count($datesSFM);
 
+    $datesSFM = array_unique($datesSFM);
+
     $counter = 0;
 
     if ($result->num_rows > 0) {
@@ -274,7 +278,6 @@ try {
                 
                 //echo $e['start'] . " vs. " . $datesSFM[$counter] . "<br>";
 
-               
                }
             $counter++;
         }
