@@ -25,6 +25,8 @@ EOD;
 $firstPanel = reset($panels);
 $url = $firstPanel->getUrl();
 ?>
+
+<!--
 <div id="yii-debug-toolbar" class="yii-debug-toolbar-<?= $position ?> hidden-print">
     <div class="yii-debug-toolbar-block title">
         <a href="<?= Url::to(['index']) ?>">
