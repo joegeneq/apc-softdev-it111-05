@@ -116,6 +116,10 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionCalendar()
+    {
+        return $this->render('calendar');
+    }
     public function actionReflections()
     {
         return $this->render('reflections');
