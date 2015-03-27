@@ -19,7 +19,6 @@ $this->title = 'About';
   <img src="images/Cardinal-tagle.jpg" align="right"  > 
 </div>
 -->
-<object data='../../extensions/ALSCalendar/calendar/testCalendar.php' style='width:100%;min-height: 965px;'>
 
 <div class="col-lg-4-about">
 <p align="justify">
