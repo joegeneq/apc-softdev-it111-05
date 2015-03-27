@@ -18,8 +18,6 @@
 
 $(document).ready(function () {
     $('#cal').fullCalendar({
-        eventLimit: true, 
-    eventLimitText: "+ More",
         eventSources: [
                 'sundayReadings.php',
                 'specialEvents.php',

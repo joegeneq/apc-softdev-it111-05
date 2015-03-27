@@ -19,7 +19,7 @@
 $(document).ready(function () {
     $('#cal').fullCalendar({
         eventSources: [
-                'sundayReadings.php',
+                //'sundayReadings.php',
                 //'specialEvents.php',
                 //'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
@@ -27,7 +27,7 @@ $(document).ready(function () {
                 //'adventWeekdays.php',
                 //'adventSundays.php',
                 //'preLent.php',
-                //'lentSundays.php',
+                'lentSundays.php',
                 //'lentWeekdays.php',
                 //'easterWeekdays.php',
                 //'easterSundays.php',
