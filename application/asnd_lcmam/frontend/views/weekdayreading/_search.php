@@ -43,6 +43,14 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'weekday_reading_type') ?>
 
+    <?php // echo $form->field($model, 'weekday_first_optional') ?>
+
+    <?php // echo $form->field($model, 'weekday_responsorial_optional') ?>
+
+    <?php // echo $form->field($model, 'weekday_alleluia_optional') ?>
+
+    <?php // echo $form->field($model, 'weekday_gospel_optional') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

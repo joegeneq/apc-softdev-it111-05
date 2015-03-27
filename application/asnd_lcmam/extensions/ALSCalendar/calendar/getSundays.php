@@ -1,9 +1,7 @@
 <?php 
 
-require 'dbConnection.php';
-require 'dateSpecification.php';
-require 'eventDeterminant.php';
-require 'functions.php';
+include_once 'eventDeterminant.php';
+include_once 'functions.php';
 
 //For Sunday
 

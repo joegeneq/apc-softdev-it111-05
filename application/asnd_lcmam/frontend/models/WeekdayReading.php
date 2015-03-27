@@ -21,6 +21,10 @@ use Yii;
  * @property integer $weekday_cycle_num
  * @property integer $weekday_weeknum
  * @property string $weekday_reading_type
+ * @property string $weekday_first_optional
+ * @property string $weekday_responsorial_optional
+ * @property string $weekday_alleluia_optional
+ * @property string $weekday_gospel_optional
  */
 class WeekdayReading extends \yii\db\ActiveRecord
 {
@@ -41,7 +45,8 @@ class WeekdayReading extends \yii\db\ActiveRecord
             [['weekday_daynum', 'weekday_day', 'weekday_cycle_num', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
             [['weekday_daynum', 'weekday_cycle_num', 'weekday_weeknum'], 'integer'],
             [['weekday_day'], 'string', 'max' => 10],
-            [['weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type'], 'string', 'max' => 45]
+            [['weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type'], 'string', 'max' => 45],
+            [['weekday_first_optional', 'weekday_responsorial_optional', 'weekday_alleluia_optional', 'weekday_gospel_optional'], 'string', 'max' => 100]
         ];
     }
 
@@ -65,6 +70,10 @@ class WeekdayReading extends \yii\db\ActiveRecord
             'weekday_cycle_num' => 'Weekday Cycle Num',
             'weekday_weeknum' => 'Weekday Weeknum',
             'weekday_reading_type' => 'Weekday Reading Type',
+            'weekday_first_optional' => 'Weekday First Optional',
+            'weekday_responsorial_optional' => 'Weekday Responsorial Optional',
+            'weekday_alleluia_optional' => 'Weekday Alleluia Optional',
+            'weekday_gospel_optional' => 'Weekday Gospel Optional',
         ];
     }
 }
