@@ -26,6 +26,10 @@ try {
 
             if ($row['rule'] == "replace SOT but not LEA"){
 
+                if (date('l', strtotime($dateToTest)) != "Sunday"){
+                    $datesSFM[$counter] = $dateToTest;
+                    $counter++;
+                }
                 if (date('l', strtotime($dateToTest)) == "Sunday"){
                     
                     $OTSundays = getSundaysOfOT();
@@ -33,7 +37,12 @@ try {
                     $EasterSundays = getSundaysOfEaster();
                     $AdventSundays = getSundaysOfEaster();
 
-                    for ($x=0; $x < count($OTSundays); $x++){
+                    $otsCount = count($OTSundays);
+                    $lentsCount = count($OTSundays);
+                    $eastersCount = count($OTSundays);
+                    $adventsCount = count($OTSundays);
+
+                    for ($x=0; $x < $otsCount; $x++){
 
                         if ($OTSundays[$x] == $dateToTest){
                             $datesSFM[$counter] = $dateToTest;
@@ -42,30 +51,52 @@ try {
 
                     }
                     
-                    for ($x=0; $x < count($LentSundays); $x++){
+                    for ($x=0; $x < $lentsCount; $x++){
 
                         if ($LentSundays[$x] == $dateToTest){
-                            $dateTotest = date('Y-m-d', strtotime($dateTotest . '+1 day'));
-                            $datesSFM[$counter] = $dateToTest;
-                            $counter++;
+                            
+                            if ($x == 5 || $x == 6){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
+
+                            if ($x < 5){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
+
                         }
 
                     }
 
-                    for ($x=0; $x < count($EasterSundays); $x++){
+                    for ($x=0; $x < $eastersCount; $x++){
 
                         if ($EasterSundays[$x] == $dateToTest){
-                            $dateTotest = date('Y-m-d', strtotime($dateTotest . '+1 day'));
-                            $datesSFM[$counter] = $dateToTest;
-                            $counter++;
+
+                            if ($x == 0 || $x == 1){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
+
+                            if ($x > 1){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
                         }
 
                     }
 
-                    for ($x=0; $x < count($AdventSundays); $x++){
+                    for ($x=0; $x < $adventsCount; $x++){
 
                         if ($AdventSundays[$x] == $dateToTest){
-                            $dateTotest = date('Y-m-d', strtotime($dateTotest . '+1 day'));
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                             $datesSFM[$counter] = $dateToTest;
                             $counter++;
                         }
@@ -73,10 +104,7 @@ try {
                     }
 
                 }
-                if (date('l', strtotime($dateToTest)) != "Sunday"){
-                    $datesSFM[$counter] = $dateToTest;
-                    $counter++;
-                }
+
             }
 
             if ($row['rule'] == "omitted if falls on a sunday"){
