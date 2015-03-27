@@ -42,6 +42,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'weekday_cycle_num',
             'weekday_weeknum',
             'weekday_reading_type',
+            'weekday_first_optional',
+            'weekday_responsorial_optional',
+            'weekday_alleluia_optional',
+            'weekday_gospel_optional',
         ],
     ]) ?>
 

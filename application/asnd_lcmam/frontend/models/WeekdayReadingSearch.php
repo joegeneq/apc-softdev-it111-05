@@ -19,7 +19,7 @@ class weekdayReadingSearch extends WeekdayReading
     {
         return [
             [['id', 'weekday_daynum', 'weekday_cycle_num', 'weekday_weeknum'], 'integer'],
-            [['weekday_day', 'weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type'], 'safe'],
+            [['weekday_day', 'weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type', 'weekday_first_optional', 'weekday_responsorial_optional', 'weekday_alleluia_optional', 'weekday_gospel_optional'], 'safe'],
         ];
     }
 
@@ -71,7 +71,11 @@ class weekdayReadingSearch extends WeekdayReading
             ->andFilterWhere(['like', 'weekday_responsorial_audio', $this->weekday_responsorial_audio])
             ->andFilterWhere(['like', 'weekday_gospel', $this->weekday_gospel])
             ->andFilterWhere(['like', 'weekday_gospel_audio', $this->weekday_gospel_audio])
-            ->andFilterWhere(['like', 'weekday_reading_type', $this->weekday_reading_type]);
+            ->andFilterWhere(['like', 'weekday_reading_type', $this->weekday_reading_type])
+            ->andFilterWhere(['like', 'weekday_first_optional', $this->weekday_first_optional])
+            ->andFilterWhere(['like', 'weekday_responsorial_optional', $this->weekday_responsorial_optional])
+            ->andFilterWhere(['like', 'weekday_alleluia_optional', $this->weekday_alleluia_optional])
+            ->andFilterWhere(['like', 'weekday_gospel_optional', $this->weekday_gospel_optional]);
 
         return $dataProvider;
     }

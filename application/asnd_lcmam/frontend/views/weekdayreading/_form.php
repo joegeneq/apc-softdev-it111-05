@@ -38,6 +38,14 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'weekday_reading_type')->textInput(['maxlength' => 45]) ?>
 
+    <?= $form->field($model, 'weekday_first_optional')->textInput(['maxlength' => 100]) ?>
+
+    <?= $form->field($model, 'weekday_responsorial_optional')->textInput(['maxlength' => 100]) ?>
+
+    <?= $form->field($model, 'weekday_alleluia_optional')->textInput(['maxlength' => 100]) ?>
+
+    <?= $form->field($model, 'weekday_gospel_optional')->textInput(['maxlength' => 100]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

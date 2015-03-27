@@ -8,14 +8,16 @@ use Yii;
  * This is the model class for table "user".
  *
  * @property integer $id
- * @property string $username
- * @property string $password
  * @property string $firstname
- * @property string $middlename
  * @property string $lastname
- * @property string $address
- * @property string $contact_num
- * @property string $user_type
+ * @property string $username
+ * @property string $auth_key
+ * @property string $password_hash
+ * @property string $password_reset_token
+ * @property string $email
+ * @property integer $status
+ * @property integer $created_at
+ * @property integer $updated_at
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -33,9 +35,11 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'password', 'firstname', 'middlename', 'lastname', 'address', 'contact_num', 'user_type'], 'required'],
-            [['username', 'password', 'firstname', 'middlename', 'lastname', 'address', 'user_type'], 'string', 'max' => 45],
-            [['contact_num'], 'string', 'max' => 11]
+            [['firstname', 'lastname', 'username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
+            [['status', 'created_at', 'updated_at'], 'integer'],
+            [['firstname', 'lastname'], 'string', 'max' => 100],
+            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['auth_key'], 'string', 'max' => 32]
         ];
     }
 
@@ -46,14 +50,16 @@ class User extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'username' => 'Username',
-            'password' => 'Password',
             'firstname' => 'Firstname',
-            'middlename' => 'Middlename',
             'lastname' => 'Lastname',
-            'address' => 'Address',
-            'contact_num' => 'Contact Num',
-            'user_type' => 'User Type',
+            'username' => 'Username',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password Hash',
+            'password_reset_token' => 'Password Reset Token',
+            'email' => 'Email',
+            'status' => 'Status',
+            'created_at' => 'Created At',
+            'updated_at' => 'Updated At',
         ];
     }
 }
