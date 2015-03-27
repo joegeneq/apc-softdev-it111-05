@@ -1,17 +1,8 @@
 <?php 
 
-require 'dbConnection.php';
-require 'dateSpecification.php';
-require 'eventDeterminant.php';
-require 'functions.php';
-
-//For Weekday
-	
-	error_reporting(E_ERROR); // attempting to remove errors and notices
-
-    $allWeekdays = getWeekdaysOfLent();
-
-    $countOfWeekdays = count($allWeekdays); //count of Sundays
+include 'dbConnection.php';
+include_once 'dateSpecification.php';
+include_once 'functions.php';
 
 try {
     // Create connection
@@ -193,82 +184,157 @@ try {
      //exit(0);
 }
 
-//For Calendar
+    //echo count($OTSundays);
+    //print_r($OTSundays);
+print_r($EasterWeekdays);
+/*echo $x . "<br>";
+                            echo $dateToTest . "<br>";                                
+                            echo $dateTotest;
+                                echo $dateToTest;
+                                                                echo $dateToTest . "<br>";
+                            echo $dateToTest . "<br>";
+$dateToTest = "2015-03-29";
+                    for ($x=0; $x < count($LentSundays); $x++){
 
-try {
+                        if ($LentSundays[$x] == $dateToTest){
+                            
+                            if ($x == 5 || $x == 6){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
 
-    $url = 'mysql:dbname='.$dbname.';host='.$servername.'';
+                            if ($x < 5){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
 
-    // Connect to database
-    $connection = new PDO($url, $username, $password);
+                        }
 
-    // Prepare and execute query
-        $query = "SELECT * FROM weekday_reading WHERE weekday_reading_type = 'lent'";
+                    }*/
+/*$dateToTest = "2015-04-26";
+                    for ($x=0; $x < count($EasterSundays); $x++){
 
-    //echo $query;
-    
-    $sth = $connection->prepare($query);
-    $sth->execute();
+                        if ($EasterSundays[$x] == $dateToTest){
 
-    // Returning array
-    $events = array();
+                            if ($x == 0 || $x == 1){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
 
-    $counter = 0;
+                            if ($x > 1){
+                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                            }
+                        }
 
-    // Fetch results
-    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        
-        $verification = 1; // Initially Sunday is to be used (Verification of Usage)
-        $dateForChecking = $allWeekdays[$counter];
+                    }
 
-        for ($x=0; $x < count($datesSFM); $x++){
+                    */
 
-            if ($datesSFM[$x] == $dateForChecking){
-                $verification = 0; // If Sunday is within the list, Sunday is no longer to be used
-            }
 
+/*
+                if (date('l', strtotime($dateToTest)) != "Sunday"){
+                    
+                    for ($x=0; $x < $lentwCount; $x++){
+
+                        //echo "<br>" . $x . "<br>";
+
+                        if ($LentWeekdays[$x] == $dateToTest){
+                            
+                            echo "<br>" . $x . "<br>";
+
+
+                            if ($x < 29){
+                                
+                                if (date('l', strtotime($dateToTest)) != "Saturday"){
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                                    $datesSFM[$counter] = $dateToTest;
+                                    $counter++;
+                                }
+
+                                if (date('l', strtotime($dateToTest)) == "Saturday"){
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . '+2 days'));
+                                    $datesSFM[$counter] = $dateToTest;
+                                    $counter++;
+                                }
+
+                            }
+
+                            if ($x >= 29){
+                                
+                                if ($x == 29){
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $datesSFM[$counter] = $dateToTest;
+                                    $counter++;
+                                }
+                                
+                                if ($x != 29){
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $datesSFM[$counter] = $dateToTest;
+                                    $counter++;
+                                }
+                            }
+
+
+
+                        }
+
+                    }
+                    
+                }
+*/
+
+$dateToTest = "2015-04-11";
+$dateValue = date('l', strtotime($dateToTest));
+echo "<br>" . $dateToTest . "<br>";
+//echo "<br>" . $lentwCount . "<br>";
+
+if (date('l', strtotime($dateToTest)) != "Sunday"){
+              
+                    for ($x=0; $x < $easterwCount; $x++){
+                        
+                        if ($EasterWeekdays[$x] == $dateToTest){
+                            
+                            if ($x <= 5){
+                                    $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                    $datesSFM[$counter] = $dateToTest;
+                                    $counter++;
+                                
+                            }
+
+                            if ($x > 5){
+                                
+                                $datesSFM[$counter] = $dateToTest;
+                                $counter++;
+                                
+                            }
+
+                        }
+                        
+                    }
+                    
+                }
+
+echo "<br>" . $dateToTest . "<br>";
+/*    $x = 1; // Initially Sunday is to be used (Verification of Usage)
+    $sundaysOfOT = listAllSFMs();
+
+    for ($x=0; $x > count($sundaysOfOT); $x++){
+
+        if ($sundaysOfOT[$x] == $dateForChecking){
+            $x = 0; // If Sunday is within the list, Sunday is no longer to be used
         }
 
-        $e = array();
-        
-        $e['title'] = $row['weekday_name'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
-        $e['color'] = '#33FF66';
-        $e['textColor'] = 'Black';
-        if ($e['title'] != "" ){ array_push($events, $e); } // Allowing verification of name
-
-        $e['title'] = $row['weekday_first_reading'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
-        $e['color'] = '#33FF66';
-        $e['textColor'] = 'Black';
-        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_alleluia_verse'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
-        //$e['color'] = '#33CC00';
-        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_responsorial_psalm'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
-        //$e['color'] = '#33CC00';
-        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_gospel'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
-        //$e['color'] = '#33CC00';
-        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
-
-        $counter++;
-
     }
-
-    // Output json for our calendar
-    echo json_encode($events);
-    exit();
-
-} catch (PDOException $e){
-    echo $e->getMessage();
-}
-
-//*/
+*/
 ?>

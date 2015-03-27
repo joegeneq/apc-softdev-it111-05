@@ -2,9 +2,8 @@
 
 function getFirstSundayInOT(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 
@@ -45,9 +44,9 @@ return $firstSunday;
 
 function getSundaysOfOT(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 
@@ -95,7 +94,7 @@ function getSundaysOfOT(){
         $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));      
     }
 
-    $sundays = $pentecostSunday;
+    $sundays = date('Y-m-d', strtotime($pentecostSunday . '+7 days')); 
 
     $limit = $firstSundayofAdvent;
     
@@ -116,9 +115,9 @@ function getSundaysOfOT(){
 
 function getWeekdaysOfOT(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 
@@ -229,8 +228,8 @@ function getWeekdaysOfOT(){
 
 function getSundaysOfLent(){
 
-    require 'dbConnection.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'eventDeterminant.php';
 
     $sundays = date('Y-m-d', strtotime($ashWednesday . '+4 days')); //first Sunday of Advent
 
@@ -250,9 +249,9 @@ function getSundaysOfLent(){
 
 function getWeekdaysOfLent(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 
@@ -293,8 +292,8 @@ function getWeekdaysOfLent(){
 
 function getSundaysOfEaster(){
 
-    require 'dbConnection.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'eventDeterminant.php';
 
     //$sundays = $pentecostSunday;
 
@@ -316,9 +315,9 @@ function getSundaysOfEaster(){
 
 function getWeekdaysOfEaster(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 
@@ -357,8 +356,8 @@ function getWeekdaysOfEaster(){
 
 function getSundaysOfAdvent(){
 
-    require 'dbConnection.php';
-    require 'eventDeterminant.php';
+    include 'dbConnection.php';
+    include 'eventDeterminant.php';
 
     $sundays=$firstSundayofAdvent; //first Sunday of Advent
 
@@ -377,9 +376,9 @@ function getSundaysOfAdvent(){
 
 function getWeekdaysOfAdvent(){
 
-    require 'dbConnection.php';
-    require 'dateSpecification.php';
-    require 'eventDeterminant.php';    
+    include 'dbConnection.php';
+    include 'dateSpecification.php';
+    include 'eventDeterminant.php';    
 
     error_reporting(E_ERROR); // attempting to remove errors and notices
 

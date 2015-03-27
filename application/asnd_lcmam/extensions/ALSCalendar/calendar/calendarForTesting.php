@@ -19,18 +19,18 @@
 $(document).ready(function () {
     $('#cal').fullCalendar({
         eventSources: [
-                'sundayReadings.php',
-                'specialEvents.php',
-                'weekdayReadings.php',
+                //'sundayReadings.php',
+                //'specialEvents.php',
+                //'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
                 'majorEvents.php',
                 'adventWeekdays.php',
                 'adventSundays.php',
-                'preLent.php',
-                'lentSundays.php',
-                'lentWeekdays.php',
-                'easterWeekdays.php',
-                'easterSundays.php',
+                //'preLent.php',
+                //'lentSundays.php',
+                //'lentWeekdays.php',
+                //'easterWeekdays.php',
+                //'easterSundays.php',
             ],
         header: {
             left: 'prev, next',
@@ -118,7 +118,7 @@ $(document).ready(function () {
             <div id="modalBody" class="modal-body"></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Reading Link</a>
+                <button class="btn btn-primary"><a id="eventUrl" target="_blank">Event Page</a>
 
                 </button>
             </div>
