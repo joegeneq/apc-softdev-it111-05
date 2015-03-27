@@ -1,29 +1,12 @@
 <?php 
 
 require 'dbConnection.php';
-require 'getSundays.php';
 require 'eventDeterminant.php';
+require 'functions.php';
 
 //For Calendar
 
-    //$sundays = $pentecostSunday;
-
-    $sundays = date('Y-m-d', strtotime($ashWednesday . '+4 days')); //first Sunday of Advent
-
-    //echo $sundays;
-
-    $allLentSundays = array();
-
-    for ($x = 0; $x <= 6; $x++) { // There will always be 6 Sundays for Lent, but the last Sunday has 2 readings
-        
-        $allLentSundays[$x] = $sundays;
-
-        if ($x != 5){ $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));}
-    }
-
-    /*foreach ($allLentSundays as $item => $x){
-        echo $x . "<br>";
-    }*/
+    $allLentSundays = getSundaysOfLent();
 
 try {
 

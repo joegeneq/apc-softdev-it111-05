@@ -2,7 +2,7 @@
 
 require 'dbConnection.php';
 require 'dateSpecification.php';
-require 'getSundays.php';
+require 'functions.php';
 require 'eventDeterminant.php';
 
 try {
@@ -13,40 +13,40 @@ try {
         die("Connection failed: " . $conn->connect_error);
     } 
 
-    $epiphanySunday = $firstSunday;
+    $epiphanySunday = getFirstSundayInOT();
 
     //echo $firstSunday;
     //$firstSunday = "2015-01-06"; // for testing
 
-    if ($firstSunday == $year . "-01-01"){
+    if ($epiphanySunday == $year . "-01-01"){
         $epiphanySunday = date('Y-m-d', strtotime($firstSunday . '+7 days'));
     }    
 
-    if ($firstSunday == $year . "-01-02"){
+    if ($epiphanySunday == $year . "-01-02"){
         $sql = "SELECT * FROM event WHERE date != '-01-02' AND date != '-01-03' AND date != '-01-04' AND date != '-01-05' AND date != '-01-06' AND date != '-01-07'";
     }
 
-    if ($firstSunday == $year . "-01-03"){
+    if ($epiphanySunday == $year . "-01-03"){
         $sql = "SELECT * FROM event WHERE date != '-01-03' AND date != '-01-04' AND date != '-01-05' AND date != '-01-06' AND date != '-01-07'";
     }
 
-    if ($firstSunday == $year . "-01-04"){
+    if ($epiphanySunday == $year . "-01-04"){
         $sql = "SELECT * FROM event WHERE date != '-01-04' AND date != '-01-05' AND date != '-01-06' AND date != '-01-07'";
     }
 
-     if ($firstSunday == $year . "-01-05"){
+     if ($epiphanySunday == $year . "-01-05"){
         $sql = "SELECT * FROM event WHERE date != '-01-05' AND date != '-01-06' AND date != '-01-07'";
     }
 
-     if ($firstSunday == $year . "-01-06"){
+     if ($epiphanySunday == $year . "-01-06"){
         $sql = "SELECT * FROM event WHERE date != '-01-06' AND date != '-01-07'";
     }
 
-    if ($firstSunday == $year . "-01-07"){
+    if ($epiphanySunday == $year . "-01-07"){
         $sql = "SELECT * FROM event WHERE date != '-01-07'";
     }
 
-    if ($firstSunday == $year . "-01-08"){
+    if ($epiphanySunday == $year . "-01-08"){
         $sql = "SELECT * FROM event WHERE date != ''";
     }
 
