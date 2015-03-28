@@ -1,12 +1,21 @@
 <?php 
 
 require 'dbConnection.php';
+require 'dateSpecification.php';
 require 'eventDeterminant.php';
 require 'functions.php';
 
-//For Calendar
+//For Weekday
+    
+    error_reporting(E_ERROR); // attempting to remove errors and notices
+    
+    $allWeekdays = getWeekdaysOfOT();
 
-error_reporting(E_ERROR);
+    $countOfWeekdays = count($allWeekdays); //count of Sundays
+
+    $skipCheck = $weekAfterPentecost - $weeksBeforeLent;
+    //echo $skipCheck;
+
 try {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -57,21 +66,9 @@ try {
                     for ($x=0; $x < $lentsCount; $x++){
 
                         if ($LentSundays[$x] == $dateToTest){
-                            
-                            if ($x == 5 || $x == 6){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
-
-                            if ($x < 5){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
-
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
                         }
 
                     }
@@ -79,19 +76,9 @@ try {
                     for ($x=0; $x < $eastersCount; $x++){
 
                         if ($EasterSundays[$x] == $dateToTest){
-
-                            if ($x == 0 || $x == 1){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
-
-                            if ($x > 1){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
                         }
 
                     }
@@ -99,7 +86,7 @@ try {
                     for ($x=0; $x < $adventsCount; $x++){
 
                         if ($AdventSundays[$x] == $dateToTest){
-                            $dateTotest = date('Y-m-d', strtotime($dateTotest . '+1 day'));
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                             $datesSFM[$counter] = $dateToTest;
                             $counter++;
                         }
@@ -129,30 +116,7 @@ try {
      //exit(0);
 }
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-    $year = date('Y', strtotime($sundays . '+1 year')); // Advent is always considered using next year's cycle type
-
-    $sql = "SELECT sunday_cycle FROM event_determinant WHERE year = " . $year . "";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $sundayCycle = $row['sunday_cycle'];
-        }
-    } else {
-        echo "Error on database connection. No results may be displayed.";
-    }
-
-    $conn->close();
-
-    $allAdventSundays = getSundaysOfAdvent();
+//For Calendar
 
 try {
 
@@ -162,8 +126,15 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'advent' AND sunday_cycle_type = '" . $sundayCycle. "'";
-    
+    if ($skipCheck > 1 ){
+        $skipValue = $weeksBeforeLent + 1;
+        //echo "You have reached if statement." . $skipValue;
+        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_num = '" . $weekdayCycle. "' AND weekday_weeknum !='" . $skipValue . "'";
+    }else{
+        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_type = '" . $weekdayCycle. "'";
+        //echo "You have reached else statement.";
+    }
+
     //echo $query;
     
     $sth = $connection->prepare($query);
@@ -178,7 +149,7 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         
         $verification = 1; // Initially Sunday is to be used (Verification of Usage)
-        $dateForChecking = $allSundays[$counter];
+        $dateForChecking = $allWeekdays[$counter];
 
         for ($x=0; $x < count($datesSFM); $x++){
 
@@ -190,44 +161,26 @@ try {
 
         $e = array();
         
-        $e['title'] = $row['sunday_name'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_name'];
-        $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:04" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_first_reading'];
+        $e['title'] = $row['weekday_first_reading'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
+        $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
-    
-        $e['title'] = $row['sunday_second_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
+
+        $e['title'] = $row['weekday_alleluia_verse'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_second_reading'];
         if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
 
-        $e['title'] = $row['sunday_alleluia_verse'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
-        $e['tip'] = $row['sunday_alleluia_verse'];
+        $e['title'] = $row['weekday_responsorial_psalm'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
         //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_alleluia_verse'];
         if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
 
-        $e['title'] = $row['sunday_responsorial_psalm'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
+        $e['title'] = $row['weekday_gospel'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
         //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_responsorial_psalm'];
         if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['sunday_gospel'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:09";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_gospel'];
-        if ($e['start'] != "T01:00:09" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
     
@@ -241,4 +194,5 @@ try {
     echo $e->getMessage();
 }
 
+//*/
 ?>

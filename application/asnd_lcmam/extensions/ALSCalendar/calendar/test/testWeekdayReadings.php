@@ -1,114 +1,86 @@
-<?php
+<?php 
 
-    //$timestamp=strtotime("7 March 2016 ");
-    //echo gmdate("Y-m-d\TH:i:s\Z", $timestamp);
-    //echo gmdate("Y-m-d", $timestamp);
+require 'dbConnection.php';
+require 'dateSpecification.php';
+require 'eventDeterminant.php';
+require 'functions.php';
 
-    $day="01";
-    $month="01";
-    $year="2015";
+//For Weekday
+	
+    $allWeekdays = getWeekdaysOfOT();
 
-    $trigger = $year . "-" . $month . "-" . $day;
+    $countOfWeekdays = count($allWeekdays); //count of Sundays
 
-    echo "<br>" . date('l', strtotime($trigger)) . "<br>";
+    $skipCheck = $weekAfterPentecost - $weeksBeforeLent;
+    //echo $skipCheck;
 
-    $day1ofyear = date('l', strtotime($trigger));
 
-    //To identify what day January 1 is
-    if ($day1ofyear == "Sunday") echo "Jan 1 is a Sunday. ";
-    if ($day1ofyear == "Monday") echo "Jan 1 is a Monday. ";
-    if ($day1ofyear == "Tuesday") echo "Jan 1 is a Tuesday. ";
-    if ($day1ofyear == "Wednesday") echo "Jan 1 is a Wednesday. ";
-    if ($day1ofyear == "Thursday") echo "Jan 1 is a Thursday. ";
-    if ($day1ofyear == "Friday") echo "Jan 1 is a Friday. ";
-    if ($day1ofyear == "Saturday") echo "Jan 1 is a Saturday. ";
+//For Calendar
 
-    $firstWeekday = "";
+try {
 
-    //To identify what is the first sunday of the year
-    if ($day1ofyear == "Sunday"){
-    	$firstWeekday = date('Y-m-d', strtotime($trigger . '+1 day'));
-    };
-    if ($day1ofyear == "Monday"){
-    	$firstWeekday = $trigger;
-    };
-    if ($day1ofyear == "Tuesday"){
-    	$firstWeekday = $trigger;
-    };
-    if ($day1ofyear == "Wednesday"){
-    	$firstWeekday = $trigger;
-    };
-    if ($day1ofyear == "Thursday"){
-    	$firstWeekday = $trigger;
-    };
-    if ($day1ofyear == "Friday"){
-    	$firstWeekday = $trigger;
-    };
-    if ($day1ofyear == "Saturday"){
-    	$firstWeekday = $trigger;
-    };
+    $url = 'mysql:dbname='.$dbname.';host='.$servername.'';
 
-    echo "<br>" . $firstWeekday . " is the first Weekday of the year"; 
+    // Connect to database
+    $connection = new PDO($url, $username, $password);
 
-    //To list all Sundays within the first month (Y-m-d)
-    $weekdays=$firstWeekday;
-
-    echo "<br>" . "These are the all the weekdays in the month of January" . "<br>";
-
-    $limit = $year . "-" . $month . "-" . "31";
-
-    echo "<br>Limit is: " . $limit . "<br><br>";
-
-    while ($weekdays < $limit){
-
-    	echo $weekdays . "<br>";
-
-		$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-       
-        $checkIfSunday = date('l', strtotime($weekdays));
-
-        if ($checkIfSunday == "Sunday"){
-        
-            $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        };  	
-
+    // Prepare and execute query
+    if ($skipCheck > 1 ){
+        $skipValue = $weeksBeforeLent + 1;
+        //echo "You have reached if statement." . $skipValue;
+        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_num = '" . $weekdayCycle. "' AND weekday_weeknum !='" . $skipValue . "'";
+    }else{
+        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_type = '" . $weekdayCycle. "'";
+        //echo "You have reached else statement.";
     }
 
-	echo "<br>" . "These are the all the weekdays in the year 2015" . "<br><br>";
+    //echo $query;
+    
+    $sth = $connection->prepare($query);
+    $sth->execute();
 
-    //To identify all the Sundays within the first year (Y-m-d)
-    //Set limit to December 31
+    // Returning array
+    $events = array();
 
-    $month = "12";
+    $counter = 0;
 
-    $limit = $year . "-" . $month . "-" . "31";
-
-    $weekdays = $firstWeekday;
-
-    while ($weekdays < $limit){
-
-    	echo date('l jS F (Y-m-d)', strtotime($weekdays)) . " - " . $weekdays . "<br>";
-
-    	//Display in CALENDAR-ACCEPTABLE date unit
-		//$weekdays = date('Y-m-d', strtotime($weekdays . '+1 days'));    	
-
-    	//Display in COMPREHENSIBLE date unit
-		$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-
-        $checkIfSunday = date('l', strtotime($weekdays));
-
-        if ($checkIfSunday == "Sunday"){
+    // Fetch results
+    while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         
-            $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
+        $e = array();
         
-        };      
+        $e['title'] = $row['weekday_first_reading'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
+        $e['color'] = '#33FF66';
+        $e['textColor'] = 'Black';
+        if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
 
+        $e['title'] = $row['weekday_alleluia_verse'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
+        //$e['color'] = '#33CC00';
+        if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
+
+        $e['title'] = $row['weekday_responsorial_psalm'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
+        //$e['color'] = '#33CC00';
+        if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+
+        $e['title'] = $row['weekday_gospel'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
+        //$e['color'] = '#33CC00';
+        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+
+        $counter++;
+    
     }
 
+    // Output json for our calendar
+    echo json_encode($events);
+    exit();
 
-    //$x = date("W",strtotime("1 April 2015"));
-    //$y = date("W",strtotime("1 March 2015"));
-    //echo "<br>". $x . "<br>";
+} catch (PDOException $e){
+    echo $e->getMessage();
+}
 
+//*/
 ?>

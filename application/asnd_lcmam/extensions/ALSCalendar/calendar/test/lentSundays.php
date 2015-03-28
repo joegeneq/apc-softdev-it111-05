@@ -6,7 +6,8 @@ require 'functions.php';
 
 //For Calendar
 
-error_reporting(E_ERROR);
+    $allLentSundays = getSundaysOfLent();
+
 try {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -129,30 +130,6 @@ try {
      //exit(0);
 }
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-    $year = date('Y', strtotime($sundays . '+1 year')); // Advent is always considered using next year's cycle type
-
-    $sql = "SELECT sunday_cycle FROM event_determinant WHERE year = " . $year . "";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $sundayCycle = $row['sunday_cycle'];
-        }
-    } else {
-        echo "Error on database connection. No results may be displayed.";
-    }
-
-    $conn->close();
-
-    $allAdventSundays = getSundaysOfAdvent();
 
 try {
 
@@ -162,7 +139,7 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'advent' AND sunday_cycle_type = '" . $sundayCycle. "'";
+        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'lent' AND sunday_cycle_type = '" . $sundayCycle. "'";
     
     //echo $query;
     
@@ -188,46 +165,58 @@ try {
 
         }
 
+
         $e = array();
         
         $e['title'] = $row['sunday_name'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
+        $e['start'] = $allLentSundays[$counter] . "T01:00:04";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_name'];
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:04" && $verification == 1){ array_push($events, $e); }
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:04";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:10";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); } 
 
         $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
+        $e['start'] = $allLentSundays[$counter] . "T01:00:05";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_first_reading'];
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:05";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:11";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
+        $e['start'] = $allLentSundays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_second_reading'];
-        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['sunday_alleluia_verse'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
-        $e['tip'] = $row['sunday_alleluia_verse'];
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_alleluia_verse'];
-        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:06";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:12";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
+        $e['start'] = $allLentSundays[$counter] . "T01:00:07";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_responsorial_psalm'];
-        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:07";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:13";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
+
+        $e['title'] = $row['sunday_before_gospel'];
+        $e['start'] = $allLentSundays[$counter] . "T01:00:08";
+        //$e['color'] = '#33CC00';
+        $e['tip'] = $row['sunday_before_gospel'];
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:08";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:14";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:09";
+        $e['start'] = $allLentSundays[$counter] . "T01:00:09";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_gospel'];
-        if ($e['start'] != "T01:00:09" && $verification == 1){ array_push($events, $e); }
+        if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:09";}
+        if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:14";}
+        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
     

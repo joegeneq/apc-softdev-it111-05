@@ -1,12 +1,9 @@
 <?php 
 
-require 'dbConnection.php';
-require 'eventDeterminant.php';
-require 'functions.php';
+include 'getSundays.php';
 
 //For Calendar
 
-error_reporting(E_ERROR);
 try {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -99,7 +96,7 @@ try {
                     for ($x=0; $x < $adventsCount; $x++){
 
                         if ($AdventSundays[$x] == $dateToTest){
-                            $dateTotest = date('Y-m-d', strtotime($dateTotest . '+1 day'));
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                             $datesSFM[$counter] = $dateToTest;
                             $counter++;
                         }
@@ -129,30 +126,7 @@ try {
      //exit(0);
 }
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-    $year = date('Y', strtotime($sundays . '+1 year')); // Advent is always considered using next year's cycle type
-
-    $sql = "SELECT sunday_cycle FROM event_determinant WHERE year = " . $year . "";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            $sundayCycle = $row['sunday_cycle'];
-        }
-    } else {
-        echo "Error on database connection. No results may be displayed.";
-    }
-
-    $conn->close();
-
-    $allAdventSundays = getSundaysOfAdvent();
+//print_r($datesSFM);
 
 try {
 
@@ -162,8 +136,16 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-        $query = "SELECT * FROM sunday_reading WHERE sunday_reading_type = 'advent' AND sunday_cycle_type = '" . $sundayCycle. "'";
-    
+    if ($skipCheck > 1 ){
+        $skipValue = $weeksBeforeLent + 1;
+        $skipValue2 = $skipValue + 1;
+        //echo "You have reached if statement." . $skipValue;
+        $query = "SELECT * FROM sunday_reading WHERE sunday_cycle_type = '" . $sundayCycle. "' AND sunday_weeknum !='" . $skipValue . "' AND sunday_weeknum !='" . $skipValue2 . "'";
+    }else{
+        $query = "SELECT * FROM sunday_reading WHERE sunday_cycle_type = '" . $sundayCycle. "'";
+        //echo "You have reached else statement.";
+    }
+
     //echo $query;
     
     $sth = $connection->prepare($query);
@@ -176,7 +158,7 @@ try {
 
     // Fetch results
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        
+
         $verification = 1; // Initially Sunday is to be used (Verification of Usage)
         $dateForChecking = $allSundays[$counter];
 
@@ -191,40 +173,40 @@ try {
         $e = array();
         
         $e['title'] = $row['sunday_name'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
+        $e['start'] = $allSundays[$counter] . "T01:00:04";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_name'];
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:04" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
+        $e['start'] = $allSundays[$counter] . "T01:00:05";
         $e['color'] = '#FFCC00';
         $e['tip'] = $row['sunday_first_reading'];
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
+        $e['start'] = $allSundays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_second_reading'];
         if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_alleluia_verse'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
+        $e['start'] = $allSundays[$counter] . "T01:00:07";
         $e['tip'] = $row['sunday_alleluia_verse'];
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_alleluia_verse'];
         if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
+        $e['start'] = $allSundays[$counter] . "T01:00:08";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_responsorial_psalm'];
         if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:09";
+        $e['start'] = $allSundays[$counter] . "T01:00:09";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_gospel'];
         if ($e['start'] != "T01:00:09" && $verification == 1){ array_push($events, $e); }
@@ -240,5 +222,7 @@ try {
 } catch (PDOException $e){
     echo $e->getMessage();
 }
+
+
 
 ?>
