@@ -100,7 +100,6 @@ try {
             if ($row['rule'] == "omitted if falls on a sunday"){
                 
                     if (date('l', strtotime($dateToTest)) != "Sunday"){
-                        
                                 $datesSFM[] = $dateToTest;
                     }
             }
@@ -110,7 +109,7 @@ try {
             if ($row['rule'] == "always on a friday"){
                 $checkForFriday = date('Y-m-d', strtotime($pentecostSunday . '+19 days'));
                 $datesSFM[] = $checkForFriday;
-                array_unique($datesSFM);
+                $datesSFM = array_unique($datesSFM);
             }
         }
     } else {

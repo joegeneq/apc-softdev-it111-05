@@ -100,9 +100,16 @@ try {
             if ($row['rule'] == "omitted if falls on a sunday"){
                 
                     if (date('l', strtotime($dateToTest)) != "Sunday"){
-                        
                                 $datesSFM[] = $dateToTest;
                     }
+            }
+
+            // For Sacred Heart Solemnity
+
+            if ($row['rule'] == "always on a friday"){
+                $checkForFriday = date('Y-m-d', strtotime($pentecostSunday . '+19 days'));
+                $datesSFM[] = $checkForFriday;
+                $datesSFM = array_unique($datesSFM);
             }
         }
     } else {

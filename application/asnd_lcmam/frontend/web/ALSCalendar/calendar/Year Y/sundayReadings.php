@@ -114,6 +114,23 @@ try {
                                 $datesSFM[] = $dateToTest;
                     }
             }
+
+            //For Trinity Sunday
+
+            if ($row['rule'] == "after pentecost"){
+                
+                $verifyDate = date('Y-m-d', strtotime($pentecostSunday . '+7 days'));
+                $datesSFM[] = $verifyDate;
+                $datesSFM = array_unique($datesSFM);
+            }
+            //For Corpus Christi
+
+            if ($row['rule'] == "after trinity"){
+                
+                $verifyDate = date('Y-m-d', strtotime($pentecostSunday . '+14 days'));
+                $datesSFM[] = $verifyDate;
+                $datesSFM = array_unique($datesSFM);
+            }
         }
     } else {
         echo "Error on database connection. No results may be displayed.";

@@ -31,6 +31,7 @@ $(document).ready(function () {
                 'lentWeekdays.php',
                 'easterWeekdays.php',
                 'easterSundays.php',
+                'specialSolemnities.php',
                 '../Year Y/sundayReadings.php',
                 '../Year Y/specialEvents.php',
                 '../Year Y/weekdayReadings.php',
@@ -43,6 +44,7 @@ $(document).ready(function () {
                 '../Year Y/lentWeekdays.php',
                 '../Year Y/easterWeekdays.php',
                 '../Year Y/easterSundays.php',
+                '../Year Y/specialSolemnities.php',
             ],
         header: {
             left: 'prev, next',
