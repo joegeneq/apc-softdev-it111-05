@@ -23,6 +23,30 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type') ?>
 
+    <?= $form->field($model, 'first_reading') ?>
+
+    <?php // echo $form->field($model, 'first_reading_audio') ?>
+
+    <?php // echo $form->field($model, 'responsorial_psalm') ?>
+
+    <?php // echo $form->field($model, 'responsorial_psalm_audio') ?>
+
+    <?php // echo $form->field($model, 'second_reading') ?>
+
+    <?php // echo $form->field($model, 'second_reading_audio') ?>
+
+    <?php // echo $form->field($model, 'alleluia_verse') ?>
+
+    <?php // echo $form->field($model, 'alleluia_verse_audio') ?>
+
+    <?php // echo $form->field($model, 'gospel') ?>
+
+    <?php // echo $form->field($model, 'gospel_audio') ?>
+
+    <?php // echo $form->field($model, 'rule') ?>
+
+    <?php // echo $form->field($model, 'cycle_type') ?>
+
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>

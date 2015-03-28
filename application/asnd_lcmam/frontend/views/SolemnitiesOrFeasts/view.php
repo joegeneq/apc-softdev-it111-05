@@ -32,6 +32,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'title',
             'type',
+            'first_reading',
+            'first_reading_audio',
+            'responsorial_psalm',
+            'responsorial_psalm_audio',
+            'second_reading',
+            'second_reading_audio',
+            'alleluia_verse',
+            'alleluia_verse_audio',
+            'gospel',
+            'gospel_audio',
+            'rule',
+            'cycle_type',
         ],
     ]) ?>
 
