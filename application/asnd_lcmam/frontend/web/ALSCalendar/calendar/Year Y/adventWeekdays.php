@@ -165,19 +165,11 @@ try {
 
                     for ($x=0; $x < count($AdventSundays); $x++){
 
-                            if ($x == 0 || $x == 1){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
-
-                            if ($x > 1){
+                            if ($AdventSundays[$x] == $dateToTest){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $datesSFM[$counter] = $dateToTest;
                                 $counter++;
                             }
-
                     }
 
                 }
