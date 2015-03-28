@@ -8,9 +8,9 @@ use yii\data\ActiveDataProvider;
 use frontend\models\WeekdayReading;
 
 /**
- * weekdayReadingSearch represents the model behind the search form about `frontend\models\WeekdayReading`.
+ * WeekdayReadingSearch represents the model behind the search form about `frontend\models\WeekdayReading`.
  */
-class weekdayReadingSearch extends WeekdayReading
+class WeekdayReadingSearch extends WeekdayReading
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class weekdayReadingSearch extends WeekdayReading
     {
         return [
             [['id', 'weekday_daynum', 'weekday_cycle_num', 'weekday_weeknum'], 'integer'],
-            [['weekday_day', 'weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type', 'weekday_first_optional', 'weekday_responsorial_optional', 'weekday_alleluia_optional', 'weekday_gospel_optional'], 'safe'],
+            [['weekday_name', 'weekday_day', 'weekday_first_reading', 'weekday_first_audio', 'weekday_alleluia_verse', 'weekday_alleluia_audio', 'weekday_responsorial_psalm', 'weekday_responsorial_audio', 'weekday_gospel', 'weekday_gospel_audio', 'weekday_reading_type', 'weekday_first_optional', 'weekday_responsorial_optional', 'weekday_alleluia_optional', 'weekday_gospel_optional'], 'safe'],
         ];
     }
 
@@ -62,7 +62,8 @@ class weekdayReadingSearch extends WeekdayReading
             'weekday_weeknum' => $this->weekday_weeknum,
         ]);
 
-        $query->andFilterWhere(['like', 'weekday_day', $this->weekday_day])
+        $query->andFilterWhere(['like', 'weekday_name', $this->weekday_name])
+            ->andFilterWhere(['like', 'weekday_day', $this->weekday_day])
             ->andFilterWhere(['like', 'weekday_first_reading', $this->weekday_first_reading])
             ->andFilterWhere(['like', 'weekday_first_audio', $this->weekday_first_audio])
             ->andFilterWhere(['like', 'weekday_alleluia_verse', $this->weekday_alleluia_verse])
