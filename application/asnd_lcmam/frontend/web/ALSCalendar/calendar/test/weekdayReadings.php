@@ -104,6 +104,14 @@ try {
                                 $datesSFM[] = $dateToTest;
                     }
             }
+
+            // For Sacred Heart Solemnity
+
+            if ($row['rule'] == "always on a friday"){
+                $checkForFriday = date('Y-m-d', strtotime($pentecostSunday . '+19 days'));
+                $datesSFM[] = $checkForFriday;
+                array_unique($datesSFM);
+            }
         }
     } else {
         echo "Error on database connection. No results may be displayed.";
