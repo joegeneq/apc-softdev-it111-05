@@ -263,7 +263,7 @@ try {
                 }
 
                 $e['title'] = $row['gospel'];
-                $e['start'] = $year . $row['date'] . "T01:00:012";
+                $e['start'] = $year . $row['date'] . "T01:00:12";
                 if ($datesSFM[$x] == $year . $row['date'] && $e['title'] != ""){
                     array_push($events, $e);
                 }
