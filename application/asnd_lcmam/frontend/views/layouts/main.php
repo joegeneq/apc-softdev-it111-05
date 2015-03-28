@@ -52,7 +52,7 @@ AppAsset::register($this);
                 ['label' => 'NOTES', 'url' => ['/site/notes']],
                 ['label' => 'ABOUT', 'url' => ['/site/about']],
                 ['label' => 'CONTACT', 'url' => ['/site/contact']],
-                ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+                ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'CREATE', 'items' => [['label' => 'New Event Determinant', 'url' => '']]],
                  '<li class="divider"></li>',
                  '<li class="dropdown-header">Dropdown Header</li>',
                 ['label' => 'Level 1 - Dropdown B', 'url' => '#']]], 
