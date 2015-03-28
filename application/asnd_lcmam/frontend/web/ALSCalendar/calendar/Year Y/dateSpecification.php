@@ -13,8 +13,9 @@
     $day="01";
     $month="01";
     $year=date('Y');
-    $yearAgo = date('Y', strtotime($year . 'a year ago'));
+    $yearAgo = date('Y', strtotime('1 year ago'));
     $year=$yearAgo;
+    
 
 //
 
