@@ -13,9 +13,6 @@
     $day="01";
     $month="01";
     $year=date('Y');
-    
-    $yearX = $year."-".$month."-".$date;
-    $year=date('Y', strtotime( $yearX . '-1 year'));
 
 //
 

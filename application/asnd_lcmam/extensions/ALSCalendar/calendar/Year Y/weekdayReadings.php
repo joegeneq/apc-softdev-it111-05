@@ -3,138 +3,118 @@
 require 'dbConnection.php';
 require 'dateSpecification.php';
 require 'eventDeterminant.php';
+require 'functions.php';
 
 //For Weekday
-	
-	error_reporting(E_ERROR); // attempting to remove errors and notices
-
-	$trigger = $year . "-" . $month . "-" . $day;
-
-    //echo "<br>" . date('l', strtotime($trigger)) . "<br>";
-
-    $day1ofyear = date('l', strtotime($trigger));
-
-    $firstSunday = "";
-
-    //To identify what is the first sunday of the year
-    if ($day1ofyear == "Sunday"){
-        $firstSunday = $trigger;
-    };
-    if ($day1ofyear == "Monday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+6 days'));
-    };
-    if ($day1ofyear == "Tuesday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+5 days'));
-    };
-    if ($day1ofyear == "Wednesday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+4 days'));
-    };
-    if ($day1ofyear == "Thursday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+3 days'));
-    };
-    if ($day1ofyear == "Friday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+2 days'));
-    };
-    if ($day1ofyear == "Saturday"){
-        $firstSunday = date('Y-m-d', strtotime($trigger . '+1 day'));
-    };
-
-    $secondSunday = date('Y-m-d', strtotime($firstSunday . '+7 days')); //Because the Second Sunday is the Baptism of the Lord
     
-    $secondWeekday = date('Y-m-d', strtotime($secondSunday . '+1 day')); 
-
-    $weekdays = $secondWeekday;
-
-    $allWeekdays = array();
-
-    $weekdayCounter = 0;
-
-    $weekdayLimit = date('Y-m-d', strtotime($ashWednesday . '-1 day')); 
-
-    for ($x = 0; $x <= $weeksBeforeLent - 1; $x++) {
-        
-    	/*
-    	if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));        
-        }if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        }if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        }if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        }if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        }if ($weekdays < $ashWednesday){
-        echo $allWeekdays[$x] = date('Y-m-d, l', strtotime($weekdays)) . "<br>";
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+2 day'));
-        }
-        */
-
-        if ($weekdays < $weekdayLimit){
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        }
-        if ($weekdays < $weekdayLimit){
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        }
-        if ($weekdays < $weekdayLimit){
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        }
-        if ($weekdays < $weekdayLimit){
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        }
-        if ($weekdays < $weekdayLimit){
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        }
-        if ($weekdays < $weekdayLimit){
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        	$allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays)); //echo $weekdayCounter . "<br>";
-        	$weekdays = date('Y-m-d', strtotime($weekdays . '+2 days'));
-        }
-        
-        
-	}
-
-
-    $weekdays = date('Y-m-d', strtotime($pentecostSunday . '+1 day'));
-
-    $limit = $firstSundayofAdvent;
+    error_reporting(E_ERROR); // attempting to remove errors and notices
     
-    while ($weekdays < $limit){
-
-        $allWeekdays[$weekdayCounter++] = $weekdays;
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));
-       	$weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+1 day'));
-        
-        $allWeekdays[$weekdayCounter++] = date('Y-m-d', strtotime($weekdays));
-        $weekdays = date('Y-m-d', strtotime($weekdays . '+2 days'));
-
-    }
+    $allWeekdays = getWeekdaysOfOT();
 
     $countOfWeekdays = count($allWeekdays); //count of Sundays
 
     $skipCheck = $weekAfterPentecost - $weeksBeforeLent;
     //echo $skipCheck;
 
+try {
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    $sql = "SELECT * FROM solemnities_or_feasts";
+    $result = $conn->query($sql);
+
+    $datesSFM = array();
+    $counter = 0;
+
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            
+            $dateToTest = $year . $row['date'];
+
+            if ($row['rule'] == "replace SOT but not LEA"){
+
+                if (date('l', strtotime($dateToTest)) != "Sunday"){
+                    $datesSFM[$counter] = $dateToTest;
+                    $counter++;
+                }
+                if (date('l', strtotime($dateToTest)) == "Sunday"){
+                    
+                    $OTSundays = getSundaysOfOT();
+                    $LentSundays = getSundaysOfLent();
+                    $EasterSundays = getSundaysOfEaster();
+                    $AdventSundays = getSundaysOfEaster();
+
+                    $otsCount = count($OTSundays);
+                    $lentsCount = count($OTSundays);
+                    $eastersCount = count($OTSundays);
+                    $adventsCount = count($OTSundays);
+
+                    for ($x=0; $x < $otsCount; $x++){
+
+                        if ($OTSundays[$x] == $dateToTest){
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
+                        }
+
+                    }
+                    
+                    for ($x=0; $x < $lentsCount; $x++){
+
+                        if ($LentSundays[$x] == $dateToTest){
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
+                        }
+
+                    }
+
+                    for ($x=0; $x < $eastersCount; $x++){
+
+                        if ($EasterSundays[$x] == $dateToTest){
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
+                        }
+
+                    }
+
+                    for ($x=0; $x < $adventsCount; $x++){
+
+                        if ($AdventSundays[$x] == $dateToTest){
+                            $dateTotest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
+                            $datesSFM[$counter] = $dateToTest;
+                            $counter++;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            if ($row['rule'] == "omitted if falls on a sunday"){
+                
+                    if (date('l', strtotime($dateToTest)) != "Sunday"){
+                        
+                                $datesSFM[] = $dateToTest;
+                    }
+            }
+        }
+    } else {
+        echo "Error on database connection. No results may be displayed.";
+    }
+    
+    $conn->close();
+
+} catch (PDOException $e){
+     die('Database connection could not be established.');
+     //exit(0);
+}
 
 //For Calendar
 
@@ -168,28 +148,39 @@ try {
     // Fetch results
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         
+        $verification = 1; // Initially Sunday is to be used (Verification of Usage)
+        $dateForChecking = $allWeekdays[$counter];
+
+        for ($x=0; $x < count($datesSFM); $x++){
+
+            if ($datesSFM[$x] == $dateForChecking){
+                $verification = 0; // If Sunday is within the list, Sunday is no longer to be used
+            }
+
+        }
+
         $e = array();
         
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
         $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:06";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_responsorial_psalm'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:07";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_gospel'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:08";
         //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
     
