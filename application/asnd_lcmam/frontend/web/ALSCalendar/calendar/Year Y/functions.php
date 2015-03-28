@@ -416,5 +416,4 @@ function getWeekdaysOfAdvent(){
     
 }
 
-
 ?>
