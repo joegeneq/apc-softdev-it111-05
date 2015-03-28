@@ -22,13 +22,6 @@ try {
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
 
         $e = array();
-        //$e['id'] = $row['id'];
-        //$e['year'] = $row['year'];
-        //$e['sunday_cycle'] = $row['sunday_cycle'];
-        //$e['weekday_cycle'] = $row['weekday_cycle'];
-        //$e['week_ot_before_lent'] = $row['week_ot_before_lent'];
-        //$e['easter_sunday'] = $row['easter_sunday'];
-        //$e['week_ot_after_pentecost'] = $row['week_ot_after_pentecost'];
 
         $e['title'] = "*Ash Wednesday";
         $e['start'] = $row['ash_wednesday'];

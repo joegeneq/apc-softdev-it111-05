@@ -266,6 +266,48 @@ try {
                         if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
 
             }
+            if ($row['sunday_name'] == "Pentecost Sunday" && $row['sunday_cycle_type'] == $sundayCycle){
+                        
+                        $e['title'] = $row['sunday_name'];
+                        $e['start'] = $pentecostSunday . "T01:00:04";
+                        $e['color'] = '#FFCC00';
+                        $e['tip'] = $row['sunday_name'];
+                        $e['textColor'] = 'Black';
+                        if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
+
+                        $e['title'] = $row['sunday_first_reading'];
+                        $e['start'] = $pentecostSunday . "T01:00:05";
+                        $e['color'] = '#FFCC00';
+                        $e['tip'] = $row['sunday_first_reading'];
+                        $e['textColor'] = 'Black';
+                        if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
+                    
+                        $e['title'] = $row['sunday_second_reading'];
+                        $e['start'] = $pentecostSunday . "T01:00:06";
+                        //$e['color'] = '#33CC00';
+                        $e['tip'] = $row['sunday_second_reading'];
+                        if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
+
+                        $e['title'] = $row['sunday_alleluia_verse'];
+                        $e['start'] = $pentecostSunday . "T01:00:07";
+                        $e['tip'] = $row['sunday_alleluia_verse'];
+                        //$e['color'] = '#33CC00';
+                        $e['tip'] = $row['sunday_alleluia_verse'];
+                        if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+
+                        $e['title'] = $row['sunday_responsorial_psalm'];
+                        $e['start'] = $pentecostSunday . "T01:00:08";
+                        //$e['color'] = '#33CC00';
+                        $e['tip'] = $row['sunday_responsorial_psalm'];
+                        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+
+                        $e['title'] = $row['sunday_gospel'];
+                        $e['start'] = $pentecostSunday . "T01:00:09";
+                        //$e['color'] = '#33CC00';
+                        $e['tip'] = $row['sunday_gospel'];
+                        if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
+
+            }
 
         }
     } else {
