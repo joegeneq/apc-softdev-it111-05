@@ -12,7 +12,8 @@
 
     $day="01";
     $month="01";
-    $year=date('Y');
+    $yearMinusOne = date('Y', strtotime('1 year ago'));
+    $year = $yearMinusOne;
 
 //
 
