@@ -12,7 +12,7 @@ try {
     $connection = new PDO($url, $username, $password);
 
     // Prepare and execute query
-    $query = "SELECT * FROM weekday_reading WHERE weekday_reading_type = 'Ash Wednesday'";
+    $query = "SELECT * FROM weekday_reading WHERE weekday_reading_type = 'ash'";
     $sth = $connection->prepare($query);
     $sth->execute();
 
