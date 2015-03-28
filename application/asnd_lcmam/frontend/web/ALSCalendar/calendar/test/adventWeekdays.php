@@ -6,8 +6,8 @@ require 'eventDeterminant.php';
 require 'functions.php';
 
 //For Weekday
-	
-	error_reporting(E_ERROR); // attempting to remove errors and notices
+    
+    error_reporting(E_ERROR); // attempting to remove errors and notices
 
     $allWeekdays = getWeekdaysOfAdvent();
 
@@ -165,18 +165,9 @@ try {
 
                     for ($x=0; $x < count($AdventSundays); $x++){
 
-                            if ($x == 0 || $x == 1){
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                $datesSFM[$counter] = $dateToTest;
-                                $counter++;
-                            }
-
-                            if ($x > 1){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $datesSFM[$counter] = $dateToTest;
                                 $counter++;
-                            }
 
                     }
 
