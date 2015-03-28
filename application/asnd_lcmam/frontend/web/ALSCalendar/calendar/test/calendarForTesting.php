@@ -17,7 +17,7 @@
 <script>
 
 $(document).ready(function () {
-    $('#cal').fullCalendar({
+    $('#cal').fullCalendar({        
         eventSources: [
                 //'sundayReadings.php',
                 //'specialEvents.php',

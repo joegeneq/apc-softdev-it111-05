@@ -165,9 +165,11 @@ try {
 
                     for ($x=0; $x < count($AdventSundays); $x++){
 
+                            if ($AdventSundays[$x] == $dateToTest){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $datesSFM[$counter] = $dateToTest;
                                 $counter++;
+                            }
 
                     }
 
