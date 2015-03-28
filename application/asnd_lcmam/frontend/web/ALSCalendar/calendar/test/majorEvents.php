@@ -117,7 +117,7 @@ try {
             if ($e['title'] != ""){ 
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Christmas Octave"){array_push($events, $e);}
-                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+                if ($row['event_type'] != "Advent" && $row['event_type'] != "Christmas Octave"){array_push($events, $e);}
             }
 
             $e['title'] = $row['event_second_reading'];
@@ -133,7 +133,7 @@ try {
             if ($e['title'] != ""){ 
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Christmas Octave"){array_push($events, $e);}
-                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+                if ($row['event_type'] != "Advent" && $row['event_type'] != "Christmas Octave"){array_push($events, $e);}
             }
 
             $e['title'] = $row['event_alleluia_verse'];
@@ -149,7 +149,7 @@ try {
             if ($e['title'] != ""){ 
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Christmas Octave"){array_push($events, $e);}
-                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+                if ($row['event_type'] != "Advent" && $row['event_type'] != "Christmas Octave"){array_push($events, $e);}
             }
 
             $e['title'] = $row['event_responsorial_psalm'];
@@ -165,7 +165,7 @@ try {
             if ($e['title'] != ""){ 
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Christmas Octave"){array_push($events, $e);}
-                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+                if ($row['event_type'] != "Advent" && $row['event_type'] != "Christmas Octave"){array_push($events, $e);}
             }
 
             $e['title'] = $row['event_gospel'];
@@ -181,7 +181,7 @@ try {
             if ($e['title'] != ""){ 
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Advent" ){array_push($events, $e); }
                 if ($sundayValidation != "Sunday" && $row['event_type'] == "Christmas Octave"){array_push($events, $e);}
-                if ($row['event_type'] != "Advent" ){array_push($events, $e);} 
+                if ($row['event_type'] != "Advent" && $row['event_type'] != "Christmas Octave"){array_push($events, $e);}
             }
 
             }
