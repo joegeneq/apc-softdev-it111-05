@@ -9,9 +9,10 @@ $this->title = 'Calendar';
 
 
 <div class="site-about">
-  
-	<object data='../../extensions/ALSCalendar/calendar/test/testCalendar.php' style='width:100%;min-height: 965px;'>
 <object data='extensions/ALSCalendar/calendar/testCalendar.php' style='width:100%;min-height: 965px;'>
+<object data='/extensions/ALSCalendar/calendar/testCalendar.php' style='width:100%;min-height: 965px;'>  
+<object data='../../extensions/ALSCalendar/calendar/test/testCalendar.php' style='width:100%;min-height: 965px;'>
+
 
 
 

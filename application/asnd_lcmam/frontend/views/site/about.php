@@ -9,7 +9,7 @@ $this->title = 'About';
 //echo include("../../extensions/ALSCalendar/demos/calendar.php");
 
 ?>
-
+<div class="row">
 <div class="site-about">
     <!-- <h1><?= Html::encode($this->title) ?></h1><br> -->
     <br>
@@ -36,12 +36,15 @@ Welcome to <b>angsalitangdiyos.com</b>!
 
 <b>+LUIS ANTONIO G. CARDINAL TAGLE</b>
 </p>
-</div>
+</div></div>
 <div class="col-lg-4-about">
+<div class="col-lg-4-about">
+<p align="justify">
+<div class="row">
 <br><br>
 	<img src="images/Cardinal-tagle.jpg">
 </div>
-
+</div>
 <div>
     <!--<p>This is the About page. You may modify the following file to customize its content:</p>
 
