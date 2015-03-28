@@ -33,23 +33,31 @@ AppAsset::register($this);
                 ],
             ]);
 
+            if (Yii::$app->user->isGuest) {
             $menuItems = [
                 ['label' => 'HOME', 'url' => ['/site/about']],
-                ['label' => 'CALENDAR', 'url' => ['site/calendar']],
-                ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
-                 '<li class="divider"></li>',
-                 '<li class="dropdown-header">Dropdown Header</li>',
-                ['label' => 'Level 1 - Dropdown B', 'url' => '#']]],              
+                ['label' => 'CALENDAR', 'url' => ['site/calendar']],            
                 ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
                 ['label' => 'NOTES', 'url' => ['/site/notes']],
                 ['label' => 'ABOUT', 'url' => ['/site/about']],
                 ['label' => 'CONTACT', 'url' => ['/site/contact']],
             ];
-            if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'SIGNUP', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'LOGIN', 'url' => ['/site/login']];
             } else {
-                $menuItems[] = [
+                $menuItems = [
+                ['label' => 'HOME', 'url' => ['/site/about']],
+                ['label' => 'CALENDAR', 'url' => ['site/calendar']],            
+                ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
+                ['label' => 'NOTES', 'url' => ['/site/notes']],
+                ['label' => 'ABOUT', 'url' => ['/site/about']],
+                ['label' => 'CONTACT', 'url' => ['/site/contact']],
+                ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+                 '<li class="divider"></li>',
+                 '<li class="dropdown-header">Dropdown Header</li>',
+                ['label' => 'Level 1 - Dropdown B', 'url' => '#']]], 
+                ];
+            $menuItems[] = [ 
                     'label' => 'LOGOUT (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
