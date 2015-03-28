@@ -8,6 +8,7 @@ use frontend\models\EventDeterminantSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * EventDeterminantController implements the CRUD actions for EventDeterminant model.
@@ -17,6 +18,17 @@ class EventDeterminantController extends Controller
     public function behaviors()
     {
         return [
+
+/***        'access'=>[
+            'class'=>AccessControl::classname(),
+                'only'=>['delete','update'],
+                'rules'=>[
+                     [
+                    'allow'=>false,
+                     ],
+                ]
+            ], **/
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
