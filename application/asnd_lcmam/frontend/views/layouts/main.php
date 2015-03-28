@@ -34,7 +34,7 @@ AppAsset::register($this);
             ]);
 
             $menuItems = [
-                ['label' => 'HOME', 'url' => ['/site/about']],
+                ['label' => 'HOME', 'url' => ['/site/index']],
                 ['label' => 'CALENDAR', 'url' => ['site/calendar']],
                 ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
                  '<li class="divider"></li>',
