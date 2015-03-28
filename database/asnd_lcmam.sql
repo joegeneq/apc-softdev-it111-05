@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2015 at 02:10 PM
+-- Generation Time: Mar 28, 2015 at 02:56 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -67,12 +67,12 @@ INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_read
 (11, '', 'Advent', '-12-22', '1 Sam 1:24-28', '', '', '', '', '', '1 Sam 2:1, 4-5, 6-7, 8abcd', '', 'Luke 1:46-56', '', '', '', '', '', ''),
 (12, '', 'Advent', '-12-23', 'Mal 3:1-4, 23-24', '', '', '', '', '', 'Ps 25:4-5ab, 8-9, 10+14', '', 'Luke 1:57-66', '', '', '', '', '', ''),
 (13, 'Morning Mass', 'Advent - Morning Mass', '-12-24', '2 Sam 7:1-5, 8b-12, 14a, 16', '', '', '', '', '', 'Ps 89:2-3, 4-5, 27+29', '', 'Luke 1:67-79', '', '', '', '', '', ''),
-(14, 'Feast of St. Stephen, first martyr', 'Christmas', '-12-26', 'Acts 6:8-10; 7:54-59', '', '', '', 'Ps 118:26a+27a', '', 'Ps 31:3cd-4, 6ab+8a, 16bc+17', '', 'Matt 10:17-22', '', '', '', '', '', ''),
-(15, 'Feast of St. John, Apostle & Evangelist', 'Christmas', '-12-27', '1 John 1:1-4', '', '', '', '', '', 'Ps 97:1-2, 5-6, 11-12', '', 'John 20:1a, 2-8', '', '', '', '', '', ''),
-(16, 'Feast of the Holy Innocents, martyrs', 'Christmas', '-12-28', '1 John 1:5?2:2', '', '', '', '', '', 'Ps 124:2-3, 4-5, 7cd-8', '', 'Matt 2:13-18', '', '', '', '', '', ''),
-(17, '5th Day in the Octave of Christmas', 'Christmas', '-12-29', '1 John 2:3-11', '', '', '', 'Luke 2:32', '', 'Ps 96:1-2a, 2b-3, 5b-6', '', 'Luke 2:22-35', '', '', '', '', '', ''),
-(18, '6th Day in the Octave of Christmas', 'Christmas', '-12-30', '1 John 2:12-17', '', '', '', 'no biblical reference', '', 'Ps 96:7-8a, 8b-9, 10', '', 'Luke 2:36-40', '', '', '', '', '', ''),
-(19, '7th Day in the Octave of Christmas', 'Christmas', '-12-31', '1 John 2:18-21', '', '', '', 'John 1:14a+12a', '', 'Ps 96:1-2, 11-12, 13', '', 'John 1:1-18', '', '', '', '', '', ''),
+(14, 'Feast of St. Stephen, first martyr', 'Christmas Octave', '-12-26', 'Acts 6:8-10; 7:54-59', '', '', '', 'Ps 118:26a+27a', '', 'Ps 31:3cd-4, 6ab+8a, 16bc+17', '', 'Matt 10:17-22', '', '', '', '', '', ''),
+(15, 'Feast of St. John, Apostle & Evangelist', 'Christmas Octave', '-12-27', '1 John 1:1-4', '', '', '', '', '', 'Ps 97:1-2, 5-6, 11-12', '', 'John 20:1a, 2-8', '', '', '', '', '', ''),
+(16, 'Feast of the Holy Innocents, martyrs', 'Christmas Octave', '-12-28', '1 John 1:5?2:2', '', '', '', '', '', 'Ps 124:2-3, 4-5, 7cd-8', '', 'Matt 2:13-18', '', '', '', '', '', ''),
+(17, '5th Day in the Octave of Christmas', 'Christmas Octave', '-12-29', '1 John 2:3-11', '', '', '', 'Luke 2:32', '', 'Ps 96:1-2a, 2b-3, 5b-6', '', 'Luke 2:22-35', '', '', '', '', '', ''),
+(18, '6th Day in the Octave of Christmas', 'Christmas Octave', '-12-30', '1 John 2:12-17', '', '', '', 'no biblical reference', '', 'Ps 96:7-8a, 8b-9, 10', '', 'Luke 2:36-40', '', '', '', '', '', ''),
+(19, '7th Day in the Octave of Christmas', 'Christmas Octave', '-12-31', '1 John 2:18-21', '', '', '', 'John 1:14a+12a', '', 'Ps 96:1-2, 11-12, 13', '', 'John 1:1-18', '', '', '', '', '', ''),
 (20, '', 'Christmas', '-01-02', '1 John 2:22-28', '', '', '', 'Heb 1:1-2', '', 'Ps 98:1, 2-3ab, 3cd-4', '', 'John 1:19-28', '', '', '', '', '', ''),
 (21, '', 'Christmas', '-01-03', '1 John 2:29?3:6', '', '', '', 'John 1:14a+12a', '', 'Ps 98:1, 3cd-4, 5-6', '', 'John 1:29-34', '', '', '', '', '', ''),
 (22, '', 'Christmas', '-01-04', '1 John 3:7-10', '', '', '', 'Heb 1:1-2', '', 'Ps 98:1, 7-8, 9', '', 'John 1:35-42', '', '', '', '', '', ''),
