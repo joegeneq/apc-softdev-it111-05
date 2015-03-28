@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'weekday_daynum',
+            'weekday_name',
             'weekday_day',
             'weekday_first_reading',
             'weekday_first_audio',

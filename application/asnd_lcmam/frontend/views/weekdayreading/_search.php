@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\weekdayReadingSearch */
+/* @var $model frontend\models\WeekdayReadingSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -19,11 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'weekday_daynum') ?>
 
+    <?= $form->field($model, 'weekday_name') ?>
+
     <?= $form->field($model, 'weekday_day') ?>
 
     <?= $form->field($model, 'weekday_first_reading') ?>
 
-    <?= $form->field($model, 'weekday_first_audio') ?>
+    <?php // echo $form->field($model, 'weekday_first_audio') ?>
 
     <?php // echo $form->field($model, 'weekday_alleluia_verse') ?>
 
