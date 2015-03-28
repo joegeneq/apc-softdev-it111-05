@@ -33,7 +33,7 @@ $(document).ready(function () {
                 'easterSundays.php',
                 'specialSolemnities.php',
                 '../Year Y/sundayReadings.php',
-                '../Year Y/specialEvents.php',
+                '../Year Y/ashWednesday.php',
                 '../Year Y/weekdayReadings.php',
                 '../Year Y/solemnitiesOrFeasts.php',
                 '../Year Y/majorEvents.php',
