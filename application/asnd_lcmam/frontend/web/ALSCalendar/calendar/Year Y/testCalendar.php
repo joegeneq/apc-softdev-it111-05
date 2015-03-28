@@ -20,7 +20,7 @@ $(document).ready(function () {
     $('#cal').fullCalendar({
         eventSources: [
                 'sundayReadings.php',
-                'specialEvents.php',
+                'ashWednesday.php',
                 'weekdayReadings.php',
                 'solemnitiesOrFeasts.php',
                 'majorEvents.php',
