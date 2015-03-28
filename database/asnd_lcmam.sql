@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2015 at 04:27 AM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Mar 28, 2015 at 12:12 PM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `asnd_lcmam`
 --
+CREATE DATABASE IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `asnd_lcmam`;
 
 -- --------------------------------------------------------
 
@@ -95,8 +97,8 @@ INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_read
 CREATE TABLE IF NOT EXISTS `event_determinant` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `year` year(4) NOT NULL,
-  `sunday_cycle` varchar(45) DEFAULT NULL,
-  `weekday_cycle` varchar(45) DEFAULT NULL,
+  `sunday_cycle` char(1) DEFAULT NULL,
+  `weekday_cycle` char(1) DEFAULT NULL,
   `week_ot_before_lent` varchar(45) DEFAULT NULL,
   `ash_wednesday` date DEFAULT NULL,
   `easter_sunday` date DEFAULT NULL,
@@ -104,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `event_determinant` (
   `week_ot_after_pentecost` varchar(45) DEFAULT NULL,
   `first_sunday_of_advent` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=83 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=84 ;
 
 --
 -- Dumping data for table `event_determinant`
@@ -238,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
   `rule` varchar(45) DEFAULT NULL,
   `cycle_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
 
 --
 -- Dumping data for table `solemnities_or_feasts`
@@ -287,7 +289,16 @@ INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`, `first_readi
 (40, '-10-02', 'The Holy Guardian Angels', 'M', 'Exod 23:20-23', NULL, 'Ps 91:1-2, 3-4ab, 4c-6, 10-11', NULL, NULL, NULL, 'Ps 103:21', NULL, 'Matt 18:1-5, 10', NULL, 'omitted if falls on a sunday', NULL),
 (41, '-10-17', 'St. Ignatius of Antioch', 'M', 'Phil 3:17-4:1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
 (42, '-05-01', 'St. Joseph the Worker', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Matt 13:54-58', NULL, NULL, NULL),
-(43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(43, '-11-08', 'Dedication of Basilicas of Sts. Peter and Paul', 'OM', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(44, '', 'Sunday after Pentecost: Solemnity of the Most Holy Trinity?- A', 'S', 'Exod 34:4b-6, 8-9', '', 'Dan 3:52, 53, 54, 55 ', '', '2 Cor 13:11-13', '', 'cf. Rev 1:8', '', 'John 3:16-18', '', '', 'A'),
+(45, '', 'Sunday after Trinity Sunday: Solemnity of the Most Holy Body and Blood of Christ (formerly called "C', 'S', 'Deut 8:2-3, 14b-16a', '', 'Ps 147:12-13, 14-15, 19-20', '', '1 Cor 10:16-17', '', 'John 6:51', '', 'John 6:51-58', '', '', 'A'),
+(46, '', 'Friday after the Second Sunday after Pentecost: Solemnity of the Most Sacred Heart of Jesus?- A', 'S', 'Deut 7:6-11', '', 'Ps 103:1-2, 3-4, [6-7,] 8+10', '', '1 John 4:7-16', '', 'Matt 11:29ab', '', 'Matt 11:25-30', '', '', 'A'),
+(47, '', 'Sunday after Pentecost: Solemnity of the Most Holy Trinity?- B', 'S', 'Deut 4:32-34, 39-40', '', 'Ps 33:4-5, 6+9, 18-19, 20+22', '', 'Rom 8:14-17', '', 'cf. Rev 1:8', '', 'Matt 28:16-20', '', '', 'B'),
+(48, '', 'Sunday after Trinity Sunday: Solemnity of the Most Holy Body and Blood of Christ (formerly called "C', 'S', 'Exod 24:3-8', '', 'Ps 116:12-13, 15-16, 17-18', '', 'Heb 9:11-15', '', 'John 6:51', '', 'Mark 14:12-16, 22-26', '', '', 'B'),
+(49, '', 'Friday after the Second Sunday after Pentecost: Solemnity of the Most Sacred Heart of Jesus?- B', 'S', 'Hos 11:1, 3-4, 8c-9', '', 'Isa 12:2-3, 4bcd, 5-6', '', 'Eph 3:8-12, 14-19', '', 'Matt 11:29ab or 1 John 4:10b', '', 'John 19:31-37', '', '', 'B'),
+(50, '', 'Sunday after Pentecost: Solemnity of the Most Holy Trinity?- C', 'S', 'Prov 8:22-31', '', 'Ps 8:4-5, 6-7, 8-9', '', 'Rom 5:1-5', '', 'cf. Rev 1:8', '', 'John 16:12-15', '', '', 'C'),
+(51, '', 'Sunday after Trinity Sunday: Solemnity of the Most Holy Body and Blood of Christ (formerly called "C', 'S', 'Gen 14:18-20', '', 'Ps 110:1, 2, 3, 4', '', '1 Cor 11:23-26', '', 'John 6:51', '', 'Luke 9:11b-17', '', '', 'C'),
+(52, '', 'Friday after the Second Sunday after Pentecost: Solemnity of the Most Sacred Heart of Jesus?- C', 'S', 'Ezek 34:11-16', '', 'Ps 23:1-3a, 3b-4, 5, 6', '', 'Rom 5:5b-11', '', 'Matt 11:29ab or John 10:14', '', 'Luke 15:3-7', '', '', 'C');
 
 -- --------------------------------------------------------
 
@@ -522,14 +533,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Client', 'admin', 'admin', 'lfBMkkcpITPrftEYdToBBSxnMKw6AhMh', '$2y$13$fm8pvZoimujn5C2VTTRyBeFLxd0kmTFUkuVJ325joAvBM9xhfNLh.', NULL, 'kimbuhleemae@gmail.com', 10, 1427263539, 1427263539);
+(1, 'Client', 'admin', 'admin', 'lfBMkkcpITPrftEYdToBBSxnMKw6AhMh', '$2y$13$fm8pvZoimujn5C2VTTRyBeFLxd0kmTFUkuVJ325joAvBM9xhfNLh.', NULL, 'kimbuhleemae@gmail.com', 10, 1427263539, 1427263539),
+(2, 'Demo', 'Administrator', 'demo', '8mzUS-m8xzCimXKoOce8Tr40xD17IYDy', '$2y$13$rX9HmFxKEptC8XFwg0z08.HZi4SFhmJ5uVXd.Hbn83e0.JkS0RwmG', NULL, 'demo@demo.com', 10, 1427510717, 1427510717);
 
 -- --------------------------------------------------------
 
