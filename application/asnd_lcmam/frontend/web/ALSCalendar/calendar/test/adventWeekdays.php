@@ -7,7 +7,7 @@ require 'functions.php';
 
 //For Weekday
     
-    error_reporting(E_ERROR); // attempting to remove errors and notices
+   // error_reporting(E_ERROR); // attempting to remove errors and notices
 
     $allWeekdays = getWeekdaysOfAdvent();
 

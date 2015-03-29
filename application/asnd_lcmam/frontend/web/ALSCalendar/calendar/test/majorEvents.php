@@ -6,6 +6,7 @@ require 'functions.php';
 require 'eventDeterminant.php';
 
 
+
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
