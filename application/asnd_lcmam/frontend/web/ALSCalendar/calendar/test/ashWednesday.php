@@ -26,29 +26,26 @@ try {
 
         $e['title'] = $row['weekday_name'];
         $e['start'] = $ashWednesday . "T01:00:05";
-        $e['color'] = '#33FF66';
-        $e['textColor'] = 'Black';
+        $e['color'] = '#3399FF';
+        $e['textColor'] = 'White';
         if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
         
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $ashWednesday . "T01:00:05";
-        $e['color'] = '#33FF66';
+        $e['color'] = '#FFFF99';
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
         $e['start'] = $ashWednesday . "T01:00:06";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:06" ){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_responsorial_psalm'];
         $e['start'] = $ashWednesday . "T01:00:07";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:07" ){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_gospel'];
         $e['start'] = $ashWednesday . "T01:00:08";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:08" ){ array_push($events, $e); }
 
 
