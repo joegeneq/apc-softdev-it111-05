@@ -54,26 +54,12 @@ AppAsset::register($this);
                     ['label' => 'CONTACT', 'url' => ['/site/contact']],
                     ['label' => 'ACTIVITIES', 'items' => [  
 
-                        '<li class="dropdown-header">CREATE</li>',
-                        '<li class="divider"></li>',              
-                        ['label' => 'Event Determinant', 'url' => '#'],
-                        
-                        '<li class="divider"></li>',
-                        '<li class="dropdown-header">VIEW/UPDATE</li>',
-                        '<li class="divider"></li>',
-                        ['label' => 'Event Determinant', 'url' => '#'],
-                        ['label' => 'Events', 'url' => '#'],
-                        ['label' => 'Solemnities and Feasts', 'url' => '#'],
-                        ['label' => 'Sunday Readings', 'url' => '#'],
-                        ['label' => 'Weekday Readings', 'url' => '#'],
-                        ['label' => 'User', 'url' => '#'], 
-                        
-
-                        '<li class="divider"></li>',
-                        '<li class="dropdown-header">DELETE</li>',
-                        '<li class="divider"></li>',
-                        ['label' => 'Event Determinant', 'url' => '#'],
-                        ['label' => 'Events', 'url' => '#'],
+                        ['label' => 'Event Determinant', 'url' => ['eventdeterminant/index']],
+                        ['label' => 'Events', 'url' => ['event/index']],
+                        ['label' => 'Solemnities and Feasts', 'url' => ['solemnitiesorfeasts/index']],
+                        ['label' => 'Sunday Readings', 'url' => ['sundayreading/index']],
+                        ['label' => 'Weekday Readings', 'url' => ['weekdayreading/index']],
+                        ['label' => 'User', 'url' => ['user/index']], 
 
                         ]
                     ], 
