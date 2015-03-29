@@ -3,7 +3,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View
 $this->params['breadcrumbs'][] = $this->title;*/
-$this->title = 'About';
+$this->title = 'Ang Salita ng Diyos';
 
 
 //echo include("../../extensions/ALSCalendar/demos/calendar.php");
