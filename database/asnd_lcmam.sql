@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2015 at 04:23 AM
+-- Generation Time: Mar 29, 2015 at 06:15 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -998,9 +998,9 @@ INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_name`, `weekday_
 (423, 3, '', 'Wednesday', 'Isa 45:6c-8, 18, 21c-25', '', 'Isa 40:9-10', '', 'Ps 85:9ab+10, 11-12, 13-14', '', 'Luke 7:18b-23', '', 0, 3, 'advent', '', '', '', ''),
 (424, 4, '', 'Thursday', 'Isa 54:1-10', '', 'Luke 3:4+6', '', 'Ps 30:2+4, 5-6, 11-12a+13b', '', 'Luke 7:24-30', '', 0, 3, 'advent', '', '', '', ''),
 (425, 5, '', 'Friday', 'Isa 56:1-3a, 6-8', '', 'no biblical reference', '', 'Ps 67:2-3, 5, 7-8', '', 'John 5:33-36', '', 0, 3, 'advent', '', '', '', ''),
-(426, 4, '', 'Thursday', 'Deut 30:15-20', '', 'Matt 4:17', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 9:22-25', '', 0, 1, 'pre-lent', '', '', '', ''),
-(427, 5, '', 'Friday', 'Isa 58:1-9a', '', 'Amos 5:14', '', 'Ps 51:3-4, 5-6ab, 18-19', '', 'Matt 9:14-15', '', 0, 1, 'pre-lent', '', '', '', ''),
-(428, 6, '', 'Saturday', 'Isa 58:9b-14', '', 'Ezek 33:11', '', 'Ps 86:1-2, 3-4, 5-6', '', 'Luke 5:27-32', '', 0, 1, 'pre-lent', '', '', '', ''),
+(426, 4, 'Thursday After Lent', 'Thursday', 'Deut 30:15-20', '', 'Matt 4:17', '', 'Ps 1:1-2, 3, 4+6', '', 'Luke 9:22-25', '', 0, 1, 'pre-lent', '', '', '', ''),
+(427, 5, 'Friday After Lent', 'Friday', 'Isa 58:1-9a', '', 'Amos 5:14', '', 'Ps 51:3-4, 5-6ab, 18-19', '', 'Matt 9:14-15', '', 0, 1, 'pre-lent', '', '', '', ''),
+(428, 6, 'Saturday After Lent', 'Saturday', 'Isa 58:9b-14', '', 'Ezek 33:11', '', 'Ps 86:1-2, 3-4, 5-6', '', 'Luke 5:27-32', '', 0, 1, 'pre-lent', '', '', '', ''),
 (429, 1, 'Octave of Easter', 'Monday', 'Acts 2:14, 22-33', '', 'Ps 118:24', '', 'Ps 16:1-2a+5, 7-8, 9-10, 11', '', 'Matt 28:8-15', '', 0, 1, 'easter', '', '', '', ''),
 (430, 2, '', 'Tuesday', 'Acts 2:36-41', '', 'Ps 118:24', '', 'Ps 33:4-5, 18-19, 20+22', '', 'John 20:11-18', '', 0, 1, 'easter', '', '', '', ''),
 (431, 3, '', 'Wednesday', 'Acts 3:1-10', '', 'Ps 118:24', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Luke 24:13-35', '', 0, 1, 'easter', '', '', '', ''),
@@ -1076,9 +1076,9 @@ INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_name`, `weekday_
 (501, 4, '', 'Thursday', 'Gen 17:3-9', '', 'Ps 95:8', '', 'Ps 105:4-5, 6-7, 8-9', '', 'John 8:51-59', '', 0, 5, 'lent', '', '', '', ''),
 (502, 5, '', 'Friday', 'Jer 20:10-13', '', 'John 6:63c+68c', '', 'Ps 18:2-3a, 3bc-4, 5-6, 7', '', 'John 10:31-42', '', 0, 5, 'lent', '', '', '', ''),
 (503, 6, '', 'Saturday', 'Ezek 37:21-28', '', 'Ezek 18:31', '', 'Jer 31:10, 11-12abcd, 13', '', 'John 11:45-56', '', 0, 5, 'lent', '', '', '', ''),
-(504, 1, 'Holy Week', 'Monday', 'Isa 42:1-7', '', 'no bibilical reference', '', 'Ps 27:1, 2, 3, 13-14', '', 'John 12:1-11', '', 0, 1, 'lent', '', '', '', ''),
-(505, 2, '', 'Tuesday', 'Isa 49:1-6', '', 'no bibilical reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'John 13:21-33, 36-38', '', 0, 1, 'lent', '', '', '', ''),
-(506, 3, '', 'Wednesday', 'Isa 50:4-9a', '', 'no bibilical reference', '', 'Ps 69:8-10, 21-22, 31+33-34', '', 'Matt 26:14-25', '', 0, 1, 'lent', '', '', '', ''),
+(504, 1, 'Holy Week', 'Monday', 'Isa 42:1-7', '', 'No Biblical Reference', '', 'Ps 27:1, 2, 3, 13-14', '', 'John 12:1-11', '', 0, 1, 'lent', '', '', '', ''),
+(505, 2, '', 'Tuesday', 'Isa 49:1-6', '', 'No Biblical Reference', '', 'Ps 71:1-2, 3-4a, 5-6ab, 15+17', '', 'John 13:21-33, 36-38', '', 0, 1, 'lent', '', '', '', ''),
+(506, 3, '', 'Wednesday', 'Isa 50:4-9a', '', 'No Biblical Reference', '', 'Ps 69:8-10, 21-22, 31+33-34', '', 'Matt 26:14-25', '', 0, 1, 'lent', '', '', '', ''),
 (507, 4, 'Maundy Thursday', 'Thursday', 'Is 61:1-3a, 6a, 8b-9', '', 'Isa 61:1 (cited in Luke 4:18', '', 'Ps 89:21-22, 25+27', '', 'Lk 4:16-21 (260)', '', 0, 1, 'lent', '', '', '', ''),
 (508, 5, 'Good Friday', 'Friday', 'Is 52:13-53:12', '', '', '', 'Heb 4:14-16; 5:7-9', '', 'Jn 18:1-19:42(40)', '', 0, 1, 'lent', '', '', '', ''),
 (509, 6, 'Holy Saturday', 'Saturday', 'Gn 1:1-2:2 or 1:1, 26-31a', '', 'Gn 22:1-18 or 22:1-2, 9a, 10-13, 15-18', '', 'Ex 14:15-15:1', '', 'Mk 16:1-7 (41)', '', 0, 1, 'lent', '', '', '', ''),
