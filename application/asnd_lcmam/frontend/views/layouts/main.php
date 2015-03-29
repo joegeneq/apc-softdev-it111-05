@@ -46,16 +46,37 @@ AppAsset::register($this);
                 $menuItems[] = ['label' => 'LOGIN', 'url' => ['/site/login']];
             } else {
                 $menuItems = [
-                ['label' => 'HOME', 'url' => ['/site/about']],
-                ['label' => 'CALENDAR', 'url' => ['site/calendar']],            
-                ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
-                ['label' => 'NOTES', 'url' => ['/site/notes']],
-                ['label' => 'ABOUT', 'url' => ['/site/about']],
-                ['label' => 'CONTACT', 'url' => ['/site/contact']],
-                ['label' => 'ACTIVITIES', 'items' => [ ['label' => 'CREATE', 'items' => [['label' => 'New Event Determinant', 'url' => '']]],
-                 '<li class="divider"></li>',
-                 '<li class="dropdown-header">Dropdown Header</li>',
-                ['label' => 'Level 1 - Dropdown B', 'url' => '#']]], 
+                    ['label' => 'HOME', 'url' => ['/site/about']],
+                    ['label' => 'CALENDAR', 'url' => ['site/calendar']],            
+                    ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
+                    ['label' => 'NOTES', 'url' => ['/site/notes']],
+                   // ['label' => 'ABOUT', 'url' => ['/site/about']],
+                    ['label' => 'CONTACT', 'url' => ['/site/contact']],
+                    ['label' => 'ACTIVITIES', 'items' => [  
+
+                        '<li class="dropdown-header">CREATE</li>',
+                        '<li class="divider"></li>',              
+                        ['label' => 'Event Determinant', 'url' => '#'],
+                        
+                        '<li class="divider"></li>',
+                        '<li class="dropdown-header">VIEW/UPDATE</li>',
+                        '<li class="divider"></li>',
+                        ['label' => 'Event Determinant', 'url' => '#'],
+                        ['label' => 'Events', 'url' => '#'],
+                        ['label' => 'Solemnities and Feasts', 'url' => '#'],
+                        ['label' => 'Sunday Readings', 'url' => '#'],
+                        ['label' => 'Weekday Readings', 'url' => '#'],
+                        ['label' => 'User', 'url' => '#'], 
+                        
+
+                        '<li class="divider"></li>',
+                        '<li class="dropdown-header">DELETE</li>',
+                        '<li class="divider"></li>',
+                        ['label' => 'Event Determinant', 'url' => '#'],
+                        ['label' => 'Events', 'url' => '#'],
+
+                        ]
+                    ], 
                 ];
             $menuItems[] = [ 
                     'label' => 'LOGOUT (' . Yii::$app->user->identity->username . ')',
