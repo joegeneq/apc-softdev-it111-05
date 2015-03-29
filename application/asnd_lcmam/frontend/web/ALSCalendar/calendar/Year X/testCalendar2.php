@@ -2,17 +2,17 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<link href='../fullcalendar.css' rel='stylesheet' />
-<link href='../fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href='../../fullcalendar.css' rel='stylesheet' />
+<link href='../../fullcalendar.print.css' rel='stylesheet' media='print' />
 
-<script src='../lib/moment.min.js'></script>
-<script src='../lib/jquery.min.js'></script>
-<script src='../fullcalendar.min.js'></script>
+<script src='../../lib/moment.min.js'></script>
+<script src='../../lib/jquery.min.js'></script>
+<script src='../../fullcalendar.min.js'></script>
 
-<script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-<script src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-<link rel="stylesheet" href="../bootstrap-3.3.4-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="../bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
+<script src="../../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+<script src="../../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="../../bootstrap-3.3.4-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../bootstrap-3.3.4-dist/css/bootstrap-theme.min.css">
 
 <script type='text/javascript'>
 
@@ -25,9 +25,8 @@
         
         $('#calendar').fullCalendar({
             eventSources: [
-                'sundayReadings.php',
-                'specialEvents.php',
-                'weekdayReadings.php',
+                'testSolemn.php',
+                'solemnOrFeasts.php',
             ],
         header: {
             left: 'prev, next',
