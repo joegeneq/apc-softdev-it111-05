@@ -162,7 +162,7 @@ function getWeekdaysOfOT(){
 
     $weekdayCounter = 0;
 
-    $weekdayLimit = date('Y-m-d', strtotime($ashWednesday . '-1 day')); 
+    $weekdayLimit = date('Y-m-d', strtotime($ashWednesday . '+3 days')); 
 
     for ($x = 0; $x <= $weeksBeforeLent - 1; $x++) {
         

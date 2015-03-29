@@ -151,49 +151,62 @@ try {
     $events = array();
 
     $counter = 0;
+    $ashOne = date('Y-m-d', strtotime($ashWednesday . '+1 day'));
+    $ashTwo = date('Y-m-d', strtotime($ashWednesday . '+2 days'));
+    $ashThree = date('Y-m-d', strtotime($ashWednesday . '+3 days'));
 
     // Fetch results
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
         
-        $verification = 1; // Initially Sunday is to be used (Verification of Usage)
-        $dateForChecking = $allWeekdays[$counter];
+        if ($allWeekdays[$counter] != $ashWednesday){
+            if ($allWeekdays[$counter] != $ashOne){
+                if ($allWeekdays[$counter] != $ashTwo){
+                    if ($allWeekdays[$counter] != $ashThree){
 
-        for ($x=0; $x < count($datesSFM); $x++){
+                         //echo $allWeekdays[$counter] . "<br>";
 
-            if ($datesSFM[$x] == $dateForChecking){
-                $verification = 0; // If Sunday is within the list, Sunday is no longer to be used
+                        $verification = 1; // Initially Sunday is to be used (Verification of Usage)
+                        $dateForChecking = $allWeekdays[$counter];
+
+                        for ($x=0; $x < count($datesSFM); $x++){
+
+                            if ($datesSFM[$x] == $dateForChecking){
+                                $verification = 0; // If Sunday is within the list, Sunday is no longer to be used
+                            }
+
+                        }
+
+                        $e = array();
+                        
+                        $e['title'] = $row['weekday_name'];
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
+                        $e['color'] = '#3399FF';
+                        $e['textColor'] = 'White';
+                        if ($e['start'] != "T01:00:04" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
+
+                        $e['title'] = $row['weekday_first_reading'];
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
+                        $e['color'] = '#FFFF85';
+                        $e['textColor'] = 'Black';
+                        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
+
+                        $e['title'] = $row['weekday_alleluia_verse'];
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
+                        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
+
+                        $e['title'] = $row['weekday_responsorial_psalm'];
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
+                        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
+
+                        $e['title'] = $row['weekday_gospel'];
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
+                        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
+                    }
+                }
             }
-
         }
-
-        $e = array();
+            $counter++;
         
-        $e['title'] = $row['weekday_name'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
-        $e['color'] = '#3399FF';
-        $e['textColor'] = 'White';
-        if ($e['start'] != "T01:00:04" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
-
-        $e['title'] = $row['weekday_first_reading'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
-        $e['color'] = '#FFFF85';
-        $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_alleluia_verse'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
-        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_responsorial_psalm'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
-        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
-
-        $e['title'] = $row['weekday_gospel'];
-        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
-        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
-
-        $counter++;
-    
     }
 
     // Output json for our calendar
