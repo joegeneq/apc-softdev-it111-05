@@ -10,7 +10,7 @@
 //*/
 
 //for testing 
-
+error_reporting(E_ERROR);
     $servername = "localhost";
     $username = "root";
     $password = "";

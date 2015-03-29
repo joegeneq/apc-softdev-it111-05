@@ -9,7 +9,7 @@
 // */
 
 //for development
-
+error_reporting(E_ERROR);
     $day="01";
     $month="01";
     $year=date('Y');
