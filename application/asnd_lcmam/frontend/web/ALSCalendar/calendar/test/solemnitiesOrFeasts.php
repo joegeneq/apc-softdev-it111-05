@@ -61,27 +61,33 @@ try {
 
                             $e['title'] = $row['title'];
                             $e['start'] = $dateToTest . "T01:00:07";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
 
                             $e['title'] = $row['first_reading'];
                             $e['start'] = $dateToTest . "T01:00:08";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
 
                             $e['title'] = $row['responsorial_psalm'];
                             $e['start'] = $dateToTest . "T01:00:09";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
 
                             $e['title'] = $row['second_reading'];
                             $e['start'] = $dateToTest . "T01:00:10";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
 
                             $e['title'] = $row['alleluia_verse'];
                             $e['start'] = $dateToTest . "T01:00:11";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
 
                             $e['title'] = $row['gospel'];
                             $e['start'] = $dateToTest . "T01:00:12";
-                            array_push($events, $e);
+                            if ($e['title'] != ""){
+                            array_push($events, $e);}
                         }
                     }
 
@@ -101,27 +107,33 @@ try {
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                                 
                             }
 
@@ -129,27 +141,33 @@ try {
                                 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                                 
                             }
 
@@ -173,27 +191,33 @@ try {
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                                 
                             }
 
@@ -208,27 +232,33 @@ try {
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                                 
                             }
 
@@ -243,27 +273,33 @@ try {
                                 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                                 
                             }
 
@@ -275,27 +311,33 @@ try {
                         if ($OTSundays[$x] == $dateToTest){
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                         }
 
                     }
@@ -308,56 +350,69 @@ try {
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
+                                
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                             }
 
                             if ($x < 5){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                             }
 
                         }
@@ -373,54 +428,66 @@ try {
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                             }
 
                             if ($x > 1){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                             }
                         }
 
@@ -432,27 +499,33 @@ try {
                             $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['first_reading'];
                                 $e['start'] = $dateToTest . "T01:00:08";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['responsorial_psalm'];
                                 $e['start'] = $dateToTest . "T01:00:09";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['second_reading'];
                                 $e['start'] = $dateToTest . "T01:00:10";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['alleluia_verse'];
                                 $e['start'] = $dateToTest . "T01:00:11";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
 
                                 $e['title'] = $row['gospel'];
                                 $e['start'] = $dateToTest . "T01:00:12";
-                                array_push($events, $e);
+                                if ($e['title'] != ""){
+                                array_push($events, $e);}
                         }
                     }
 
@@ -465,27 +538,33 @@ try {
                     if (date('l', strtotime($dateToTest)) != "Sunday"){
                         $e['title'] = $row['title'];
                         $e['start'] = $dateToTest . "T01:00:07";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
 
                         $e['title'] = $row['first_reading'];
                         $e['start'] = $dateToTest . "T01:00:08";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
 
                         $e['title'] = $row['responsorial_psalm'];
                         $e['start'] = $dateToTest . "T01:00:09";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
 
                         $e['title'] = $row['second_reading'];
                         $e['start'] = $dateToTest . "T01:00:10";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
 
                         $e['title'] = $row['alleluia_verse'];
                         $e['start'] = $dateToTest . "T01:00:11";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
 
                         $e['title'] = $row['gospel'];
                         $e['start'] = $dateToTest . "T01:00:12";
-                        array_push($events, $e);
+                        if ($e['title'] != ""){
+                        array_push($events, $e);}
                     }
             }
         }
