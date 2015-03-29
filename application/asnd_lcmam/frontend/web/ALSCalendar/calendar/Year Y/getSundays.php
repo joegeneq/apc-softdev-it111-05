@@ -5,7 +5,7 @@ include_once 'functions.php';
 
 //For Sunday
 
-    error_reporting(E_ERROR); // attempting to remove errors and notices
+    
 
     $allSundays = getSundaysOfOT();
 
