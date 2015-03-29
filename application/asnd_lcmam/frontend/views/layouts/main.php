@@ -39,8 +39,8 @@ AppAsset::register($this);
                 ['label' => 'CALENDAR', 'url' => ['site/calendar']],            
                 ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
                 ['label' => 'NOTES', 'url' => ['/site/notes']],
-                ['label' => 'ABOUT', 'url' => ['/site/about']],
-                ['label' => 'CONTACT', 'url' => ['/site/contact']],
+               // ['label' => 'ABOUT', 'url' => ['/site/about']],
+               // ['label' => 'CONTACT', 'url' => ['/site/contact']],
             ];
                 $menuItems[] = ['label' => 'SIGNUP', 'url' => ['/site/signup']];
                 $menuItems[] = ['label' => 'LOGIN', 'url' => ['/site/login']];
@@ -51,7 +51,7 @@ AppAsset::register($this);
                     ['label' => 'REFLECTIONS', 'url' => ['/site/reflections']],
                     ['label' => 'NOTES', 'url' => ['/site/notes']],
                    // ['label' => 'ABOUT', 'url' => ['/site/about']],
-                    ['label' => 'CONTACT', 'url' => ['/site/contact']],
+                 //   ['label' => 'CONTACT', 'url' => ['/site/contact']],
                     ['label' => 'ACTIVITIES', 'items' => [  
 
                         ['label' => 'Event Determinant', 'url' => ['eventdeterminant/index']],
