@@ -87,7 +87,7 @@ try {
                         
                         $e['title'] = $row['sunday_name'];
                         $e['start'] = $epiphanySunday . "T01:00:04";
-                        $e['color'] = '#3399FF';
+                        $e['color'] = '#3366FF';
                         $e['textColor'] = 'White';
                         if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
 

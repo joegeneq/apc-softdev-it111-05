@@ -168,7 +168,7 @@ try {
         
         $e['title'] = $row['sunday_name'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:04";
-        $e['color'] = '#3399FF';
+        $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:04";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:10";}

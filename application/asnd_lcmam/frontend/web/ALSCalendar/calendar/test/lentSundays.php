@@ -170,7 +170,7 @@ try {
         
         $e['title'] = $row['sunday_name'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:04";
-        $e['color'] = '#3399FF';
+        $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:04";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:10";}
@@ -178,7 +178,7 @@ try {
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:05";
-        $e['color'] = '#47D147';
+        $e['color'] = '#FF9147';
         $e['textColor'] = 'Black';
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:05";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:11";}
