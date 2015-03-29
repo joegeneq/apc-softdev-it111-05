@@ -155,7 +155,10 @@ a.desc:after {
 
 .site-about{
     width: 100%;
-   
+}
+
+.home-header{
+    padding-left: 15px;
 }
 
 .col-lg-4-about {
