@@ -7,6 +7,7 @@ require 'functions.php';
 
 //For Weekday
 	
+	
 
     $allWeekdays = getWeekdaysOfEaster();
 
@@ -55,6 +56,7 @@ try {
                         if ($LentWeekdays[$x] == $dateToTest){
                             
                             if ($x >= 30){
+                                
                                     $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                     $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                     $datesSFM[$counter] = $dateToTest;
@@ -78,6 +80,7 @@ try {
                         if ($EasterWeekdays[$x] == $dateToTest){
                             
                             if ($x >= 30){
+
                                     $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                     $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                     $datesSFM[$counter] = $dateToTest;
@@ -113,6 +116,7 @@ try {
                         if ($LentSundays[$x] == $dateToTest){
                             
                             if ($x == 5 || $x == 6){
+                                
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
@@ -121,6 +125,7 @@ try {
                             }
 
                             if ($x < 5){
+
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . '+1 day'));
                                 $datesSFM[$counter] = $dateToTest;
                                 $counter++;
@@ -234,7 +239,7 @@ try {
         $e['start'] = $allWeekdays[$counter] . "T01:00:04";
         $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
-        if ($e['title'] != ""){ array_push($events, $e); } // Allowing verification of name
+        if ($e['title'] != ""){ array_push($events, $e); } // Allowed for Displaying Weekday name
 
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";

@@ -239,7 +239,7 @@ try {
         $e['start'] = $allWeekdays[$counter] . "T01:00:04";
         $e['color'] = '#33FF66';
         $e['textColor'] = 'Black';
-        if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
+        if ($e['title'] != ""){ array_push($events, $e); } // Allowed for Displaying Weekday name
 
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
