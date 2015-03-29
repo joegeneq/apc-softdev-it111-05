@@ -4,6 +4,7 @@ include 'getSundays.php';
 
 //For Calendar
 
+
 try {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
