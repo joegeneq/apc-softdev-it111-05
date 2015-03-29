@@ -6,7 +6,6 @@ require 'functions.php';
 
 //For Calendar
 
-error_reporting(E_ERROR);
 try {
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
