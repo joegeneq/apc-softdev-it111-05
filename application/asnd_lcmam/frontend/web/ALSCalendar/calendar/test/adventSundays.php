@@ -191,35 +191,26 @@ try {
         
         $e['title'] = $row['sunday_name'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_name'];
-        $e['textColor'] = 'Black';
+        $e['color'] = '#3366FF';
+        $e['textColor'] = 'White';
         if ($e['start'] != "T01:00:04" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_first_reading'];
+        $e['color'] = '#19D119';
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_second_reading'];
         if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_alleluia_verse'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
-        $e['tip'] = $row['sunday_alleluia_verse'];
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_alleluia_verse'];
         if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_responsorial_psalm'];
         if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
