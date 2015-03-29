@@ -13,7 +13,7 @@ $this->title = 'Ang Salita ng Diyos';
 <div class="site-about">
     <!-- <h1><?= Html::encode($this->title) ?></h1><br> -->
     <br>
-     <h2>A Message from the Archbishop of Manila</h2>
+     <h2 class="home-header">A Message from the Archbishop of Manila</h2>
      <!--
 <div id="image">
   <img src="images/Cardinal-tagle.jpg" align="right"  > 
