@@ -168,25 +168,28 @@ try {
 
         $e = array();
         
+        $e['title'] = $row['weekday_name'];
+        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
+        $e['color'] = '#3399FF';
+        $e['textColor'] = 'White';
+        if ($e['start'] != "T01:00:04"){ array_push($events, $e); } // Allowed for displaying week number
+
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
-        $e['color'] = '#33FF66';
+        $e['color'] = '#6989ED';
         $e['textColor'] = 'Black';
         if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:06";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_responsorial_psalm'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:07";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_gospel'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:08";
-        //$e['color'] = '#33CC00';
         if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
