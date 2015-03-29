@@ -74,6 +74,7 @@ try {
         echo "Error on database connection. No results may be displayed.";
     }
     
+    /*
     $sql = "SELECT * FROM sunday_reading";
 
     $result = $conn->query($sql);
@@ -119,7 +120,7 @@ try {
         }
     } else {
         echo "Error on database connection. No results may be displayed.";
-    }
+    }*/
     
 
     echo json_encode($events);
