@@ -87,12 +87,16 @@ try {
 
                 $e['title'] = $row['title'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:07";
+                $e['color'] = '#3366FF';
+                $e['textColor'] = 'White';
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['first_reading'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:08";
+                $e['color'] = '#00CC66';
+                $e['textColor'] = 'White';
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
