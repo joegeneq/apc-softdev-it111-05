@@ -168,17 +168,15 @@ try {
         
         $e['title'] = $row['sunday_name'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:04";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_name'];
-        $e['textColor'] = 'Black';
+        $e['color'] = '#3399FF';
+        $e['textColor'] = 'White';
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:04";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:10";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:05";
-        $e['color'] = '#FFCC00';
-        $e['tip'] = $row['sunday_first_reading'];
+        $e['color'] = '#CCFFCC';
         $e['textColor'] = 'Black';
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:05";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:11";}
@@ -186,32 +184,24 @@ try {
     
         $e['title'] = $row['sunday_second_reading'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:06";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_second_reading'];
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:06";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:12";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:07";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_responsorial_psalm'];
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:07";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:13";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_before_gospel'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:08";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_before_gospel'];
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:08";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:14";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:09";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_gospel'];
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:09";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:15";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
