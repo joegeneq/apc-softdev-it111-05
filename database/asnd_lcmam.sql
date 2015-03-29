@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2015 at 02:56 PM
+-- Generation Time: Mar 28, 2015 at 04:43 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -272,10 +272,8 @@ INSERT INTO `solemnities_or_feasts` (`id`, `date`, `title`, `type`, `first_readi
 (25, '-10-18', 'St. Luke, evangelist', 'F', '2 Tim 4:10-17b', NULL, 'Ps 145:10-11, 12-13, 17-18', NULL, NULL, NULL, 'John 15:16', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
 (26, '-10-28', 'Sts. Simon and Jude, Apostles', 'F', 'Eph 2:19-22', NULL, 'Ps 19:2-3, 4-5', NULL, NULL, NULL, NULL, NULL, 'Luke 6:12-19', NULL, 'omitted if falls on a sunday', NULL),
 (27, '-11-30', 'St. Andrew, Apostle', 'F', 'Rom 10:9-18', NULL, 'Ps 19:8, 9, 10, 11', NULL, NULL, NULL, 'Matt 4:19', NULL, 'Matt 4:18-22', NULL, 'omitted if falls on a sunday', NULL),
-(28, '-12-27', 'St. John, Apostle and evangelist', 'F', '1 John 1:1-4', NULL, 'Ps 97:1-2, 5-6, 11-12', NULL, NULL, NULL, NULL, NULL, 'John 20:1a+2-8', NULL, 'omitted if falls on a sunday', NULL),
 (29, '-08-10', 'St. Lawrence, deacon and martyr', 'F', '2 Cor 9:6-10', NULL, 'Ps 112:1-2, 5-6, 7-8, 9', NULL, NULL, NULL, 'John 8:12bc', NULL, 'John 12:24-26', NULL, 'omitted if falls on a sunday', NULL),
 (30, '-09-29', 'Sts. Michael, Gabriel and Raphael, archangels', 'F', 'Dan 7:9-10, 13-14', NULL, 'Ps 138:1-2ab, 2cde-3, 4-5', NULL, NULL, NULL, 'Ps 103:21', NULL, 'John 1:47-51', NULL, 'omitted if falls on a sunday', NULL),
-(31, '-12-26', 'St. Stephen, first martyr', 'F', 'Acts 6:8-10; 7:54-59', NULL, 'Ps 31:3cd-4, 6+8ab, 16bc+17', NULL, NULL, NULL, 'Ps 118:26a+27a', NULL, 'Matt 10:17-22', NULL, 'omitted if falls on a sunday', NULL),
 (32, '-12-28', 'The Holy Innocents, Martyrs', 'F', '1 John 1:5-2:2', NULL, 'Ps 124:2-3, 4-5, 7b-8', NULL, NULL, NULL, NULL, NULL, 'Matt 2:13-18', NULL, 'omitted if falls on a sunday', NULL),
 (33, '-01-26', 'Sts. Timothy and Titus, Bishops', 'M', '2 Tim 1:1-8', NULL, 'Ps 96:1-2a, 2b-3, 7-8a, 10', NULL, NULL, NULL, 'Luke 4:18', NULL, 'Luke 10:1-9', NULL, 'omitted if falls on a sunday', NULL),
 (34, '-06-11', 'St. Barnabas, Apostle', 'M', 'Acts 11:21b-26; 13:1-3', NULL, 'Ps 98:1, 2-3ab, 3cd-4, 5-6', NULL, NULL, NULL, 'Matt 28:19a+20b', NULL, 'Matt 10:7-13', NULL, 'omitted if falls on a sunday', NULL),
