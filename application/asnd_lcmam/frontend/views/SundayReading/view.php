@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\SundayReading */
 
-$this->title = $model->id;
+$this->title = $model->sunday_name;
 $this->params['breadcrumbs'][] = ['label' => 'Sunday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

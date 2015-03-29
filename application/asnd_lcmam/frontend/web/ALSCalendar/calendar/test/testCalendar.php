@@ -32,7 +32,7 @@ $(document).ready(function () {
                 'easterWeekdays.php',
                 'easterSundays.php',
                 'specialSolemnities.php',
-                '../Year Y/sundayReadings.php',
+                /*'../Year Y/sundayReadings.php',
                 '../Year Y/ashWednesday.php',
                 '../Year Y/weekdayReadings.php',
                 '../Year Y/solemnitiesOrFeasts.php',
@@ -58,6 +58,7 @@ $(document).ready(function () {
                 '../Year X/easterWeekdays.php',
                 '../Year X/easterSundays.php',
                 '../Year X/specialSolemnities.php',
+                */
             ],
         header: {
             left: 'prev, next',
