@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="author" content="WB DataDic" />
-    <meta name="description" content="asnd_lcmam Data Dictionary." />
-    <title>asnd_lcmam Data Dictionary</title>
+    <meta name="description" content="mydb Data Dictionary." />
+    <title>mydb Data Dictionary</title>
     <style type="text/css">
     table{
         width: 100%;
@@ -51,9 +51,9 @@
 </head>
 <body>
 <div id="title-sect">
-<h1>asnd_lcmam<br> Data Dictionary</h1>
+<h1>mydb<br> Data Dictionary</h1>
 <p>
-<em>2015-03-11</em>
+<em>2015-03-29</em>
 </p>
 <p class="proj-desc">
 <em></em>
@@ -61,94 +61,14 @@
 </div>
 <h2>Alphabetic Index</h2>
 <ul>
-<li><a href='#date'>date</a></li>
 <li><a href='#event'>event</a></li>
 <li><a href='#event_determinant'>event_determinant</a></li>
+<li><a href='#migration'>migration</a></li>
+<li><a href='#solemnities_or_feasts'>solemnities_or_feasts</a></li>
 <li><a href='#sunday_reading'>sunday_reading</a></li>
+<li><a href='#user'>user</a></li>
 <li><a href='#weekday_reading'>weekday_reading</a></li>
-<li><a href='#year'>year</a></li>
 </ul>
-<table id='date'>
-<caption>date</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>date_month</td>
-    <td>INT(2)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>date_week_num</td>
-    <td>INT(2)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>date_day_num</td>
-    <td>INT(2)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>year_id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
 <table id='event'>
 <caption>event</caption>
 <tr><td colspan='11'></td></tr>
@@ -167,7 +87,7 @@
 </tr>
 <tr>
     <td>id</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -205,7 +125,7 @@
     <td></td>
 </tr>
 <tr>
-    <td>event_audio_link</td>
+    <td>date</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
@@ -218,22 +138,204 @@
     <td></td>
 </tr>
 <tr>
-    <td>date</td>
-    <td>DATE</td>
+    <td>event_first_reading</td>
+    <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
-    <td>year_id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
+    <td>event_first_audio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_second_reading</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_second_audio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_alleluia_verse</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_alleluia_audio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_responsorial_psalm</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_responsorial_audio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_gospel</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_gospel_audio</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_first_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_second_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_responsorial_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_alleluia_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_gospel_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_determinant_id</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -261,7 +363,7 @@
 </tr>
 <tr>
     <td>id</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -287,7 +389,7 @@
 </tr>
 <tr>
     <td>sunday_cycle</td>
-    <td>VARCHAR(45)</td>
+    <td>CHAR(1)</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -295,12 +397,12 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
     <td>weekday_cycle</td>
-    <td>VARCHAR(45)</td>
+    <td>CHAR(1)</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -308,7 +410,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -321,7 +423,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -334,7 +436,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -347,11 +449,11 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
-    <td>penticost_sunday</td>
+    <td>pentecost_sunday</td>
     <td>DATE</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -360,7 +462,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -373,7 +475,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -381,6 +483,285 @@
     <td>DATE</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<table id='migration'>
+<caption>migration</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>version</td>
+    <td>VARCHAR(180)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>apply_time</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<table id='solemnities_or_feasts'>
+<caption>solemnities_or_feasts</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id</td>
+    <td>INT(11)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>date</td>
+    <td>VARCHAR(10)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>title</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>type</td>
+    <td>VARCHAR(20)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>first_reading</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>first_reading_audio</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>responsorial_psalm</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>responsorial_psalm_audio</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>second_reading</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>second_reading_audio</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>alleluia_verse</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>alleluia_verse_audio</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>gospel</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>gospel_audio</td>
+    <td>VARCHAR(60)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>rule</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>cycle_type</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_determinant_id</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -407,7 +788,7 @@
 </tr>
 <tr>
     <td>id</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -416,6 +797,32 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_weeknum</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_name</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -428,7 +835,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -441,7 +848,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -454,7 +861,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -467,7 +874,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -480,7 +887,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -493,7 +900,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -506,7 +913,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -519,7 +926,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -532,7 +939,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -545,27 +952,40 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
-    <td>sunday_cycle_type</td>
-    <td>CHAR</td>
+    <td>sunday_before_gospel</td>
+    <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
-    <td>sunday_weeknum</td>
-    <td>VARCHAR(45)</td>
+    <td>sunday_before_gospel_audio</td>
+    <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_cycle_type</td>
+    <td>CHAR(1)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -578,7 +998,270 @@
     <td>sunday_reading_type</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_description</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_first_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_second_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_responsorial_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_alleluia_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_gospel_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>sunday_before_gospel_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_determinant_id</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<table id='user'>
+<caption>user</caption>
+<tr><td colspan='11'></td></tr>
+<tr>
+    <th>Column name</th>
+    <th>DataType</th>
+    <th><abbr title='Primary Key'>PK</abbr></th>
+    <th><abbr title='Not Null'>NN</abbr></th>
+    <th><abbr title='Unique'>UQ</abbr></th>
+    <th><abbr title='Binary'>BIN</abbr></th>
+    <th><abbr title='Unsigned'>UN</abbr></th>
+    <th><abbr title='Zero Fill'>ZF</abbr></th>
+    <th><abbr title='Auto Increment'>AI</abbr></th>
+    <th>Default</th>
+    <th>Comment</th>
+</tr>
+<tr>
+    <td>id</td>
+    <td>INT(11)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>firstname</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>lastname</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>username</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>auth_key</td>
+    <td>VARCHAR(32)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>password_hash</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>password_reset_token</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>email</td>
+    <td>VARCHAR(255)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>status</td>
+    <td>SMALLINT(6)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>'10'</td>
+    <td></td>
+</tr>
+<tr>
+    <td>created_at</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>updated_at</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -605,7 +1288,7 @@
 </tr>
 <tr>
     <td>id</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&#10004;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
@@ -613,6 +1296,45 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&#10004;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>weekday_daynum</td>
+    <td>INT(100)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>weekday_name</td>
+    <td>VARCHAR(45)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>weekday_day</td>
+    <td>VARCHAR(10)</td>
+    <td>&nbsp;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
     <td></td>
     <td></td>
 </tr>
@@ -626,7 +1348,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -639,7 +1361,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -652,7 +1374,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -665,7 +1387,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -678,7 +1400,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -691,7 +1413,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -704,7 +1426,7 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
@@ -717,27 +1439,27 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
     <td>weekday_cycle_num</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
     <td>weekday_weeknum</td>
-    <td>INT</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -750,48 +1472,6 @@
     <td>weekday_reading_type</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td></td>
-</tr>
-<table id='year'>
-<caption>year</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td></td>
-</tr>
-<tr>
-    <td>year</td>
-    <td>YEAR</td>
-    <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -802,22 +1482,61 @@
     <td></td>
 </tr>
 <tr>
-    <td>year_cycle</td>
-    <td>CHAR</td>
+    <td>weekday_first_optional</td>
+    <td>VARCHAR(100)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td></td>
 </tr>
 <tr>
-    <td>trigger_id</td>
-    <td>INT</td>
-    <td>&#10004;</td>
+    <td>weekday_responsorial_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>weekday_alleluia_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>weekday_gospel_optional</td>
+    <td>VARCHAR(100)</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td>NULL</td>
+    <td></td>
+</tr>
+<tr>
+    <td>event_determinant_id</td>
+    <td>INT(11)</td>
+    <td>&nbsp;</td>
     <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
