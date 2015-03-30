@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\EventDeterminant */
 
-$this->title = 'Update Event Determinant: ' . ' ' . $model->id;
+$this->title = 'Update Event Determinant: ' . ' ' . $model->year;
 $this->params['breadcrumbs'][] = ['label' => 'Event Determinants', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
