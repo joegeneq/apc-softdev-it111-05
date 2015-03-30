@@ -12,9 +12,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'sunday_weeknum')->textInput() ?>
+    <?= $form->field($model, 'sunday_weeknum')->textInput(['disabled' => 'disabled']) ?>
 
-    <?= $form->field($model, 'sunday_name')->textInput(['maxlength' => 100]) ?>
+    <?= $form->field($model, 'sunday_name')->textInput(['maxlength' => 100, 'disabled' => 'disabled']) ?>
 
     <?= $form->field($model, 'sunday_first_reading')->textInput(['maxlength' => 45]) ?>
 
@@ -40,11 +40,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sunday_before_gospel_audio')->textInput(['maxlength' => 100]) ?>
 
-    <?= $form->field($model, 'sunday_cycle_type')->textInput(['maxlength' => 1]) ?>
+    <?= $form->field($model, 'sunday_cycle_type')->textInput(['maxlength' => 1, 'disabled' => 'disabled']) ?>
 
-    <?= $form->field($model, 'sunday_reading_type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'sunday_reading_type')->textInput(['maxlength' => 45, 'disabled' => 'disabled']) ?>
 
-    <?= $form->field($model, 'sunday_description')->textInput(['maxlength' => 100]) ?>
+    <?= $form->field($model, 'sunday_description')->textInput(['maxlength' => 100, 'disabled' => 'disabled']) ?>
 
     <?= $form->field($model, 'sunday_first_optional')->textInput(['maxlength' => 100]) ?>
 

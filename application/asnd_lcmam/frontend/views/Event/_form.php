@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'event_name')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'event_name')->textInput(['maxlength' => 45, 'disabled'=>'disabled']) ?>
 
-    <?= $form->field($model, 'event_type')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'event_type')->textInput(['maxlength' => 45, 'disabled'=>'disabled']) ?>
 
-    <?= $form->field($model, 'date')->textInput(['maxlength' => 45]) ?>
+    <?= $form->field($model, 'date')->textInput(['maxlength' => 45, 'disabled' => 'disabled']) ?>
 
     <?= $form->field($model, 'event_first_reading')->textInput(['maxlength' => 45]) ?>
 
