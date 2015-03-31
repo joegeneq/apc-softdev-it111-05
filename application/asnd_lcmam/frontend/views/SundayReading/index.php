@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Sunday Reading', ['create'], ['class' => 'btn btn-success']) ?>
+       <!-- Removed Create Button <?= Html::a('Create Sunday Reading', ['create'], ['class' => 'btn btn-success']) ?> !-->
     </p>
 
     <?= GridView::widget([
@@ -50,7 +50,19 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'sunday_gospel_optional',
             // 'sunday_before_gospel_optional',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+             'template'=>'{view}{update}',
+                            'buttons'=>[
+                              'create' => function ($url, $model) {     
+                                return Html::a('<span class="glyphicon glyphicon-plus"></span>', $url, [
+                                        'title' => Yii::t('yii', 'Create'),
+                                ]);                                
+            
+                              }
+                          ]         
+
+
+            ],
         ],
     ]); ?>
 
