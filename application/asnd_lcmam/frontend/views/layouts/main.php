@@ -54,11 +54,11 @@ AppAsset::register($this);
                     // ['label' => 'CONTACT', 'url' => ['/site/contact']],
                     ['label' => 'ACTIVITIES', 'items' => [  
 
-                        ['label' => 'Event Determinant', 'url' => ['eventdeterminant/index']],
+                        ['label' => 'Event Determinant', 'url' => ['event-determinant/index']],
                         ['label' => 'Events', 'url' => ['event/index']],
-                        ['label' => 'Solemnities and Feasts', 'url' => ['solemnitiesorfeasts/index']],
-                        ['label' => 'Sunday Readings', 'url' => ['sundayreading/index']],
-                        ['label' => 'Weekday Readings', 'url' => ['weekdayreading/index']],
+                        ['label' => 'Solemnities and Feasts', 'url' => ['solemnities-or-feasts/index']],
+                        ['label' => 'Sunday Readings', 'url' => ['sunday-reading/index']],
+                        ['label' => 'Weekday Readings', 'url' => ['weekday-reading/index']],
                         ['label' => 'User', 'url' => ['user/index']], 
 
                         ]
