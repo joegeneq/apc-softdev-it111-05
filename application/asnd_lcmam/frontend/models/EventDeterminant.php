@@ -35,6 +35,7 @@ class EventDeterminant extends \yii\db\ActiveRecord
     {
         return [
             [['year'], 'required'],
+            [['year'], 'unique', 'targetClass' => '\frontend\models\EventDeterminant', 'message' => 'This year has already been taken'],
             [['year', 'ash_wednesday', 'easter_sunday', 'pentecost_sunday', 'first_sunday_of_advent'], 'safe'],
             [['sunday_cycle', 'weekday_cycle'], 'string', 'max' => 1],
             [['week_ot_before_lent', 'week_ot_after_pentecost'], 'string', 'max' => 45]
