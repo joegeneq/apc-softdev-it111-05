@@ -93,15 +93,11 @@ $(document).ready(function () {
 <style>
 
     body {
-        background-color: #99CC66;
-        margin: 40px 10px;
-        padding: 0;
-        font-family: "Helvetica",Helvetica,Arial,Verdana,sans-serif;
+        font-family: "Trebuchet MS",Helvetica,Arial,Verdana,sans-serif;
         font-size: 14px;
     }
 
     #calendar {
-        margin: 0 auto;
     }
 
     .fc-time{
