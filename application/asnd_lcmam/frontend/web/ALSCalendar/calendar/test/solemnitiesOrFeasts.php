@@ -42,8 +42,18 @@ try {
         $e = array();
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            
+              
             $dateToTest = $year . $row['date'];
+            
+              if ($row['type'] == "S"){
+                  $e['color'] = '#FF6699';
+              }
+              if ($row['type'] == "F"){
+                  $e['color'] = '#6633CC';
+              }
+              if ($row['type'] == "M"){
+                  $e['color'] = '#52CC29';
+              }
 
             if ($row['rule'] == "replace SOT but not LEA"){
 
@@ -51,13 +61,6 @@ try {
               
                     for ($x=0; $x < $otCount; $x++){
                         if ($OTWeekdays[$x] == $dateToTest){
-
-                            if ($row['type'] == "S"){
-                                $e['color'] = '#FF6699';
-                            }
-                            if ($row['type'] == "F"){
-                                $e['color'] = '#6633CC';
-                            }
 
                             $e['title'] = $row['title'];
                             $e['start'] = $dateToTest . "T01:00:07";
@@ -98,12 +101,6 @@ try {
                             if ($x >= 30){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                if ($row['type'] == "S"){
-                                $e['color'] = '#FF6699';
-                                }
-                                if ($row['type'] == "F"){
-                                    $e['color'] = '#6633CC';
-                                }
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
@@ -182,12 +179,6 @@ try {
                             if ($x >= 30){
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
                                 $dateToTest = date('Y-m-d', strtotime($dateToTest . 'Next Monday'));
-                                if ($row['type'] == "S"){
-                                    $e['color'] = '#FF6699';
-                                }
-                                if ($row['type'] == "F"){
-                                    $e['color'] = '#6633CC';
-                                }
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";
@@ -222,13 +213,6 @@ try {
                             }
 
                             if ($x < 30){
-                                
-                                if ($row['type'] == "S"){
-                                    $e['color'] = '#FF6699';
-                                }
-                                if ($row['type'] == "F"){
-                                    $e['color'] = '#6633CC';
-                                }
 
                                 $e['title'] = $row['title'];
                                 $e['start'] = $dateToTest . "T01:00:07";

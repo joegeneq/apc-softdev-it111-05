@@ -241,41 +241,41 @@ try {
             if ($row['sunday_name'] == "Epiphany of the Lord" && $row['sunday_cycle_type'] == $sundayCycle){
                         
                     $e['title'] = $row['sunday_name'];
-                    $e['start'] = $epiphanySunday . "T01:00:04";
+                    $e['start'] = $epiphanySunday . "T01:00:19";
                     $e['color'] = '#3366FF';
                     $e['textColor'] = 'White';
-                    if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:19"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_first_reading'];
-                    $e['start'] = $epiphanySunday . "T01:00:05";
+                    $e['start'] = $epiphanySunday . "T01:00:20";
                     $e['color'] = '#FFCC00';
                     $e['textColor'] = 'Black';
-                    if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:20"){ array_push($events, $e); }
                 
                     $e['title'] = $row['sunday_second_reading'];
-                    $e['start'] = $epiphanySunday . "T01:00:06";
+                    $e['start'] = $epiphanySunday . "T01:00:21";
                     $e['color'] = '#FFCC00';
                     $e['textColor'] = 'Black';
-                    if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:21"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_alleluia_verse'];
-                    $e['start'] = $epiphanySunday . "T01:00:07";
+                    $e['start'] = $epiphanySunday . "T01:00:22";
                     $e['tip'] = $row['sunday_alleluia_verse'];
                     $e['color'] = '#FFCC00';
                     $e['textColor'] = 'Black';
-                    if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:22"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_responsorial_psalm'];
-                    $e['start'] = $epiphanySunday . "T01:00:08";
+                    $e['start'] = $epiphanySunday . "T01:00:23";
                     $e['color'] = '#FFCC00';
                     $e['textColor'] = 'Black';
-                    if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:23"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_gospel'];
-                    $e['start'] = $epiphanySunday . "T01:00:09";
+                    $e['start'] = $epiphanySunday . "T01:00:24";
                     $e['color'] = '#FFCC00';
                     $e['textColor'] = 'Black';
-                    if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
+                    if ($e['start'] != "T01:00:24"){ array_push($events, $e); }
 
             }
             if ($row['sunday_name'] == "Pentecost Sunday" && $row['sunday_cycle_type'] == $sundayCycle){

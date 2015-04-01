@@ -188,7 +188,7 @@ try {
         }
 
         $e = array();
-        
+        if ($allSundays[$counter] != $pentecostSunday){
         $e['title'] = $row['sunday_name'];
         $e['start'] = $allSundays[$counter] . "T01:00:04";
         $e['color'] = '#3366FF';
@@ -216,7 +216,7 @@ try {
         $e['title'] = $row['sunday_gospel'];
         $e['start'] = $allSundays[$counter] . "T01:00:09";
         if ($e['start'] != "T01:00:09" && $verification == 1){ array_push($events, $e); }
-
+}
         $counter++;
     
     }

@@ -190,34 +190,34 @@ try {
         $e = array();
         
         $e['title'] = $row['sunday_name'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:04";
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:19";
         $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
-        if ($e['start'] != "T01:00:04" && $verification == 1){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:19" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:05";
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:20";
         $e['color'] = '#19D119';
         $e['textColor'] = 'Black';
-        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:20" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:06";
-        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:21";
+        if ($e['start'] != "T01:00:21" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_alleluia_verse'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:07";
-        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:22";
+        if ($e['start'] != "T01:00:22" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:08";
-        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:23";
+        if ($e['start'] != "T01:00:23" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
-        $e['start'] = $allAdventSundays[$counter] . "T01:00:09";
+        $e['start'] = $allAdventSundays[$counter] . "T01:00:24";
         //$e['color'] = '#33CC00';
         $e['tip'] = $row['sunday_gospel'];
-        if ($e['start'] != "T01:00:09" && $verification == 1){ array_push($events, $e); }
+        if ($e['start'] != "T01:00:24" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
     
