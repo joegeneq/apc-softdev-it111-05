@@ -50,8 +50,9 @@ class SundayReading extends \yii\db\ActiveRecord
         return [
             [['sunday_weeknum', 'sunday_cycle_type', 'sunday_reading_type'], 'required'],
             [['sunday_weeknum'], 'integer'],
-            [['sunday_name', 'sunday_before_gospel', 'sunday_before_gospel_audio', 'sunday_description', 'sunday_first_optional', 'sunday_second_optional', 'sunday_responsorial_optional', 'sunday_alleluia_optional', 'sunday_gospel_optional', 'sunday_before_gospel_optional'], 'string', 'max' => 100],
-            [['sunday_first_reading', 'sunday_first_audio', 'sunday_second_reading', 'sunday_second_audio', 'sunday_alleluia_verse', 'sunday_alleluia_audio', 'sunday_responsorial_psalm', 'sunday_responsorial_audio', 'sunday_gospel', 'sunday_gospel_audio', 'sunday_reading_type'], 'string', 'max' => 45],
+            [['sunday_name', 'sunday_before_gospel', 'sunday_description', 'sunday_first_optional', 'sunday_second_optional', 'sunday_responsorial_optional', 'sunday_alleluia_optional', 'sunday_gospel_optional', 'sunday_before_gospel_optional'], 'string', 'max' => 100],
+            [['sunday_first_reading', 'sunday_second_reading', 'sunday_alleluia_verse', 'sunday_responsorial_psalm', 'sunday_gospel', 'sunday_reading_type'], 'string', 'max' => 45],
+            [['sunday_first_audio', 'sunday_second_audio', 'sunday_alleluia_audio', 'sunday_responsorial_audio', 'sunday_gospel_audio', 'sunday_before_gospel_audio'], 'string', 'max' => 1000],
             [['sunday_cycle_type'], 'string', 'max' => 1]
         ];
     }
