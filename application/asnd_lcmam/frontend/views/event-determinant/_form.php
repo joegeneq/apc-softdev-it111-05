@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'year')->textInput(['maxlength' => 4]) ?>
+    <?= $form->field($model, 'year')->textInput(['maxlength' => 4, 'disabled' => 'disabled']) ?>
 
     <?= $form->field($model, 'sunday_cycle')->textInput(['maxlength' => 1]) ?>
 

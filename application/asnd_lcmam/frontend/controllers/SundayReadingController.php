@@ -8,7 +8,6 @@ use frontend\models\SundayReadingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
 
 /**
  * SundayReadingController implements the CRUD actions for SundayReading model.
@@ -18,16 +17,6 @@ class SundayReadingController extends Controller
     public function behaviors()
     {
         return [
-            'access'=>[
-                'class'=>AccessControl::classname(),
-                'only'=>['create','delete'],
-                'rules'=>[
-                     [
-                    'allow'=>false,
-                    ],
-                ]
-
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -20,23 +20,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'first_reading')->textInput(['maxlength' => 60]) ?>
 
-    <?= $form->field($model, 'first_reading_audio')->textInput(['maxlength' => 60]) ?>
+    <?= $form->field($model, 'first_reading_audio')->textInput(['maxlength' => 1000]) ?>
 
     <?= $form->field($model, 'responsorial_psalm')->textInput(['maxlength' => 60]) ?>
 
-    <?= $form->field($model, 'responsorial_psalm_audio')->textInput(['maxlength' => 60]) ?>
+    <?= $form->field($model, 'responsorial_psalm_audio')->textInput(['maxlength' => 1000]) ?>
 
     <?= $form->field($model, 'second_reading')->textInput(['maxlength' => 60]) ?>
 
-    <?= $form->field($model, 'second_reading_audio')->textInput(['maxlength' => 60]) ?>
+    <?= $form->field($model, 'second_reading_audio')->textInput(['maxlength' => 1000]) ?>
 
     <?= $form->field($model, 'alleluia_verse')->textInput(['maxlength' => 60]) ?>
 
-    <?= $form->field($model, 'alleluia_verse_audio')->textInput(['maxlength' => 60]) ?>
+    <?= $form->field($model, 'alleluia_verse_audio')->textInput(['maxlength' => 1000]) ?>
 
     <?= $form->field($model, 'gospel')->textInput(['maxlength' => 60]) ?>
 
-    <?= $form->field($model, 'gospel_audio')->textInput(['maxlength' => 60]) ?>
+    <?= $form->field($model, 'gospel_audio')->textInput(['maxlength' => 1000]) ?>
 
     <?= $form->field($model, 'rule')->textInput(['maxlength' => 45, 'disabled' => 'disabled']) ?>
 
