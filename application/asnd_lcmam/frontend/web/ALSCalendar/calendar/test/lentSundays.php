@@ -172,6 +172,7 @@ try {
         $e['start'] = $allLentSundays[$counter] . "T01:00:04";
         $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
+        $e['description'] = "This is the Marker for this Sunday.";
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:04";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:10";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); } 
@@ -180,30 +181,101 @@ try {
         $e['start'] = $allLentSundays[$counter] . "T01:00:05";
         $e['color'] = '#FF9147';
         $e['textColor'] = 'Black';
+
+            if ($row['sunday_first_optional'] == ""){
+                $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+            }
+
+            if ($row['sunday_first_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_first_audio'] != ""){
+                $e['url'] = $row['sunday_first_audio'];
+            }
+
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:05";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:11";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:06";
+
+            if ($row['sunday_second_optional'] == ""){
+                $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+            }
+
+            if ($row['sunday_second_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_second_audio'] != ""){
+                $e['url'] = $row['sunday_second_audio'];
+            }
+
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:06";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:12";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:07";
+
+            if ($row['sunday_alleluia_optional'] == ""){
+                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+            }
+
+            if ($row['sunday_alleluia_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_alleluia_audio'] != ""){
+                $e['url'] = $row['sunday_alleluia_audio'];
+            }
+
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:07";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:13";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_before_gospel'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:08";
+
+            if ($row['sunday_before_gospel_optional'] == ""){
+                $e['description'] = "This is the Reading Before the Gospel for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Reading Before the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_before_gospel_optional'];
+            }
+
+            if ($row['sunday_before_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_before_gospel_audio'] != ""){
+                $e['url'] = $row['sunday_before_gospel_audio'];
+            }
+
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:08";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:14";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:09";
+
+            if ($row['sunday_gospel_optional'] == ""){
+                $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+            }
+
+            if ($row['sunday_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_gospel_audio'] != ""){
+                $e['url'] = $row['sunday_gospel_audio'];
+            }
+
+        
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:09";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:14";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
