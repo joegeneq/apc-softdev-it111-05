@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\WeekdayReading */
 
-$this->title = $model->id;
+$this->title = $model->weekday_name;
 $this->params['breadcrumbs'][] = ['label' => 'Weekday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -34,19 +34,22 @@ $this->params['breadcrumbs'][] = $this->title;
             'weekday_day',
             'weekday_first_reading',
             'weekday_first_audio',
+            'weekday_first_optional',
             'weekday_alleluia_verse',
             'weekday_alleluia_audio',
+            'weekday_alleluia_optional',
             'weekday_responsorial_psalm',
+            'weekday_responsorial_optional',
             'weekday_responsorial_audio',
             'weekday_gospel',
             'weekday_gospel_audio',
+            'weekday_gospel_optional',
             'weekday_cycle_num',
             'weekday_weeknum',
             'weekday_reading_type',
-            'weekday_first_optional',
-            'weekday_responsorial_optional',
-            'weekday_alleluia_optional',
-            'weekday_gospel_optional',
+            
+                        
+            
         ],
     ]) ?>
 
