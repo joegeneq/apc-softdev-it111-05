@@ -222,18 +222,19 @@ try {
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:07";
 
-            if ($row['sunday_alleluia_optional'] == ""){
-                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+            if ($row['sunday_responsorial_optional'] == ""){
+                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
             else{
-                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
             }
 
-            if ($row['sunday_alleluia_audio'] == ""){
+            if ($row['sunday_responsorial_audio'] == ""){
                 $e['url'] = "/";
             }
-            if ($row['sunday_alleluia_audio'] != ""){
-                $e['url'] = $row['sunday_alleluia_audio'];
+            if ($row['sunday_responsorial_audio'] != ""){
+                $e['url'] = $row['sunday_responsorial_audio'];
             }
+
 
         if ($row['sunday_name'] == "Palm Sunday of the Passion of the Lord:At the Procession with Palms - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:07";}
         if ($row['sunday_name'] == "Palm Sunday: At the Mass - B"){$e['start'] = $allLentSundays[$counter] . "T01:00:13";}

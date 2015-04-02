@@ -193,30 +193,100 @@ try {
         $e['start'] = $allAdventSundays[$counter] . "T01:00:19";
         $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
+        $e['description'] = "This is the Marker for this Sunday.";
         if ($e['start'] != "T01:00:19" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:20";
         $e['color'] = '#19D119';
         $e['textColor'] = 'Black';
+
+            if ($row['sunday_first_optional'] == ""){
+                $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+            }
+
+            if ($row['sunday_first_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_first_audio'] != ""){
+                $e['url'] = $row['sunday_first_audio'];
+            }
+
         if ($e['start'] != "T01:00:20" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:21";
+
+            if ($row['sunday_second_optional'] == ""){
+                $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+            }
+
+            if ($row['sunday_second_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_second_audio'] != ""){
+                $e['url'] = $row['sunday_second_audio'];
+            }
+
         if ($e['start'] != "T01:00:21" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_alleluia_verse'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:22";
+
+            if ($row['sunday_alleluia_optional'] == ""){
+                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+            }
+
+            if ($row['sunday_alleluia_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_alleluia_audio'] != ""){
+                $e['url'] = $row['sunday_alleluia_audio'];
+            }
+
+
         if ($e['start'] != "T01:00:22" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:23";
+
+            if ($row['sunday_responsorial_optional'] == ""){
+                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
+            }
+
+            if ($row['sunday_responsorial_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_responsorial_audio'] != ""){
+                $e['url'] = $row['sunday_responsorial_audio'];
+            }
+
         if ($e['start'] != "T01:00:23" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:24";
-        //$e['color'] = '#33CC00';
-        $e['tip'] = $row['sunday_gospel'];
+
+            if ($row['sunday_gospel_optional'] == ""){
+                $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+            }
+
+            if ($row['sunday_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_gospel_audio'] != ""){
+                $e['url'] = $row['sunday_gospel_audio'];
+            }
+
         if ($e['start'] != "T01:00:24" && $verification == 1){ array_push($events, $e); }
 
         $counter++;
