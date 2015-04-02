@@ -67,7 +67,8 @@ $(document).ready(function () {
         },
         
         eventClick: function (event, jsEvent, view) {
-            //if (!event.url){event.url = "/"};
+            if (!event.url){event.url = ""};
+            if (!event.description){event.description = ""};
             $('#modalTitle').html(event.title);
             $('#modalBody').html(event.description);
             $('#eventUrl').attr('href', event.url);
