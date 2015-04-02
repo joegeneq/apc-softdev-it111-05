@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\SundayReading */
 
-$this->title = $model->id;
+$this->title = $model->sunday_name;
 $this->params['breadcrumbs'][] = ['label' => 'Sunday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -33,25 +33,31 @@ $this->params['breadcrumbs'][] = $this->title;
             'sunday_name',
             'sunday_first_reading',
             'sunday_first_audio',
+            'sunday_first_optional',
             'sunday_second_reading',
             'sunday_second_audio',
+            'sunday_second_optional',
             'sunday_alleluia_verse',
             'sunday_alleluia_audio',
+            'sunday_alleluia_optional',
             'sunday_responsorial_psalm',
             'sunday_responsorial_audio',
-            'sunday_gospel',
-            'sunday_gospel_audio',
+            'sunday_responsorial_optional',
             'sunday_before_gospel',
             'sunday_before_gospel_audio',
+            'sunday_before_gospel_optional',
+            'sunday_gospel',
+            'sunday_gospel_audio',
+            'sunday_gospel_optional',
             'sunday_cycle_type',
             'sunday_reading_type',
             'sunday_description',
-            'sunday_first_optional',
-            'sunday_second_optional',
-            'sunday_responsorial_optional',
-            'sunday_alleluia_optional',
-            'sunday_gospel_optional',
-            'sunday_before_gospel_optional',
+            
+            
+            
+            
+            
+            
         ],
     ]) ?>
 
