@@ -59,7 +59,7 @@ class WeekdayReading extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'weekday_daynum' => 'Weekday Daynum',
+            'weekday_daynum' => 'Weekday Day Number',
             'weekday_name' => 'Weekday Name',
             'weekday_day' => 'Weekday Day',
             'weekday_first_reading' => 'Weekday First Reading',
@@ -70,8 +70,8 @@ class WeekdayReading extends \yii\db\ActiveRecord
             'weekday_responsorial_audio' => 'Weekday Responsorial Audio',
             'weekday_gospel' => 'Weekday Gospel',
             'weekday_gospel_audio' => 'Weekday Gospel Audio',
-            'weekday_cycle_num' => 'Weekday Cycle Num',
-            'weekday_weeknum' => 'Weekday Weeknum',
+            'weekday_cycle_num' => 'Weekday Cycle Number',
+            'weekday_weeknum' => 'Weekday Week Number',
             'weekday_reading_type' => 'Weekday Reading Type',
             'weekday_first_optional' => 'Weekday First Optional',
             'weekday_responsorial_optional' => 'Weekday Responsorial Optional',

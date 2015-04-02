@@ -64,7 +64,7 @@ class SundayReading extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'sunday_weeknum' => 'Sunday Weeknum',
+            'sunday_weeknum' => 'Sunday Week Number',
             'sunday_name' => 'Sunday Name',
             'sunday_first_reading' => 'Sunday First Reading',
             'sunday_first_audio' => 'Sunday First Audio',
