@@ -22,29 +22,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'event_first_audio')->textInput(['maxlength' => 45]) ?>
 
+    <?= $form->field($model, 'event_first_optional')->textInput(['maxlength' => 100]) ?>
+
     <?= $form->field($model, 'event_second_reading')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'event_second_audio')->textInput(['maxlength' => 45]) ?>
+
+    <?= $form->field($model, 'event_second_optional')->textInput(['maxlength' => 100]) ?>
 
     <?= $form->field($model, 'event_alleluia_verse')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'event_alleluia_audio')->textInput(['maxlength' => 45]) ?>
 
+    <?= $form->field($model, 'event_alleluia_optional')->textInput(['maxlength' => 100]) ?>
+
     <?= $form->field($model, 'event_responsorial_psalm')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'event_responsorial_audio')->textInput(['maxlength' => 45]) ?>
 
+    <?= $form->field($model, 'event_responsorial_optional')->textInput(['maxlength' => 100]) ?>
+
     <?= $form->field($model, 'event_gospel')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'event_gospel_audio')->textInput(['maxlength' => 45]) ?>
-
-    <?= $form->field($model, 'event_first_optional')->textInput(['maxlength' => 100]) ?>
-
-    <?= $form->field($model, 'event_second_optional')->textInput(['maxlength' => 100]) ?>
-
-    <?= $form->field($model, 'event_responsorial_optional')->textInput(['maxlength' => 100]) ?>
-
-    <?= $form->field($model, 'event_alleluia_optional')->textInput(['maxlength' => 100]) ?>
 
     <?= $form->field($model, 'event_gospel_optional')->textInput(['maxlength' => 100]) ?>
 

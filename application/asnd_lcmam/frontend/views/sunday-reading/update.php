@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->title = 'Update Sunday Reading: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Sunday Readings', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->sunday_name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="sunday-reading-update">

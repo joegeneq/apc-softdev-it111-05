@@ -180,11 +180,11 @@ try {
                         $e = array();
                         
                         $e['title'] = $row['weekday_name'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:20";
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:01";
                         $e['color'] = '#3399FF';
                         $e['textColor'] = 'White';
                         $e['description'] = "This is the Marker for this Week / Day.";
-                        if ($e['start'] != "T01:00:20" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
+                        if ($e['start'] != "T01:00:01" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
 
                         $e['title'] = $row['weekday_first_reading'];
                         $e['start'] = $allWeekdays[$counter] . "T01:00:21";
