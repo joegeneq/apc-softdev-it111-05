@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\SundayReading */
 
-$this->title = 'Update Sunday Reading: ' . ' ' . $model->sunday_name;
+$this->title = 'Update Sunday Reading: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Sunday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
