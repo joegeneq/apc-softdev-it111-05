@@ -103,7 +103,7 @@ $(document).ready(function () {
     }
 
     .fc-time{
-    display : none;
+        display : none;
     }
 
     .modal {
