@@ -12,41 +12,65 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'sunday_weeknum')->textInput(['disabled' => 'disabled']) ?>
+    <?= $form->field($model, 'sunday_weeknum')->textInput() ?>
 
-    <?= $form->field($model, 'sunday_name')->textInput(['maxlength' => 100, 'disabled' => 'disabled']) ?>
+    <?= $form->field($model, 'sunday_name')->textInput(['maxlength' => 100]) ?>
 
     <?= $form->field($model, 'sunday_first_reading')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'sunday_first_audio')->textInput(['maxlength' => 1000]) ?>
+<<<<<<< HEAD
 
     <?= $form->field($model, 'sunday_first_optional')->textInput(['maxlength' => 100]) ?>
+=======
+>>>>>>> e7e2376bf24b147e537a32c7466e522932a27462
 
     <?= $form->field($model, 'sunday_second_reading')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'sunday_second_audio')->textInput(['maxlength' => 1000]) ?>
+<<<<<<< HEAD
 
     <?= $form->field($model, 'sunday_second_optional')->textInput(['maxlength' => 100]) ?>
+=======
+>>>>>>> e7e2376bf24b147e537a32c7466e522932a27462
 
     <?= $form->field($model, 'sunday_alleluia_verse')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'sunday_alleluia_audio')->textInput(['maxlength' => 1000]) ?>
+<<<<<<< HEAD
 
     <?= $form->field($model, 'sunday_alleluia_optional')->textInput(['maxlength' => 100]) ?>
+=======
+>>>>>>> e7e2376bf24b147e537a32c7466e522932a27462
 
     <?= $form->field($model, 'sunday_responsorial_psalm')->textInput(['maxlength' => 45]) ?>
 
     <?= $form->field($model, 'sunday_responsorial_audio')->textInput(['maxlength' => 1000]) ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'sunday_responsorial_optional')->textInput(['maxlength' => 100]) ?>
+=======
+    <?= $form->field($model, 'sunday_gospel')->textInput(['maxlength' => 45]) ?>
+
+    <?= $form->field($model, 'sunday_gospel_audio')->textInput(['maxlength' => 1000]) ?>
+>>>>>>> e7e2376bf24b147e537a32c7466e522932a27462
 
     <?= $form->field($model, 'sunday_before_gospel')->textInput(['maxlength' => 100]) ?>
 
     <?= $form->field($model, 'sunday_before_gospel_audio')->textInput(['maxlength' => 1000]) ?>
+<<<<<<< HEAD
 
     <?= $form->field($model, 'sunday_before_gospel_optional')->textInput(['maxlength' => 100]) ?>
 
     <?= $form->field($model, 'sunday_gospel')->textInput(['maxlength' => 45]) ?>
+=======
+
+    <?= $form->field($model, 'sunday_cycle_type')->textInput(['maxlength' => 1]) ?>
+
+    <?= $form->field($model, 'sunday_reading_type')->textInput(['maxlength' => 45]) ?>
+
+    <?= $form->field($model, 'sunday_description')->textInput(['maxlength' => 100]) ?>
+>>>>>>> e7e2376bf24b147e537a32c7466e522932a27462
 
     <?= $form->field($model, 'sunday_gospel_audio')->textInput(['maxlength' => 1000]) ?>
 
