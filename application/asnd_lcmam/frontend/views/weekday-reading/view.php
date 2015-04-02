@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\WeekdayReading */
 
-$this->title = $model->weekday_name;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Weekday Readings', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
