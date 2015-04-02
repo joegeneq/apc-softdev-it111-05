@@ -67,6 +67,7 @@ $(document).ready(function () {
         },
         
         eventClick: function (event, jsEvent, view) {
+            //if (!event.url){event.url = "/"};
             $('#modalTitle').html(event.title);
             $('#modalBody').html(event.description);
             $('#eventUrl').attr('href', event.url);
@@ -93,21 +94,17 @@ $(document).ready(function () {
 <style>
 
     body {
-        background-color: #99CC66;
         margin: 40px 10px;
         padding: 0;
-        font-family: "Helvetica",Helvetica,Arial,Verdana,sans-serif;
+        font-family: "Trebuchet MS",Helvetica,Arial,Verdana,sans-serif;
         font-size: 14px;
     }
 
     #calendar {
-        background-color: #99CC66;
-        max-width: 900px;
-        margin: 0 auto;
     }
 
     .fc-time{
-    display : none;
+        display : none;
     }
 
     .modal {
