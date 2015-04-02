@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    background-color: #F2E0C7;
 }
 
 .wrap {
@@ -8,10 +9,17 @@ body {
     height: auto;
     margin: 0 auto -60px;
     padding: 0 0 60px;
+    background-color: #FFF;
+    font-family: 'Trebuchet MS';
+    font-color: #000000;
+    font-size: 15px;
+
 }
 
 .wrap > .container {
     padding: 70px 15px 20px;
+    background-color: #FFFFE6;
+
 }
 
 .footer {
@@ -24,6 +32,7 @@ body {
 .jumbotron {
     text-align: center;
     background-color: transparent;
+    position:relative; 
 }
 
 .jumbotron .btn {
@@ -88,4 +97,97 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+.navbar-inverse {
+ background-color: #6D811E;
+}
+
+.navbar-inverse .navbar-text {
+  color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFF;
+  font-family: 'Trebuchet MS';
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+
+  color: #FFFFCC;
+  background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #9ACD32;
+}
+
+.nav-header{
+ color:#75A319;
+
+}
+
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.row-login,.row-signup{
+   
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.col-lg-5-login,.col-lg-5-signup {
+    width: 41.66666667%;
+    position: relative;
+    margin-top: 50px;
+
+    
+  }
+
+.site-about{
+    width: 100%;
+}
+
+.home-header{
+    padding-left: 15px;
+}
+
+.col-lg-4-about {
+    width: 44.33333333%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+  }
+
+.image {
+    display: block;
+
+}
+
+.message_text{
+    display: block;
+    margin-right: 30px;
+    text-align: left;
+    border-style: solid;
+    border-color: #000000;
+
+}
+
+#container, #container2 {
+    font-family: 'Trebuchet MS';
+}
+
+tr:hover {
+    background-color: #E6F5FA;
 }
