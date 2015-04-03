@@ -255,8 +255,8 @@ try {
                         
                         $e['title'] = $row['event_name'];
                         $e['start'] = $dayConversion . "T01:00:03";
-                        $e['color'] = '#99FF66';
-                        $e['textColor'] = 'Black';
+                        $e['color'] = '#3399FF';
+                        $e['textColor'] = 'White';
                         $e['description'] = "This is the Marker for this Day after the Epiphany.";
                         if ($e['title'] != ""){ array_push($events, $e); }
 
