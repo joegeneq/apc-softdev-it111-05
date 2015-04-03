@@ -43,28 +43,86 @@ try {
 
         $e = array();
 
+        $e['title'] = $row['weekday_name'];
+        $e['start'] = $preLentDays[$counter] . "T01:00:04";
+        $e['color'] = '#3399FF';
+        $e['textColor'] = 'White';
+        $e['description'] = "This is the Marker for this Day.";
+        if ($e['start'] != "T01:00:04" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
+
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $preLentDays[$counter] . "T01:00:05";
-        $e['color'] = '#33FF66';
+        $e['color'] = '#FFFF99';
         $e['textColor'] = 'Black';
+
+            if ($row['weekday_first_optional'] == ""){
+                $e['description'] = "This is the First Reading for this day after Ash." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the First Reading for this day after Ash." . "<br>" . "Optional: " . $row['weekday_first_optional'];
+            }
+
+            if ($row['weekday_first_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['weekday_first_audio'] != ""){
+                $e['url'] = $row['weekday_first_audio'];
+            }
+
         if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_alleluia_verse'];
         $e['start'] = $preLentDays[$counter] . "T01:00:06";
-        //$e['color'] = '#33CC00';
+
+            if ($row['weekday_alleluia_optional'] == ""){
+                $e['description'] = "This is the Alleluia Verse for this day after Ash." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Alleluia Verse for this day after Ash." . "<br>" . "Optional: " . $row['weekday_alleluia_optional'];
+            }
+
+            if ($row['weekday_alleluia_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['weekday_alleluia_audio'] != ""){
+                $e['url'] = $row['weekday_alleluia_audio'];
+            }
+
         if ($e['start'] != "T01:00:06"){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_responsorial_psalm'];
         $e['start'] = $preLentDays[$counter] . "T01:00:07";
-        //$e['color'] = '#33CC00';
+
+            if ($row['weekday_responsorial_optional'] == ""){
+                $e['description'] = "This is the Responsorial Psalm for this day after Ash." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Responsorial Psalm for this day after Ash." . "<br>" . "Optional: " . $row['weekday_responsorial_optional'];
+            }
+
+            if ($row['weekday_responsorial_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['weekday_responsorial_audio'] != ""){
+                $e['url'] = $row['weekday_responsorial_audio'];
+            }
+
         if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
 
         $e['title'] = $row['weekday_gospel'];
         $e['start'] = $preLentDays[$counter] . "T01:00:08";
-        //$e['color'] = '#33CC00';
-        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
 
-            //echo $sundayValidation;
+            if ($row['weekday_gospel_optional'] == ""){
+                $e['description'] = "This is the Gospel for this day after Ash." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Gospel for this day after Ash." . "<br>" . "Optional: " . $row['weekday_gospel_optional'];
+            }
+
+            if ($row['weekday_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['weekday_gospel_audio'] != ""){
+                $e['url'] = $row['weekday_gospel_audio'];
+            }
+        
+        if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
 
         $counter++;
 
@@ -73,6 +131,7 @@ try {
         echo "Error on database connection. No results may be displayed.";
     }
     
+    /*
     $sql = "SELECT * FROM sunday_reading";
 
     $result = $conn->query($sql);
@@ -85,15 +144,13 @@ try {
                         
                         $e['title'] = $row['sunday_name'];
                         $e['start'] = $epiphanySunday . "T01:00:04";
-                        $e['color'] = '#FFCC00';
-                        $e['tip'] = $row['sunday_name'];
-                        $e['textColor'] = 'Black';
+                        $e['color'] = '#3366FF';
+                        $e['textColor'] = 'White';
                         if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
 
                         $e['title'] = $row['sunday_first_reading'];
                         $e['start'] = $epiphanySunday . "T01:00:05";
-                        $e['color'] = '#FFCC00';
-                        $e['tip'] = $row['sunday_first_reading'];
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
                         if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
                     
@@ -105,21 +162,14 @@ try {
 
                         $e['title'] = $row['sunday_alleluia_verse'];
                         $e['start'] = $epiphanySunday . "T01:00:07";
-                        $e['tip'] = $row['sunday_alleluia_verse'];
-                        //$e['color'] = '#33CC00';
-                        $e['tip'] = $row['sunday_alleluia_verse'];
                         if ($e['start'] != "T01:00:07"){ array_push($events, $e); }
 
                         $e['title'] = $row['sunday_responsorial_psalm'];
                         $e['start'] = $epiphanySunday . "T01:00:08";
-                        //$e['color'] = '#33CC00';
-                        $e['tip'] = $row['sunday_responsorial_psalm'];
                         if ($e['start'] != "T01:00:08"){ array_push($events, $e); }
 
                         $e['title'] = $row['sunday_gospel'];
                         $e['start'] = $epiphanySunday . "T01:00:09";
-                        //$e['color'] = '#33CC00';
-                        $e['tip'] = $row['sunday_gospel'];
                         if ($e['start'] != "T01:00:09"){ array_push($events, $e); }
 
             }
@@ -127,7 +177,7 @@ try {
         }
     } else {
         echo "Error on database connection. No results may be displayed.";
-    }
+    }*/
     
 
     echo json_encode($events);

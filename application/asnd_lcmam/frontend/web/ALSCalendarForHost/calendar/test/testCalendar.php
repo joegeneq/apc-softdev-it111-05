@@ -61,12 +61,14 @@ $(document).ready(function () {
                 */
             ],
         header: {
-            left: 'title',
-            center: '',
-            right: 'prev, today, next '
+            left: 'prev, next',
+            center: 'title',
+            right: 'today'
         },
         
         eventClick: function (event, jsEvent, view) {
+            if (!event.url){event.url = ""};
+            if (!event.description){event.description = ""};
             $('#modalTitle').html(event.title);
             $('#modalBody').html(event.description);
             $('#eventUrl').attr('href', event.url);
@@ -93,6 +95,8 @@ $(document).ready(function () {
 <style>
 
     body {
+        margin: 40px 10px;
+        padding: 0;
         font-family: "Trebuchet MS",Helvetica,Arial,Verdana,sans-serif;
         font-size: 14px;
     }
@@ -101,7 +105,7 @@ $(document).ready(function () {
     }
 
     .fc-time{
-    display : none;
+        display : none;
     }
 
     .modal {
