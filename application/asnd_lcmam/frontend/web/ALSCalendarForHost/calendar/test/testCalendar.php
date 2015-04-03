@@ -61,9 +61,9 @@ $(document).ready(function () {
                 */
             ],
         header: {
-            left: 'prev, next',
-            center: 'title',
-            right: 'today'
+            left: 'title',
+            center: '',
+            right: 'prev, today, next'
         },
         
         eventClick: function (event, jsEvent, view) {

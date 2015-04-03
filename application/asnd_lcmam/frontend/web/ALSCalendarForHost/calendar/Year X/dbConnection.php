@@ -12,9 +12,10 @@
 //for testing 
 error_reporting(E_ERROR);
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "asnd_lcmam";
+    $password = "asnd_lcmam";
     $dbname = "asnd_lcmam";
+
 
 //*/
 
