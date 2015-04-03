@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'title',
             'type',
-            'first_reading',
+            //'first_reading',
             // 'first_reading_audio',
             // 'responsorial_psalm',
             // 'responsorial_psalm_audio',
