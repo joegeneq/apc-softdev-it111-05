@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\SolemnitiesOrFeastsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Solemnities and Feasts';
+$this->title = 'Solemnities, Feasts and Memorials';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solemnities-or-feasts-index">
