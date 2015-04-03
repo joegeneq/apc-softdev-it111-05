@@ -32,6 +32,33 @@ $(document).ready(function () {
                 'easterWeekdays.php',
                 'easterSundays.php',
                 'specialSolemnities.php',
+                /*'../Year Y/sundayReadings.php',
+                '../Year Y/ashWednesday.php',
+                '../Year Y/weekdayReadings.php',
+                '../Year Y/solemnitiesOrFeasts.php',
+                '../Year Y/majorEvents.php',
+                '../Year Y/adventWeekdays.php',
+                '../Year Y/adventSundays.php',
+                '../Year Y/preLent.php',
+                '../Year Y/lentSundays.php',
+                '../Year Y/lentWeekdays.php',
+                '../Year Y/easterWeekdays.php',
+                '../Year Y/easterSundays.php',
+                '../Year Y/specialSolemnities.php',
+                '../Year X/sundayReadings.php',
+                '../Year X/ashWednesday.php',
+                '../Year X/weekdayReadings.php',
+                '../Year X/solemnitiesOrFeasts.php',
+                '../Year X/majorEvents.php',
+                '../Year X/adventWeekdays.php',
+                '../Year X/adventSundays.php',
+                '../Year X/preLent.php',
+                '../Year X/lentSundays.php',
+                '../Year X/lentWeekdays.php',
+                '../Year X/easterWeekdays.php',
+                '../Year X/easterSundays.php',
+                '../Year X/specialSolemnities.php',
+                */
             ],
         header: {
             left: 'prev, next',
@@ -40,6 +67,8 @@ $(document).ready(function () {
         },
         
         eventClick: function (event, jsEvent, view) {
+            if (!event.url){event.url = ""};
+            if (!event.description){event.description = ""};
             $('#modalTitle').html(event.title);
             $('#modalBody').html(event.description);
             $('#eventUrl').attr('href', event.url);
@@ -66,21 +95,17 @@ $(document).ready(function () {
 <style>
 
     body {
-        background-color: #75A319;
         margin: 40px 10px;
         padding: 0;
-        font-family: "Helvetica",Helvetica,Arial,Verdana,sans-serif;
+        font-family: "Trebuchet MS",Helvetica,Arial,Verdana,sans-serif;
         font-size: 14px;
     }
 
     #calendar {
-        background-color: #99CC66;
-        max-width: 900px;
-        margin: 0 auto;
     }
 
     .fc-time{
-    display : none;
+        display : none;
     }
 
     .modal {

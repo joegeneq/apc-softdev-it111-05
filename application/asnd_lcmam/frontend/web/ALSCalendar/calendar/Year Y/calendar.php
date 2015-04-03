@@ -53,7 +53,7 @@
     }
 
     #calendar {
-        background-color: #99CC66;
+        background-color: #75A319;
         max-width: 900px;
         margin: 0 auto;
     }

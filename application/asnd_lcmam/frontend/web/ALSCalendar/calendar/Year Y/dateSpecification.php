@@ -15,7 +15,6 @@ error_reporting(E_ERROR);
     $year=date('Y');
     $yearAgo = date('Y', strtotime('1 year ago'));
     $year=$yearAgo;
-    
 
 //
 
