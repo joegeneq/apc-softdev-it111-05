@@ -6,7 +6,6 @@ include_once 'functions.php';
 //For Sunday
 
     
-
     $allSundays = getSundaysOfOT();
 
     $countOfSundays = count($allSundays); //count of Sundays

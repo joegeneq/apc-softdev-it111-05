@@ -16,7 +16,6 @@ error_reporting(E_ERROR);
     $yearAhead = date('Y', strtotime('+1 year'));
     $year=$yearAhead;
 
-
 //
 
 ?>

@@ -170,6 +170,7 @@ try {
         $e['start'] = $allEasterSundays[$counter] . "T01:00:04";
         $e['color'] = '#3366FF';
         $e['textColor'] = 'White';
+        $e['description'] = "This is the Marker for this Sunday of Easter.";
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:04";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:10";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
@@ -178,30 +179,100 @@ try {
         $e['start'] = $allEasterSundays[$counter] . "T01:00:05";
         $e['color'] = '#CCFFCC';
         $e['textColor'] = 'Black';
+
+            if ($row['sunday_first_optional'] == ""){
+                $e['description'] = "This is the First Reading for this Sunday of Easter." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the First Reading for this Sunday of Easter." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+            }
+
+            if ($row['sunday_first_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_first_audio'] != ""){
+                $e['url'] = $row['sunday_first_audio'];
+            }
+
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:05";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:11";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
     
         $e['title'] = $row['sunday_second_reading'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:06";
+
+            if ($row['sunday_second_optional'] == ""){
+                $e['description'] = "This is the Second Reading for this Sunday of Easter." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Second Reading for this Sunday of Easter." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+            }
+
+            if ($row['sunday_second_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_second_audio'] != ""){
+                $e['url'] = $row['sunday_second_audio'];
+            }
+
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:06";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:12";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_responsorial_psalm'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:07";
+
+            if ($row['sunday_responsorial_optional'] == ""){
+                $e['description'] = "This is the Responsorial Psalm for this Sunday of Easter." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Responsorial Psalm for this Sunday of Easter." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
+            }
+
+            if ($row['sunday_responsorial_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_responsorial_audio'] != ""){
+                $e['url'] = $row['sunday_responsorial_audio'];
+            }
+
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:07";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:13";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_before_gospel'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:08";
+
+            if ($row['sunday_before_gospel_optional'] == ""){
+                $e['description'] = "This is the Reading Before the Gospel for this Sunday of Easter." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Reading Before the Gospel for this Sunday of Easter." . "<br>" . "Optional: " . $row['sunday_before_gospel_optional'];
+            }
+
+            if ($row['sunday_before_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_before_gospel_audio'] != ""){
+                $e['url'] = $row['sunday_before_gospel_audio'];
+            }
+
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:08";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:14";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }
 
         $e['title'] = $row['sunday_gospel'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:09";
+
+            if ($row['sunday_gospel_optional'] == ""){
+                $e['description'] = "This is the Gospel for this Sunday of Easter." . "<br>" . "No optional readings.";}
+            else{
+                $e['description'] = "This is the Gospel for this Sunday of Easter." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+            }
+
+            if ($row['sunday_gospel_audio'] == ""){
+                $e['url'] = "/";
+            }
+            if ($row['sunday_gospel_audio'] != ""){
+                $e['url'] = $row['sunday_gospel_audio'];
+            }
+
         if ($row['sunday_name'] == "The Mass of Easter Day"){$e['start'] = $allEasterSundays[$counter] . "T01:00:09";}
         if ($row['sunday_name'] == "Easter Vigil in the Holy Night"){$e['start'] = $allEasterSundays[$counter] . "T01:00:15";}
         if ($e['title'] != "" && $verification == 1){ array_push($events, $e); }

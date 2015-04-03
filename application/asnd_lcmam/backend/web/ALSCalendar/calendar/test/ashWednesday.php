@@ -28,7 +28,7 @@ try {
         $e['start'] = $ashWednesday . "T01:00:05";
         $e['color'] = '#3399FF';
         $e['textColor'] = 'White';
-        $e['description'] = "This is the Marker for this Day.";
+        $e['description'] = "This is the Marker for this Ash Wednesday.";
         if ($e['start'] != "T01:00:05"){ array_push($events, $e); }
         
         $e['title'] = $row['weekday_first_reading'];
@@ -37,9 +37,9 @@ try {
         $e['textColor'] = 'Black';
             
             if ($row['weekday_first_optional'] == ""){
-                $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+                $e['description'] = "This is the First Reading for Ash Wednesday." . "<br>" . "No optional readings.";}
             else{
-                $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['weekday_first_optional'];
+                $e['description'] = "This is the First Reading for Ash Wednesday." . "<br>" . "Optional: " . $row['weekday_first_optional'];
             }
 
             if ($row['weekday_first_audio'] == ""){
@@ -55,9 +55,9 @@ try {
         $e['start'] = $ashWednesday . "T01:00:06";
 
             if ($row['weekday_alleluia_optional'] == ""){
-                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+                $e['description'] = "This is the Alleluia Verse for Ash Wednesday." . "<br>" . "No optional readings.";}
             else{
-                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['weekday_alleluia_optional'];
+                $e['description'] = "This is the Alleluia Verse for Ash Wednesday." . "<br>" . "Optional: " . $row['weekday_alleluia_optional'];
             }
 
             if ($row['weekday_alleluia_audio'] == ""){
@@ -74,9 +74,9 @@ try {
         $e['start'] = $ashWednesday . "T01:00:07";
 
             if ($row['weekday_responsorial_optional'] == ""){
-                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+                $e['description'] = "This is the Responsorial Psalm for Ash Wednesday." . "<br>" . "No optional readings.";}
             else{
-                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['weekday_responsorial_optional'];
+                $e['description'] = "This is the Responsorial Psalm for Ash Wednesday." . "<br>" . "Optional: " . $row['weekday_responsorial_optional'];
             }
 
             if ($row['weekday_responsorial_audio'] == ""){
@@ -92,9 +92,9 @@ try {
         $e['start'] = $ashWednesday . "T01:00:08";
 
             if ($row['weekday_gospel_optional'] == ""){
-                $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+                $e['description'] = "This is the Gospel for Ash Wednesday." . "<br>" . "No optional readings.";}
             else{
-                $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['weekday_gospel_optional'];
+                $e['description'] = "This is the Gospel for Ash Wednesday." . "<br>" . "Optional: " . $row['weekday_gospel_optional'];
             }
 
             if ($row['weekday_gospel_audio'] == ""){

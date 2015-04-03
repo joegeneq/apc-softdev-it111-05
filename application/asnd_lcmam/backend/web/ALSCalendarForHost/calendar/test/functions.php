@@ -93,8 +93,16 @@ function getSundaysOfOT(){
 
         $sundays = date('Y-m-d', strtotime($sundays . '+7 days'));      
     }
+    
+    $skipValidate = $weekAfterPentecost - $weeksBeforeLent;
 
-    $sundays = date('Y-m-d', strtotime($pentecostSunday . '+7 days')); 
+    if ($skipValidate > 1 ){
+    $sundays = date('Y-m-d', strtotime($pentecostSunday . '+7 days'));     
+    }else{
+    $sundays = $pentecostSunday;
+    }
+    
+    //$sundays = date('Y-m-d', strtotime($pentecostSunday . '+7 days')); 
 
     $limit = $firstSundayofAdvent;
     
