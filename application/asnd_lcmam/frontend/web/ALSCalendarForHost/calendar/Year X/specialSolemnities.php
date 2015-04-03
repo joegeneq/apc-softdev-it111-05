@@ -87,36 +87,91 @@ try {
 
                 $e['title'] = $row['title'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:07";
+                $e['color'] = '#3366FF';
+                $e['textColor'] = 'White';
+                $e['description'] = "This is the Marker for this Solemnity.";
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['first_reading'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:08";
+                $e['color'] = '#00CC66';
+                $e['textColor'] = 'White';
+
+                    $e['description'] = "This is the First Reading for this Solemnity.";
+
+                    if ($row['first_reading_audio'] == ""){
+                        $e['url'] = "/";
+                    }
+                    if ($row['first_reading_audio'] != ""){
+                        $e['url'] = $row['first_reading_audio'];
+                    }
+
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['responsorial_psalm'];
                 $e['start'] = $datesSFM[$counter]  . "T01:00:09";
+
+                    $e['description'] = "This is the Responsorial Psalm for this Solemnity.";
+
+                    if ($row['responsorial_psalm_audio'] == ""){
+                        $e['url'] = "/";
+                    }
+                    if ($row['responsorial_psalm_audio'] != ""){
+                        $e['url'] = $row['responsorial_psalm_audio'];
+                    }
+
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['second_reading'];
                 $e['start'] = $datesSFM[$counter]  . "T01:00:10";
+
+                    $e['description'] = "This is the Second Reading for this Solemnity.";
+
+                    if ($row['second_reading_audio'] == ""){
+                        $e['url'] = "/";
+                    }
+                    if ($row['second_reading_audio'] != ""){
+                        $e['url'] = $row['second_reading_audio'];
+                    }
+
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['alleluia_verse'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:11";
+
+                    $e['description'] = "This is the Alleluia Verse for this Solemnity.";
+
+                    if ($row['alleluia_verse_audio'] == ""){
+                        $e['url'] = "/";
+                    }
+                    if ($row['alleluia_verse_audio'] != ""){
+                        $e['url'] = $row['alleluia_verse_audio'];
+                    }
+
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }
 
                 $e['title'] = $row['gospel'];
                 $e['start'] = $datesSFM[$counter] . "T01:00:12";
+
+                    $e['description'] = "This is the Gospel for this Solemnity.";
+
+                    if ($row['gospel_audio'] == ""){
+                        $e['url'] = "/";
+                    }
+                    if ($row['gospel_audio'] != ""){
+                        $e['url'] = $row['gospel_audio'];
+                    }
+                
                 if ($e['title'] != ""){
                     array_push($events, $e);
                 }

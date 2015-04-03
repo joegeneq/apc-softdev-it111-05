@@ -1,10 +1,10 @@
 <?php 
 
 /*/for hosting  
-error_reporting(E_ERROR);
+
     $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $username = "asnd_lcmam";
+    $password = "asnd_lcmam";
     $dbname = "asnd_lcmam";
 
 //*/
@@ -15,6 +15,7 @@ error_reporting(E_ERROR);
     $username = "asnd_lcmam";
     $password = "asnd_lcmam";
     $dbname = "asnd_lcmam";
+
 
 //*/
 

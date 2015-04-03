@@ -91,7 +91,7 @@ try {
                 $e['start'] = $year . $row['date'] . "T01:00:02";
                 $e['color'] = '#FF6600';
                 $e['textColor'] = 'White';
-                $e['description'] = "This is the Marker for this Day's Mass.";
+                $e['description'] = "This is the Marker for this Day's Mass during Advent.";
                 if ($row['event_type'] == "Christmas Dawn"){$e['start'] = $year . $row['date'] . "T01:00:02";}
                 if ($row['event_type'] == "Christmas Day"){$e['start'] = $year . $row['date'] . "T01:00:08";}
                 if ($row['event_type'] == "Christmas Night"){$e['start'] = $year . $row['date'] . "T01:00:14";}
@@ -109,9 +109,9 @@ try {
                 $e['textColor'] = '#White';
 
                     if ($row['event_first_optional'] == ""){
-                        $e['description'] = "This is the First Reading for this mass/event." . "<br>" . "No optional readings.";}
+                        $e['description'] = "This is the First Reading for this mass during Advent/Christmas." . "<br>" . "No optional readings.";}
                     else{
-                        $e['description'] = "This is the First Reading for this mass/event." . "<br>" . "Optional: " . $row['event_first_optional'];
+                        $e['description'] = "This is the First Reading for this mass during Advent/Christmas." . "<br>" . "Optional: " . $row['event_first_optional'];
                     }
 
                     if ($row['event_first_audio'] == ""){
@@ -137,9 +137,9 @@ try {
                 $e['start'] = $year . $row['date'] . "T01:00:04";
 
                     if ($row['event_second_optional'] == ""){
-                        $e['description'] = "This is the Second Reading for this mass/event." . "<br>" . "No optional readings.";}
+                        $e['description'] = "This is the Second Reading for this mass during Advent/Christmas." . "<br>" . "No optional readings.";}
                     else{
-                        $e['description'] = "This is the Second Reading for this mass/event." . "<br>" . "Optional: " . $row['event_second_optional'];
+                        $e['description'] = "This is the Second Reading for this mass during Advent/Christmas." . "<br>" . "Optional: " . $row['event_second_optional'];
                     }
 
                     if ($row['event_second_audio'] == ""){
@@ -164,9 +164,9 @@ try {
                 $e['start'] = $year . $row['date'] . "T01:00:05";
 
                     if ($row['event_alleluia_optional'] == ""){
-                        $e['description'] = "This is the Alleluia Verse for this mass/event." . "<br>" . "No optional readings.";}
+                        $e['description'] = "This is the Alleluia Verse for this mass during Advent/Christmas." . "<br>" . "No optional readings.";}
                     else{
-                        $e['description'] = "This is the Alleluia Verse for this mass/event." . "<br>" . "Optional: " . $row['event_alleluia_optional'];
+                        $e['description'] = "This is the Alleluia Verse for this mass during Advent/Christmas." . "<br>" . "Optional: " . $row['event_alleluia_optional'];
                     }
 
                     if ($row['event_alleluia_audio'] == ""){
@@ -191,9 +191,9 @@ try {
                 $e['start'] = $year . $row['date'] . "T01:00:06";
 
                     if ($row['event_responsorial_optional'] == ""){
-                        $e['description'] = "This is the Responsorial Psalm for this mass/event." . "<br>" . "No optional readings.";}
+                        $e['description'] = "This is the Responsorial Psalm for this mass during Advent/Christmas." . "<br>" . "No optional readings.";}
                     else{
-                        $e['description'] = "This is the Responsorial Psalm for this mass/event." . "<br>" . "Optional: " . $row['event_responsorial_optional'];
+                        $e['description'] = "This is the Responsorial Psalm for this mass during Advent/Christmas." . "<br>" . "Optional: " . $row['event_responsorial_optional'];
                     }
 
                     if ($row['event_responsorial_audio'] == ""){
@@ -218,9 +218,9 @@ try {
                 $e['start'] = $year . $row['date'] . "T01:00:07";
 
                     if ($row['event_gospel_optional'] == ""){
-                        $e['description'] = "This is the Gospel for this mass/event." . "<br>" . "No optional readings.";}
+                        $e['description'] = "This is the Gospel for this mass during Advent/Christmas." . "<br>" . "No optional readings.";}
                     else{
-                        $e['description'] = "This is the Gospel for this mass/event." . "<br>" . "Optional: " . $row['event_gospel_optional'];
+                        $e['description'] = "This is the Gospel for this mass during Advent/Christmas." . "<br>" . "Optional: " . $row['event_gospel_optional'];
                     }
 
                     if ($row['event_gospel_audio'] == ""){
@@ -257,7 +257,7 @@ try {
                         $e['start'] = $dayConversion . "T01:00:03";
                         $e['color'] = '#99FF66';
                         $e['textColor'] = 'Black';
-                        $e['description'] = "This is the Marker for this Day.";
+                        $e['description'] = "This is the Marker for this Day after the Epiphany.";
                         if ($e['title'] != ""){ array_push($events, $e); }
 
                         $e['title'] = $row['event_first_reading'];
@@ -266,9 +266,9 @@ try {
                         $e['textColor'] = 'Black';
 
                             if ($row['event_first_optional'] == ""){
-                                $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+                                $e['description'] = "This is the First Reading for this day after the Epiphany." . "<br>" . "No optional readings.";}
                             else{
-                                $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['event_first_optional'];
+                                $e['description'] = "This is the First Reading for this day after the Epiphany." . "<br>" . "Optional: " . $row['event_first_optional'];
                             }
 
                             if ($row['event_first_audio'] == ""){
@@ -286,9 +286,9 @@ try {
                         $e['textColor'] = 'Black';
 
                             if ($row['event_second_optional'] == ""){
-                                $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+                                $e['description'] = "This is the Second Reading for this day after the Epiphany." . "<br>" . "No optional readings.";}
                             else{
-                                $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['event_second_optional'];
+                                $e['description'] = "This is the Second Reading for this day after the Epiphany." . "<br>" . "Optional: " . $row['event_second_optional'];
                             }
 
                             if ($row['event_second_audio'] == ""){
@@ -306,9 +306,9 @@ try {
                         $e['textColor'] = 'Black';
 
                             if ($row['event_alleluia_optional'] == ""){
-                                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+                                $e['description'] = "This is the Alleluia Verse for this day after the Epiphany." . "<br>" . "No optional readings.";}
                             else{
-                                $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['event_alleluia_optional'];
+                                $e['description'] = "This is the Alleluia Verse for this day after the Epiphany." . "<br>" . "Optional: " . $row['event_alleluia_optional'];
                             }
 
                             if ($row['event_alleluia_audio'] == ""){
@@ -326,9 +326,9 @@ try {
                         $e['textColor'] = 'Black';
 
                             if ($row['event_responsorial_optional'] == ""){
-                                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+                                $e['description'] = "This is the Responsorial Psalm for this day after the Epiphany." . "<br>" . "No optional readings.";}
                             else{
-                                $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['event_responsorial_optional'];
+                                $e['description'] = "This is the Responsorial Psalm for this day after the Epiphany." . "<br>" . "Optional: " . $row['event_responsorial_optional'];
                             }
 
                             if ($row['event_responsorial_audio'] == ""){
@@ -346,9 +346,9 @@ try {
                         $e['textColor'] = 'Black';
 
                             if ($row['event_gospel_optional'] == ""){
-                                $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+                                $e['description'] = "This is the Gospel for this day after the Epiphany." . "<br>" . "No optional readings.";}
                             else{
-                                $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['event_gospel_optional'];
+                                $e['description'] = "This is the Gospel for this day after the Epiphany." . "<br>" . "Optional: " . $row['event_gospel_optional'];
                             }
 
                             if ($row['event_gospel_audio'] == ""){
@@ -381,7 +381,7 @@ try {
                     $e['start'] = $epiphanySunday . "T01:00:19";
                     $e['color'] = '#3366FF';
                     $e['textColor'] = 'White';
-                    $e['description'] = "This is the Marker for this Day.";
+                    $e['description'] = "This is the Marker for this Sunday of Epiphany.";
                     if ($e['start'] != "T01:00:19"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_first_reading'];
@@ -390,9 +390,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_first_optional'] == ""){
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the First Reading for this Sunday of Epiphany." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+                            $e['description'] = "This is the First Reading for this Sunday of Epiphany." . "<br>" . "Optional: " . $row['sunday_first_optional'];
                         }
 
                         if ($row['sunday_first_audio'] == ""){
@@ -410,9 +410,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_second_optional'] == ""){
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Second Reading for this Sunday of Epiphany." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+                            $e['description'] = "This is the Second Reading for this Sunday of Epiphany." . "<br>" . "Optional: " . $row['sunday_second_optional'];
                         }
 
                         if ($row['sunday_second_audio'] == ""){
@@ -431,9 +431,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_alleluia_optional'] == ""){
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Alleluia Verse for this Sunday of Epiphany." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+                            $e['description'] = "This is the Alleluia Verse for this Sunday of Epiphany." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
                         }
 
                         if ($row['sunday_alleluia_audio'] == ""){
@@ -451,9 +451,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_responsorial_optional'] == ""){
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Responsorial Psalm for this Sunday of Epiphany." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
+                            $e['description'] = "This is the Responsorial Psalm for this Sunday of Epiphany." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
                         }
 
                         if ($row['sunday_responsorial_audio'] == ""){
@@ -471,9 +471,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_gospel_optional'] == ""){
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Gospel for this Sunday of Epiphany." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+                            $e['description'] = "This is the Gospel for this Sunday of Epiphany." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
                         }
 
                         if ($row['sunday_gospel_audio'] == ""){
@@ -492,7 +492,7 @@ try {
                     $e['start'] = $pentecostSunday . "T01:00:04";
                     $e['color'] = '#3366FF';
                     $e['textColor'] = 'White';
-                    $e['description'] = "This is the Marker for this Day.";
+                    $e['description'] = "This is the Marker for this Pentecost Sunday.";
                     if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
 
                     $e['title'] = $row['sunday_first_reading'];
@@ -501,9 +501,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_first_optional'] == ""){
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the First Reading for this Pentecost Sunday." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+                            $e['description'] = "This is the First Reading for this Pentecost Sunday." . "<br>" . "Optional: " . $row['sunday_first_optional'];
                         }
 
                         if ($row['sunday_first_audio'] == ""){
@@ -521,9 +521,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_second_optional'] == ""){
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Second Reading for this Pentecost Sunday." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+                            $e['description'] = "This is the Second Reading for this Pentecost Sunday." . "<br>" . "Optional: " . $row['sunday_second_optional'];
                         }
 
                         if ($row['sunday_second_audio'] == ""){
@@ -542,9 +542,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_alleluia_optional'] == ""){
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Alleluia Verse for this Pentecost Sunday." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+                            $e['description'] = "This is the Alleluia Verse for this Pentecost Sunday." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
                         }
 
                         if ($row['sunday_alleluia_audio'] == ""){
@@ -562,9 +562,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_responsorial_optional'] == ""){
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Responsorial Psalm for this Pentecost Sunday." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
+                            $e['description'] = "This is the Responsorial Psalm for this Pentecost Sunday." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
                         }
 
                         if ($row['sunday_responsorial_audio'] == ""){
@@ -582,9 +582,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_gospel_optional'] == ""){
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Gospel for this Pentecost Sunday." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+                            $e['description'] = "This is the Gospel for this Pentecost Sunday." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
                         }
 
                         if ($row['sunday_gospel_audio'] == ""){
@@ -616,9 +616,9 @@ try {
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_first_optional'] == ""){
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the First Reading for this Octave of Christmas." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the First Reading for this day." . "<br>" . "Optional: " . $row['sunday_first_optional'];
+                            $e['description'] = "This is the First Reading for this Octave of Christmas." . "<br>" . "Optional: " . $row['sunday_first_optional'];
                         }
 
                         if ($row['sunday_first_audio'] == ""){
@@ -634,9 +634,9 @@ try {
                     $e['start'] = $lastChristmasSunday . "T01:00:06";
 
                         if ($row['sunday_second_optional'] == ""){
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Second Reading for this Octave of Christmas." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Second Reading for this day." . "<br>" . "Optional: " . $row['sunday_second_optional'];
+                            $e['description'] = "This is the Second Reading for this Octave of Christmas." . "<br>" . "Optional: " . $row['sunday_second_optional'];
                         }
 
                         if ($row['sunday_second_audio'] == ""){
@@ -652,9 +652,9 @@ try {
                     $e['start'] = $lastChristmasSunday . "T01:00:07";
 
                         if ($row['sunday_alleluia_optional'] == ""){
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Alleluia Verse for this Octave of Christmas." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Alleluia Verse for this day." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
+                            $e['description'] = "This is the Alleluia Verse for this Octave of Christmas." . "<br>" . "Optional: " . $row['sunday_alleluia_optional'];
                         }
 
                         if ($row['sunday_alleluia_audio'] == ""){
@@ -670,9 +670,9 @@ try {
                     $e['start'] = $lastChristmasSunday . "T01:00:08";
 
                         if ($row['sunday_responsorial_optional'] == ""){
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Responsorial Psalm for this Octave of Christmas." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Responsorial Psalm for this day." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
+                            $e['description'] = "This is the Responsorial Psalm for this Octave of Christmas." . "<br>" . "Optional: " . $row['sunday_responsorial_optional'];
                         }
 
                         if ($row['sunday_responsorial_audio'] == ""){
@@ -689,9 +689,9 @@ try {
                     $e['start'] = $lastChristmasSunday . "T01:00:09";
 
                         if ($row['sunday_gospel_optional'] == ""){
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "No optional readings.";}
+                            $e['description'] = "This is the Gospel for this Octave of Christmas." . "<br>" . "No optional readings.";}
                         else{
-                            $e['description'] = "This is the Gospel for this day." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
+                            $e['description'] = "This is the Gospel for this Octave of Christmas." . "<br>" . "Optional: " . $row['sunday_gospel_optional'];
                         }
 
                         if ($row['sunday_gospel_audio'] == ""){

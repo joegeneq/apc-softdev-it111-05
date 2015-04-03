@@ -109,7 +109,7 @@ try {
             if ($row['rule'] == "always on a friday"){
                 $checkForFriday = date('Y-m-d', strtotime($pentecostSunday . '+19 days'));
                 $datesSFM[] = $checkForFriday;
-                $datesSFM = array_unique($datesSFM);
+                //$datesSFM = array_unique($datesSFM);
             }
         }
     } else {
@@ -138,7 +138,7 @@ try {
         //echo "You have reached if statement." . $skipValue;
         $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_num = '" . $weekdayCycle. "' AND weekday_weeknum !='" . $skipValue . "'";
     }else{
-        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_type = '" . $weekdayCycle. "'";
+        $query = "SELECT * FROM weekday_reading WHERE weekday_cycle_num = '" . $weekdayCycle. "'";
         //echo "You have reached else statement.";
     }
 
@@ -157,7 +157,7 @@ try {
 
     // Fetch results
     while ($row = $sth->fetch(PDO::FETCH_ASSOC)) {
-        
+
         if ($allWeekdays[$counter] != $ashWednesday){
             if ($allWeekdays[$counter] != $ashOne){
                 if ($allWeekdays[$counter] != $ashTwo){
@@ -168,6 +168,7 @@ try {
                         $verification = 1; // Initially Sunday is to be used (Verification of Usage)
                         $dateForChecking = $allWeekdays[$counter];
 
+
                         for ($x=0; $x < count($datesSFM); $x++){
 
                             if ($datesSFM[$x] == $dateForChecking){
@@ -175,32 +176,89 @@ try {
                             }
 
                         }
-
+                        
                         $e = array();
                         
                         $e['title'] = $row['weekday_name'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:04";
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:01";
                         $e['color'] = '#3399FF';
                         $e['textColor'] = 'White';
-                        if ($e['start'] != "T01:00:04" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
+                        $e['description'] = "This is the Marker for this Week in Ordinary Time.";
+                        if ($e['start'] != "T01:00:01" && $e['title'] != ""){ array_push($events, $e); } // Allowed for displaying week number
 
                         $e['title'] = $row['weekday_first_reading'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:05";
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:21";
                         $e['color'] = '#FFFF85';
                         $e['textColor'] = 'Black';
-                        if ($e['start'] != "T01:00:05" && $verification == 1){ array_push($events, $e); }
+                        
+                            if ($row['weekday_first_optional'] == ""){
+                                $e['description'] = "This is the First Reading for this day in Ordinary Time." . "<br>" . "No optional readings.";}
+                            else{
+                                $e['description'] = "This is the First Reading for this day in Ordinary Time." . "<br>" . "Optional: " . $row['weekday_first_optional'];
+                            }
+
+                            if ($row['weekday_first_audio'] == ""){
+                                $e['url'] = "/";
+                            }
+                            if ($row['weekday_first_audio'] != ""){
+                                $e['url'] = $row['weekday_first_audio'];
+                            }
+
+                        if ($e['start'] != "T01:00:21" && $verification == 1){ array_push($events, $e); }
 
                         $e['title'] = $row['weekday_alleluia_verse'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:06";
-                        if ($e['start'] != "T01:00:06" && $verification == 1){ array_push($events, $e); }
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:22";
+
+                            if ($row['weekday_alleluia_optional'] == ""){
+                                $e['description'] = "This is the Alleluia Verse for this day in Ordinary Time." . "<br>" . "No optional readings.";}
+                            else{
+                                $e['description'] = "This is the Alleluia Verse for this day in Ordinary Time." . "<br>" . "Optional: " . $row['weekday_alleluia_optional'];
+                            }
+
+                            if ($row['weekday_alleluia_audio'] == ""){
+                                $e['url'] = "/";
+                            }
+                            if ($row['weekday_alleluia_audio'] != ""){
+                                $e['url'] = $row['weekday_alleluia_audio'];
+                            }
+
+                        if ($e['start'] != "T01:00:22" && $verification == 1){ array_push($events, $e); }
 
                         $e['title'] = $row['weekday_responsorial_psalm'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:07";
-                        if ($e['start'] != "T01:00:07" && $verification == 1){ array_push($events, $e); }
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:23";
+
+                            if ($row['weekday_responsorial_optional'] == ""){
+                                $e['description'] = "This is the Responsorial Psalm for this day in Ordinary Time." . "<br>" . "No optional readings.";}
+                            else{
+                                $e['description'] = "This is the Responsorial Psalm for this day in Ordinary Time." . "<br>" . "Optional: " . $row['weekday_responsorial_optional'];
+                            }
+
+                            if ($row['weekday_responsorial_audio'] == ""){
+                                $e['url'] = "/";
+                            }
+                            if ($row['weekday_responsorial_audio'] != ""){
+                                $e['url'] = $row['weekday_responsorial_audio'];
+                            }
+
+                        if ($e['start'] != "T01:00:23" && $verification == 1){ array_push($events, $e); }
 
                         $e['title'] = $row['weekday_gospel'];
-                        $e['start'] = $allWeekdays[$counter] . "T01:00:08";
-                        if ($e['start'] != "T01:00:08" && $verification == 1){ array_push($events, $e); }
+                        $e['start'] = $allWeekdays[$counter] . "T01:00:24";
+
+                            if ($row['weekday_gospel_optional'] == ""){
+                                $e['description'] = "This is the Gospel for this day in Ordinary Time." . "<br>" . "No optional readings.";}
+                            else{
+                                $e['description'] = "This is the Gospel for this day in Ordinary Time." . "<br>" . "Optional: " . $row['weekday_gospel_optional'];
+                            }
+
+                            if ($row['weekday_gospel_audio'] == ""){
+                                $e['url'] = "/";
+                            }
+                            if ($row['weekday_gospel_audio'] != ""){
+                                $e['url'] = $row['weekday_gospel_audio'];
+                            }
+
+                        if ($e['start'] != "T01:00:24" && $verification == 1){ array_push($events, $e); }
                     }
                 }
             }
@@ -208,6 +266,8 @@ try {
             $counter++;
         
     }
+
+//print_r($datesSFM);
 
     // Output json for our calendar
     echo json_encode($events);
