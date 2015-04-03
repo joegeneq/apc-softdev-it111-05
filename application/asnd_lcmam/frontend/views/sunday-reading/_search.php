@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'sunday_first_reading') ?>
 
-    <?= $form->field($model, 'sunday_first_audio') ?>
+    <?= $form->field($model, 'sunday_cycle_type') ?>
 
     <?php // echo $form->field($model, 'sunday_second_reading') ?>
 

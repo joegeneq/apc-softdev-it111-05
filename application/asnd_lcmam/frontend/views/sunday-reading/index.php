@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'sunday_weeknum',
             'sunday_name',
             'sunday_first_reading',
-            'sunday_first_audio',
+            'sunday_cycle_type',
             // 'sunday_second_reading',
             // 'sunday_second_audio',
             // 'sunday_alleluia_verse',
