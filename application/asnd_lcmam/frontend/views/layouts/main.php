@@ -56,7 +56,7 @@ AppAsset::register($this);
 
                         ['label' => 'Event Determinant', 'url' => ['event-determinant/index']],
                         ['label' => 'Events', 'url' => ['event/index']],
-                        ['label' => 'Solemnities and Feasts', 'url' => ['solemnities-or-feasts/index']],
+                        ['label' => 'Solemnities, Feasts and Memorials', 'url' => ['solemnities-or-feasts/index']],
                         ['label' => 'Sunday Readings', 'url' => ['sunday-reading/index']],
                         ['label' => 'Weekday Readings', 'url' => ['weekday-reading/index']],
                         ['label' => 'User', 'url' => ['user/index']], 
