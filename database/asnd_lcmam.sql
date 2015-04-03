@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2015 at 06:15 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Apr 03, 2015 at 05:47 AM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `asnd_lcmam`
 --
+CREATE DATABASE IF NOT EXISTS `asnd_lcmam` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `asnd_lcmam`;
 
 -- --------------------------------------------------------
 
@@ -54,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `event` (
 --
 
 INSERT INTO `event` (`id`, `event_name`, `event_type`, `date`, `event_first_reading`, `event_first_audio`, `event_second_reading`, `event_second_audio`, `event_alleluia_verse`, `event_alleluia_audio`, `event_responsorial_psalm`, `event_responsorial_audio`, `event_gospel`, `event_gospel_audio`, `event_first_optional`, `event_second_optional`, `event_responsorial_optional`, `event_alleluia_optional`, `event_gospel_optional`) VALUES
-(1, ' The Nativity of the Lord ', 'Solemnity, Christmas - Nativity', '-12-24', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', '', '', '', '', '', ''),
+(1, ' The Nativity of the Lord ', 'Solemnity, Christmas - Nativity', '-12-24', 'Isa 62:1-5', '', 'Acts 13:16-17', '', '(no bibl. ref.)', '', 'Ps 89:4-5', '', 'Matt 1:1-25', 'google.com', '', '', '', '', ''),
 (2, ' Christmas: Mass during the Night', 'Christmas Night', '-12-25', 'Isa 9:1-6', '', 'Titus 2:11-14', '', 'Luke 2:10-11', '', 'Ps 96:1-2a', '', 'Luke 2:1-14', '', '', '', '', '', ''),
 (3, 'Christmas: Mass at Dawn', 'Christmas Dawn', '-12-25', 'Isa 62:11-12', '', 'Titus 3:4-7', '', 'Luke 2:14', '', 'Ps 97:1+6', '', 'Luke 2:15-20', '', '', '', '', '', ''),
 (4, 'Christmas: Mass during the Day', 'Christmas Day', '-12-25', 'Isa 52:7-10', '', 'Heb 1:1-6', '', '(no bibl. ref.)', '', 'Ps 98:1, 2-3a', '', 'John 1:1-18', '', '', '', '', '', ''),
@@ -104,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `event_determinant` (
   `week_ot_after_pentecost` varchar(45) DEFAULT NULL,
   `first_sunday_of_advent` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=84 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=83 ;
 
 --
 -- Dumping data for table `event_determinant`
@@ -226,15 +228,15 @@ CREATE TABLE IF NOT EXISTS `solemnities_or_feasts` (
   `title` varchar(100) NOT NULL,
   `type` varchar(20) NOT NULL,
   `first_reading` varchar(60) DEFAULT NULL,
-  `first_reading_audio` varchar(60) DEFAULT NULL,
+  `first_reading_audio` varchar(1000) DEFAULT NULL,
   `responsorial_psalm` varchar(60) DEFAULT NULL,
-  `responsorial_psalm_audio` varchar(60) DEFAULT NULL,
+  `responsorial_psalm_audio` varchar(1000) DEFAULT NULL,
   `second_reading` varchar(60) DEFAULT NULL,
-  `second_reading_audio` varchar(60) DEFAULT NULL,
+  `second_reading_audio` varchar(1000) DEFAULT NULL,
   `alleluia_verse` varchar(60) DEFAULT NULL,
-  `alleluia_verse_audio` varchar(60) DEFAULT NULL,
+  `alleluia_verse_audio` varchar(1000) DEFAULT NULL,
   `gospel` varchar(60) DEFAULT NULL,
-  `gospel_audio` varchar(60) DEFAULT NULL,
+  `gospel_audio` varchar(1000) DEFAULT NULL,
   `rule` varchar(45) DEFAULT NULL,
   `cycle_type` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -306,17 +308,17 @@ CREATE TABLE IF NOT EXISTS `sunday_reading` (
   `sunday_weeknum` int(11) NOT NULL,
   `sunday_name` varchar(100) DEFAULT NULL,
   `sunday_first_reading` varchar(45) DEFAULT NULL,
-  `sunday_first_audio` varchar(45) DEFAULT NULL,
+  `sunday_first_audio` varchar(1000) DEFAULT NULL,
   `sunday_second_reading` varchar(45) DEFAULT NULL,
-  `sunday_second_audio` varchar(45) DEFAULT NULL,
+  `sunday_second_audio` varchar(1000) DEFAULT NULL,
   `sunday_alleluia_verse` varchar(45) DEFAULT NULL,
-  `sunday_alleluia_audio` varchar(45) DEFAULT NULL,
+  `sunday_alleluia_audio` varchar(1000) DEFAULT NULL,
   `sunday_responsorial_psalm` varchar(45) DEFAULT NULL,
-  `sunday_responsorial_audio` varchar(45) DEFAULT NULL,
+  `sunday_responsorial_audio` varchar(1000) DEFAULT NULL,
   `sunday_gospel` varchar(45) DEFAULT NULL,
-  `sunday_gospel_audio` varchar(45) DEFAULT NULL,
+  `sunday_gospel_audio` varchar(1000) DEFAULT NULL,
   `sunday_before_gospel` varchar(100) DEFAULT NULL,
-  `sunday_before_gospel_audio` varchar(100) DEFAULT NULL,
+  `sunday_before_gospel_audio` varchar(1000) DEFAULT NULL,
   `sunday_cycle_type` char(1) NOT NULL,
   `sunday_reading_type` varchar(45) NOT NULL,
   `sunday_description` varchar(100) DEFAULT NULL,
@@ -334,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `sunday_reading` (
 --
 
 INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_first_reading`, `sunday_first_audio`, `sunday_second_reading`, `sunday_second_audio`, `sunday_alleluia_verse`, `sunday_alleluia_audio`, `sunday_responsorial_psalm`, `sunday_responsorial_audio`, `sunday_gospel`, `sunday_gospel_audio`, `sunday_before_gospel`, `sunday_before_gospel_audio`, `sunday_cycle_type`, `sunday_reading_type`, `sunday_description`, `sunday_first_optional`, `sunday_second_optional`, `sunday_responsorial_optional`, `sunday_alleluia_optional`, `sunday_gospel_optional`, `sunday_before_gospel_optional`) VALUES
-(1, 1, 'The Feast of the Baptism of the Lord - A ', 'Isa 42:1-4', '', 'Acts 10:34-38', '', 'cf. Mark 9:7', '', 'Ps 29:1-2', '', 'Matt 3:13-17', '', '', '', 'A', 'ordinary', '[begin 1st Week in Ordinary Time]', NULL, NULL, NULL, NULL, NULL, NULL),
+(1, 1, 'The Feast of the Baptism of the Lord - A ', 'Isa 42:1-4', '', 'Acts 10:34-38', '', 'cf. Mark 9:7', '', 'Ps 29:1-2', '', 'Matt 3:13-17', '', '', '', 'A', 'ordinary', '[begin 1st Week in Ordinary Time]', '', '', '', '', '', ''),
 (2, 2, '2nd Sunday in Ordinary Time - A', 'Isa 49:3', '', '1 Cor 1:1-3', '', 'John 1:14a+12a', '', 'Ps 40:2+4', '', 'John 1:29-34', '', '', '', 'A', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 3, '3rd Sunday in Ordinary Time - A', 'Isa 8:23b-9:3', '', '1 Cor 1:10-13', '', 'cf. Matt 4:23', '', 'Ps 27:1', '', 'Matt 4:12-23', '', '', '', 'A', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (4, 4, '4th Sunday in Ordinary Time - A', 'Zeph 2:3', '', '1 Cor 1:26-31', '', 'Matt 5:12a', '', 'Ps 146:6c-7', '', 'Matt 5:1-12a', '', '', '', 'A', 'ordinary', '[Presentation in 2014]', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -368,7 +370,7 @@ INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_fir
 (32, 32, '32nd Sunday in Ordinary Time - A', 'Wis 6:12-16', '', '1 Thess 4:13-18', '', 'Matt 24:42a+44', '', 'Ps 63:2', '', 'Matt 25:1-13', '', '', '', 'A', 'ordinary', '[Ded. Lateran in 2014]', NULL, NULL, NULL, NULL, NULL, NULL),
 (33, 33, '33rd Sunday in Ordinary Time - A', 'Prov 31:10-13', '', '1 Thess 5:1-6', '', 'John 15:4a+5b', '', 'Ps 128:1-2', '', 'Matt 25:14-30 ', '', '', '', 'A', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (34, 34, '34th or Last Sunday in Ordinary Time - A', 'Ezek 34:11-12', '', '1 Cor 15:20-26', '', 'Mark 11:9b+10a', '', 'Ps 23:1-2a', '', 'Matt 25:31-46', '', '', '', 'A', 'ordinary', ':The Solemnity of Our Lord Jesus Christ the King', NULL, NULL, NULL, NULL, NULL, NULL),
-(35, 1, 'The Feast of the Baptism of the Lord - B', 'Isa 55:1-11', '', '1 John 5:1-9 ', '', 'cf. John 1:29', '', 'Isa 12:2-3', '', 'Mark 1:7-11', '', '', '', 'B', 'ordinary', '[begin 1st Week in Ordinary Time]', NULL, NULL, NULL, NULL, NULL, NULL),
+(35, 1, 'The Feast of the Baptism of the Lord - B', 'Isa 55:1-11', '', '1 John 5:1-9 ', '', 'cf. John 1:29', '', 'Isa 12:2-3', '', 'Mark 1:7-11', '', '', '', 'B', 'ordinary', '[begin 1st Week in Ordinary Time]', '', '', '', '', '', ''),
 (36, 2, '2nd Sunday in Ordinary Time - B', '1 Sam 3:3b-10', '', '1 Cor 6:13c-15a, 17-20', '', 'John 1:41+17b', '', 'Ps 40:2+4', '', 'John 1:35-42', '', '', '', 'B', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (37, 3, '3rd Sunday in Ordinary Time - B', 'Jon 3:1-5', '', '1 Cor 7:29-31', '', 'Mark 1:15', '', 'Ps 25:4-5', '', 'Mark 1:14-20', '', '', '', 'B', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (38, 4, '4th Sunday in Ordinary Time - B', 'Deut 18:15-20', '', '1 Cor 7:32-35', '', 'Matt 4:16', '', 'Ps 95:1-2', '', 'Mark 1:21-28', '', '', '', 'B', 'ordinary', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -440,11 +442,11 @@ INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_fir
 (104, 2, '2nd Sunday of Advent - A', 'Isa 11:1-10', '', 'Rom 15:4-9', '', 'Luke 3:4+6', '', 'Ps 72:1-2', '', 'Matt 3:1-12', '', '', '', 'A', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (105, 3, '3rd Sunday of Advent - A', 'Isa 35:1-6a', '', 'Jas 5:7-10', '', 'Isa 61:1 ', '', 'Ps 146:6c-7', '', 'Matt 11:2-11', '', '', '', 'A', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (106, 4, '4th Sunday of Advent - A', 'Isa 7:10-14', '', 'Rom 1:1-7', '', 'Matt 1:23', '', 'Ps 24:1-2', '', 'Matt 1:18-24', '', '', '', 'A', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(107, 1, '1st Sunday of Advent - B', 'Isa 63:16b-17', '', '1 Cor 1:3-9', '', 'Ps 85:8', '', 'Ps 80:2-3', '', 'Mark 13:33-37', '', '', '', 'B', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(107, 1, '1st Sunday of Advent - B', 'Isa 63:16b-17', '', '1 Cor 1:3-9', '', 'Ps 85:8', '', 'Ps 80:2-3', '', 'Mark 13:33-37', '', '', '', 'B', 'advent', '', '', '', '', '', '', ''),
 (108, 2, '2nd Sunday of Advent - B', 'Isa 40:1-5', '', '2 Pet 3:8-14', '', 'Luke 3:4+6', '', 'Ps 85:9ab+10', '', 'Mark 1:1-8', '', '', '', 'B', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (109, 3, '3rd Sunday of Advent - B', 'Isa 61:1-2a', '', '1 Thess 5:16-24', '', 'Isa 61:1', '', 'Luke 1:46-48', '', 'John 1:6-8', '', '', '', 'B', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (110, 4, '4th Sunday of Advent - B', '2 Sam 7:1-5', '', 'Rom 16:25-27', '', 'Luke 1:38', '', 'Ps 89:2-3', '', 'Luke 1:26-38', '', '', '', 'B', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(111, 1, '1st Sunday of Advent - C', 'Jer 33:14-16', '', '1 Thess 3:12-4:2', '', 'Ps 85:8', '', 'Ps 25:4-5', '', 'Luke 21:25-28', '', '', '', 'C', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(111, 1, '1st Sunday of Advent - C', 'Jer 33:14-16', '', '1 Thess 3:12-4:2', '', 'Ps 85:8', '', 'Ps 25:4-5', '', 'Luke 21:25-28', '', '', '', 'C', 'advent', '', '', '', '', '', '', ''),
 (112, 2, '2nd Sunday of Advent - C', 'Bar 5:1-9', '', 'Phil 1:4-6', '', 'Luke 3:4+6', '', 'Ps 126:1-2a', '', 'Luke 3:1-6', '', '', '', 'C', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (113, 3, '3rd Sunday of Advent - C', 'Zeph 3:14-18a', '', 'Phil 4:4-7', '', 'Isa 61:1', '', 'Isa 12:2-3', '', 'Luke 3:10-18', '', '', '', 'C', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (114, 4, '4th Sunday of Advent - C', 'Mic 5:1-4a', '', 'Heb 10:5-10', '', 'Luke 1:38', '', 'Ps 80:2-3', '', 'Luke 1:39-45', '', '', '', 'C', 'advent', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -456,7 +458,7 @@ INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_fir
 (120, 6, 'Palm Sunday of the Passion of the Lord:At the Procession with Palms - A', '', '', '', '', '', '', '', '', 'Matt 21:1-11', '', '', '', 'A', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (121, 6, 'Palm Sunday: At the Mass -  A', 'Isa 50:4-7', '', 'Phil 2:6-11', '', '', '', 'Ps 22:8-9', '', 'Matt 26:14-27:66', '', 'Phil 2:8-9', '', 'A', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (122, 1, '1st Sunday of Lent B', 'Gen 9:8-15', '', '1 Pet 3:18-22', '', '', '', 'Ps 25:4-5', '', 'Mark 1:12-15', '', 'Matt 4:4b', '', 'B', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(123, 2, '2nd Sunday of Lent B', 'Gen 22:1-2', '', 'Rom 8:31b-34', '', '', '', 'Ps 116:10+15', '', 'Mark 9:2-10', '', 'cf. Matt 17:5', '', 'B', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(123, 2, '2nd Sunday of Lent B', 'Gen 22:1-2', '', 'Rom 8:31b-34', '', '', '', 'Ps 116:10+15', '', 'Mark 9:2-10', '', 'cf. Matt 17:5', '', 'B', 'lent', '', '', '', '', '', '', ''),
 (124, 3, '3rd Sunday of Lent B', 'Exod 20:1-17', '', '1 Cor 1:22-25', '', '', '', 'Ps 19:8', '', 'John 2:13-25', '', 'John 3:16', '', 'B', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (125, 4, '4th Sunday of Lent B', '2 Chr 36:14-16', '', 'Eph 2:4-10', '', '', '', 'Ps 137:1-2', '', 'John 3:14-21', '', 'John 3:16', '', 'B', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (126, 5, '5th Sunday of Lent B', 'Jer 31:31-34', '', 'Heb 5:7-9', '', '', '', 'Ps 51:3-4', '', 'John 12:20-33', '', 'John 12:26', '', 'B', 'lent', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -473,11 +475,11 @@ INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_fir
 (137, 2, 'Second Sunday of Christmas', 'Sir 24:1-4', '', 'Eph 1:3-6 ', '', 'cf. 1 Tim 3:16', '', 'Ps 147:12-13', '', 'John 1:1-18', '', '', '', 'A', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (138, 3, 'Epiphany of the Lord', 'Isa 60:1-6', '', 'Eph 3:2-3a', '', 'Matt 2:2', '', 'Ps 72:1-2', '', 'Matt 2:1-12', '', '', '', 'A', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (139, 4, 'Baptism of the Lord', 'Isa 42:1-4', '', 'Acts 10:34-38', '', 'cf. Mark 9:7', '', 'Ps 29:1-2', '', 'Matt 3:13-17', '', '', '', 'A', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(140, 1, 'Octave of Christmas: The Holy Family of Jesus', 'opt:Gen 15:1-6; 21:1-3 (new)', '', 'opt:Heb 11:8, 11-12, 17-19 (new)', '', 'Heb 1:1-2', '', 'opt:Ps 105:1-2, 3-4, 5-6, 8-9 (new)', '', 'Luke 2:22-40', '', '', '', 'B', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(140, 1, 'Octave of Christmas: The Holy Family of Jesus', 'opt:Gen 15:1-6; 21:1-3 (new)', '', 'opt:Heb 11:8, 11-12, 17-19 (new)', '', 'Heb 1:1-2', '', 'opt:Ps 105:1-2, 3-4, 5-6, 8-9 (new)', '', 'Luke 2:22-40', '', '', '', 'B', 'christmas', '', '', '', '', '', '', ''),
 (141, 2, 'Second Sunday of Christmas', 'Sir 24:1-4', '', 'Eph 1:3-6 ', '', 'cf. 1 Tim 3:16', '', 'Ps 147:12-13', '', 'John 1:1-18', '', '', '', 'B', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(142, 3, 'Epiphany of the Lord', 'Isa 60:1-6', '', 'Eph 3:2-3a', '', 'Matt 2:2', '', 'Ps 72:1-2', '', 'Matt 2:1-12', '', '', '', 'B', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(142, 3, 'Epiphany of the Lord', 'Isa 60:1-6', '', 'Eph 3:2-3a', '', 'Matt 2:2', '', 'Ps 72:1-2', '', 'Matt 2:1-12', '', '', '', 'B', 'christmas', '', '', '', '', '', '', ''),
 (143, 4, 'Baptism of the Lord', 'opt:Isa 55:1-11 (new)', '', 'opt:1 John 5:1-9 (new)', '', 'cf. John 1:29', '', 'opt:Isa 12:2-3, 4bcd, 5-6 (new)', '', 'Mark 1:7-11', '', '', '', 'B', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(144, 1, 'Octave of Christmas: The Holy Family of Jesus', 'opt:1 Sam 1:20-22, 24-28 (new)', '', 'opt:1 John 3:1-2, 21-24 (new)', '', 'cf. Acts 16:14b', '', 'opt:Ps 84:2-3, 5-6, 9-10 (new)', '', 'Luke 2:41-52', '', '', '', 'C', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(144, 1, 'Octave of Christmas: The Holy Family of Jesus', 'opt:1 Sam 1:20-22, 24-28 (new)', '', 'opt:1 John 3:1-2, 21-24 (new)', '', 'cf. Acts 16:14b', '', 'opt:Ps 84:2-3, 5-6, 9-10 (new)', '', 'Luke 2:41-52', '', '', '', 'C', 'christmas', '', '', '', '', '', '', ''),
 (145, 2, 'Second Sunday of Christmas', 'Sir 24:1-4', '', 'Eph 1:3-6 ', '', 'cf. 1 Tim 3:16', '', 'Ps 147:12-13', '', 'John 1:1-18', '', '', '', 'C', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (146, 3, 'Epiphany of the Lord', 'Isa 60:1-6', '', 'Eph 3:2-3a', '', 'Matt 2:2', '', 'Ps 72:1-2', '', 'Matt 2:1-12', '', '', '', 'C', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (147, 4, 'Baptism of the Lord', 'opt:Isa 40:1-5, 9-11 (new)', '', 'opt:Titus 2:11-14; 3:4-7 (new)', '', 'cf. Luke 3:16', '', 'opt:Ps 104:1b-2, 3-4, 24-25,27-28, 29b-30 (', '', 'Luke 3:15-16, 21-22', '', '', '', 'C', 'christmas', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -492,13 +494,13 @@ INSERT INTO `sunday_reading` (`id`, `sunday_weeknum`, `sunday_name`, `sunday_fir
 (156, 8, 'Pentecost Sunday', 'Acts 2:1-11', '', '1 Cor 12:3b-7, 12-13', '', '(no bibl. ref.)', '', 'Ps 104:1+24, 29-30, 31+34', '', 'John 20:19-23', '', '', '', 'A', 'pentecost', 'Mass during the day', NULL, NULL, NULL, NULL, NULL, NULL),
 (157, 1, 'Easter Vigil in the Holy Night', '', '', '', '', '', '', '', '', '', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (158, 1, 'The Mass of Easter Day', 'Acts 10:34a', '', 'Col 3:1-4', '', '1 Cor 5:7b-8a', '', 'Ps 118:1-2', '', 'John 20:1-9 or Luke 24:13-35 (for afternoon M', '', '', '', 'B', 'easter', 'Easter Sunday: The Resurrection of the Lord', NULL, NULL, NULL, NULL, NULL, NULL),
-(159, 2, '2nd Sunday of Easter - B', 'Acts 4:32-35', '', '1 John 5:1-6', '', 'John 20:29', '', 'Ps 118:2-4, 13-15, 22-24', '', 'John 20:19-31', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(159, 2, '2nd Sunday of Easter - B', 'Acts 4:32-35', '', '1 John 5:1-6', '', 'John 20:29', '', 'Ps 118:2-4, 13-15, 22-24', '', 'John 20:19-31', '', '', '', 'B', 'easter', '', '', '', '', '', '', ''),
 (160, 3, '3rd Sunday of Easter - B', 'Acts 3:13-15, 17-19', '', '1 John 2:1-5a', '', 'cf. Luke 24:32', '', 'Ps 4:2, 4, 7-8, 9', '', 'Luke 24:35-48', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (161, 4, '4th Sunday of Easter - B', 'Acts 4:8-12', '', '1 John 3:1-2', '', 'John 10:14', '', 'Ps 118:1+8-9, 21-23, 26+21+29', '', 'John 10:11-18', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (162, 5, '5th Sunday of Easter - B', 'Acts 9:26-31', '', '1 John 3:18-24', '', 'John 15:4a+5b', '', 'Ps 22:26-27, 28+30, 31-32', '', 'John 15:1-8', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (163, 6, '6th Sunday of Easter - B', 'Acts 10:25-26, 34-35, 44-48', '', '1 John 4:7-10', '', 'John 14:23', '', 'Ps 98:1, 2-3a, 3b-4', '', 'John 15:9-17', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (164, 7, '7th Sunday of Easter - B (note)', 'Acts 1:15-17, 20a, 20c-26', '', '1 John 4:11-16', '', 'cf. John 14:18', '', 'Ps 103:1-2, 11-12, 19-20', '', 'John 17:11b-19', '', '', '', 'B', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(165, 8, 'Pentecost Sunday', 'Acts 2:1-11', '', 'opt: Gal 5:16-25 (new)', '', '(no bibl. ref.)', '', 'Ps 104:1+24, 29-30, 31+34', '', 'opt: John 15:26-27; 16:12-15 (new)', '', '', '', 'B', 'pentecost', 'Mass during the day', NULL, NULL, NULL, NULL, NULL, NULL),
+(165, 8, 'Pentecost Sunday', 'Acts 2:1-11', '', 'opt: Gal 5:16-25 (new)', '', '(no bibl. ref.)', '', 'Ps 104:1+24, 29-30, 31+34', '', 'opt: John 15:26-27; 16:12-15 (new)', '', '', '', 'B', 'pentecost', 'Mass during the day', '', '', '', '', '', ''),
 (166, 1, 'Easter Vigil in the Holy Night', '', '', '', '', '', '', '', '', '', '', '', '', 'C', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (167, 1, 'The Mass of Easter Day', 'Acts 10:34a', '', 'Col 3:1-4', '', '1 Cor 5:7b-8a', '', 'Ps 118:1-2', '', 'John 20:1-9 or Luke 24:13-35 (for afternoon M', '', '', '', 'C', 'easter', 'Easter Sunday: The Resurrection of the Lord', NULL, NULL, NULL, NULL, NULL, NULL),
 (168, 2, '2nd Sunday of Easter - C', 'Acts 5:12-16', '', 'Rev 1:9-11a, 12-13, 17-19', '', 'John 20:29', '', 'Ps 118:2-4, 13-15, 22-24', '', 'John 20:19-31', '', '', '', 'C', 'easter', '', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -550,13 +552,13 @@ CREATE TABLE IF NOT EXISTS `weekday_reading` (
   `weekday_name` varchar(45) DEFAULT NULL,
   `weekday_day` varchar(10) NOT NULL,
   `weekday_first_reading` varchar(45) DEFAULT NULL,
-  `weekday_first_audio` varchar(45) DEFAULT NULL,
+  `weekday_first_audio` varchar(1000) DEFAULT NULL,
   `weekday_alleluia_verse` varchar(45) DEFAULT NULL,
-  `weekday_alleluia_audio` varchar(45) DEFAULT NULL,
+  `weekday_alleluia_audio` varchar(1000) DEFAULT NULL,
   `weekday_responsorial_psalm` varchar(45) DEFAULT NULL,
-  `weekday_responsorial_audio` varchar(45) DEFAULT NULL,
+  `weekday_responsorial_audio` varchar(1000) DEFAULT NULL,
   `weekday_gospel` varchar(45) DEFAULT NULL,
-  `weekday_gospel_audio` varchar(45) DEFAULT NULL,
+  `weekday_gospel_audio` varchar(1000) DEFAULT NULL,
   `weekday_cycle_num` int(11) DEFAULT NULL,
   `weekday_weeknum` int(11) NOT NULL,
   `weekday_reading_type` varchar(45) NOT NULL,
@@ -572,7 +574,7 @@ CREATE TABLE IF NOT EXISTS `weekday_reading` (
 --
 
 INSERT INTO `weekday_reading` (`id`, `weekday_daynum`, `weekday_name`, `weekday_day`, `weekday_first_reading`, `weekday_first_audio`, `weekday_alleluia_verse`, `weekday_alleluia_audio`, `weekday_responsorial_psalm`, `weekday_responsorial_audio`, `weekday_gospel`, `weekday_gospel_audio`, `weekday_cycle_num`, `weekday_weeknum`, `weekday_reading_type`, `weekday_first_optional`, `weekday_responsorial_optional`, `weekday_alleluia_optional`, `weekday_gospel_optional`) VALUES
-(1, 1, '1st Week of Ordinary Time', 'Monday', 'Heb 1:1-6', '', 'Mark 1:15', '', 'Ps 97:1+2b, 6+7c, 9', '', 'Mark 1:14-20', '', 1, 1, 'ordinary', '', '', '', ''),
+(1, 1, '1st Week of Ordinary Time', 'Monday', 'Heb 1:1-6', 'audio/1-sto_nino_r2g.mp3', 'Mark 1:15', '', 'Ps 97:1+2b, 6+7c, 9', '', 'Mark 1:14-20', '', 1, 1, 'ordinary', '', '', '', ''),
 (2, 2, '', 'Tuesday', 'Heb 2:5-12', '', '1 Thess 2:13', '', 'Ps 8:2ab+5, 6-7, 8-9', '', 'Mark 1:21-28', '', 1, 1, 'ordinary', '', '', '', ''),
 (3, 3, '', 'Wednesday', 'Heb 2:14-18', '', 'John 10:27', '', 'Ps 105:1-2, 3-4, 6-7, 8-9', '', 'Mark 1:29-39', '', 1, 1, 'ordinary', '', '', '', ''),
 (4, 4, '', 'Thursday', 'Heb 3:7-14', '', 'Matt 4:23', '', 'Ps 95:6-7c, 8-9, 10-11', '', 'Mark 1:40-45', '', 1, 1, 'ordinary', '', '', '', ''),

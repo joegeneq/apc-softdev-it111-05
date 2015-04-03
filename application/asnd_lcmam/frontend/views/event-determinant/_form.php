@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'year')->textInput(['maxlength' => 4]) ?>
 
-    <?= $form->field($model, 'sunday_cycle')->textInput(['maxlength' => 1]) ?>
+    <?= $form->field($model, 'sunday_cycle')->dropDownlist(['A'=> 'A', 'B'=> 'B', 'C'=>'C']) ?>
 
-    <?= $form->field($model, 'weekday_cycle')->textInput(['maxlength' => 1]) ?>
+    <?= $form->field($model, 'weekday_cycle')->dropDownlist(['1' => '1', '2'=>'2']) ?>
 
     <?= $form->field($model, 'week_ot_before_lent')->textInput(['maxlength' => 45]) ?>
 

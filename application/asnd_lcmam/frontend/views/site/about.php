@@ -10,6 +10,7 @@ $this->title = 'Ang Salita ng Diyos';
 
 ?>
 <div class="row" position="relative">
+	<br><br>
 	<h2 class="home-header">A Message from the Archbishop of Manila</h2>
 	<div class="site-about" align="center">
     <!-- <h1><?= Html::encode($this->title) ?></h1><br> -->
