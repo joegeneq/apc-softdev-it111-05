@@ -8,7 +8,7 @@ use frontend\models\SolemnitiesOrFeastsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * SolemnitiesOrFeastsController implements the CRUD actions for SolemnitiesOrFeasts model.
  */
@@ -17,6 +17,17 @@ class SolemnitiesOrFeastsController extends Controller
     public function behaviors()
     {
         return [
+
+             'access'=>[
+                'class'=>AccessControl::classname(),
+                'only'=>['create','delete'],
+                'rules'=>[
+                     [
+                    'allow'=>false,
+                    ],
+                ]
+
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

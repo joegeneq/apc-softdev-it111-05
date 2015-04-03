@@ -8,7 +8,7 @@ use frontend\models\WeekdayReadingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\filters\AccessControl;
 /**
  * WeekdayReadingController implements the CRUD actions for WeekdayReading model.
  */
@@ -17,6 +17,19 @@ class WeekdayReadingController extends Controller
     public function behaviors()
     {
         return [
+                'access'=>[
+                'class'=>AccessControl::classname(),
+                'only'=>['create','delete'],
+                'rules'=>[
+                     [
+                    'allow'=>false,
+                    ],
+                ]
+
+            ],
+
+
+
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

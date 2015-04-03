@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Solemnities Or Feasts', ['create'], ['class' => 'btn btn-success']) ?>
+      <!--  <?= Html::a('Create Solemnities Or Feasts', ['create'], ['class' => 'btn btn-success']) ?> !-->
     </p>
 
     <?= GridView::widget([
@@ -42,7 +42,18 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'rule',
             // 'cycle_type',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+            'template'=>'{view}{update}',
+                            'buttons'=>[
+                              'create' => function ($url, $model) {     
+                                return Html::a('<span class="glyphicon glyphicon-plus"></span>', $url, [
+                                        'title' => Yii::t('yii', 'Create'),
+                                ]);                                
+            
+                              }
+                          ] 
+
+            ],
         ],
     ]); ?>
 

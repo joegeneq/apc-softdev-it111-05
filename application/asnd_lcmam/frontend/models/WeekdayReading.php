@@ -43,7 +43,7 @@ class WeekdayReading extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['weekday_daynum', 'weekday_day', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
+            [['weekday_daynum', 'weekday_weeknum', 'weekday_reading_type'], 'required'],
             [['weekday_daynum', 'weekday_cycle_num', 'weekday_weeknum'], 'integer'],
             [['weekday_name', 'weekday_first_reading', 'weekday_alleluia_verse', 'weekday_responsorial_psalm', 'weekday_gospel', 'weekday_reading_type'], 'string', 'max' => 45],
             [['weekday_day'], 'string', 'max' => 10],

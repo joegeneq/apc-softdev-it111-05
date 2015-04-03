@@ -9,7 +9,8 @@ $this->title = 'Reflections';
 
 ?>
 
-<div class="site-reflections">
+<div class="site-reflections" position="relative">
+	<br>
 	<center><h2>Reflections and Guide to Sunday Mass Readings</h2></center>
 
  	<div id="container">

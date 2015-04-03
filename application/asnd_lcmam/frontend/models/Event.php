@@ -43,7 +43,7 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['event_name', 'event_type', 'date'], 'required'],
+            [['event_type'], 'required'],
             [['event_name', 'event_type', 'date', 'event_first_reading', 'event_first_audio', 'event_second_reading', 'event_second_audio', 'event_alleluia_verse', 'event_alleluia_audio', 'event_responsorial_psalm', 'event_responsorial_audio', 'event_gospel', 'event_gospel_audio'], 'string', 'max' => 45],
             [['event_first_optional', 'event_second_optional', 'event_responsorial_optional', 'event_alleluia_optional', 'event_gospel_optional'], 'string', 'max' => 100]
         ];

@@ -133,9 +133,12 @@ a.desc:after {
 .navbar-brand {
   float: left;
   height: 50px;
-  padding: 15px 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px;
   font-size: 18px;
   line-height: 20px;
+  position: relative;
 }
 
 .row-login,.row-signup{
@@ -154,21 +157,40 @@ a.desc:after {
   }
 
 .site-about{
-    width: 100%;
+    padding: 15px 15px;
+    float: center;
+    position: relative;
+}
+
+.site-reflections{
+    padding: 15px 15px;
+    float: center;
+    position: relative;
 }
 
 .home-header{
     padding-left: 15px;
 }
 
+.home-image{
+    position: relative;
+    float: center;
+}
+
 .col-lg-4-about {
-    width: 44.33333333%;
+    width: 100%;
     position: relative;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
-    float: left;
+    
   }
+
+.site-notes{
+    padding: 15px 15px;
+    float: center;
+    position: relative;
+}
 
 .image {
     display: block;

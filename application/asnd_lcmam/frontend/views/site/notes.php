@@ -9,8 +9,8 @@ $this->title = 'Notes';
 
 ?>
 
-<div class="site-about">
-    
+<div class="site-notes" position="relative">
+    <br>
     <h2>Useful Websites for Lectors and Commentators</h2>
 
     <div id="container" style="text-indent:20px">
