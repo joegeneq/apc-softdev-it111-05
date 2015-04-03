@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model frontend\models\SolemnitiesOrFeasts */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Solemnities Or Feasts', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Solemnities, Feasts and Memorials', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="solemnities-or-feasts-view">

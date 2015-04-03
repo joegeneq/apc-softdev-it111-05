@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'type') ?>
 
-    <?= $form->field($model, 'first_reading') ?>
+    <?php //echo <?= $form->field($model, 'first_reading') ?>
 
     <?php // echo $form->field($model, 'first_reading_audio') ?>
 
