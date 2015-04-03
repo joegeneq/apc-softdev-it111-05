@@ -11,7 +11,7 @@ use yii\widgets\Breadcrumbs;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
+<!DOCTYPE html>ay me
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
@@ -34,7 +34,7 @@ AppAsset::register($this);
             $menuItems = [
                 ['label' => 'Calendar', 'url' => ['/site/index']],
             ];
-            if (Yii::$app->user->isGuest) {
+ /**           if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
             } else {
                 $menuItems[] = [
@@ -42,7 +42,7 @@ AppAsset::register($this);
                     'url' => ['/site/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
-            }
+            }  **/
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
