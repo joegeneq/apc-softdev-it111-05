@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'weekday_responsorial_audio',
             // 'weekday_gospel',
             // 'weekday_gospel_audio',
-            // 'weekday_cycle_num',
+            'weekday_cycle_num',
             // 'weekday_weeknum',
             // 'weekday_reading_type',
             // 'weekday_first_optional',

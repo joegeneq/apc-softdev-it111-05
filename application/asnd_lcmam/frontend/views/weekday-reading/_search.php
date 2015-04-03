@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'weekday_first_reading') ?>
 
+    <?= $form->field($model, 'weekday_cycle_num') ?>
+
     <?php // echo $form->field($model, 'weekday_first_audio') ?>
 
     <?php // echo $form->field($model, 'weekday_alleluia_verse') ?>
