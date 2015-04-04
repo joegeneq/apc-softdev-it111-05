@@ -7,6 +7,15 @@ return [
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
+
+
+           'user' => [
+    		'identityClass' => 'app\models\User',
+    		'enableAutoLogin' => false,
+    		'enableSession' => true,
+    		'authTimeout' => 900,
+    		'loginUrl' => ['site/login'],
+    	],
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
