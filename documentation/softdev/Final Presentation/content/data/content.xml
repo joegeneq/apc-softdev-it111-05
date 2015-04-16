@@ -1,0 +1,1862 @@
+<zuiprezi>
+  <version>8</version>
+  <zui-table>
+    <settings>
+      <autoplay>
+        <delay>4000</delay>
+      </autoplay>
+      <bounds x="-33471.4263996204" y="-20188.799029167676" width="66942.8527992408" height="40377.59805833535"/>
+      <aspectratio>off</aspectratio>
+      <languages>
+        <language>en</language>
+      </languages>
+      <mode type="normal"/>
+    </settings>
+    <object id="80" type="button" x="-20983.85" y="7722" r="3.130885408111511e-45" s="7.011399112957483" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2183.0068234788614</w>
+        <h>1197.6134777681507</h>
+      </size>
+    </object>
+    <object id="134_24309637" type="image" x="-17235.63210030804" y="6210.4954499618525" r="3.130885408111483e-45" s="21.194848440239387">
+      <source w="104" h="120">
+        0xewqyfnrb.swf
+        <url>0xewqyfnrb.swf</url>
+      </source>
+      <resource>
+        <id>3258841279</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/7/2/3/3b8920398f47a02a3f06120437b1dfd92673f.swf</url>
+      </resource>
+      <sourceUrl>hexorange.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="26_238900" type="button" x="0" y="0" r="3.130885408111498e-45" s="66.21449337214719" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1012.0552324869526</w>
+        <h>610.8487609628257</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="OVERVIEW"/>
+      </layout>
+    </object>
+    <object id="20_24309637" type="image" x="-17169.969046438735" y="9346.6443851083" r="3.130885408111496e-45" s="21.173583430033826">
+      <source w="104" h="120">
+        fdwf3rimuZ.swf
+        <url>fdwf3rimuZ.swf</url>
+      </source>
+      <resource>
+        <id>3258850099</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/4/9/1/af0d47b8148d161a59741f41c05681d6b4a7f.swf</url>
+      </resource>
+      <sourceUrl>hexgreen.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="3_24309637" type="text" x="-17272.006698766494" y="5954.787475405337" r="6.261770816223004e-45" s="15.605604529679193" class="body">
+      <height>57.6</height>
+      <width>122.81405576917838</width>
+      <p align="center">
+        <text><![CDATA[Final Presentation ]]></text>
+      </p>
+      <p align="center">
+        <text><![CDATA[with the client]]></text>
+      </p>
+    </object>
+    <object id="7_24309637" type="button" x="14864.329301441683" y="828.8023841831166" r="3.130885408111497e-45" s="35.06529985262111" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1016.3987254384232</w>
+        <h>1010.980923679983</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="OVERVIEW"/>
+      </layout>
+    </object>
+    <object id="4_24309637" type="image" x="10216.45566819577" y="6851.7881472906865" r="3.130885408111499e-45" s="47.39223563592504">
+      <source w="104" h="120">
+        v3ei3u1abr.swf
+        <url>v3ei3u1abr.swf</url>
+      </source>
+      <resource>
+        <id>3258842308</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/f/3/a/6ce0fce77e6c04f2c29bbff58245f4d7e1ac3.swf</url>
+      </resource>
+      <sourceUrl>hexgreen.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="1_24309637" type="text" x="-15599.1712035477" y="-15305.97986979132" r="1.337893399544662e-31" s="131.45654439309138" class="strong">
+      <height>29.16</height>
+      <width>197.65024868954904</width>
+      <p>
+        <text><![CDATA[ASND-LCMAM]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="0_24309637" type="text" x="-15350.918588734308" y="-10982.627093012548" r="-4.442966739762254e-61" s="75.5822649862255" class="body">
+      <height>57.6</height>
+      <width>347.85799484775526</width>
+      <p>
+        <text><![CDATA[Ang Salita ng Diyos - Lectors and Commentators Ministry of the Archdiocese of Manila]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="body" parent-id="23_2648233"/>
+      </layout>
+    </object>
+    <object id="153_24309637" type="image" x="18820.657038121542" y="1969.2927204809412" r="3.130885408111509e-45" s="47.447436945992614">
+      <source w="104" h="120">
+        p5zv4ccfj2.swf
+        <url>p5zv4ccfj2.swf</url>
+      </source>
+      <resource>
+        <id>3258842707</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/6/b/7a6642d742bfa6551ea35acc1afac5dcf3e30.swf</url>
+      </resource>
+      <sourceUrl>hexorange.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="221_24309637" type="text" x="18841.675487467644" y="228.94270684582284" r="3.7710276575893384e-31" s="13.43365406490368" class="strong">
+      <height>29.16</height>
+      <width>198.36363636363643</width>
+      <p align="center">
+        <text><![CDATA[ITERATIONS]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="172_24309637"/>
+      </layout>
+    </object>
+    <object id="222_24309637" type="text" x="18930.146990589583" y="1531.448451194061" r="3.7710276575893253e-31" s="8.428399362429849" class="body">
+      <height>86.4</height>
+      <width>521.1367272760535</width>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[Minutes of the Meeting]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[Presentation Feedback form]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[Photo with the Client]]></text>
+      </p>
+      <layout>
+        <layout-element role="body" parent-id="172_24309637"/>
+      </layout>
+    </object>
+    <object id="162_24309637" type="image" x="1655.0167420264193" y="1978.6792240343375" r="3.1308854081115085e-45" s="47.447436945992614">
+      <source w="104" h="120">
+        8jnm54d7v2.swf
+        <url>8jnm54d7v2.swf</url>
+      </source>
+      <resource>
+        <id>3258842920</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/7/6/75ce646d59b3fba9bb9fd95d9370b998cbf23.swf</url>
+      </resource>
+      <sourceUrl>hexblue.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="1" type="button" x="10185.667675777217" y="-2854.257301413116" r="3.130885408111497e-45" s="11.75001839950759" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>700.7747706926535</w>
+        <h>712.8151620942897</h>
+      </size>
+    </object>
+    <object id="0" type="image" x="10021.653265179231" y="-2620.6571869622835" r="3.1308854081114985e-45" s="37.87082355628943">
+      <source w="200" h="200">
+        PSDgjn2MHAv1pC1.png
+        <url>PSDgjn2MHAv1pC1.png</url>
+      </source>
+      <resource>
+        <id>3258843388</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/6/a/1aa0a0169cb924a0a4182e90bca9bea43c9f1.png</url>
+      </resource>
+      <sourceUrl>ALC_Logo.png</sourceUrl>
+    </object>
+    <object id="86" type="image" x="1448.7656066694867" y="12996.18903703589" r="3.130885408111497e-45" s="4.454924161823778">
+      <source w="877" h="331">
+        QBhsLhR8YWsoQ2X.jpg
+        <url>QBhsLhR8YWsoQ2X.jpg</url>
+      </source>
+      <resource>
+        <id>3258843625</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/5/e/1/65374d33e49b1f376933834fb12fac69583c0.jpg</url>
+      </resource>
+      <sourceUrl>latest%20commit-josh.jpg</sourceUrl>
+    </object>
+    <object id="107" type="image" x="10200.574199256527" y="8026.9043666892285" r="3.1308854081115e-45" s="1.9966460566815185">
+      <source w="1022" h="588">
+        ebt7wrTCNhNRDBO.JPG
+        <url>ebt7wrTCNhNRDBO.JPG</url>
+      </source>
+      <resource>
+        <id>3258843805</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/8/d/4/b336bf4431e36c654a608f3130a17bc7cf5ab.JPG</url>
+      </resource>
+      <sourceUrl>homepage.JPG</sourceUrl>
+    </object>
+    <object id="108" type="image" x="11402.543539008657" y="6312.258308553024" r="3.1308854081115e-45" s="1.9415530636807916">
+      <source w="1051" h="593">
+        VMWcYdX17tM4WUk.JPG
+        <url>VMWcYdX17tM4WUk.JPG</url>
+      </source>
+      <resource>
+        <id>3258843979</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/2/a/4/48e1e561c09741a2ed0fdae2c9d4c24675698.JPG</url>
+      </resource>
+      <sourceUrl>pulse.JPG</sourceUrl>
+    </object>
+    <object id="106" type="image" x="9065.326422853905" y="6312.258308553024" r="3.1308854081115e-45" s="2.232573599484149">
+      <source w="914" h="608">
+        YfjinTpXTfDr1r7.JPG
+        <url>YfjinTpXTfDr1r7.JPG</url>
+      </source>
+      <resource>
+        <id>3258844207</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/8/6/0aa0817339c0d9281dc84d16d6c103bcf72b1.JPG</url>
+      </resource>
+      <sourceUrl>graphs.JPG</sourceUrl>
+    </object>
+    <object id="223_24309637" type="text" x="10205.97079629215" y="5023.943416230946" r="3.7710276575893336e-31" s="13.433654064903669" class="strong">
+      <height>58.32</height>
+      <width>211.9129972055865</width>
+      <p align="center">
+        <text><![CDATA[INDIVIDUAL CONTRIBUTION]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="173_24309637"/>
+      </layout>
+    </object>
+    <object id="225_24309637" type="text" x="1581.813700783694" y="236.2578187334827" r="3.7710276575893393e-31" s="13.433654064903688" class="strong">
+      <height>29.16</height>
+      <width>238.9090909090909</width>
+      <p align="center">
+        <text><![CDATA[PROTOTYPE]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="174_24309637"/>
+      </layout>
+    </object>
+    <object id="226_24309637" type="text" x="1905.2" y="1654.05" r="3.77102765758933e-31" s="8.428399362429854" class="body">
+      <height>28.8</height>
+      <width>530.2995708325553</width>
+      <p>
+        <text><![CDATA[http://gnuhealth.ioss.com.ph/softdev2015/it111/05 asnd-lcmam/]]></text>
+      </p>
+      <layout>
+        <layout-element role="body" parent-id="174_24309637"/>
+      </layout>
+    </object>
+    <object id="150_24309637" type="image" x="18821.203366549296" y="-7801.013446175845" r="3.130885408111509e-45" s="47.447436945992614">
+      <source w="104" h="120">
+        ydgoswtd3l.swf
+        <url>ydgoswtd3l.swf</url>
+      </source>
+      <resource>
+        <id>3258844627</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/6/a/9/c2b904e30fe32fdf191079141afc14910b6a7.swf</url>
+      </resource>
+      <sourceUrl>hexyellow.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="12_24309637" type="text" x="18688.325419550387" y="675.8778356360656" r="3.7710276575893336e-31" s="10.833313464133589" class="head">
+      <height>28.8</height>
+      <width>285.3873046321293</width>
+      <p>
+        <text><![CDATA[This will include the following]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="23_24309637" type="persistentgroup" x="18820.657038121542" y="1969.2927204809412" r="3.1308854081114985e-45" s="22.38812785598008">
+      <m o="153_24309637"/>
+      <m o="221_24309637"/>
+      <m o="222_24309637"/>
+      <m o="12_24309637"/>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="14_24309637" type="text" x="1632.9" y="641.65" r="3.7710276575893336e-31" s="10.833313464133594" class="body">
+      <height>28.8</height>
+      <width>332.7272727272727</width>
+      <p>
+        <text color="16777215"><![CDATA[Demonstration of the prototype on hosted server.]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="165_24309637" type="image" x="1636.6085393687467" y="-7801.164396128902" r="3.130885408111512e-45" s="47.44743694599261">
+      <source w="104" h="120">
+        mulZ8swept.swf
+        <url>mulZ8swept.swf</url>
+      </source>
+      <resource>
+        <id>3258844954</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/f/a/9/fbc72ad5308497b0f36eb459973acd1252218.swf</url>
+      </resource>
+      <sourceUrl>hexpurple.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="84" type="image" x="1867.2471767954332" y="15021.384724585603" r="3.130885408111498e-45" s="2.873304226845332">
+      <source w="950" h="655">
+        kVPUJZnnpvjKz4Y.jpg
+        <url>kVPUJZnnpvjKz4Y.jpg</url>
+      </source>
+      <resource>
+        <id>3258845284</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/8/6/1960b31331219f7a1600eae462c251cc356bf.jpg</url>
+      </resource>
+      <sourceUrl>diff-josh.jpg</sourceUrl>
+    </object>
+    <object id="16_24309637" type="text" x="1581.169323734721" y="-9533.951222405996" r="3.7710276575893336e-31" s="13.43365406490368" class="strong">
+      <height>58.32</height>
+      <width>233.63636363636363</width>
+      <p align="center">
+        <text><![CDATA[Current Status of ]]></text>
+      </p>
+      <p align="center">
+        <text><![CDATA[the project]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="179_24309637"/>
+      </layout>
+    </object>
+    <object id="17_24309637" type="text" x="1654.5999999999997" y="-7385.1" r="3.7710276575893253e-31" s="8.428399362429854" class="body">
+      <height>57.6</height>
+      <width>532.5902817216811</width>
+      <p>
+        <text><![CDATA[ - Client feedback regarding their interest in completing / implementing the project (or non-interest)]]></text>
+      </p>
+      <layout>
+        <layout-element role="body" parent-id="179_24309637"/>
+      </layout>
+    </object>
+    <object id="91_24309637" type="button" x="-21177.628119599987" y="7696.748087138344" r="3.1308854081114966e-45" s="13.536551101616052" class="bracket">
+      <type>bracket</type>
+      <size>
+        <w>1075.3480489263184</w>
+        <h>600</h>
+      </size>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <frametype value="OVERVIEW"/>
+      </layout>
+    </object>
+    <object id="78_24309637" type="text" x="-23638.054543521546" y="5912.781651939491" r="3.130885408111499e-45" s="50.17130214255389" class="strong">
+      <height>29.16</height>
+      <width>-133.416</width>
+      <p align="center">
+        <text><![CDATA[NEXT STEPS]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="79_24309637" type="text" x="-23905.385652287285" y="7035.334764655725" r="3.130885408111504e-45" s="66.77800315173927" class="strong">
+      <height>29.16</height>
+      <width>-92.184</width>
+      <p align="center">
+        <text><![CDATA[TO TAKE]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="98_24309637" type="text" x="-22649.4" y="-1728.25" r="3.130885408111497e-45" s="28.537339612268216" class="head">
+      <height>201.60000000000002</height>
+      <width>397.73989467212016</width>
+      <p>
+        <text><![CDATA[SOFTDEV IT111 Group 05 Lectors and Commentators Ministry for the Archdiocese of Manila - Angsalitangdiyos.com]]></text>
+      </p>
+      <p>
+        <text><![CDATA[]]></text>
+      </p>
+      <p>
+        <text><![CDATA[MEMBERS:]]></text>
+      </p>
+      <p>
+        <text><![CDATA[joshua dimapilis]]></text>
+      </p>
+      <p>
+        <text><![CDATA[kimberly elizondo]]></text>
+      </p>
+      <p>
+        <text><![CDATA[trixia urquiza]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="138_24309637" type="text" x="-17170.519046438734" y="9062.394385108299" r="6.261770816223001e-45" s="12.822950077088617" class="body">
+      <height>57.6</height>
+      <width>153.69643359500907</width>
+      <p align="center">
+        <text><![CDATA[Plans for continuing the project]]></text>
+      </p>
+    </object>
+    <object id="159_24309637" type="image" x="10212.839192519275" y="-12679.347859261004" r="3.13088540811151e-45" s="47.44743694599262">
+      <source w="104" h="120">
+        gbkkn3jp0s.swf
+        <url>gbkkn3jp0s.swf</url>
+      </source>
+      <resource>
+        <id>3258845515</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/e/b/2e0c3d82f911dc78e1b1aae77adae02af3de8.swf</url>
+      </resource>
+      <sourceUrl>hexwhite.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="7_4" type="text" x="10208.453309289593" y="-14404.15107128428" r="1.2570092191964454e-31" s="13.43365406490368" class="strong">
+      <height>29.16</height>
+      <width>319.0159753355654</width>
+      <p align="center">
+        <text><![CDATA[CLIENT]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="171_24309637"/>
+      </layout>
+    </object>
+    <object id="9_24309637" type="text" x="10208.70132881609" y="-13902.626670436526" r="1.2570092191964434e-31" s="10.833313464133616" class="body">
+      <height>28.8</height>
+      <width>422.8106467366106</width>
+      <p align="center">
+        <text color="16777215"><![CDATA[Ang Salita ng Diyos - LCMAM]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="8_24309637" type="persistentgroup" x="10212.839192519275" y="-12679.347859261004" r="3.1308854081114985e-45" s="22.38812785598008">
+      <m o="159_24309637"/>
+      <m o="7_4"/>
+      <m o="9_24309637"/>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="96" type="button" x="19159.906477849752" y="15611.085600659912" r="3.130885408111498e-45" s="1.3927857169648967" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2713.7723064031406</w>
+        <h>1170.8875068921252</h>
+      </size>
+    </object>
+    <object id="85" type="image" x="19493.51429459728" y="15570.856422758005" r="3.130885408111497e-45" s="2.5941617123246377">
+      <source w="1235" h="602">
+        mI7A5ZXGdDhltvd.jpg
+        <url>mI7A5ZXGdDhltvd.jpg</url>
+      </source>
+      <resource>
+        <id>3258846502</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/0/9/9/18da0641fa2dd3ffe25a8ed06571c71fb0cc9.jpg</url>
+      </resource>
+      <sourceUrl>diff-kim.jpg</sourceUrl>
+    </object>
+    <object id="229_24309637" type="text" x="18783.18500551647" y="-9525.925304466498" r="1.2570092191964454e-31" s="13.433654064903688" class="strong">
+      <height>29.16</height>
+      <width>196.06508149212155</width>
+      <p align="center">
+        <text><![CDATA[PROJECT]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+      <layout>
+        <layout-element role="title" parent-id="214_24309637"/>
+      </layout>
+    </object>
+    <object id="11_24309637" type="text" x="17382.761584488686" y="-9058.132608330438" r="1.2570092191964437e-31" s="10.833313464133616" class="body">
+      <height>28.8</height>
+      <width>-72.456</width>
+      <p>
+        <text color="16777215"><![CDATA[Objectives:]]></text>
+      </p>
+      <meta>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="18_24309637" type="text" x="18856.43938818205" y="-8588.915228521208" r="1.2570092191964426e-31" s="8.428399362429868" class="body">
+      <height>57.6</height>
+      <width>540.1790987900403</width>
+      <p>
+        <text><![CDATA[The project aims to provide a tool that helps online users to identify the designated dates of religious lections and feasts within a specified year.]]></text>
+      </p>
+      <layout>
+        <layout-element role="body"/>
+      </layout>
+    </object>
+    <object id="15" type="shape" x="21963.541875869312" y="-516.8028057567661" r="-56.86038729948919" s="10.76369571183699" class="line2">
+      <geom type="arrow">
+        <sp>-118.58140720551916 0</sp>
+        <ep>118.58140720551916 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="16" type="button" x="27243.50172820909" y="-3771.78163312938" r="-24.026238517683392" s="7.1583709841510945" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1392.6920518021489</w>
+        <h>600</h>
+      </size>
+      <layout>
+        <frametype value="OVERVIEW"/>
+      </layout>
+    </object>
+    <object id="17" type="button" x="24683.22239878734" y="-2619.918706356762" r="-24.026238517683392" s="5.154146881395105" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="18" type="shape" x="27188.6856665883" y="-3702.348914941913" r="-24.02623851768337" s="19.70256002385885" class="line1">
+      <geom type="arrow">
+        <sp>-30.66399894557194 0</sp>
+        <ep>30.66399894557194 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="19" type="button" x="29797.318169530616" y="-4910.206070810833" r="-24.026238517683375" s="5.1575207398846015" class="circle">
+      <type>circle</type>
+      <size>
+        <w>800</w>
+        <h>800</h>
+      </size>
+    </object>
+    <object id="21" type="text" x="24080.15545112103" y="-3968.773490657212" r="-24.02623851768337" s="11.362691711227509" class="strong">
+      <height>29.16</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[ITERATION 1]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="17"/>
+      </layout>
+    </object>
+    <object id="13" type="button" x="23798.18070031204" y="-2718.33800729946" r="-24.026238517683375" s="1.018542847114238" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1577.8580116009666</w>
+        <h>1299.605363450144</h>
+      </size>
+    </object>
+    <object id="22" type="text" x="23692.545803655325" y="-3257.874110579002" r="-24.026238517683392" s="6.556215766434423" class="body">
+      <height>28.8</height>
+      <width>195.8287487228488</width>
+      <p>
+        <text><![CDATA[Minutes of the Meeting]]></text>
+      </p>
+      <layout>
+        <layout-element role="body" parent-id="17"/>
+      </layout>
+    </object>
+    <object id="79" type="image" x="30530.24515851817" y="-5674.188717411281" r="-24.026238517683392" s="1.13347579409531">
+      <source w="540" h="720">
+        WSb0EaK5Wl1JN7X.jpg
+        <url>WSb0EaK5Wl1JN7X.jpg</url>
+      </source>
+      <resource>
+        <id>3258848005</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/9/d/3/f8bee4d11328380be2a92363fe9dde70e1081.jpg</url>
+      </resource>
+      <sourceUrl>Iteration2-PresentationFeedback.jpg</sourceUrl>
+    </object>
+    <object id="78" type="image" x="30263.584243795536" y="-3969.8106664663264" r="-24.026238517683392" s="2.0285722640703296">
+      <source w="720" h="540">
+        5GYUiz8qfS7Tw1D.jpg
+        <url>5GYUiz8qfS7Tw1D.jpg</url>
+      </source>
+      <resource>
+        <id>3258849442</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/e/7/a/7d2c6cac7ed1d8c9433916bd86dad9e681441.jpg</url>
+      </resource>
+      <sourceUrl>Iteration2-photo_with_client.jpg</sourceUrl>
+    </object>
+    <object id="23" type="text" x="29189.78582567076" y="-6246.449657947817" r="-24.026238517683375" s="11.37012962768111" class="strong">
+      <height>29.16</height>
+      <width>220.4993900181616</width>
+      <p align="center">
+        <text><![CDATA[ITERATION 2]]></text>
+      </p>
+      <layout>
+        <layout-element role="title" parent-id="19"/>
+      </layout>
+    </object>
+    <object id="25" type="image" x="10203.961799602368" y="15158.04330938094" r="3.130885408111497e-45" s="58.84805632290285">
+      <source w="104" h="120">
+        mnyr1ijxne.swf
+        <url>mnyr1ijxne.swf</url>
+      </source>
+      <resource>
+        <id>3258849739</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/8/0/50fb42b31bb710efd664f5144609bbd7037c0.swf</url>
+      </resource>
+      <sourceUrl>hexpurple.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="28" type="image" x="1618.088800026322" y="13633.679426935914" r="3.1308854081114935e-45" s="59.389488111931705">
+      <source w="104" h="120">
+        fdwf3rimuZ.swf
+        <url>fdwf3rimuZ.swf</url>
+      </source>
+      <resource>
+        <id>3258884908</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/6/8/3/fac40f944daeaf0dce9f55050bb005aeaae63.swf</url>
+      </resource>
+      <sourceUrl>hexgreen.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="29" type="text" x="23.08278980430749" y="11952.683410238838" r="6.261770816223007e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>153.69643359500907</width>
+      <p align="center">
+        <text><![CDATA[Recent Commits]]></text>
+      </p>
+    </object>
+    <object id="38" type="button" x="1639.602216832547" y="13749.15777223114" r="3.130885408111499e-45" s="3.055308609012348" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2177.061105330875</w>
+        <h>2431.805295058209</h>
+      </size>
+    </object>
+    <object id="31" type="image" x="19015.857222584164" y="14040.220943866563" r="3.1308854081114804e-45" s="60.145517404533926">
+      <source w="104" h="120">
+        0o4zj5kwqZ.swf
+        <url>0o4zj5kwqZ.swf</url>
+      </source>
+      <resource>
+        <id>3258850366</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/5/6/e/5956a822ec452c24aab46aa7df9db541ab97a.swf</url>
+      </resource>
+      <sourceUrl>hexyellow.swf</sourceUrl>
+      <extra>
+        <fixed_avm1_pos>1</fixed_avm1_pos>
+      </extra>
+      <meta>
+        <notModifiedByUser>from-template</notModifiedByUser>
+        <parentTemplate>brainstorm-with-cubes-group-b</parentTemplate>
+      </meta>
+    </object>
+    <object id="40" type="button" x="19014.03744400628" y="14132.28072154748" r="3.1308854081114985e-45" s="12.33590653548663" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>724.3818359375</w>
+        <h>600</h>
+      </size>
+    </object>
+    <object id="34" type="shape" x="4714.786126341348" y="9132.292376810308" r="-16.8594262956702" s="15.690518530374646" class="line3">
+      <geom type="line">
+        <sp>-203.8932172234541 0</sp>
+        <ep>203.8932172234541 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="36" type="shape" x="10219.94592606325" y="10661.78036767014" r="90.00000000000018" s="15.690518530374636" class="line5">
+      <geom type="line">
+        <sp>-59.666751839384595 0</sp>
+        <ep>59.66675183938459 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="37" type="shape" x="15869.92883355145" y="9377.661432298995" r="18.520849477471106" s="15.690518530374638" class="line1">
+      <geom type="line">
+        <sp>-211.5077715849082 0</sp>
+        <ep>211.5077715849082 0</ep>
+        <t>8</t>
+      </geom>
+    </object>
+    <object id="39" type="button" x="10213.02972339102" y="15121.312623222962" r="3.1308854081115e-45" s="4.043144592925226" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1686.2862178427197</w>
+        <h>1821.0512591413835</h>
+      </size>
+    </object>
+    <object id="2" type="text" x="1500.1094302112658" y="11185.186244128468" r="3.1308854081115004e-45" s="15.02362974673277" class="body">
+      <height>28.8</height>
+      <width>-108.72000000000003</width>
+      <p>
+        <text color="7326720"><![CDATA[Joshua Dimapilis]]></text>
+      </p>
+    </object>
+    <object id="3" type="text" x="18768.457256477748" y="-7378.734682833679" r="3.1308854081115085e-45" s="6.487125881485613" class="body">
+      <height>259.2</height>
+      <width>600</width>
+      <p listType="bullet" indent="1">
+        <text color="11793407"><![CDATA[Create a database that includes (e.g. Solemnities or Feasts, Events, Seasons of Lent, Advent and Easter, etc.) within the year]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="11793407"><![CDATA[Create a tool to insert the specified events that are specified by the Catholic church]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="11793407"><![CDATA[Create a tool that shows the readings of the said database for the benefit of the client]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="11793407"><![CDATA[Provide a calendar to display links to the necessary pages and/or audio files, representing lections and mass readings for each date]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text color="11793407"><![CDATA[Encourage the online community to visit the AngSalitaNgDiyos.com site for informative and spiritual purposes]]></text>
+      </p>
+    </object>
+    <object id="4" type="button" x="18777.353998707546" y="-7171.925169059351" r="3.13088540811151e-45" s="1.4608551251457322" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2646.3554690409796</w>
+        <h>1410.6195864168883</h>
+      </size>
+    </object>
+    <object id="8" type="image" x="23516.39374487489" y="-2421.151831371902" r="-24.026238517683392" s="0.8245860618705649">
+      <source w="724" h="960">
+        QUgVdQV1QqfYMW7.jpg
+        <url>QUgVdQV1QqfYMW7.jpg</url>
+      </source>
+      <resource>
+        <id>3258850828</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/5/4/e/cec80de66b59be498deb38f71eb9260334c17.jpg</url>
+      </resource>
+      <sourceUrl>Iteration1-Minutes.jpg</sourceUrl>
+    </object>
+    <object id="9" type="image" x="24200.907875210403" y="-2726.3193106024123" r="-24.026238517683396" s="0.824586061870565">
+      <source w="722" h="960">
+        knxTd24J1sYSnT6.jpg
+        <url>knxTd24J1sYSnT6.jpg</url>
+      </source>
+      <resource>
+        <id>3258851455</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/e/3/8cee924f6e019a42ee095625988b7a73af8da.jpg</url>
+      </resource>
+      <sourceUrl>Iteration1-Minutes_2.jpg</sourceUrl>
+    </object>
+    <object id="10" type="image" x="25101.386683155193" y="-1688.9376765905142" r="-24.02623851768337" s="1.539227315491721">
+      <source w="960" h="720">
+        FuMnnGd3rC1hbTJ.jpg
+        <url>FuMnnGd3rC1hbTJ.jpg</url>
+      </source>
+      <resource>
+        <id>3258851779</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/e/1/b3c6f2effe716b5fe30d66b1a903e19bb5f4a.jpg</url>
+      </resource>
+      <sourceUrl>Iteration1-photo_with_client.jpg</sourceUrl>
+    </object>
+    <object id="11" type="image" x="25510.968389125497" y="-3310.4568146925667" r="-24.026238517683396" s="0.824586061870565">
+      <source w="744" h="960">
+        iQRbdSdPXapSBhq.jpg
+        <url>iQRbdSdPXapSBhq.jpg</url>
+      </source>
+      <resource>
+        <id>3258852100</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/5/7/5/d880fb83fe2a58856a1bc2a66fe5f95d788e3.jpg</url>
+      </resource>
+      <sourceUrl>Iteration1-PresentationFeedback.jpg</sourceUrl>
+    </object>
+    <object id="35" type="button" x="25422.30573452973" y="-3455.9937491756623" r="-24.026238517683392" s="1.0815832844489557" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>675.3156833648682</w>
+        <h>1191.8191366084309</h>
+      </size>
+    </object>
+    <object id="12" type="text" x="25229.18143368834" y="-3942.8577293440985" r="-24.026238517683392" s="6.556215766434424" class="head">
+      <height>28.8</height>
+      <width>-97.416</width>
+      <p>
+        <text><![CDATA[Feedback Form]]></text>
+      </p>
+    </object>
+    <object id="14" type="button" x="23514.90263174985" y="-2420.051774718176" r="-24.026238517683375" s="0.3359375656954965" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1812.5386164204936</w>
+        <h>2475.2018931034872</h>
+      </size>
+    </object>
+    <object id="20" type="button" x="24202.802713400273" y="-2728.394778944374" r="-24.026238517683375" s="0.21115301508312093" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2924.3326820495204</w>
+        <h>3807.9190183231663</h>
+      </size>
+    </object>
+    <object id="41" type="button" x="25512.177976950552" y="-3311.5527966430727" r="-24.026238517683392" s="0.3278905114961043" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1957.8759136445076</w>
+        <h>2517.8571394491246</h>
+      </size>
+    </object>
+    <object id="42" type="button" x="25102.65161235476" y="-1699.2717018438764" r="-24.026238517683392" s="1.0815832844489557" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1436.6787748665663</w>
+        <h>1091.3961926915215</h>
+      </size>
+    </object>
+    <object id="45" type="image" x="28648.653461730635" y="-4812.8197893658435" r="-24.026238517683392" s="0.8084713193591098">
+      <source w="711" h="960">
+        iVHMz3mN348j1fM.jpg
+        <url>iVHMz3mN348j1fM.jpg</url>
+      </source>
+      <resource>
+        <id>3258852265</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/8/e/6926a73c0aa7ab33e35471b913a3cd2ae3174.jpg</url>
+      </resource>
+      <sourceUrl>Iteration2-Minutes.jpg</sourceUrl>
+    </object>
+    <object id="46" type="image" x="29336.360113387334" y="-5121.1797899175335" r="-24.026238517683392" s="0.8084713193591098">
+      <source w="744" h="960">
+        ShC1ei8Dgk4CUVX.jpg
+        <url>ShC1ei8Dgk4CUVX.jpg</url>
+      </source>
+      <resource>
+        <id>3258852589</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/d/c/d/e88624f9480a68c6f0684bf2c9eef375ecf6d.jpg</url>
+      </resource>
+      <sourceUrl>Iteration2-Minutes_2.jpg</sourceUrl>
+    </object>
+    <object id="47" type="button" x="28945.591470969805" y="-5110.004454876633" r="-24.026238517683375" s="1.0185428471142377" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1483.569847020561</w>
+        <h>1238.1714336384578</h>
+      </size>
+    </object>
+    <object id="48" type="text" x="28826.026190427987" y="-5650.668840803949" r="-24.026238517683407" s="6.556215766434421" class="body">
+      <height>28.8</height>
+      <width>195.8287487228488</width>
+      <p>
+        <text><![CDATA[Minutes of the Meeting]]></text>
+      </p>
+      <layout>
+        <layout-element role="body" parent-id="17"/>
+      </layout>
+    </object>
+    <object id="51" type="button" x="28648.383018522523" y="-4812.84650494313" r="-24.026238517683375" s="0.33593756569549665" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1812.5386164204936</w>
+        <h>2475.2018931034872</h>
+      </size>
+    </object>
+    <object id="52" type="button" x="29336.283100172943" y="-5121.18950916932" r="-24.026238517683375" s="0.2111530150831209" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2924.3326820495204</w>
+        <h>3807.9190183231663</h>
+      </size>
+    </object>
+    <object id="54" type="button" x="30440.40910440036" y="-5818.557903223685" r="-24.026238517683392" s="1.0815832844489557" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>675.3156833648682</w>
+        <h>1191.8191366084309</h>
+      </size>
+    </object>
+    <object id="62" type="button" x="30428.891493441057" y="-5829.315095574954" r="-24.02623851768337" s="1.0385683557375112" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>695.8324916839599</w>
+        <h>1260.5744178912437</h>
+      </size>
+    </object>
+    <object id="55" type="text" x="30247.284803558978" y="-6305.421883392121" r="-24.026238517683392" s="6.556215766434424" class="head">
+      <height>28.8</height>
+      <width>-97.416</width>
+      <p>
+        <text><![CDATA[Feedback Form]]></text>
+      </p>
+    </object>
+    <object id="56" type="button" x="30530.281346821183" y="-5674.116950691095" r="-24.026238517683392" s="0.3278905114961044" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1957.8759136445076</w>
+        <h>2517.8571394491246</h>
+      </size>
+    </object>
+    <object id="58" type="button" x="30267.261771569265" y="-3976.285305530579" r="-24.026238517683392" s="1.0815832844489557" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1436.6787748665663</w>
+        <h>1091.3961926915215</h>
+      </size>
+    </object>
+    <object id="59" type="button" x="28944.10552865811" y="-5112.366604499672" r="-24.026238517683375" s="1.0179482785281824" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1479.7422290631343</w>
+        <h>1244.973953633263</h>
+      </size>
+    </object>
+    <object id="60" type="button" x="28649.47690921789" y="-4815.8594939690565" r="-24.026238517683375" s="0.47424065076564426" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1220.6605296753696</w>
+        <h>1644.6599893255675</h>
+      </size>
+    </object>
+    <object id="61" type="button" x="29333.480350346785" y="-5121.682470244826" r="-24.026238517683375" s="0.4458204311215011" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1368.7071945251855</w>
+        <h>1811.714349870495</h>
+      </size>
+    </object>
+    <object id="63" type="button" x="30520.84377470644" y="-5672.290056478857" r="-24.02623851768337" s="1.0385683557375112" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>614.5013017058372</w>
+        <h>785.9785703280417</h>
+      </size>
+    </object>
+    <object id="64" type="button" x="30255.173629534373" y="-3964.252115293501" r="-24.026238517683375" s="1.036000032382584" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1495.9320606986123</w>
+        <h>1161.7160072841314</h>
+      </size>
+    </object>
+    <object id="65" type="text" x="10255.880846607122" y="12681.633664588962" r="3.130885408111499e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>-130.32000000000002</width>
+      <p>
+        <text color="11705824"><![CDATA[Trixia Marie Urquiza]]></text>
+      </p>
+    </object>
+    <object id="66" type="text" x="19122.169839327387" y="11518.241336076346" r="3.130885408111499e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>-147</width>
+      <p>
+        <text color="16775176"><![CDATA[Kimberly Mae Elizondo]]></text>
+      </p>
+    </object>
+    <object id="5" type="text" x="-14947.5679867411" y="-7993.139233419367" r="3.130885408111497e-45" s="41.781518926321894" class="head">
+      <height>86.4</height>
+      <width>552</width>
+      <p>
+        <text><![CDATA[]]></text>
+      </p>
+      <p>
+        <text><![CDATA[Is a community for the Lectors and Commentators of different parishes that is under the archdioceses of Manila.]]></text>
+      </p>
+    </object>
+    <object id="6" type="text" x="8755.42595804075" y="-13449.546926874791" r="3.13088540811151e-45" s="10.277175219738275" class="head">
+      <height>28.8</height>
+      <width>-123.048</width>
+      <p>
+        <text><![CDATA[Mission Statement]]></text>
+      </p>
+    </object>
+    <object id="74" type="button" x="11313.50740309301" y="-12382.904741174572" r="3.1308854081115103e-45" s="1.3849677260162927" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1369.080799484253</w>
+        <h>1702.778229772677</h>
+      </size>
+    </object>
+    <object id="7" type="text" x="10981.392758183172" y="-13449.54692687479" r="3.13088540811151e-45" s="10.277175219738275" class="head">
+      <height>28.8</height>
+      <width>-80.376</width>
+      <p>
+        <text><![CDATA[Contact Info]]></text>
+      </p>
+    </object>
+    <object id="75" type="button" x="8914.745763514202" y="-11654.254913609357" r="3.1308854081115103e-45" s="1.3849677260162927" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1306.2144102496975</w>
+        <h>631.6796875</h>
+      </size>
+    </object>
+    <object id="24" type="text" x="8369.834275351828" y="-11918.379954537448" r="3.13088540811151e-45" s="10.277175219738275" class="head">
+      <height>28.8</height>
+      <width>-53.28000000000001</width>
+      <p>
+        <text><![CDATA[Address]]></text>
+      </p>
+    </object>
+    <object id="43" type="text" x="8989.257951261974" y="-12656.20107658444" r="3.130885408111509e-45" s="6.332381188902981" class="body">
+      <height>172.8</height>
+      <width>308.33600000000007</width>
+      <p>
+        <text><![CDATA[ To evangelize and catechize the people of the Archdiocese of Manila of their participation to the evangelical task of the universal Church by providing liturgical formation and ministries they can participate in.]]></text>
+      </p>
+      <p align="justify">
+        <text><![CDATA[]]></text>
+      </p>
+    </object>
+    <object id="44" type="text" x="9048.812222216697" y="-11455.338090616862" r="3.130885408111509e-45" s="5.756710171729982" class="body">
+      <height>86.4</height>
+      <width>255.67736190736565</width>
+      <p>
+        <text><![CDATA[Archdiocesan Liturgical Commission]]></text>
+      </p>
+      <p>
+        <text><![CDATA[Arzobispado de Manila ]]></text>
+      </p>
+      <p>
+        <text><![CDATA[121 Arzobispo St., Intramuros, Manila]]></text>
+      </p>
+    </object>
+    <object id="49" type="text" x="11594.120282234731" y="-12692.644734929869" r="3.130885408111509e-45" s="3.9319105059285446" class="body">
+      <height>115.2</height>
+      <width>-338.68799999999993</width>
+      <p>
+        <text color="16248250"><![CDATA[              Minister]]></text>
+      </p>
+      <p>
+        <text color="16248250"><![CDATA[              Ministry of Lectors and Commentators  ]]></text>
+      </p>
+      <p>
+        <text color="16248250"><![CDATA[              Archdiocesan Liturgical Commission (ALC)  ]]></text>
+      </p>
+      <p>
+        <text color="16248250"><![CDATA[              Roman Catholic Archdiocese of Manila  ]]></text>
+      </p>
+    </object>
+    <object id="67" type="text" x="11442.775398634372" y="-11414.390825711676" r="3.13088540811151e-45" s="5.233372883390894" class="body">
+      <height>57.6</height>
+      <width>328.6544872563221</width>
+      <p indent="1">
+        <text color="16758141"><![CDATA[Telephone Nos: ]]></text>
+        <text><![CDATA[(632) 4043891]]></text>
+      </p>
+      <p indent="1">
+        <text color="16758141"><![CDATA[Email Address:]]></text>
+        <text><![CDATA[ angsalitangdiyos@gmail.com​]]></text>
+      </p>
+    </object>
+    <object id="68" type="text" x="11366.865924909996" y="-11976.215744041734" r="3.130885408111509e-45" s="5.756710171729982" class="body">
+      <height>86.4</height>
+      <width>152.35</width>
+      <p>
+        <text><![CDATA[Mr. Ernesto Boydon]]></text>
+      </p>
+      <p>
+        <text><![CDATA[Mr. Manny Joson ]]></text>
+      </p>
+      <p>
+        <text><![CDATA[Ms. Vi P. Hernandez ]]></text>
+      </p>
+    </object>
+    <object id="69" type="text" x="11014.992581207753" y="-13180.8107284516" r="3.130885408111509e-45" s="3.9319105059285446" class="strong">
+      <height>29.16</height>
+      <width>338.7</width>
+      <p>
+        <text><![CDATA[PROJECT SPONSOR:]]></text>
+      </p>
+    </object>
+    <object id="70" type="text" x="11016.769772869706" y="-12340.948617401242" r="3.130885408111509e-45" s="3.9319105059285446" class="strong">
+      <height>29.16</height>
+      <width>339.7</width>
+      <p>
+        <text><![CDATA[PROJECT COORDINATORS:]]></text>
+      </p>
+    </object>
+    <object id="71" type="text" x="11457.95443001726" y="-12995.808565978974" r="3.130885408111509e-45" s="6.332381188902981" class="body">
+      <height>28.8</height>
+      <width>190.5</width>
+      <p>
+        <text><![CDATA[ Rev. Fr. Carmelo P. Arada Jr ]]></text>
+      </p>
+    </object>
+    <object id="72" type="button" x="10203.59584404252" y="-14087.445226860782" r="3.13088540811151e-45" s="1.3805144535853724" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1471.3654171888677</w>
+        <h>511.6411590576172</h>
+      </size>
+    </object>
+    <object id="73" type="button" x="8974.420933620566" y="-12881.347466755702" r="3.13088540811151e-45" s="1.3805144535853724" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1434.5556282048829</w>
+        <h>984.9966570830268</h>
+      </size>
+    </object>
+    <object id="87" type="image" x="19108.393506146087" y="13570.190721733848" r="3.130885408111497e-45" s="3.628300922673757">
+      <source w="883" h="553">
+        QidvJ8bzLVVPWwL.jpg
+        <url>QidvJ8bzLVVPWwL.jpg</url>
+      </source>
+      <resource>
+        <id>3258852997</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/1/a/7/625e44909e87dd1ad223f7fdb5ca2223675af.jpg</url>
+      </resource>
+      <sourceUrl>latest%20commits-kim.jpg</sourceUrl>
+    </object>
+    <object id="90" type="button" x="1515.6812633626696" y="15037.472001939876" r="0" s="2.180916619308331" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1617.8675397677566</w>
+        <h>871.838874181251</h>
+      </size>
+    </object>
+    <object id="88" type="text" x="-76.50895548944132" y="14565.617574940812" r="3.130885408111497e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>-24.264000000000003</width>
+      <p>
+        <text><![CDATA[Diff]]></text>
+      </p>
+    </object>
+    <object id="89" type="button" x="1435.5912250450867" y="12966.822592499711" r="0" s="2.052747870113261" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2271.810935319245</w>
+        <h>1059.184591263207</h>
+      </size>
+    </object>
+    <object id="91" type="text" x="17441.82622159997" y="12273.04503426257" r="6.261770816223007e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>153.69643359500907</width>
+      <p align="center">
+        <text><![CDATA[Recent Commits]]></text>
+      </p>
+    </object>
+    <object id="92" type="text" x="17485.48959761546" y="15236.267406549454" r="3.130885408111497e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>-24.264000000000003</width>
+      <p>
+        <text><![CDATA[Diff]]></text>
+      </p>
+    </object>
+    <object id="93" type="text" x="8862.70873415283" y="13325.872055939331" r="6.261770816223007e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>153.69643359500907</width>
+      <p align="center">
+        <text><![CDATA[Recent Commits]]></text>
+      </p>
+    </object>
+    <object id="103" type="button" x="10159.780091078996" y="16310.190396724827" r="3.1308854081115e-45" s="5.476507999201974" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>800</w>
+        <h>306.09997099421116</h>
+      </size>
+    </object>
+    <object id="94" type="text" x="8201.380297423902" y="15695.468754307816" r="3.130885408111497e-45" s="15.02362974673277" class="head">
+      <height>28.8</height>
+      <width>-24.264000000000003</width>
+      <p>
+        <text><![CDATA[Diff]]></text>
+      </p>
+    </object>
+    <object id="95" type="button" x="18736.9336114646" y="13323.050375957117" r="3.130885408111498e-45" s="1.8320350449809488" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2258.160576516411</w>
+        <h>1367.6177747249603</h>
+      </size>
+    </object>
+    <object id="99" type="image" x="10112.266247764534" y="14674.04011538376" r="3.1308854081115004e-45" s="5.419895881630103">
+      <source w="794" h="104">
+        mnySE3ObF0sbWrF.JPG
+        <url>mnySE3ObF0sbWrF.JPG</url>
+      </source>
+      <resource>
+        <id>3258853162</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/a/7/8/8cdb9405132f8f1972a868f7793ccbcbe5416.JPG</url>
+      </resource>
+      <sourceUrl>Capture.JPG</sourceUrl>
+    </object>
+    <object id="100" type="image" x="10464.516854271484" y="16299.887622297458" r="3.130885408111499e-45" s="3.0203973516426617">
+      <source w="1243" h="539">
+        v8Z6rJcjf2dH3K0.JPG
+        <url>v8Z6rJcjf2dH3K0.JPG</url>
+      </source>
+      <resource>
+        <id>3258853327</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/e/b/7/f2d5d4bfb12e6b759601629a60bb3d369f947.JPG</url>
+      </resource>
+      <sourceUrl>diff-trix.JPG</sourceUrl>
+    </object>
+    <object id="101" type="image" x="10113.738046956069" y="13986.219293207238" r="3.1308854081115e-45" s="5.4069766095175735">
+      <source w="796" h="152">
+        OgTSzQ0kSWvWyiA.JPG
+        <url>OgTSzQ0kSWvWyiA.JPG</url>
+      </source>
+      <resource>
+        <id>3258853438</id>
+        <url>http://0103.static.prezi.com.s3.amazonaws.com/media/f/3/8/fb79b2bc091ecf6f5275c168de5614ed89b10.JPG</url>
+      </resource>
+      <sourceUrl>latest%20commits-trix.JPG</sourceUrl>
+    </object>
+    <object id="102" type="button" x="10113.177235130668" y="14078.043423205128" r="3.1308854081115e-45" s="1.8190140937988717" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>2403.305617256341</w>
+        <h>1038.0933198106154</h>
+      </size>
+    </object>
+    <object id="109" type="button" x="9047.114115145963" y="6305.004912127829" r="3.1308854081115004e-45" s="1.4176545197043855" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1463.6666653864086</w>
+        <h>986.3568243901244</h>
+      </size>
+    </object>
+    <object id="110" type="button" x="11397.3915803139" y="6317.755944296522" r="3.1308854081115004e-45" s="1.4176545197043855" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1443.4116515476164</w>
+        <h>830.2221952401101</h>
+      </size>
+    </object>
+    <object id="111" type="button" x="10210.604304594306" y="8023.94824545643" r="3.1308854081115004e-45" s="1.4176545197043855" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>1459.214283422924</w>
+        <h>851.9172006639928</h>
+      </size>
+    </object>
+    <object id="26" type="text" x="1499.9500000000005" y="2445.4" r="3.1308854081115085e-45" s="10.833313464133594" class="head">
+      <height>28.8</height>
+      <width>-249.24</width>
+      <p>
+        <text color="16749190"><![CDATA[PROJECT ON CLIENTS CURRENT SYSTEM]]></text>
+      </p>
+    </object>
+    <object id="27" type="text" x="1456.6" y="1248.3" r="3.1308854081115085e-45" s="10.833313464133596" class="head">
+      <height>28.8</height>
+      <width>-257.232</width>
+      <p>
+        <text color="16749190"><![CDATA[HOSTED PROJECT IN GNUHEALTH SERVER]]></text>
+      </p>
+    </object>
+    <object id="30" type="text" x="1655.05" y="2863.45" r="3.1308854081115085e-45" s="7.399298862190828" class="body">
+      <height>28.8</height>
+      <width>-490.24800000000005</width>
+      <p>
+        <text><![CDATA[http://192.185.194.26/~angsalit/index.php/daily-mass-readings/english]]></text>
+      </p>
+    </object>
+    <object id="32" type="button" x="-17252.969046438728" y="6216.444385108297" r="3.1308854081115134e-45" s="2.33238977871999" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>969.8152291135892</w>
+        <h>1123.8463272963104</h>
+      </size>
+    </object>
+    <object id="33" type="text" x="-17294.3858853458" y="6697.976491323138" r="3.130885408111514e-45" s="7.962043127387345" class="strong strong-background">
+      <height>29.16</height>
+      <width>202.7317791521725</width>
+      <p align="center">
+        <text><![CDATA[April 17, 2015]]></text>
+      </p>
+    </object>
+    <object id="82" type="button" x="1647.909660911087" y="-8434.088248363867" r="3.130885408111512e-45" s="1.3849677260162925" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>3208.3733210277983</w>
+        <h>614.7025705893775</h>
+      </size>
+    </object>
+    <object id="53" type="text" x="66.44999999999993" y="-8718.35" r="3.7710276575893253e-31" s="8.428399362429854" class="body">
+      <height>28.8</height>
+      <width>151.25</width>
+      <p>
+        <text><![CDATA[ - Percent completed]]></text>
+      </p>
+      <layout>
+        <layout-element role="body"/>
+      </layout>
+    </object>
+    <object id="57" type="text" x="2882.6" y="-8718.35" r="3.7710276575893253e-31" s="8.428399362429854" class="body">
+      <height>28.8</height>
+      <width>241.3</width>
+      <p>
+        <text><![CDATA[    - Remaining work to be completed]]></text>
+      </p>
+      <layout>
+        <layout-element role="body"/>
+      </layout>
+    </object>
+    <object id="76" type="text" x="3.7" y="-8277.95" r="3.130885408111512e-45" s="8.428399362429854" class="strong">
+      <height>29.16</height>
+      <width>-52.944</width>
+      <p>
+        <text><![CDATA[85 %]]></text>
+      </p>
+    </object>
+    <object id="77" type="text" x="2714.3877100516647" y="-8284.904424546661" r="3.130885408111512e-45" s="5.233372883390884" class="strong">
+      <height>87.48</height>
+      <width>436.2</width>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[Integrate the whole project in the client's current system]]></text>
+      </p>
+      <p listType="bullet" indent="1">
+        <text><![CDATA[Audio Files]]></text>
+      </p>
+    </object>
+    <object id="81" type="text" x="1499.85" y="-6778.4" r="3.130885408111512e-45" s="6.3323811889029695" class="strong">
+      <height>58.32</height>
+      <width>542.449286250939</width>
+      <p>
+        <text><![CDATA[They are interested in implementing the project and hoping for the turnover.]]></text>
+      </p>
+    </object>
+    <object id="83" type="button" x="1518.661022242516" y="-7087.2775065250435" r="3.130885408111512e-45" s="1.3849677260162925" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>3082.0571424516975</w>
+        <h>924.0833548092612</h>
+      </size>
+    </object>
+    <object id="97" type="button" x="-17160.764821708897" y="9345.707659628917" r="3.1308854081115134e-45" s="0.6461142360655128" class="invisible">
+      <type>invisible</type>
+      <size>
+        <w>3375.0368504621883</w>
+        <h>3974.149991093293</h>
+      </size>
+    </object>
+  </zui-table>
+  <background>
+    <layer depth="8.66167925102218" fadescale="0.10858027192081064">
+      <object id="background761068305" type="image" x="-1585.1999312671642" y="-3002.7557417584007" r="0" s="49.43671174341356">
+        <source w="2029" h="1253">
+          6g45v5xsq4.png
+          <url>6g45v5xsq4.png</url>
+        </source>
+        <resource>
+          <id>3258853795</id>
+          <url>http://0103.static.prezi.com.s3.amazonaws.com/media/b/0/3/898efa1c5c0af0df50af671b4cd4316c04da2.png</url>
+        </resource>
+        <sourceUrl>gridbgo.png</sourceUrl>
+      </object>
+    </layer>
+  </background>
+  <path>
+    <s>
+      <eagle o="26_238900"/>
+    </s>
+    <s>
+      <eagle o="7_24309637"/>
+    </s>
+    <s>
+      <eagle o="1"/>
+    </s>
+    <s>
+      <eagle o="159_24309637"/>
+    </s>
+    <s>
+      <eagle o="72"/>
+    </s>
+    <s>
+      <eagle o="73"/>
+    </s>
+    <s>
+      <eagle o="74"/>
+    </s>
+    <s>
+      <eagle o="75"/>
+    </s>
+    <s>
+      <eagle o="150_24309637"/>
+    </s>
+    <s>
+      <eagle o="4"/>
+    </s>
+    <s>
+      <eagle o="153_24309637"/>
+    </s>
+    <s>
+      <eagle o="16"/>
+    </s>
+    <s>
+      <eagle o="17"/>
+    </s>
+    <s>
+      <eagle o="13"/>
+    </s>
+    <s>
+      <eagle o="14"/>
+    </s>
+    <s>
+      <eagle o="20"/>
+    </s>
+    <s>
+      <eagle o="35"/>
+    </s>
+    <s>
+      <eagle o="41"/>
+    </s>
+    <s>
+      <eagle o="42"/>
+    </s>
+    <s>
+      <eagle o="19"/>
+    </s>
+    <s>
+      <eagle o="59"/>
+    </s>
+    <s>
+      <eagle o="60"/>
+    </s>
+    <s>
+      <eagle o="61"/>
+    </s>
+    <s>
+      <eagle o="62"/>
+    </s>
+    <s>
+      <eagle o="63"/>
+    </s>
+    <s>
+      <eagle o="64"/>
+    </s>
+    <s>
+      <eagle o="4_24309637"/>
+    </s>
+    <s>
+      <eagle o="111"/>
+    </s>
+    <s>
+      <eagle o="109"/>
+    </s>
+    <s>
+      <eagle o="110"/>
+    </s>
+    <s>
+      <eagle o="38"/>
+    </s>
+    <s>
+      <eagle o="89"/>
+    </s>
+    <s>
+      <eagle o="90"/>
+    </s>
+    <s>
+      <eagle o="39"/>
+    </s>
+    <s>
+      <eagle o="102"/>
+    </s>
+    <s>
+      <eagle o="103"/>
+    </s>
+    <s>
+      <eagle o="40"/>
+    </s>
+    <s>
+      <eagle o="95"/>
+    </s>
+    <s>
+      <eagle o="96"/>
+    </s>
+    <s>
+      <eagle o="162_24309637"/>
+    </s>
+    <s>
+      <eagle o="165_24309637"/>
+    </s>
+    <s>
+      <eagle o="82"/>
+    </s>
+    <s>
+      <eagle o="83"/>
+    </s>
+    <s>
+      <eagle o="80"/>
+    </s>
+    <s>
+      <eagle o="32"/>
+    </s>
+    <s>
+      <eagle o="97"/>
+    </s>
+  </path>
+  <style type="text/css"><![CDATA[
+@font-face
+{
+	src: url('LeagueGothic-Regular.keg');
+	fontFamily: body;
+	font-class: body;
+	font-style: normal;
+	font-weight: normal;
+	font-family: LeagueGothic;
+}
+
+@font-face
+{
+	src: url('LeagueGothic-Regular.keg');
+	fontFamily: head;
+	font-class: head;
+	font-style: normal;
+	font-weight: normal;
+	font-family: LeagueGothic;
+}
+
+@font-face
+{
+	src: url('Cabin-Bold.keg');
+	fontFamily: strong;
+	font-class: strong;
+	font-style: normal;
+	font-weight: bold;
+	font-family: Cabin;
+}
+
+@font-face
+{
+	src: url('LeagueGothic-Italic.keg');
+	font-style: italic;
+	font-weight: normal;
+	font-family: LeagueGothic;
+}
+
+@font-face
+{
+	src: url('Cabin-Italic.keg');
+	font-style: italic;
+	font-weight: normal;
+	font-family: Cabin;
+}
+
+@font-face
+{
+	src: url('Cabin-BoldItalic.keg');
+	font-style: italic;
+	font-weight: bold;
+	font-family: Cabin;
+}
+
+@font-face
+{
+	src: url('Cabin-Regular.keg');
+	font-style: normal;
+	font-weight: normal;
+	font-family: Cabin;
+}
+
+.line1
+{
+	color: #ffbe00;
+	gradEndColor: #ffbe00;
+	gradStartColor: #ffbe00;
+}
+
+.line2
+{
+	color: #ff8840;
+	gradEndColor: #ff8840;
+	gradStartColor: #ff8840;
+}
+
+.line3
+{
+	color: #52dd5c;
+	gradEndColor: #52dd5c;
+	gradStartColor: #52dd5c;
+}
+
+.line4
+{
+	color: #00e1ee;
+	gradEndColor: #00e1ee;
+	gradStartColor: #00e1ee;
+}
+
+.line5
+{
+	color: #ea6cf7;
+	gradEndColor: #ea6cf7;
+	gradStartColor: #ea6cf7;
+}
+
+.poly1
+{
+	color: #046896;
+	gradEndAlpha: .9;
+	gradEndColor: #f7b83f;
+	gradStartAlpha: .9;
+	gradStartColor: #f7b83f;
+}
+
+.poly2
+{
+	color: #046896;
+	gradEndAlpha: .9;
+	gradEndColor: #f7833e;
+	gradStartAlpha: .9;
+	gradStartColor: #f7833e;
+}
+
+.poly3
+{
+	color: #046896;
+	gradEndAlpha: .9;
+	gradEndColor: #52dd5c;
+	gradStartAlpha: .9;
+	gradStartColor: #52dd5c;
+}
+
+.poly4
+{
+	color: #046896;
+	gradEndAlpha: .9;
+	gradEndColor: #00dbe8;
+	gradStartAlpha: .9;
+	gradStartColor: #00dbe8;
+}
+
+.poly5
+{
+	color: #046896;
+	gradEndAlpha: .9;
+	gradEndColor: #e167ee;
+	gradStartAlpha: .9;
+	gradStartColor: #e167ee;
+}
+
+Background
+{
+	gradEnd: #01354d;
+	gradStart: #079be0;
+}
+
+Grid
+{
+	color: #0583bd;
+}
+
+ZArrow
+{
+	borderColor: #fff;
+	gradEndColor: #333;
+	gradStartColor: #333;
+	lockTintAlpha: 0;
+}
+
+ZCircle
+{
+	borderAlpha: 1;
+	gradEndAlpha: 1;
+	gradStartAlpha: 1;
+	lockTintAlpha: 0;
+	radius: 300;
+	thickness: 100;
+}
+
+ZCurveLine
+{
+	color: #333;
+}
+
+ZFrame.bracket
+{
+	borderColor: #fff;
+	borderThickness: 2;
+	gradEndAlpha: .2;
+	gradEndColor: #fff;
+	gradStartAlpha: 0;
+	gradStartColor: #fff;
+	padding: 1.03;
+	thickness: 10;
+}
+
+ZFrame.circle
+{
+	borderColor: #fff;
+	borderThickness: 0;
+	gradEndColor: #fff;
+	gradStartColor: #fff;
+	padding: 1.03;
+	thickness: 5;
+}
+
+ZFrame.roundrect
+{
+	gradEndAlpha: .2;
+	gradEndColor: #fff;
+	gradStartAlpha: .2;
+	gradStartColor: #fff;
+	padding: 1.03;
+	radius: 20;
+}
+
+ZLabel
+{
+	lockTintAlpha: 0.15;
+	padding: 1.2;
+}
+
+ZLabel.body
+{
+	color: #97ffff;
+	fontFamily: body;
+}
+
+ZLabel.body-background
+{
+	background-alpha: 0.9;
+	background-color: #ff8840;
+	background-padding: 4;
+}
+
+ZLabel.head
+{
+	color: #fff;
+	fontFamily: head;
+}
+
+ZLabel.head-background
+{
+	background-alpha: 0.9;
+	background-color: #ea6cf7;
+	background-padding: 4;
+}
+
+ZLabel.strong
+{
+	color: #fff;
+	fontFamily: strong;
+}
+
+ZLabel.strong-background
+{
+	background-alpha: 0.9;
+	background-color: #00e1ee;
+	background-padding: 4;
+}
+
+ZLine
+{
+	color: #333;
+	lockTintAlpha: 0;
+}
+
+ZMarker
+{
+	alpha: 0.3;
+	color: #00e1ff;
+}
+
+ZPath
+{
+	alpha: 1;
+	color: #40abe6;
+	textColor: #fff;
+	thickness: 3;
+}
+
+ZPath Ball.base
+{
+	alpha: 1;
+	fillColor: #40abe6;
+	radius: 12;
+}
+
+ZPath Ball.mid
+{
+	alpha: .5;
+	fillColor: #40abe6;
+	radius: 8;
+}
+
+ZPoly
+{
+	borderAlpha: 1;
+	gradEndAlpha: 1;
+	gradStartAlpha: 1;
+	lockTintAlpha: 0;
+	radius: 0;
+	thickness: 100;
+}
+
+]]></style>
+  <hash>45aee076</hash>
+  <config>3trTnhnnaLk+8QAbC6UBaqqJq2lOBvs+Gg==</config>
+</zuiprezi>
