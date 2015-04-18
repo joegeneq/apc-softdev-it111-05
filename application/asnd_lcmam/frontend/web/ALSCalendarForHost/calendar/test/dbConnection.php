@@ -1,6 +1,6 @@
 <?php 
 
-//for hosting  
+/*/for hosting  
 
     $servername = "localhost";
     $username = "root";
@@ -9,7 +9,7 @@
 
 //*/
 
-/*/for testing 
+//for testing 
 error_reporting(E_ERROR);
     $servername = "localhost";
     $username = "asnd_lcmam";
