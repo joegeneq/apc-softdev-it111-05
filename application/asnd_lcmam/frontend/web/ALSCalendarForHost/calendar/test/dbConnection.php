@@ -1,15 +1,15 @@
 <?php 
 
-/*/for hosting  
+//for hosting  
 
     $servername = "localhost";
-    $username = "asnd_lcmam";
-    $password = "asnd_lcmam";
+    $username = "root";
+    $password = "";
     $dbname = "asnd_lcmam";
 
 //*/
 
-//for testing 
+/*/for testing 
 error_reporting(E_ERROR);
     $servername = "localhost";
     $username = "asnd_lcmam";

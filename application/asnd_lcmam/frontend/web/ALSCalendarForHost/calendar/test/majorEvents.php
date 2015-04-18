@@ -262,7 +262,7 @@ try {
 
                         $e['title'] = $row['event_first_reading'];
                         $e['start'] = $dayConversion . "T01:00:04";
-                        $e['color'] = '#99FF66';
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
 
                             if ($row['event_first_optional'] == ""){
@@ -282,7 +282,7 @@ try {
 
                         $e['title'] = $row['event_second_reading'];
                         $e['start'] = $dayConversion . "T01:00:05";
-                        $e['color'] = '#99FF66';
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
 
                             if ($row['event_second_optional'] == ""){
@@ -302,7 +302,7 @@ try {
 
                         $e['title'] = $row['event_alleluia_verse'];
                         $e['start'] = $dayConversion . "T01:00:06";
-                        $e['color'] = '#99FF66';
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
 
                             if ($row['event_alleluia_optional'] == ""){
@@ -322,7 +322,7 @@ try {
 
                         $e['title'] = $row['event_responsorial_psalm'];
                         $e['start'] = $dayConversion . "T01:00:07";
-                        $e['color'] = '#99FF66';
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
 
                             if ($row['event_responsorial_optional'] == ""){
@@ -342,7 +342,7 @@ try {
 
                         $e['title'] = $row['event_gospel'];
                         $e['start'] = $dayConversion . "T01:00:08";
-                        $e['color'] = '#99FF66';
+                        $e['color'] = '#FFFF99';
                         $e['textColor'] = 'Black';
 
                             if ($row['event_gospel_optional'] == ""){
@@ -386,7 +386,7 @@ try {
 
                     $e['title'] = $row['sunday_first_reading'];
                     $e['start'] = $epiphanySunday . "T01:00:20";
-                    $e['color'] = '#FFCC00';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_first_optional'] == ""){
@@ -406,7 +406,7 @@ try {
                 
                     $e['title'] = $row['sunday_second_reading'];
                     $e['start'] = $epiphanySunday . "T01:00:21";
-                    $e['color'] = '#FFCC00';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_second_optional'] == ""){
@@ -427,7 +427,7 @@ try {
                     $e['title'] = $row['sunday_alleluia_verse'];
                     $e['start'] = $epiphanySunday . "T01:00:22";
                     $e['tip'] = $row['sunday_alleluia_verse'];
-                    $e['color'] = '#FFCC00';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_alleluia_optional'] == ""){
@@ -447,7 +447,7 @@ try {
 
                     $e['title'] = $row['sunday_responsorial_psalm'];
                     $e['start'] = $epiphanySunday . "T01:00:23";
-                    $e['color'] = '#FFCC00';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_responsorial_optional'] == ""){
@@ -467,7 +467,7 @@ try {
 
                     $e['title'] = $row['sunday_gospel'];
                     $e['start'] = $epiphanySunday . "T01:00:24";
-                    $e['color'] = '#FFCC00';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'Black';
 
                         if ($row['sunday_gospel_optional'] == ""){
@@ -490,7 +490,7 @@ try {
                         
                     $e['title'] = $row['sunday_name'];
                     $e['start'] = $pentecostSunday . "T01:00:04";
-                    $e['color'] = '#3366FF';
+                    $e['color'] = '#FFFF99';
                     $e['textColor'] = 'White';
                     $e['description'] = "This is the Marker for this Pentecost Sunday.";
                     if ($e['start'] != "T01:00:04"){ array_push($events, $e); }
