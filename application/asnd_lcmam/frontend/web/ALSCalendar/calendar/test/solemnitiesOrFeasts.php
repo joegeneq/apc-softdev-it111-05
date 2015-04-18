@@ -46,15 +46,18 @@ try {
             $dateToTest = $year . $row['date'];
             
               if ($row['type'] == "S"){
-                    $e['color'] = '#FF6699';
+                    $e['color'] = '#DBDBBF';
+                    $e['textColor'] = 'Black';
                     $e['description'] = "This is the Solemnity's name.";
               }
               if ($row['type'] == "F"){
-                    $e['color'] = '#6633CC';
+                    $e['color'] = '#E6E6B8';
+                    $e['textColor'] = 'Black';
                     $e['description'] = "This is the Feast's name.";
               }
               if ($row['type'] == "M"){
-                    $e['color'] = '#52CC29';
+                    $e['color'] = '#E4E4CD';
+                    $e['textColor'] = 'Black';
                     $e['description'] = "This is the Memorial's name.";
               }
 

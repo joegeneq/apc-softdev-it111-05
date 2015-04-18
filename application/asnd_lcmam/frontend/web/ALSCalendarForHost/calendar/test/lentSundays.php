@@ -179,8 +179,8 @@ try {
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allLentSundays[$counter] . "T01:00:05";
-        $e['color'] = '#FF9147';
-        $e['textColor'] = 'Black';
+        $e['color'] = '#993399';
+        $e['textColor'] = 'White';
 
             if ($row['sunday_first_optional'] == ""){
                 $e['description'] = "This is the First Reading for this Sunday  of Lent." . "<br>" . "No optional readings.";}

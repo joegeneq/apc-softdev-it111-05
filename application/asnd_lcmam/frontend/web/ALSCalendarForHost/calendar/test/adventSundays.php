@@ -198,8 +198,8 @@ try {
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allAdventSundays[$counter] . "T01:00:20";
-        $e['color'] = '#19D119';
-        $e['textColor'] = 'Black';
+        $e['color'] = '#660066';
+        $e['textColor'] = 'White';
 
             if ($row['sunday_first_optional'] == ""){
                 $e['description'] = "This is the First Reading for this Sunday of Advent." . "<br>" . "No optional readings.";}

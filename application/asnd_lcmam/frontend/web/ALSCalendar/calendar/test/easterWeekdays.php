@@ -227,7 +227,7 @@ try {
 
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
-        $e['color'] = '#FFCC66';
+        $e['color'] = '#EAEAEA';
         $e['textColor'] = 'Black';
 
             if ($row['weekday_first_optional'] == ""){

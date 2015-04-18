@@ -177,7 +177,7 @@ try {
 
         $e['title'] = $row['sunday_first_reading'];
         $e['start'] = $allEasterSundays[$counter] . "T01:00:05";
-        $e['color'] = '#CCFFCC';
+        $e['color'] = '#EAEAEA';
         $e['textColor'] = 'Black';
 
             if ($row['sunday_first_optional'] == ""){

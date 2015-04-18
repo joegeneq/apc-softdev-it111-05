@@ -72,6 +72,7 @@ $(document).ready(function () {
             $('#modalTitle').html(event.title);
             $('#modalBody').html(event.description);
             $('#eventUrl').attr('href', event.url);
+            $('#eventDownload').attr('href', event.url);
             $('#fullCalModal').modal();
             return false;
         },
@@ -145,7 +146,7 @@ $(document).ready(function () {
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button class="btn btn-success"><a id="eventUrl" target="_blank" style="color: white;">Reading Link</a>
-
+                <button class="btn btn-success"><a id="eventDownload" download="" style="color: white;">Download</a>
                 </button>
             </div>
         </div>

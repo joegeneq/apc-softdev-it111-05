@@ -244,8 +244,8 @@ try {
 
         $e['title'] = $row['weekday_first_reading'];
         $e['start'] = $allWeekdays[$counter] . "T01:00:05";
-        $e['color'] = '#990000';
-        $e['textColor'] = '#E6E600';
+        $e['color'] = '#660066';
+        $e['textColor'] = 'White';
 
             if ($row['weekday_first_optional'] == ""){
                 $e['description'] = "This is the First Reading for this Weekday of Advent." . "<br>" . "No optional readings.";}

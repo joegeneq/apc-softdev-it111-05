@@ -188,7 +188,7 @@ try {
 
                         $e['title'] = $row['weekday_first_reading'];
                         $e['start'] = $allWeekdays[$counter] . "T01:00:21";
-                        $e['color'] = '#FFFF85';
+                        $e['color'] = '#99FF66';
                         $e['textColor'] = 'Black';
                         
                             if ($row['weekday_first_optional'] == ""){
